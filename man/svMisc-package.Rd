@@ -5,8 +5,8 @@
 
 \title{ SciViews - Miscellaneous Functions }
 \description{
-  The SciViews svMisc package collects together a series of functions that are
-  shared across all the svXXX packages.
+  Miscellaneous functions for SciViews or general use. The svMisc package collects together a series of functions that are
+  shared across all svXXX packages.
 }
 \details{
   \tabular{ll}{
