@@ -1,5 +1,11 @@
 = svMisc News
 
+== Changes in svMisc 0.9-73
+
+* New, snake_case names of the functions. Old camelCase functions names are kept
+  for compatibility, e.g., captureAll() -> capture_all().
+
+
 == Changes in svMisc 0.9-72
 
 * toRjson() adapted to be compatible with R >= 3.5.0 (thanks to Martin Maechler)

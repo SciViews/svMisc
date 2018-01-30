@@ -1,4 +1,4 @@
-parseText <- function (text, firstline = 1, srcfilename = NULL,
+parse_text <- function (text, firstline = 1, srcfilename = NULL,
 encoding = "unknown")
 {
 	## Parse R instructions provided as a string and return the expression if it
@@ -16,17 +16,17 @@ encoding = "unknown")
 	if (inherits(res, "error")) {
 		## Check if this is incomplete code
 		msg <- conditionMessage(res)
-		
+
 		## Incomplete string
 		if (regexpr(gettext("INCOMPLETE_STRING", domain = "R"), msg) > 0)
 			return(NA)
 		## Incomplete instruction
 		if (regexpr(gettext("end of input", domain = "R"), msg) > 0)
-			return(NA)	
-		
+			return(NA)
+
 		## This should be incorrect R code
 		## Rework the message a little bit... keep line:col position in front
-		
+
 		## TODO: from SciViews-K-dev:
 		## This reformats the message as it would appear in the CLI:
 		#errinfo <-
@@ -37,17 +37,17 @@ encoding = "unknown")
 		#rx <- sprintf("^%d:", errpos[1])
 		#errcode <- sub(rx, "", err[grep(rx, err)])
 		#err <- simpleError(sprintf("%s in \"%s\"", errinfo[3], errcode))
-		
+
 		## -or-
-		
+
 		err <- res
 		err$message <- res <- sub("^<.*>:", "", msg)
 		## Call is from instructions in "text"... but from the corresponding line
 		err$call <- strsplit(text, "\n")[[1]][as.integer(
 			sub("^[^0-9]*([0-9]+):.*$", "\\1", res))]
-		
+
 		## ... until here...
-		
+
 		## Return a try-error object to remain compatible with previous versions
 		## TODO: from SciViews-K-dev:
 		#res <- .makeMessage(res)
@@ -57,3 +57,6 @@ encoding = "unknown")
 
     res
 }
+
+# Backward compatibility
+parseText <- parse_text

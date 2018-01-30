@@ -1,4 +1,5 @@
 \name{captureAll}
+\alias{capture_all}
 \alias{captureAll}
 
 \title{ Run an R expression and capture output and messages in a similar way
@@ -13,6 +14,7 @@
 }
 
 \usage{
+capture_all(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 captureAll(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 }
 
@@ -55,19 +57,19 @@ captureAll(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
   \code{\link{sourceClipboard}} }
 
 \examples{
-writeLines(captureAll(expression(1+1), split = FALSE))
-writeLines(captureAll(expression(1+1), split = TRUE))
-writeLines(captureAll(parseText("search()"), split = FALSE))
+writeLines(capture_all(expression(1+1), split = FALSE))
+writeLines(capture_all(expression(1+1), split = TRUE))
+writeLines(capture_all(parse_text("search()"), split = FALSE))
 
 \dontrun{
-writeLines(captureAll(parseText('1:2 + 1:3'), split = FALSE))
-writeLines(captureAll(parseText("badname"), split = FALSE))
+writeLines(capture_all(parse_text('1:2 + 1:3'), split = FALSE))
+writeLines(capture_all(parse_text("badname"), split = FALSE))
 }
 
-## Management of incomplete lines
-captRes <- captureAll(parseText("1 +")) # Clearly an incomplete command
-if (is.na(captRes)) cat("Incomplete line!\n") else writeLines(captRes)
-rm(captRes)
+# Management of incomplete lines
+capt_res <- capture_all(parse_text("1 +")) # Clearly an incomplete command
+if (is.na(capt_res)) cat("Incomplete line!\n") else writeLines(capt_res)
+rm(capt_res)
 }
 
 \keyword{ IO }

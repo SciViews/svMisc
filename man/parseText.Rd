@@ -1,4 +1,5 @@
 \name{parseText}
+\alias{parse_text}
 \alias{parseText}
 
 \title{ Parse a character string as if it was a command entered at the command
@@ -11,6 +12,7 @@
 }
 
 \usage{
+parse_text(text, firstline = 1, srcfilename = NULL, encoding = "unknown")
 parseText(text, firstline = 1, srcfilename = NULL, encoding = "unknown")
 }
 
