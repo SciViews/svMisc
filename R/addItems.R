@@ -1,14 +1,3 @@
-addItems <- function (x, y, use.names = TRUE, replace = TRUE)
-{
-	if (replace) res <- c(y, x) else res <- c(x, y)
-	if (use.names) {
-		res <- res[!duplicated(names(res))]
-	} else {
-		res <- sort(unique(res))
-	}
-	res
-}
-
 addActions <- function (obj = ".svActions", text = NULL, code = NULL,
 state = NULL, options = NULL, replace = TRUE)
 {

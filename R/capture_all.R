@@ -1,7 +1,57 @@
-# Inspired by 'capture.output' and the old .try_silent in utils package
-# Requires: R >= 2.13.0
+#' Run an R expression and capture output and messages in a similar way as it
+#' would be done at the command line
+#'
+#' @description This function captures results of evaluating one or several R
+#' expressions the same way as it would be issued at the prompt in a R console.
+#' The result is returned in a character string. Errors, warnings and other
+#' conditions are treated as usual, including the delayed display of the
+#' warnings if `options(warn = 0)`.
+#'
+#' @param expr A  valid R expression to evaluate (names and calls are also
+#'   accepted).
+#' @param split Do we split output, that is, do we also issue it at the R
+#' console too, or do we only capture it silently?
+#' @param echo Do we echo each expression in front of the results (like in the
+#' console)? In case the expression spans on more than 7 lines, only first and
+#' last three lines are echoed, separated by `[...]`.
+#' @param file A file, or a valid opened connection where output is sinked. It
+#' is closed at the end, and the function returns `NULL` in this case. If
+#' `file = NULL` (by default), a `textConnection()` captures the output and it
+#' is returned as a character string by the function.
+#' @param markStdErr If `TRUE`, stderr is separated from sddout by STX/ETX
+#' characters.
+#' @return Returns a string with the result of the evaluation done in the user
+#' workspace.
+#' @note If the expression is provided as a character string that should be
+#' evaluated, and you need a similar behaviour as at the prompt for incomplete
+#' lines of code (that is, to prompt for more), you should not parse the
+#' expression with `parse(text = "<some_code>")` because it returns an error
+#' instead of an indication of an incomplete code line. Use
+#' `parse_text("<some_code>")` instead, like in the examples bellow.
+#' Of course, you have to deal with incomplete line management in your GUI/CLI
+#' application... the function only returns `NA` instead of a character string.
+#' @export
+#' @seealso [parse()], [expression()], [capture.output()]
+#' @keywords IO
+#' @concept capturing output for GUI clients
+#' @examples
+#' writeLines(capture_all(expression(1 + 1), split = FALSE))
+#' writeLines(capture_all(expression(1 + 1), split = TRUE))
+#' writeLines(capture_all(parse_text("search()"), split = FALSE))
+#' \dontrun{
+#' writeLines(capture_all(parse_text('1:2 + 1:3'), split = FALSE))
+#' writeLines(capture_all(parse_text("badname"), split = FALSE))
+#' }
+#'
+#' # Management of incomplete lines
+#' capt_res <- capture_all(parse_text("1 +")) # Clearly an incomplete command
+#' if (is.na(capt_res)) cat("Incomplete line!\n") else writeLines(capt_res)
+#' rm(capt_res)
 capture_all <- function(expr, split = TRUE, echo = TRUE, file = NULL,
 markStdErr = FALSE) {
+  # Inspired by 'capture.output' and the old .try_silent in utils package
+  # Requires: R >= 2.13.0
+
   if (is.null(expr))
     stop("argument is of length zero")
   if (!is.expression(expr)) {
@@ -229,4 +279,7 @@ markStdErr = FALSE) {
 }
 
 # Backward compatibility
+
+#' export
+#' @rdname capture_all
 captureAll <- capture_all

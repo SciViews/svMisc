@@ -5,6 +5,8 @@
 * New, snake_case names of the functions. Old camelCase functions names are kept
   for compatibility, e.g., captureAll() -> capture_all().
 
+* Vignette added.
+
 
 == Changes in svMisc 0.9-72
 

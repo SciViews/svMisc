@@ -1,5 +1,4 @@
-\name{addItems}
-\alias{addItems}
+\name{addActions}
 \alias{addActions}
 \alias{addIcons}
 \alias{addMethods}
@@ -12,7 +11,6 @@
 }
 
 \usage{
-addItems(x, y, use.names = TRUE, replace = TRUE)
 addActions(obj = ".svActions", text = NULL, code = NULL, state = NULL,
 	options = NULL, replace = TRUE)
 addIcons(obj = ".svIcons", icons, replace = TRUE)
@@ -20,10 +18,6 @@ addMethods(methods)
 }
 
 \arguments{
-  \item{x}{ the vector to add items to. }
-  \item{y}{ the vector of which we want to inject missing items in 'x'. }
-  \item{use.names}{ use names of items to determine which one is unique,
-    otherwise, the selection is done on the items themselves. }
   \item{replace}{ do we replace existing items in 'x'? }
   \item{obj}{ the name of the object in \code{SciViews:TempEnv} to manipulate. }
   \item{text}{ the text of actions to add (label on first line, tip on other
@@ -51,15 +45,6 @@ addMethods(methods)
   \code{\link{TempEnv}} }
 
 \examples{
-## I have a vector v1 with this:
-v1 <- c(a = "some v1 text", b = "another v1 text")
-## I want to add items whose name is missing in v1 from v2
-v2 <- c(a = "v2 text", c = "the missign item")
-addItems(v1, v2, replace = FALSE)
-## Not the same as
-addItems(v1, v2, replace = TRUE)
-## This yield different result (names not used and lost!)
-addItems(v1, v2, use.names = FALSE)
 
 ## This is useful to add actions, icons, descriptions, shortcuts or methods
 ## TODO: examples and use for functions addActions(), addIcons() and
