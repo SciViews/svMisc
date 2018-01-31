@@ -44,6 +44,7 @@
 #' is_rgui()
 #' is_sdi()
 #' is_rstudio()
+#' is_rstudio_desktop()
 #' is_rstudio_server()
 #' is_jgr()
 is_help <- function(topic, package = NULL, lib.loc = NULL) {
@@ -105,12 +106,26 @@ is_aqua <- function()
 #' @export
 #' @rdname is_help
 is_rstudio <- function()
-  NULL # TODO
+  !is.null(get0("RStudio.Version"))
 
 #' @export
 #' @rdname is_help
-is_rstudio_server <- function()
-  NULL # TODO
+is_rstudio_desktop <- function() {
+  rstudio_version <- get0("RStudio.Version")
+  if (is.null(rstudio_version) || !is.function(rstudio_version))
+    return(FALSE)
+  (rstudio_version()$mode == "desktop")
+}
+
+
+#' @export
+#' @rdname is_help
+is_rstudio_server <- function() {
+  rstudio_version <- get0("RStudio.Version")
+  if (is.null(rstudio_version) || !is.function(rstudio_version))
+    return(FALSE)
+  (rstudio_version()$mode == "server")
+}
 
 #' @export
 #' @rdname is_help

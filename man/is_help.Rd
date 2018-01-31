@@ -8,6 +8,7 @@
 \alias{is_mac}
 \alias{is_aqua}
 \alias{is_rstudio}
+\alias{is_rstudio_desktop}
 \alias{is_rstudio_server}
 \alias{is_jgr}
 \alias{isHelp}
@@ -32,6 +33,8 @@ is_mac()
 is_aqua()
 
 is_rstudio()
+
+is_rstudio_desktop()
 
 is_rstudio_server()
 
@@ -101,6 +104,7 @@ is_aqua()
 is_rgui()
 is_sdi()
 is_rstudio()
+is_rstudio_desktop()
 is_rstudio_server()
 is_jgr()
 }

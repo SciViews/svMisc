@@ -24,4 +24,5 @@
 #' @importFrom methods findFunction existsFunction new getMethods isGeneric
 #'   showMethods slot slotNames
 #' @importFrom stats runif
+#' @importFrom tools file_path_as_absolute
 NULL
