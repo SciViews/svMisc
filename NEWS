@@ -1,15 +1,18 @@
 = svMisc News
 
-== Changes in svMisc 0.9-73
+== Changes in svMisc 1.0-0
 
 * New, snake_case names of the functions. Old camelCase functions names are kept
   for compatibility, e.g., captureAll() -> capture_all().
 
+* All documentation converted to Roxygen2 format.
+
+
+== Changes in svMisc 0.9-73
+
 * New is_rstudio(), and is_rstudio_server() functions. Also, file_edit() detects
   if RStudio is used and get an internal buffer to edit a file by default in
   that case.
-
-* All documentation converted to Roxygen2 format
 
 * Vignette added.
 

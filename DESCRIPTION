@@ -1,6 +1,6 @@
 Package: svMisc
 Type: Package
-Version: 0.9-73
+Version: 1.0-0
 Date: 2018-01-30
 Title: SciViews - Miscellaneous Functions
 Description: Miscellaneous functions for SciViews or general use: manage a
