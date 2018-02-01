@@ -40,7 +40,7 @@
 #' # Not the same as
 #' add_items(v1, v2, replace = TRUE)
 #' # This yield different result (names not used and lost!)
-#' addItems(v1, v2, use.names = FALSE)
+#' add_items(v1, v2, use.names = FALSE)
 #'
 #' add_temp("tst", "item1", c(a = 1, b = 2))
 #' # Retrieve this variable
@@ -92,7 +92,7 @@ temp_env <- function() {
   pos.to.env(pos)
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 add_items <- function(x, y, use.names = TRUE, replace = TRUE) {
   if (isTRUE(replace)) res <- c(y, x) else res <- c(x, y)
@@ -103,7 +103,7 @@ add_items <- function(x, y, use.names = TRUE, replace = TRUE) {
   }
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 add_temp <- function(x, item, value, use.names = TRUE, replace = TRUE) {
   x <- as.character(x)[1]
@@ -120,7 +120,7 @@ add_temp <- function(x, item, value, use.names = TRUE, replace = TRUE) {
   assign_temp(x, dat)
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 assign_temp <- function(x, value, replace.existing = TRUE) {
   t_env <- temp_env()
@@ -129,7 +129,7 @@ assign_temp <- function(x, value, replace.existing = TRUE) {
     assign(x, value, envir = t_env)
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 change_temp <- function(x, item, value, replace.existing = TRUE) {
   x <- as.character(x)[1]
@@ -145,12 +145,12 @@ change_temp <- function(x, item, value, replace.existing = TRUE) {
   }
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 exists_temp <- function(x, mode = "any")
   exists(x, envir = temp_env(), mode = mode, inherits = FALSE)
 
-#' export
+#' @export
 #' @rdname temp_env
 get_temp <- function(x, default = NULL, mode = "any", item = NULL) {
   if (is.null(item)) Mode <- mode else Mode <- "any"
@@ -175,7 +175,7 @@ get_temp <- function(x, default = NULL, mode = "any", item = NULL) {
   }
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 delete_temp <- function(x) {
   if (!is.character(x))
@@ -194,41 +194,41 @@ delete_temp <- function(x) {
   invisible(res)
 }
 
-#' export
+#' @export
 #' @rdname temp_env
 rm_temp <- delete_temp
 
 
 # Backward compatibility
 
-#' export
+#' @export
 #' @rdname temp_env
 TempEnv <- temp_env
 
-#' export
+#' @export
 #' @rdname temp_env
 addItems <- add_items
 
-#' export
+#' @export
 #' @rdname temp_env
 addTemp <- add_temp
 
-#' export
+#' @export
 #' @rdname temp_env
 assignTemp <- assign_temp
 
-#' export
+#' @export
 #' @rdname temp_env
 changeTemp <- change_temp
 
-#' export
+#' @export
 #' @rdname temp_env
 existsTemp <- exists_temp
 
-#' export
+#' @export
 #' @rdname temp_env
 getTemp <- get_temp
 
-#' export
+#' @export
 #' @rdname temp_env
 rmTemp <- delete_temp

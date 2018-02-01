@@ -89,38 +89,6 @@ or changed for \code{assign_temp()}, \code{add_temp()}, \code{change_temp()}, or
 Create and manage a temporary environment \code{SciViews:TempEnv}
 low enough on the search path so that all loaded packages (except \strong{base})
 could easily access objects there.
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
-
-export
 }
 \details{
 The temporary environment is attached to the search path for easier
@@ -137,7 +105,7 @@ add_items(v1, v2, replace = FALSE)
 # Not the same as
 add_items(v1, v2, replace = TRUE)
 # This yield different result (names not used and lost!)
-addItems(v1, v2, use.names = FALSE)
+add_items(v1, v2, use.names = FALSE)
 
 add_temp("tst", "item1", c(a = 1, b = 2))
 # Retrieve this variable

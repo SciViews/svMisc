@@ -74,13 +74,13 @@
 #'   c = c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf, NA, c6 = NaN),
 #'   c(TRUE, FALSE, NA),
 #'   e = factor(c("a", "b", "a")),
-#'   f = "this is a \"string\"\nwith\tspecial chars",
+#'   f = 'this is a "string" with quote',
 #'   g = matrix(rnorm(4), ncol = 2),
-#'   `h&'$@` = data.frame(x = 1:3, y = rnorm(3),
+#'   `h&$@` = data.frame(x = 1:3, y = rnorm(3),
 #'     fact = factor(c("b", "a", "b"))),
 #'   i = Sys.Date(),
 #'   j = list(1:5, y = "another item")),
-#'   comment = "My comment\n\"",
+#'   comment = "My comment",
 #'   anAttrib = 1:10,
 #'   anotherAttrib = list(TRUE, y = 1:4))
 #'
