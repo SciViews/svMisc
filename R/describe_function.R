@@ -213,7 +213,7 @@ description = FALSE, methods = FALSE, width = getOption("width")) {
 
   # Do we add a short mention of available methods if the function is generic?
   if (isTRUE(methods)) {
-    mets <- listMethods(code)
+    mets <- list_methods(code)
     if (length(mets)) {
       # How many 25 char strings can we put on width and 5 lines max?
       # Note: we use two space each time as separator, except for last
