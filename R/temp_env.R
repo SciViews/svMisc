@@ -85,7 +85,7 @@ temp_env <- function() {
   if (is.na(pos)) { # Must create it
     `SciViews:TempEnv` <- list()
     attach_env <- function(...) get("attach", mode = "function")(...)
-    attach_env(`SciViews:TempEnv`, pos = length(search()) - 1)
+    attach_env(`SciViews:TempEnv`, pos = length(search()) - 1L)
     rm(`SciViews:TempEnv`)
     pos <- match("SciViews:TempEnv", search())
   }

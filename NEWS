@@ -7,6 +7,9 @@
 
 * All documentation converted to Roxygen2 format.
 
+* package() is reworked to record packages it cannot install, and the install()
+  function uses these automatically.
+
 
 == Changes in svMisc 0.9-73
 

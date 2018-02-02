@@ -2,34 +2,79 @@
 % Please edit documentation in R/package.R
 \name{package}
 \alias{package}
-\title{A very silent and multipackage require() function}
+\title{A (possibly) very silent and multi-package library()/require() function}
 \usage{
-package(..., warn = TRUE)
+package(..., stop = TRUE, message = stop, warn.conflicts = message,
+  pos = 2L, lib.loc = NULL, verbose = getOption("verbose"))
 }
 \arguments{
 \item{...}{The name of one or several R packages to load (character strings).}
 
-\item{warn}{If \code{TRUE}, issue a warning if one or several packages are not
+\item{stop}{If \code{TRUE}, issue an error in case the package(s) cannot be
 loaded.}
+
+\item{message}{Do we display introductory message of the package? If a
+package displays such a message, there is often a good reason. So, it is
+\strong{not} a good idea to disable it in \emph{interactive} sessions. However, in
+other contexts, like in non-interactive use, inside an R Markdown document,
+etc., it is more convenient not to display it.}
+
+\item{warn.conflicts}{As for \code{\link[=library]{library()}}: "logical. If TRUE, warnings are
+printed about conflicts from attaching the new package. A conflict is a
+function masking a function, or a non-function masking a non-function.}
+
+\item{pos}{As for \code{\link[=library]{library()}}: "the position on the search list at which to
+attach the loaded namespace. Can also be the name of a position on the
+current search list as given by \code{\link[=search]{search()}}". Only one position can be
+provided here, even if several packages, and they will be all inserted one
+after the other at the given position.}
+
+\item{lib.loc}{As for \code{\link[=library]{library()}}: "a character vector describing the
+location of \R library trees to search through, or \code{NULL}. The default value
+of \code{NULL} corresponds to all libraries currently known to \code{\link[=.libPaths]{.libPaths()}}.
+Non-existent library trees are silently ignored".}
+
+\item{verbose}{A logical indicating if additional diagnostic messages are
+printed.}
 }
 \value{
-\code{TRUE} if all packages are loaded correctly, \code{FALSE} otherwise.
-This function is designed to concisely and quitely indicate package
-requirements in GUI menu or other GUI actions.
+\code{TRUE} if all packages are loaded correctly, \code{FALSE} otherwise, with
+a \code{details} attribute indicating which package was loaded or not.
 }
 \description{
 This function loads one or several R packages as silently as
-possible and it returns \code{TRUE} only if all packages are loaded successfully.
-If at least one loading fails, a short message is printed.
+possible (with \code{warn/message = FALSE}) and it returns \code{TRUE} only if all
+packages are loaded successfully. If at least one loading fails, a short
+message is printed, by default. For all packages that were not found, an
+entry is recorded in \code{.packages_to_install} in \code{SciViews:TempEnv}, and that
+list can be automatically used by \code{\link[=install]{install()}}.
+}
+\note{
+This function is designed to concisely and possibly quietly (with
+\code{warn = FALSE}) load packages and attach them to the search path. Also, on
+the contrary to \code{\link[=library]{library()}}, or \code{\link[=require]{require()}}, it is \strong{not} possible to use
+unquoted names of the packages. This is cleaner, and avoids the contrived
+work-around to pass name(s) of packages as a variable with an arguments
+\code{character.only = TRUE}!
+
+If several packages are provided, they are loaded and attached in reverse
+order, so that the order in the search path is the same one as the order in
+the provided vector.
+
+The \code{library(help = ...)} version is \strong{not} implemented here.
 }
 \examples{
 # This should work...
-if (all(package("tools", "methods"))) message("Fine!")
-# ... but this not
-if (!all(package("tools", "badname", warn = FALSE))) message("Not fine!")
+if (package('tools', 'methods', stop = FALSE)) message("Fine!")
+# ... but this not (note that there are no details here!)
+if (!package('tools', 'badname', stop = FALSE)) message("Not fine!")
+\dontrun{
+# Get an error
+package('badname')
+}
 }
 \seealso{
-\code{\link[=require]{require()}}, \code{\link[=library]{library()}}
+\code{\link[=require]{require()}}, \code{\link[=library]{library()}}, \code{\link[=install]{install()}}
 }
 \concept{
 package requirement and loading
