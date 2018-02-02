@@ -5,8 +5,8 @@ Date: 2018-02-02
 Title: SciViews - Miscellaneous Functions
 Description: Miscellaneous functions for SciViews or general use: manage a
   temporary environment attached to the search path for temporary variables you
-  do not want to save() or load(), test if RGUI, Aqua, Mac, Win, ... Show
-  progress bar, etc.
+  do not want to save() or load(), test if Aqua, Mac, Win, ... Show progress
+  bar, etc.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
   email = "phgrosjean@sciviews.org"),
   person("Romain", "Francois", role = "ctb",
