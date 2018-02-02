@@ -5,7 +5,7 @@
 #' packages are loaded successfully. If at least one loading fails, a short
 #' message is printed, by default. For all packages that were not found, an
 #' entry is recorded in `.packages_to_install` in `SciViews:TempEnv`, and that
-#' list can be automatically used by [install()].
+#' list can be automatically used by [Install()].
 #'
 #' @param ... The name of one or several R packages to load (character strings).
 #' @param stop If `TRUE`, issue an error in case the package(s) cannot be
@@ -42,9 +42,9 @@
 #' order, so that the order in the search path is the same one as the order in
 #' the provided vector.
 #'
-#' The `library(help = ...)` version is **not** implemented here.
+#' The `library(help = ...)` version is not implemented here.
 #' @export
-#' @seealso [require()], [library()], [install()]
+#' @seealso [require()], [library()], [Install()]
 #' @keywords utilities
 #' @concept package requirement and loading
 #' @examples
@@ -89,7 +89,7 @@ pos = 2L, lib.loc = NULL, verbose = getOption("verbose")) {
 
   if (!res) {
     bads <- pkgs[!check]
-    # Record the list of packages that were not found for easier install()
+    # Record the list of packages that were not found for easier Install()
     to_install <- get_temp('.packages_to_install', default = character(0))
     to_install <- unique(c(bads, to_install))
     assign_temp('.packages_to_install', to_install, replace.existing = TRUE)
@@ -98,11 +98,11 @@ pos = 2L, lib.loc = NULL, verbose = getOption("verbose")) {
     if (stop) {
       if (length(bads) == 1) {
         stop("Unable to load package '", bads,
-          "'!\nUse install() to make it available...")
+          "'!\nUse `Install()` to make it available...")
       } else {
         stop("Unable to load package(s): '",
           paste(bads, collapse = "', '"),
-          "'!\nUse install() to make them available...")
+          "'!\nUse `Install()` to make them available...")
       }
     }
   }

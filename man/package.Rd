@@ -47,7 +47,7 @@ possible (with \code{warn/message = FALSE}) and it returns \code{TRUE} only if a
 packages are loaded successfully. If at least one loading fails, a short
 message is printed, by default. For all packages that were not found, an
 entry is recorded in \code{.packages_to_install} in \code{SciViews:TempEnv}, and that
-list can be automatically used by \code{\link[=install]{install()}}.
+list can be automatically used by \code{\link[=Install]{Install()}}.
 }
 \note{
 This function is designed to concisely and possibly quietly (with
@@ -61,7 +61,7 @@ If several packages are provided, they are loaded and attached in reverse
 order, so that the order in the search path is the same one as the order in
 the provided vector.
 
-The \code{library(help = ...)} version is \strong{not} implemented here.
+The \code{library(help = ...)} version is not implemented here.
 }
 \examples{
 # This should work...
@@ -74,7 +74,7 @@ package('badname')
 }
 }
 \seealso{
-\code{\link[=require]{require()}}, \code{\link[=library]{library()}}, \code{\link[=install]{install()}}
+\code{\link[=require]{require()}}, \code{\link[=library]{library()}}, \code{\link[=Install]{Install()}}
 }
 \concept{
 package requirement and loading

@@ -17,7 +17,7 @@
 #' @seealso [package()]
 #' @keywords utilities
 #' @concept package installation
-install <- function(pkgs = get_temp('.packages_to_install'), ..., ask = TRUE) {
+Install <- function(pkgs = get_temp('.packages_to_install'), ..., ask = TRUE) {
   if (is.null(pkgs) || !length(pkgs)) {
     warning("nothing to install")
     return(invisible(TRUE)) # We consider there is no error!
