@@ -19,7 +19,7 @@
 #' @concept package installation
 Install <- function(pkgs = get_temp('.packages_to_install'), ..., ask = TRUE) {
   if (is.null(pkgs) || !length(pkgs)) {
-    warning("nothing to install")
+    warning("Nothing to install.")
     return(invisible(TRUE)) # We consider there is no error!
   }
   pkgs_list <- '.packages_to_install'

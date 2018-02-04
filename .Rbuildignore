@@ -4,6 +4,7 @@
 .git/*
 README.md
 NEWS.md
+CONDUCT.md
 FAQ.md
 Makefile
 .Rprofile
