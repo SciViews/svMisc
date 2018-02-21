@@ -166,3 +166,7 @@ isAqua <- is_aqua
 #' @export
 #' @rdname is_help
 isJGR <- is_jgr
+
+# One could define this too:
+#`%is%` <- function(x, what)
+#  inherits(x, what)

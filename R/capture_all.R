@@ -280,6 +280,6 @@ markStdErr = FALSE) {
 
 # Backward compatibility
 
-#' export
+#' @export
 #' @rdname capture_all
 captureAll <- capture_all

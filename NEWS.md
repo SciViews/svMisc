@@ -1,5 +1,11 @@
 # svMisc News
 
+## Changes in svMisc 1.0-2
+
+* captureAll() and parseText() were not exported anymore after switching help
+  pages to Roxygen2.
+
+
 ## Changes in svMisc 1.0-1
 
 * This is a minor update to avoid 2 notes on CRAN R CMD check.

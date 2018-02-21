@@ -102,6 +102,6 @@ encoding = "unknown") {
 
 # Backward compatibility
 
-#' export
+#' @export
 #' @rdname parse_text
 parseText <- parse_text
