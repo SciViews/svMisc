@@ -41,8 +41,6 @@ expressions the same way as it would be issued at the prompt in a R console.
 The result is returned in a character string. Errors, warnings and other
 conditions are treated as usual, including the delayed display of the
 warnings if \code{options(warn = 0)}.
-
-export
 }
 \note{
 If the expression is provided as a character string that should be

@@ -1,6 +1,6 @@
 # svMisc News
 
-## Changes in svMisc 1.0-2
+## Changes in svMisc 1.0.2
 
 * captureAll() and parseText() were not exported anymore after switching help
   pages to Roxygen2.

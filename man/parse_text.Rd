@@ -29,8 +29,6 @@ the error message if the code is incorrect.
 Parse R instructions provided as a string and return the
 expression if it is correct, or an object of class 'try-error' if it is an
 incorrect code, or \code{NA} if the (last) instruction is incomplete.
-
-export
 }
 \note{
 On the contrary to \code{parse()}, \code{parse_text()} recovers from incorrect
