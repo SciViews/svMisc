@@ -98,7 +98,7 @@ about <- function(topic, ...) {
     obj <- get(topic)
     info <- comment(obj)
     if (!is.null(info)) {
-      if (info != "") {
+      if (length(info) != 1 || info != "") {
         message("Comment:")
         writeLines(info)
       }
