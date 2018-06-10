@@ -10,7 +10,7 @@
 #' `srcfile` attribute of the object's comment. By the way, if the object has a
 #' comment, it is also displayed. This can be used as a quick and dirty way to
 #' provide short hints to custom objects. Finally, it is possible to track down
-#' the source of an object into a file with the `srcfile`attribute of its
+#' the source of an object into a file with the `srcfile` attribute of its
 #' comment. In this case, it is the source file that is displayed. So, you can
 #' also further document your custom objects easily in their source files!
 #'

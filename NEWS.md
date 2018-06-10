@@ -1,12 +1,15 @@
 # svMisc News
 
+## Changes in svMisc 1.1.0
+
+* `about()` added and a special version of `?` accepts `.?` as a shortcut to
+  `about()`, but is otherwise, compatible with `utils::??`.
+
+
 ## Changes in svMisc 1.0.2
 
 * `captureAll()` and `parseText()` were not exported anymore after switching
   help pages to Roxygen2.
-
-* `about()` added and a special version of `?` accepts `.?` as a shortcut to
-  `about()`, but is otherwise, compatible with `utils::??`.
 
 
 ## Changes in svMisc 1.0-1

@@ -15,9 +15,10 @@ not the name of a known object.}
 
 \item{...}{Further arguments passed to \code{\link[=help]{help()}}.}
 
-\item{type}{First argument to \code{?}. If it is a dot, like \code{.?}, the second
+\item{type}{First argument to \code{?}. If it is a dot, like \code{.?topic}, the second
 argument is a topic passed to the \code{about()} function. Otherwise, it is the
-first argument to restrict help pages, like \code{class}, \code{methods}, or \code{method}.}
+first argument to restrict help pages, like \code{class}, \code{methods}, or \code{method}.
+See examples for how to use it.}
 }
 \value{
 A string with the location of all objects named \code{topic} are found is
@@ -31,7 +32,7 @@ the help page of an object even if its name is changed, by using the \code{src} 
 \code{srcfile} attribute of the object's comment. By the way, if the object has a
 comment, it is also displayed. This can be used as a quick and dirty way to
 provide short hints to custom objects. Finally, it is possible to track down
-the source of an object into a file with the \code{srcfile}attribute of its
+the source of an object into a file with the \code{srcfile} attribute of its
 comment. In this case, it is the source file that is displayed. So, you can
 also further document your custom objects easily in their source files!
 }
