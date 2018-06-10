@@ -97,7 +97,7 @@ about <- function(topic, ...) {
     # Is there comments, and is it a 'src' attribute too to substitute topic?
     obj <- get(topic)
     info <- comment(obj)
-    if (!is.null(info)) {
+    if (!is.null(info) && info != "") {
       message("Comment:")
       writeLines(info)
       # Is there a 'src_file' attribute?
