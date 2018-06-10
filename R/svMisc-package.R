@@ -20,7 +20,8 @@
 #' @importFrom utils RSiteSearch apropos available.packages browseURL
 #'   capture.output compareVersion file.edit file_test flush.console
 #'   getCRANmirrors getS3method install.packages installed.packages methods
-#'   object.size packageDescription remove.packages str tail write.table
+#'   object.size packageDescription remove.packages str tail write.table ? help
+#'   help.search apropos find
 #' @importFrom methods findFunction existsFunction new getMethods isGeneric
 #'   showMethods slot slotNames
 #' @importFrom stats runif
