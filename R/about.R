@@ -99,7 +99,7 @@ about <- function(topic, ...) {
     info <- comment(obj)
     if (!is.null(info)) {
       message("Comment:")
-      print(info)
+      writeLines(info)
       # Is there a 'src_file' attribute?
       src_file <- attr(info, "srcfile")
       if (!is.null(src_file)) {
