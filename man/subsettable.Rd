@@ -14,10 +14,6 @@
 \item{x}{A \code{subsettable_type} function.}
 
 \item{name}{The value to use for the \code{type=} argument.}
-
-\item{x}{A \code{subsettable_type} function.}
-
-\item{name}{The value to use for the \code{which=} argument.}
 }
 \description{
 In case a textual argument allows for selecting the result, for
