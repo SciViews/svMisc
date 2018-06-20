@@ -3,7 +3,9 @@
 ## Changes in svMisc 1.1.0
 
 * `about()` added and a special version of `?` accepts `.?` as a shortcut to
-  `about()`, but is otherwise, compatible with `utils::??`.
+  `about()`, but is otherwise, compatible with `utils::?`.
+
+* `subsettable` functions for arguments `type=` or `which=` added.
 
 
 ## Changes in svMisc 1.0.2
