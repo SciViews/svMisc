@@ -32,8 +32,6 @@
 
 #' @export
 #' @rdname subsettable
-#' @param x A `subsettable_type` function.
-#' @param name The value to use for the `which=` argument.
 #' @method $ subsettable_which
 `$.subsettable_which` <- function(x, name)
   function(...) x(which = name, ...)
