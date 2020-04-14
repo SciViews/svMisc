@@ -17,8 +17,14 @@ describe_args(fun, args = NULL, package = NULL, lib.loc = NULL)
 
 args_tip(name, only.args = FALSE, width = getOption("width"))
 
-call_tip(code, only.args = FALSE, location = FALSE, description = FALSE,
-  methods = FALSE, width = getOption("width"))
+call_tip(
+  code,
+  only.args = FALSE,
+  location = FALSE,
+  description = FALSE,
+  methods = FALSE,
+  width = getOption("width")
+)
 
 descFun(fun, package, lib.loc = NULL)
 
@@ -26,8 +32,14 @@ descArgs(fun, args = NULL, package = NULL, lib.loc = NULL)
 
 argsTip(name, only.args = FALSE, width = getOption("width"))
 
-callTip(code, only.args = FALSE, location = FALSE, description = FALSE,
-  methods = FALSE, width = getOption("width"))
+callTip(
+  code,
+  only.args = FALSE,
+  location = FALSE,
+  description = FALSE,
+  methods = FALSE,
+  width = getOption("width")
+)
 }
 \arguments{
 \item{fun}{A character string with the name of a function (several functions
@@ -48,7 +60,7 @@ of the arguments to search for.}
 \item{name}{A string with the name of a function.}
 
 \item{only.args}{Do we return only arguments of the function
-(\code{arg1, arg2 = TRUE, ...}), or the full call, like
+(\verb{arg1, arg2 = TRUE, ...}), or the full call, like
 (\code{myfun(arg1, arg2 = TRUE, ...)}).}
 
 \item{width}{Reformat the tip to fit to fit in that width, except if
@@ -107,7 +119,5 @@ call_tip("myvar <- lm(")
 \seealso{
 \code{\link[=completion]{completion()}}, \code{\link[=args]{args()}}, \code{\link[=argsAnywhere]{argsAnywhere()}}
 }
-\concept{
-graphical user interface (GUI) control
-}
+\concept{graphical user interface (GUI) control}
 \keyword{utilities}

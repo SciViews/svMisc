@@ -5,7 +5,7 @@
 #'
 #' @section Important functions:
 #'
-#' - [temp_env()] for unsing a temporary environment attached to the search path,
+#' - [temp_env()] for using a temporary environment attached to the search path,
 #'
 #' - [temp_var()] create the name of temporary variables,
 #'

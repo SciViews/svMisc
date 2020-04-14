@@ -28,7 +28,5 @@ compare_r_version("2.11.0") # Note that we strongly advise to use R > 2.11.0!
 \seealso{
 \code{\link[=compareVersion]{compareVersion()}}, \code{\link[=R.version]{R.version()}}
 }
-\concept{
-version comparison
-}
+\concept{version comparison}
 \keyword{utilities}

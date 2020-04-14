@@ -62,7 +62,7 @@
 #' help of [rc.settings()].
 #'
 #' If `print == TRUE`, results are returned invisibly, and printed in a form:
-#' triggerPos<newline>completions separated by `sep`.
+#' triggerPos *newline* completions separated by `sep`.
 #'
 #' If `types` are supplied, a completion will consist of name and type,
 #' separated by `type.sep`. `types` may me a vector of length 5, giving the type

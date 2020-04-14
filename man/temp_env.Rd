@@ -149,7 +149,5 @@ exists_temp("test")
 \seealso{
 \code{\link[=assign]{assign()}}, \code{\link[=search]{search()}}, \code{\link[=temp_var]{temp_var()}}
 }
-\concept{
-temporary variables
-}
+\concept{temporary variables}
 \keyword{utilities}

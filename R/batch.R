@@ -34,7 +34,7 @@
 #' # Run it in batch mode on five items
 #' files <- paste0("file", 1:5)
 #' batch(files, fake_process)
-batch <- function(items, fun, ...,	show.progress = !is_aqua() && !is_jgr(),
+batch <- function(items, fun, ..., show.progress = !is_aqua() && !is_jgr(),
 suppress.messages = show.progress, verbose = TRUE) {
   if (!is.function(fun))
     stop("'fun' must be a function")
@@ -45,6 +45,7 @@ suppress.messages = show.progress, verbose = TRUE) {
   verbose <- isTRUE(as.logical(verbose))
   if (verbose) message("Running the batch process with ",
     deparse(substitute(fun)), "...")
+  cat("\n")
   n <- length(items)
   if (n < 1) {
     warning("No items to process!")
@@ -64,11 +65,20 @@ suppress.messages = show.progress, verbose = TRUE) {
     progress(i, n)
     item <- items[i]
     ok[i] <- as.logical(suppressMessages(fun(item, ...)))[1]
+    # Go to a new line in case of error and prevent progess() to erase text
+    if (!ok[i]) {
+      cat("\n")
+      rm_temp(".progress")
+    }
+
     flush.console()
   }
   progress(n + 1, n) # Cancel progression message
-  if (verbose) message("Processed successfully ", sum(ok, na.rm = TRUE),
+  if (verbose) {
+    cat("\n")
+    message("Processed successfully ", sum(ok, na.rm = TRUE),
     " items on ", n, " (see .last.batch)")
+  }
   # Record .last.batch variable in SciViews:TempEnv
   last_batch <- structure(sum(ok, na.rm = TRUE) == n, items = items, ok = ok)
   assignTemp(".last.batch", last_batch)

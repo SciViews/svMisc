@@ -4,8 +4,14 @@
 \alias{batch}
 \title{Run a function in batch mode}
 \usage{
-batch(items, fun, ..., show.progress = !is_aqua() && !is_jgr(),
-  suppress.messages = show.progress, verbose = TRUE)
+batch(
+  items,
+  fun,
+  ...,
+  show.progress = !is_aqua() && !is_jgr(),
+  suppress.messages = show.progress,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{items}{The items (usually, arguments vector of character strings) on
@@ -51,7 +57,5 @@ batch(files, fake_process)
 \seealso{
 \code{\link[=progress]{progress()}}
 }
-\concept{
-batch processing
-}
+\concept{batch processing}
 \keyword{utilities}

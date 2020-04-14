@@ -29,7 +29,5 @@ generaly sufficient.
 \seealso{
 \code{\link[=package]{package()}}
 }
-\concept{
-package installation
-}
+\concept{package installation}
 \keyword{utilities}

@@ -45,7 +45,7 @@ parse_text(c("1 + 1", "log(10)"))
 parse_text("log(")
 
 # Incomplete strings
-parse_text("text <- \\"some string")
+parse_text("text <- \"some string")
 parse_text("text <- 'some string")
 
 # Incomplete names (don't write backtick quoted names on several lines!)
@@ -58,7 +58,5 @@ parse_text("log)")
 \seealso{
 \code{\link[=parse]{parse()}}, \code{\link[=capture_all]{capture_all()}}
 }
-\concept{
-parsing expression, incomplete code
-}
+\concept{parsing expression, incomplete code}
 \keyword{IO}

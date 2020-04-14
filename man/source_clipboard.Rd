@@ -25,7 +25,5 @@ it. Clipboard is managed correctly depending on the OS (Windows, MacOS, or
 \seealso{
 \code{\link[=source]{source()}}, \code{\link[=file]{file()}}
 }
-\concept{
-Source code from clipboard
-}
+\concept{Source code from clipboard}
 \keyword{IO}

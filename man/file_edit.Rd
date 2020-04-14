@@ -5,11 +5,25 @@
 \alias{fileEdit}
 \title{Invoke an external text editor for a file}
 \usage{
-file_edit(..., title = files, editor = getOption("fileEditor"),
-  file.encoding = "", template = NULL, replace = FALSE, wait = FALSE)
+file_edit(
+  ...,
+  title = files,
+  editor = getOption("fileEditor"),
+  file.encoding = "",
+  template = NULL,
+  replace = FALSE,
+  wait = FALSE
+)
 
-fileEdit(..., title = files, editor = getOption("fileEditor"),
-  file.encoding = "", template = NULL, replace = FALSE, wait = FALSE)
+fileEdit(
+  ...,
+  title = files,
+  editor = getOption("fileEditor"),
+  file.encoding = "",
+  template = NULL,
+  replace = FALSE,
+  wait = FALSE
+)
 }
 \arguments{
 \item{...}{Path to one or more files to edit.}
@@ -18,7 +32,7 @@ fileEdit(..., title = files, editor = getOption("fileEditor"),
 most external editors only display the file name or path).}
 
 \item{editor}{Editor to use. Either the name of the program, or a string
-containing the command to run, using \%s as replacement tag where to place
+containing the command to run, using \\%s as replacement tag where to place
 the filename in the command, or a function with 'file', 'title' and 'wait'
 arguments to delegate process of the files.}
 
@@ -29,7 +43,7 @@ files are considered as being already in the right encoding.}
 created. If \code{NULL}, an empty file is created. This argument is recycled for
 all files to edit.}
 
-\item{replace}{Force replacement of files if \code{template=} is not null.}
+\item{replace}{Force replacement of files if \verb{template=} is not null.}
 
 \item{wait}{Wait for edition to complete. If more than one file is edited,
 the program waits sequentially for each file to be edited in turn (with a
@@ -120,7 +134,5 @@ unlink(template)
 \seealso{
 \code{\link[=system_file]{system_file()}}, \code{\link[=file.path]{file.path()}}, \code{\link[=file.edit]{file.edit()}}
 }
-\concept{
-file edition
-}
+\concept{file edition}
 \keyword{utilities}

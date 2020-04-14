@@ -32,11 +32,13 @@
 #' Otherwise, a character vector with the requested methods.
 #'
 #' For `list_types()`, a vector with character strings with methods' type names.
+#'
 #' @note `list_types()` is only useful for special generic functions with type
 #' argument like `view`, `copy` or `export`. These functions offer a mechanism
 #' to easily add custom types, and the present function list them. For S3
-#' objects a type is simply a function whose name is : <method>_<type>.<class>.
-#' So, adding new <type>s for <method> is very easy to implement.
+#' objects a type is simply a function whose name is : *method*_*type*.*class*.
+#' So, adding new *type*s for *method* is very easy to implement.
+#'
 #' @export
 #' @seealso [obj_menu()]
 #' @keywords utilities
@@ -106,7 +108,7 @@ mixed = TRUE, filter = getOption("svGUI.methods")) {
         arg <- names(formals(eval(parse(text =
         paste("getAnywhere(", f, ")", sep = "")))[1]))[1]
         s3 <- sub(paste("^", f, ".", sep = ""), "", s3)
-        if (length(s3) == 0 || s3 == "") {
+        if (length(s3) == 0 || (length(s3) == 1 && s3 == "")) {
           res$S3 <- character(0)
         } else {
           # Check all possible methods in turn, to verify them

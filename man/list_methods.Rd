@@ -8,13 +8,25 @@
 \title{List all methods associated with a generic function or a class, or all types
 associated with a method}
 \usage{
-list_methods(f = character(), class = NULL, S3 = TRUE, S4 = TRUE,
-  mixed = TRUE, filter = getOption("svGUI.methods"))
+list_methods(
+  f = character(),
+  class = NULL,
+  S3 = TRUE,
+  S4 = TRUE,
+  mixed = TRUE,
+  filter = getOption("svGUI.methods")
+)
 
 list_types(method, class = "default", strict = FALSE)
 
-listMethods(f = character(), class = NULL, S3 = TRUE, S4 = TRUE,
-  mixed = TRUE, filter = getOption("svGUI.methods"))
+listMethods(
+  f = character(),
+  class = NULL,
+  S3 = TRUE,
+  S4 = TRUE,
+  mixed = TRUE,
+  filter = getOption("svGUI.methods")
+)
 
 listTypes(method, class = "default", strict = FALSE)
 }
@@ -60,15 +72,15 @@ For \code{list_types()}, a vector with character strings with methods' type name
 List all S3 and/or S4 methods for a generic function or for a
 class. List all types for a method; types are variants for a given method
 defined in a way it is easy to add other variants dynamically (on the
-contrary to a usual \code{type =} or \code{which =} argument, like in \code{\link[=plot.ts]{plot.ts()}} or
+contrary to a usual \verb{type =} or \verb{which =} argument, like in \code{\link[=plot.ts]{plot.ts()}} or
 \code{\link[=plot.lm]{plot.lm()}}, respectively.
 }
 \note{
 \code{list_types()} is only useful for special generic functions with type
 argument like \code{view}, \code{copy} or \code{export}. These functions offer a mechanism
 to easily add custom types, and the present function list them. For S3
-objects a type is simply a function whose name is : <method>_<type>.<class>.
-So, adding new <type>s for <method> is very easy to implement.
+objects a type is simply a function whose name is : \emph{method}_\emph{type}.\emph{class}.
+So, adding new \emph{type}s for \emph{method} is very easy to implement.
 }
 \examples{
 # Generic functions
@@ -90,7 +102,5 @@ list_types("view", "data.frame", TRUE) # None, except if you defined custom view
 \seealso{
 \code{\link[=obj_menu]{obj_menu()}}
 }
-\concept{
-classes, objects and methods
-}
+\concept{classes, objects and methods}
 \keyword{utilities}

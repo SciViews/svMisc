@@ -13,12 +13,12 @@
 \arguments{
 \item{x}{A \code{subsettable_type} function.}
 
-\item{name}{The value to use for the \code{type=} argument.}
+\item{name}{The value to use for the \verb{type=} argument.}
 }
 \description{
 In case a textual argument allows for selecting the result, for
 instance, if \code{plot()} allows for several charts that you can choose with a
-\code{type=} or \code{which=}, making the function 'subsettable' also allows to
+\verb{type=} or \verb{which=}, making the function 'subsettable' also allows to
 indicate \code{fun$variant()}. See examples.
 }
 \examples{
@@ -38,7 +38,5 @@ foo(rnorm(50), type = "histogram")
 foo$histogram(rnorm(50))
 foo$boxplot(rnorm(50))
 }
-\concept{
-create 'subsettable' functions
-}
+\concept{create 'subsettable' functions}
 \keyword{utilities}

@@ -11,7 +11,7 @@ collects together a series of functions that are shared with svXXX packages.
 \section{Important functions}{
 
 \itemize{
-\item \code{\link[=temp_env]{temp_env()}} for unsing a temporary environment attached to the search path,
+\item \code{\link[=temp_env]{temp_env()}} for using a temporary environment attached to the search path,
 \item \code{\link[=temp_var]{temp_var()}} create the name of temporary variables,
 \item \code{\link[=capture_all]{capture_all()}} to capture R output, errors, warnings and messages,
 \item \code{\link[=parse_text]{parse_text()}} to parse any R expression, including partial or incorrect

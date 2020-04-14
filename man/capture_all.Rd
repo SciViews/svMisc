@@ -6,11 +6,9 @@
 \title{Run an R expression and capture output and messages in a similar way as it
 would be done at the command line}
 \usage{
-capture_all(expr, split = TRUE, echo = TRUE, file = NULL,
-  markStdErr = FALSE)
+capture_all(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 
-captureAll(expr, split = TRUE, echo = TRUE, file = NULL,
-  markStdErr = FALSE)
+captureAll(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 }
 \arguments{
 \item{expr}{A  valid R expression to evaluate (names and calls are also
@@ -21,7 +19,7 @@ console too, or do we only capture it silently?}
 
 \item{echo}{Do we echo each expression in front of the results (like in the
 console)? In case the expression spans on more than 7 lines, only first and
-last three lines are echoed, separated by \code{[...]}.}
+last three lines are echoed, separated by \verb{[...]}.}
 
 \item{file}{A file, or a valid opened connection where output is sinked. It
 is closed at the end, and the function returns \code{NULL} in this case. If
@@ -63,13 +61,11 @@ writeLines(capture_all(parse_text("badname"), split = FALSE))
 
 # Management of incomplete lines
 capt_res <- capture_all(parse_text("1 +")) # Clearly an incomplete command
-if (is.na(capt_res)) cat("Incomplete line!\\n") else writeLines(capt_res)
+if (is.na(capt_res)) cat("Incomplete line!\n") else writeLines(capt_res)
 rm(capt_res)
 }
 \seealso{
 \code{\link[=parse]{parse()}}, \code{\link[=expression]{expression()}}, \code{\link[=capture.output]{capture.output()}}
 }
-\concept{
-capturing output for GUI clients
-}
+\concept{capturing output for GUI clients}
 \keyword{IO}

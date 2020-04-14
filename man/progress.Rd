@@ -4,8 +4,15 @@
 \alias{progress}
 \title{Display progression of a long calculation at the R console and/or in a GUI}
 \usage{
-progress(value, max.value = NULL, progress.bar = FALSE, char = "|",
-  init = (value == 0), console = TRUE, gui = TRUE)
+progress(
+  value,
+  max.value = NULL,
+  progress.bar = FALSE,
+  char = "|",
+  init = (value == 0),
+  console = TRUE,
+  gui = TRUE
+)
 }
 \arguments{
 \item{value}{Current value of the progression (use a value higher than
@@ -38,7 +45,7 @@ effects.
 }
 \description{
 Display progression level of a long-running task in the console.
-Two mode can be used: either percent of achievement (55\%), or the number of
+Two mode can be used: either percent of achievement (55\\%), or the number of
 items or steps done on a total (1 file on 10 done...). This is displayed
 either through a message, or through a text-based "progression bar" on the
 console, or a true progression bar widget in a GUI.
@@ -47,7 +54,7 @@ console, or a true progression bar widget in a GUI.
 The function \code{progress()} proposes different styles of progression
 indicators than the standard \code{\link[=txtProgressBar]{txtProgressBar()}} in package 'utils'.
 
-The function uses backspace (\8) to erase characters at the console.
+The function uses backspace (\\8) to erase characters at the console.
 
 With \code{gui = TRUE}, it looks for all functions defined in the \code{.progress} list
 located in the \code{SciViews:TempEnv} environment. Each function is executed in
@@ -153,7 +160,5 @@ if (require(tcltk)) {
 \seealso{
 \code{\link[=batch]{batch()}}, \code{\link[=txtProgressBar]{txtProgressBar()}}
 }
-\concept{
-graphical user interface (GUI) long process progression and feedback
-}
+\concept{graphical user interface (GUI) long process progression and feedback}
 \keyword{utilities}

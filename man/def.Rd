@@ -46,7 +46,5 @@ def(NA, 10, mode = "numeric", length.out = 2) # Vector of two numbers
 \seealso{
 \code{\link[=mode]{mode()}}, \code{\link[=rep]{rep()}}, \code{\link[=temp_env]{temp_env()}}
 }
-\concept{
-coercion and default values
-}
+\concept{coercion and default values}
 \keyword{utilities}

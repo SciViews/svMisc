@@ -1,12 +1,12 @@
 Package: svMisc
 Type: Package
-Version: 1.1.0
-Date: 2018-06-10
-Title: SciViews - Miscellaneous Functions
-Description: Miscellaneous functions for SciViews or general use: manage a
+Version: 1.1.1
+Date: 2020-04-14
+Title: 'SciViews' - Miscellaneous Functions
+Description: Miscellaneous functions for 'SciViews' or general use: manage a
   temporary environment attached to the search path for temporary variables you
-  do not want to save() or load(), test if Aqua, Mac, Win, ... Show progress
-  bar, etc.
+  do not want to save() or load(), test if 'Aqua', 'Mac', 'Win', ... Show
+  progress bar, etc.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
   email = "phgrosjean@sciviews.org"),
   person("Romain", "Francois", role = "ctb",
@@ -18,8 +18,10 @@ Depends: R (>= 2.13.0)
 Imports: utils, methods, stats, tools
 Suggests: rJava, tcltk, covr, knitr, testthat
 License: GPL-2
-URL: https://github.com/SciViews/svMisc, http://www.sciviews.org/SciViews-R
+URL: https://github.com/SciViews/svMisc, https://www.sciviews.org/svMisc/
 BugReports: https://github.com/SciViews/svMisc/issues
+LazyData: yes
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
+Encoding: UTF-8

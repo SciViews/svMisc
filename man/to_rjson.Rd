@@ -128,7 +128,5 @@ rm(obj, obj2, rjson1, rjson2)
 \seealso{
 \code{\link[=parse_text]{parse_text()}}
 }
-\concept{
-object serialization, JavaScript Object Notation
-}
+\concept{object serialization, JavaScript Object Notation}
 \keyword{utilities}

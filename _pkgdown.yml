@@ -1,0 +1,7 @@
+destination: docs
+template:
+  params:
+    bootswatch: spacelab
+authors:
+  Philippe Grosjean:
+    href: https://phgrosjean.sciviews.org/

@@ -25,7 +25,5 @@ temp_var()
 \seealso{
 \code{\link[=tempfile]{tempfile()}}
 }
-\concept{
-temporary variables
-}
+\concept{temporary variables}
 \keyword{utilities}

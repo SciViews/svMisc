@@ -4,8 +4,15 @@
 \alias{package}
 \title{A (possibly) very silent and multi-package library()/require() function}
 \usage{
-package(..., stop = TRUE, message = stop, warn.conflicts = message,
-  pos = 2L, lib.loc = NULL, verbose = getOption("verbose"))
+package(
+  ...,
+  stop = TRUE,
+  message = stop,
+  warn.conflicts = message,
+  pos = 2L,
+  lib.loc = NULL,
+  verbose = getOption("verbose")
+)
 }
 \arguments{
 \item{...}{The name of one or several R packages to load (character strings).}
@@ -76,7 +83,5 @@ package('badname')
 \seealso{
 \code{\link[=require]{require()}}, \code{\link[=library]{library()}}, \code{\link[=Install]{Install()}}
 }
-\concept{
-package requirement and loading
-}
+\concept{package requirement and loading}
 \keyword{utilities}

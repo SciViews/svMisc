@@ -68,7 +68,5 @@ system_dir("help", package = "splines")
 \seealso{
 \code{\link[=file_edit]{file_edit()}}, \code{\link[=file.path]{file.path()}}, \code{\link[=file.exists]{file.exists()}}
 }
-\concept{
-system files and directories
-}
+\concept{system files and directories}
 \keyword{utilities}

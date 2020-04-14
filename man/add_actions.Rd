@@ -11,8 +11,14 @@
 \title{Add GUI elements like actions (menu items), icons, or methods in a predefined
 list}
 \usage{
-add_actions(obj = get_actions(), text = NULL, code = NULL, state = NULL,
-  options = NULL, replace = TRUE)
+add_actions(
+  obj = get_actions(),
+  text = NULL,
+  code = NULL,
+  state = NULL,
+  options = NULL,
+  replace = TRUE
+)
 
 get_actions()
 
@@ -20,8 +26,14 @@ add_icons(obj = ".svIcons", icons, replace = TRUE)
 
 add_methods(methods)
 
-addActions(obj = get_actions(), text = NULL, code = NULL, state = NULL,
-  options = NULL, replace = TRUE)
+addActions(
+  obj = get_actions(),
+  text = NULL,
+  code = NULL,
+  state = NULL,
+  options = NULL,
+  replace = TRUE
+)
 
 addIcons(obj = ".svIcons", icons, replace = TRUE)
 
@@ -64,7 +76,5 @@ Manage lists of GUI actions, icons and methods.
 \seealso{
 \code{\link[=add_items]{add_items()}}, \code{\link[=obj_menu]{obj_menu()}}, \code{\link[=temp_env]{temp_env()}}
 }
-\concept{
-list of GUI elements
-}
+\concept{list of GUI elements}
 \keyword{utilities}

@@ -111,7 +111,5 @@ is_jgr()
 \seealso{
 \code{\link[=example]{example()}}, \code{\link[=help]{help()}}, \code{\link[=capabilities]{capabilities()}}
 }
-\concept{
-help and example, and OS system platform
-}
+\concept{help and example, and OS system platform}
 \keyword{utilities}

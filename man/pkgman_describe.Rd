@@ -25,9 +25,15 @@ pkgman_describe(pkgname, print.it = TRUE)
 
 pkgman_get_mirrors()
 
-pkgman_get_available(page = "next", pattern = "", n = 50,
+pkgman_get_available(
+  page = "next",
+  pattern = "",
+  n = 50,
   keep = c("Package", "Version", "InstalledVersion", "Status"),
-  reload = FALSE, sep = ";", eol = "\\t\\n")
+  reload = FALSE,
+  sep = ";",
+  eol = "\\t\\n"
+)
 
 pkgman_get_installed(sep = ";", eol = "\\t\\n")
 
@@ -45,9 +51,15 @@ pkgManDescribe(pkgname, print.it = TRUE)
 
 pkgManGetMirrors()
 
-pkgManGetAvailable(page = "next", pattern = "", n = 50,
+pkgManGetAvailable(
+  page = "next",
+  pattern = "",
+  n = 50,
   keep = c("Package", "Version", "InstalledVersion", "Status"),
-  reload = FALSE, sep = ";", eol = "\\t\\n")
+  reload = FALSE,
+  sep = ";",
+  eol = "\\t\\n"
+)
 
 pkgManGetInstalled(sep = ";", eol = "\\t\\n")
 
@@ -102,7 +114,5 @@ They implement the R-side code for the SciViews \R package manager.
 \author{
 Kamil Barton \href{mailto:kamil.barton@uni-wuerzburg.de}{kamil.barton@uni-wuerzburg.de}
 }
-\concept{
-SciViews R package manager
-}
+\concept{SciViews R package manager}
 \keyword{utilities}

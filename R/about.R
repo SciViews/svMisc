@@ -1,6 +1,3 @@
-# TODO: also include RSiteSearch()/helpSearchWeb(), sos, Rseek, RDocumentation
-# perhaps in a different function dedicated to search on the web!
-
 #' Get information and help about \R objects
 #'
 #' @description Help obtained with this function is wider than with [help()]. If

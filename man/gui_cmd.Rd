@@ -77,7 +77,5 @@ attribute.
 \seealso{
 \code{\link[=get_temp]{get_temp()}}
 }
-\concept{
-graphical user interface (GUI) control
-}
+\concept{graphical user interface (GUI) control}
 \keyword{misc}

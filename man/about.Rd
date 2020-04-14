@@ -7,7 +7,7 @@
 \usage{
 about(topic, ...)
 
-"?"(type, topic)
+`?`(type, topic)
 }
 \arguments{
 \item{topic}{The name of an object, or the topic to search for, if this is
@@ -15,7 +15,7 @@ not the name of a known object.}
 
 \item{...}{Further arguments passed to \code{\link[=help]{help()}}.}
 
-\item{type}{First argument to \code{?}. If it is a dot, like \code{.?topic}, the second
+\item{type}{First argument to \verb{?}. If it is a dot, like \code{.?topic}, the second
 argument is a topic passed to the \code{about()} function. Otherwise, it is the
 first argument to restrict help pages, like \code{class}, \code{methods}, or \code{method}.
 See examples for how to use it.}
@@ -62,7 +62,5 @@ about("vec")
 \seealso{
 \code{\link[=help]{help()}}, \code{\link[=help.search]{help.search()}}, \code{\link[=apropos]{apropos()}}
 }
-\concept{
-help and information about objects
-}
+\concept{help and information about objects}
 \keyword{utilities}

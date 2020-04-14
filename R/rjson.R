@@ -109,8 +109,8 @@ to_rjson <- function(x, attributes = FALSE) {
   # This is derived from dput()
   file <- file()
   on.exit(close(file))
-  # Martin Maechler suggested 'niceNames' used fro R >= 3.5.0
-  opts <- c(if (getRversion() >= "3.5") "niceNames",
+  # Martin Maechler suggested 'niceNames' used from R >= 3.5.0
+  opts <- c("digits17", if (getRversion() >= "3.5") "niceNames",
     if (isTRUE(attributes)) "showAttributes", "S_compatible")
 
   # Non-named list items are not allowed => make sure we give names to these
@@ -209,7 +209,8 @@ to_rjson <- function(x, attributes = FALSE) {
   res <- gsub('"?`@&#&&', '"', res)
   res <- gsub('&&#&@`\"? =', '" :=', res)
   # Convert "@&#&&[[d]]&&#&@" to "" (non-named items)
-  res <- gsub('"@&#&&\\[\\[[1-9][0-9]*]]&&#&@"', '""', res)
+  #res <- gsub('"@&#&&\\[\\[[1-9][0-9]*]]&&#&@"', '""', res)
+  res <- gsub('"\\[\\[[1-9][0-9]*]]" :=', '"" :=', res)
   # Convert "@&#&& into " and &&#&@" into "
   res <- gsub('"@&#&&', '"', res, fixed = TRUE)
   res <- gsub('&&#&@"', '"', res, fixed = TRUE)
@@ -229,7 +230,7 @@ to_rjson <- function(x, attributes = FALSE) {
 #' @rdname to_rjson
 eval_rjson <- function(rjson) {
   # Our list() manages to create list() but also new() or structure() items
-  list <- function(Class_, Data_, ...) {
+  list <- function(..., Class_, Data_) {
     # If there is a "Class_" argument, create new S4 object
     # Note that "Data_" is ignored in this case!
     if (!missing(Class_))
@@ -246,8 +247,10 @@ eval_rjson <- function(rjson) {
   # providing the <callback>() exists and can manage a single
   # argument (being the RJSOn object converted to R)
 
-  # We need first to convert all ':=' into '='
-  eval(parse(text = gsub(":=", "=", rjson, fixed = TRUE)))
+  # We need first to convert all '"" := ' into nothing and ':=' into '='
+  rjson <- gsub('"" := ', "", rjson, fixed = TRUE)
+  rjson <- gsub(":=", "=", rjson, fixed = TRUE)
+  eval(parse(text = rjson))
 }
 
 #' @export
