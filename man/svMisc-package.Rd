@@ -2,11 +2,20 @@
 % Please edit documentation in R/svMisc-package.R
 \docType{package}
 \name{svMisc-package}
+\alias{svMisc}
 \alias{svMisc-package}
-\title{SciViews - Miscellaneous functions}
+\title{svMisc: 'SciViews' - Miscellaneous Functions}
 \description{
-Miscellaneous functions for SciViews or general use. The svMisc package
-collects together a series of functions that are shared with svXXX packages.
+Miscellaneous functions for 'SciViews' or general use: manage a
+  temporary environment attached to the search path for temporary variables you
+  do not want to save() or load(), test if 'Aqua', 'Mac', 'Win', ... Show
+  progress bar, etc.
+}
+\details{
+The 'svMisc' package is of general use among \code{SciViews::R}, a layer on top of
+R, and the tidyverse. This package collects together a series of general
+functions to manage a centralized environment for temporary variables, a
+progress bar and batch analysis mode, etc.
 }
 \section{Important functions}{
 
@@ -19,3 +28,23 @@ ones (fails gracefully).
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/SciViews/svMisc}
+  \item \url{https://www.sciviews.org/svMisc/}
+  \item Report bugs at \url{https://github.com/SciViews/svMisc/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Philippe Grosjean \email{phgrosjean@sciviews.org} (\href{https://orcid.org/0000-0002-2694-9471}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Romain Francois \email{romain@r-enthusiasts.com} [contributor]
+  \item Kamil Barton \email{kamil.barton@uni-wuerzburg.de} [contributor]
+}
+
+}
+\keyword{internal}
