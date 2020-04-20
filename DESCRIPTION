@@ -8,7 +8,8 @@ Description: Miscellaneous functions for 'SciViews' or general use: manage a
   do not want to save() or load(), test if 'Aqua', 'Mac', 'Win', ... Show
   progress bar, etc.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
-  email = "phgrosjean@sciviews.org"),
+  email = "phgrosjean@sciviews.org",
+  comment = c(ORCID = "0000-0002-2694-9471")),
   person("Romain", "Francois", role = "ctb",
   email = "romain@r-enthusiasts.com"),
   person("Kamil", "Barton", role = "ctb",
