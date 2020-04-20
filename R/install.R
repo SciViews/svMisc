@@ -2,9 +2,9 @@
 #'
 #' @description This is similar to [install.packages()], except it takes by
 #' default the list of packages from `.packages_to_install` in
-#' `SciViews:TempEnv`. That list is populated automatically by unfructuous calls
+#' `SciViews:TempEnv`. That list is populated automatically by infructuous calls
 #' to `package()`, so that just a call to `install()` without arguments is
-#' generaly sufficient.
+#' generally sufficient.
 #'
 #' @param pkgs The list of packages to install (character vector). If missing,
 #' the list is read from `packages_to_install`, which is cleared on success.

@@ -16,7 +16,7 @@
 #' @param value The value to add in the item, it must be a named vector and
 #'   element matching is done according to name of items.
 #' @param replace.existing Do we replace an existing variable?
-#' @param mode The mode of the seeked variable
+#' @param mode The mode of the seek variable
 #' @param  default The default value to return, in case the variable or the item
 #'   does not exist.
 #' @return The temporary environment for `temp-env()`, the value assigned, added

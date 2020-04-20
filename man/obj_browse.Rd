@@ -170,7 +170,7 @@ These functions provide features required to implement a
 complete object browser in a GUI client.
 }
 \details{
-\code{obj_browse()} does the horsework. \code{obj_dir()} gets the temporary
+\code{obj_browse()} does the horse work. \code{obj_dir()} gets the temporary
 directory where exchange files with the GUI client are stored, in case you
 exchange data through files. You can use a better way to communicate with
 your GUI (you have to provide your code) and disable writing to files by

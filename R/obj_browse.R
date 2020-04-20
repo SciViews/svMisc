@@ -36,7 +36,7 @@
 #' @return Depending on the function, a list, a string, a reference to an
 #' external, temporary file or `TRUE` in case of success or `FALSE` otherwise
 #' is returned invisibly.
-#' @details `obj_browse()` does the horsework. `obj_dir()` gets the temporary
+#' @details `obj_browse()` does the horse work. `obj_dir()` gets the temporary
 #' directory where exchange files with the GUI client are stored, in case you
 #' exchange data through files. You can use a better way to communicate with
 #' your GUI (you have to provide your code) and disable writing to files by

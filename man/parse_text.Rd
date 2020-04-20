@@ -22,7 +22,7 @@ the correct position in the file.}
 }
 \value{
 Returns an expression with the parsed code or \code{NA} if the last
-instruction is correct but incomplete, or an object of class'try-error' with
+instruction is correct but incomplete, or an object of class 'try-error' with
 the error message if the code is incorrect.
 }
 \description{

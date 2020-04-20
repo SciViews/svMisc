@@ -23,7 +23,7 @@ components to retrieve in 'temp', 'sysTemp', 'user', 'home', 'bin', 'doc',
 'etc' and/or 'share' to retrieve special system directories.}
 
 \item{exec}{If \code{TRUE} (default) search for executables on the search path.
-It superseedes all other arguments.}
+It supersedes all other arguments.}
 
 \item{package}{The name of one package to look for files or subdirs in its
 main directory (use \code{exec = FALSE} to search inside package dirs).}

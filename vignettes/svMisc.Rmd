@@ -22,13 +22,13 @@ The 'svMisc' package contains a large collection of functions that are useful in
 
 ## Help
 
-In R, you access man pages for the various R objects with `help(topic)`, or `?topic`. But, if `topic` is not found, these function do not return a very useful information. For instance, if you want to make a [Kalman filtering](https://www.jstatsoft.org/article/view/v039i02) in R, you may be enclined to search for the topic `kalman`
+In R, you access man pages for the various R objects with `help(topic)`, or `?topic`. But, if `topic` is not found, these function do not return a very useful information. For instance, if you want to make a [Kalman filtering](https://www.jstatsoft.org/article/view/v039i02) in R, you may be inclined to search for the topic `kalman`
 
 ```{r}
 ?kalman
 ```
 
-OK, it is suggested to use `??` to search the documentation for `kalman`. However, using `about()` instead immediatelly produces a more useful result:
+OK, it is suggested to use `??` to search the documentation for `kalman`. However, using `about()` instead immediately produces a more useful result:
 
 ```{r}
 library(svMisc)
@@ -41,11 +41,11 @@ You may also be interested by `is_help()` that indicates if an object is associa
 
 ## Packages
 
-In R, the use of `library()` to load a **package** is very confusing. Given the number of questions raised about it, one could consider another function to load R packages in memory. `svMisc` proposes `package()`.  That fuction loads one or several R packages as silently as possible and it returns `TRUE` only if **all** the packages are loaded. Otherwise, the list of missing packages is recorded^[The list of missing packages is written in a variable named `.packages_to_install` located in the `SciViews:TempEnv` environnement], and one could simply issue `Install()` to install them. This is indeed a semi-automatic installation mechanisms for R packages. The UseR still masters the process, but it is more straightforward.
+In R, the use of `library()` to load a **package** is very confusing. Given the number of questions raised about it, one could consider another function to load R packages in memory. `svMisc` proposes `package()`.  That function loads one or several R packages as silently as possible and it returns `TRUE` only if **all** the packages are loaded. Otherwise, the list of missing packages is recorded^[The list of missing packages is written in a variable named `.packages_to_install` located in the `SciViews:TempEnv` environment], and one could simply issue `Install()` to install them. This is indeed a semi-automatic installation mechanisms for R packages. The UseR still masters the process, but it is more straightforward.
 
 ## Analyses in batch and show progression
 
-If you need to perform an analysis in batch mode, you may be happy with `batch()` and `progress()`. The first function runs a function sequentially on all items **allowing for an informative message in case of fealure**. Also, `batch()` provides a mechanism to recover from the error, so that followin items in the list are also analyzed. Indeed, if you use a simple `for()` loop or `applyXXX()` functions, the execution is stopped at the first error encountered. Imagine 500 items to process, and an error that appears at the second one... it leaves you 498 items unanalyzed! allows to continue to the next item.
+If you need to perform an analysis in batch mode, you may be happy with `batch()` and `progress()`. The first function runs a function sequentially on all items **allowing for an informative message in case of failure**. Also, `batch()` provides a mechanism to recover from the error, so that following items in the list are also analyzed. Indeed, if you use a simple `for()` loop or `applyXXX()` functions, the execution is stopped at the first error encountered. Imagine 500 items to process, and an error that appears at the second one... it leaves you 498 items unanalyzed! allows to continue to the next item.
 
 The example shows a fake batch process of files, which fails randomly. Here is the function to run sequentially:
 
@@ -61,7 +61,7 @@ fake_process <- function(file) {
 }
 ```
 
-The key aspect here is that you function, instead of using `stop()` must use `warning()` and return `FALSE`. Otherwise, in cas of success, it should return `TRUE`. Then, calling your function on a series of objects is straightforward:
+The key aspect here is that you function, instead of using `stop()` must use `warning()` and return `FALSE`. Otherwise, in case of success, it should return `TRUE`. Then, calling your function on a series of objects is straightforward:
 
 ```{r}
 # Run it in batch mode on ten items
@@ -169,7 +169,7 @@ identical(obj, obj2)
 
 ## Get system file or directory
 
-There are several different functions in R to access system files, or files inside R packages: `R.home()`, `system.file()`, `Sys.which()`, `tempdir()`. The `system_dir()` and `system_file()` functions centralize their functionnalities. For instance:
+There are several different functions in R to access system files, or files inside R packages: `R.home()`, `system.file()`, `Sys.which()`, `tempdir()`. The `system_dir()` and `system_file()` functions centralize their functionalities. For instance:
 
 - Get the temporary directory used by this R process
 
@@ -255,7 +255,7 @@ is_jgr() # Is R running under JGR?
 def(0:2, mode = "logical", length.out = 5) # logical, size 5
 ```
 
-- Get a nicely formatted `args()` (see `?arg_tips` for other functions to get short textuyal information about functions):
+- Get a nicely formatted `args()` (see `?arg_tips` for other functions to get short textual information about functions):
 
 ```{r}
 args_tip("ls")

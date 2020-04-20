@@ -10,7 +10,7 @@
 #' components to retrieve in 'temp', 'sysTemp', 'user', 'home', 'bin', 'doc',
 #' 'etc' and/or 'share' to retrieve special system directories.
 #' @param exec If `TRUE` (default) search for executables on the search path.
-#' It superseedes all other arguments.
+#' It supersedes all other arguments.
 #' @param package The name of one package to look for files or subdirs in its
 #' main directory (use `exec = FALSE` to search inside package dirs).
 #' @param lib.loc A character vector with path names of \R libraries or `NULL`

@@ -1,27 +1,27 @@
+
 # svMisc
 
-[![Linux Build Status](https://travis-ci.org/SciViews/svMisc.svg )](https://travis-ci.org/SciViews/svMisc)
-[![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svMisc?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svMisc)
-[![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg)
+<!-- badges: start -->
+[![Linux build status](https://travis-ci.org/SciViews/svMisc.svg )](https://travis-ci.org/SciViews/svMisc)
+[![Win build status](https://ci.appveyor.com/api/projects/status/github/SciViews/svMisc?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svMisc)
+[![Coverage status](https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg)
 ](https://codecov.io/github/SciViews/svMisc?branch=master)
-[![CRAN Status](http://www.r-pkg.org/badges/version/svMisc)](http://cran.r-project.org/package=svMisc)
+[![CRAN status](http://www.r-pkg.org/badges/version/svMisc)](http://cran.r-project.org/package=svMisc)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![Life
-cycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+<!-- badges: end -->
+
+'svMisc' provides a series of functions that are used by the other SciViews packages. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.
 
 ## Installation
 
-### Latest stable version
-
-The latest stable version of 'svMisc' can simply be installed from [CRAN](http://cran.r-project.org):
+You can install the released version of 'svMisc' from [CRAN](https://CRAN.R-project.org) with:
 
 ```r
 install.packages("svMisc")
 ```
 
-### Development version
-
-Make sure you have the 'devtools' R package installed:
+You can also install the latest developement version. Make sure you have the 'devtools' R package installed:
 
 ```r
 install.packages("devtools")
@@ -37,9 +37,9 @@ R should install all required dependencies automatically, and then it should com
 
 Latest devel version of 'svMisc' (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
 
-## Usage
+## Further explore 'svMisc'
 
-Make the 'svMisc' package available in your R session:
+You can get further help about this package this way: Make the 'svMisc' package available in your R session:
 
 ```r
 library("svMisc")
@@ -55,8 +55,10 @@ vignette("svMisc") # None is installed with install_github()
 
 For further instructions, please, refer to the help pages at https://www.sciviews.org/svMisc/.
 
-## Note to developers
+## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that the svSweave project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+## Note to developers
 
 This package used to be developed on R-Forge in the past. However, the latest [R-Forge version](https://r-forge.r-project.org/projects/sciviews/) was moved to this Github repository on 2016-03-16 (SVN version 569). **Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.**

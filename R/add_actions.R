@@ -7,10 +7,10 @@
 #' @param text The text of actions to add (label on first line, tip on other
 #' lines).
 #' @param code The R code of actions to add.
-#' @param state The default (intial) state of an action, as a succession of
+#' @param state The default (initial) state of an action, as a succession of
 #' letters: `c` = checked, `u` = unchecked (default); `d` = disabled,
 #' `e` = enabled (default); `h` = hidden, `v` = visible (default). Default
-#' values are facultative. Ex: `udv` means: unchecked - disabled - visible and
+#' values are optional. Ex: `udv` means: unchecked - disabled - visible and
 #' it equals to simply `d`, given the defaults for the other properties.
 #' @param options A character vector with other options to pass to the graphical
 #' toolkit for this action.

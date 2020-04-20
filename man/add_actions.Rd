@@ -47,10 +47,10 @@ lines).}
 
 \item{code}{The R code of actions to add.}
 
-\item{state}{The default (intial) state of an action, as a succession of
+\item{state}{The default (initial) state of an action, as a succession of
 letters: \code{c} = checked, \code{u} = unchecked (default); \code{d} = disabled,
 \code{e} = enabled (default); \code{h} = hidden, \code{v} = visible (default). Default
-values are facultative. Ex: \code{udv} means: unchecked - disabled - visible and
+values are optional. Ex: \code{udv} means: unchecked - disabled - visible and
 it equals to simply \code{d}, given the defaults for the other properties.}
 
 \item{options}{A character vector with other options to pass to the graphical

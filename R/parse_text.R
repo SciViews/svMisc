@@ -11,7 +11,7 @@
 #' @param srcfilename A character string with the name of the source file.
 #' @param encoding Encoding of `text``, as in [parse()].
 #' @return Returns an expression with the parsed code or `NA` if the last
-#' instruction is correct but incomplete, or an object of class'try-error' with
+#' instruction is correct but incomplete, or an object of class 'try-error' with
 #' the error message if the code is incorrect.
 #' @note On the contrary to `parse()`, `parse_text()` recovers from incorrect
 #' code and also detects incomplete code. It is also easier to use in case you

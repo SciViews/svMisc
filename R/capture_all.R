@@ -14,7 +14,7 @@
 #' @param echo Do we echo each expression in front of the results (like in the
 #' console)? In case the expression spans on more than 7 lines, only first and
 #' last three lines are echoed, separated by `[...]`.
-#' @param file A file, or a valid opened connection where output is sinked. It
+#' @param file A file, or a valid opened connection where output is sunk. It
 #' is closed at the end, and the function returns `NULL` in this case. If
 #' `file = NULL` (by default), a `textConnection()` captures the output and it
 #' is returned as a character string by the function.
@@ -23,7 +23,7 @@
 #' @return Returns a string with the result of the evaluation done in the user
 #' workspace.
 #' @note If the expression is provided as a character string that should be
-#' evaluated, and you need a similar behaviour as at the prompt for incomplete
+#' evaluated, and you need a similar behavior as at the prompt for incomplete
 #' lines of code (that is, to prompt for more), you should not parse the
 #' expression with `parse(text = "<some_code>")` because it returns an error
 #' instead of an indication of an incomplete code line. Use

@@ -10,7 +10,7 @@
 #' @param ... Further arguments to pass the `fun`.
 #' @param show.progress Do we show progression as item x on y... message? This
 #' uses the [progress()] function.
-#' @param suppress.messages Are messages from the batcheable function suppressed?
+#' @param suppress.messages Are messages from the batchable function suppressed?
 #' Only warnings will be issued. Recommended if `show.progress = TRUE`.
 #' @param verbose Display start and end messages if `TRUE` (default).
 #' @return Returns invisibly the number of items that were correctly processed
@@ -20,7 +20,7 @@
 #' @keywords utilities
 #' @concept batch processing
 #' @examples
-#' # Here is a fake batcheable process
+#' # Here is a fake batchable process
 #' fake_process <- function(file) {
 #'   message("Processing ", file, "...")
 #'   flush.console()

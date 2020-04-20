@@ -5,7 +5,7 @@
 #' does not exists yet.
 #'
 #' @param ... Path to one or more files to edit.
-#' @param title The title of the editor window (not honoured by all editors,
+#' @param title The title of the editor window (not honored by all editors,
 #' most external editors only display the file name or path).
 #' @param editor Editor to use. Either the name of the program, or a string
 #' containing the command to run, using \%s as replacement tag where to place
@@ -33,24 +33,24 @@
 #' different syntax highlighting, including R, and is lightweight but feature
 #' rich, it is recommended as default text editor for `file_edit()` on Unixes.
 #' If JGR is run and the editor is "vi" or "internal", then the internal JGR
-#' editor is used, otherwise, the provided editor is choosen.
+#' editor is used, otherwise, the provided editor is chosen.
 #'
 #' On MacOS, if the "bbedit" program exists, it is used (it is the command line
 #' program installed by BBEdit, see <http://www.barebones.com/products/>, a much
-#' more capables text editor than the default TextEdit program), otherwise, the
-#' default text editor used by MacOS is choosen (default usually to TextEdit).
+#' more capable text editor than the default TextEdit program), otherwise, the
+#' default text editor used by MacOS is chosen (default usually to TextEdit).
 #' BBEdit can be configured to highlight and submit R code.It features also
 #' several tools that makes it a much better choice than TextEdit for
 #' `file_edit()` on MacOS. Specify "bbedit" to force using it. The default value
 #' is "textedit", the MacOS default text editor, but on R.app, and with
 #' `wait = FALSE`, the internal R.app editor is used instead in that case. If
 #' RStudio or JGR is run, and the editor is "textedit", "internal" or "vi", then,
-#' the RStuiod or JGR internal editor is used instead. If `wait = TRUE` with an
+#' the RStudio or JGR internal editor is used instead. If `wait = TRUE` with an
 #' RStudio editor, it is enough to switch to another editor to continue.
 #'
 #' On Windows, if Notepad++ is installed in its default location, it is used,
 #' otherwise, the default "notepad" is used in Rterm and the internal editors
-#' are choosen for Rgui. Notepad++ is a free text editor that is much better
+#' are chosen for Rgui. Notepad++ is a free text editor that is much better
 #' suited to edit code or text files that the default Windows' notepad
 #' application, in particular because it can handle various line end types
 #' (Unix, Mac or Windows) and encodings. It also supports syntax highlighting,
@@ -60,12 +60,12 @@
 #' <http://sourceforge.net/projects/npptor/>.
 #'
 #' Of course, you can use your own text editor, just indicate it in the
-#' `fileEditor` option. Note, however, that you should use only lighweight and
+#' `fileEditor` option. Note, however, that you should use only lightweight and
 #' fast starting programs. Also, for the `wait = TRUE` argument of
 #' `file_edit()`, you must check that R waits for the editor to be closed
 #' before further processing code. In some cases, a little command line program
 #' is used to start a larger application (like for Komodo Edit/IDE), or the
-#' program delegates to an existing instances and exits immediatelly, even if the
+#' program delegates to an existing instances and exits immediately, even if the
 #' file is still edited. Such editors are not recommended at all for
 #' `file_edit()`.
 #'

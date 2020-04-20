@@ -124,9 +124,9 @@ _ New `is_rstudio()`, and `is_rstudio_server()` functions. Also, `file_edit()` d
 
 - `Sys.tempdir()` and `Sys.userdir()` are deprecated in favor of the new more general functions `systemFile()` and `systemDir()`.
 
-- `r()` is deprecated in favor of `pkg()` (`r()` is not informative enough and more susceptible to be used elsewere too).
+- `r()` is deprecated in favor of `pkg()` (`r()` is not informative enough and more susceptible to be used elsewhere too).
 
-- `Args()` is deprecated in favor of `argsTip()` and `CallTip()` is deprecated in favor of `callTip()` (further homogeneization of svMisc function names). The new `argsTip()` and `callTip()` functions can reflow the tip to a given width, and `callTip()` can also return a short description of the function as well as the list of available methods if the tip os asked for a generic function.
+- `Args()` is deprecated in favor of `argsTip()` and `CallTip()` is deprecated in favor of `callTip()` (further homogenization of svMisc function names). The new `argsTip()` and `callTip()` functions can reflow the tip to a given width, and `callTip()` can also return a short description of the function as well as the list of available methods if the tip os asked for a generic function.
 
 - `Complete()` and `CompletePlus()` are deprecated in favor of a unique `completion()` function. Code of both original functions has been fused and reworked.
 
@@ -199,7 +199,7 @@ _ New `is_rstudio()`, and `is_rstudio_server()` functions. Also, `file_edit()` d
 
 - Added `objList()`, `print()` method for 'objList' objects and `write.objList()` [KB].
 
-- Localisation complete and French local file done.
+- Localization complete and French local file done.
 
 # svMisc 0.9-45
 

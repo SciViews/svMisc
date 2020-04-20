@@ -27,11 +27,11 @@ containing C pointers, environments, promises or expressions, but should
 work with almost all other \R objects).}
 
 \item{attributes}{If \code{FALSE} (by default), a simple object is created by
-ignoring all attributes. This is usally the suitable option to transfer data
+ignoring all attributes. This is usually the suitable option to transfer data
 to another language, like JavaScript that do not understand R attributes
 anyway. With \code{attributes = TRUE}, the complete information about the object
 is written, so that the object could be recreated (almost) identical when
-evaluated in \R (but prefer \code{\link[=save]{save()}} and \code{\link[=load]{load()}} to tranfer objects between
+evaluated in \R (but prefer \code{\link[=save]{save()}} and \code{\link[=load]{load()}} to transfer objects between
 \R sessions!).}
 
 \item{rjson}{A string containing an object specified in RJSON notation. The
@@ -69,7 +69,7 @@ lists and objects with attributes, or S4 objects, etc.). Moreover, JSON is
 not very easy to interpret in \R and the existing implementations can convert
 only specified objects (simple objects, lists, data frames, ...).
 
-RJSON slighly modifies and enhances JSON to make it: (1) more complete to
+RJSON slightly modifies and enhances JSON to make it: (1) more complete to
 represent almost any \R object (except objects with pointers, environments,
 ..., of course), and (2) to make it very easy to parse and evaluate in both
 \R and JavaScript (and probably many other) languages.

@@ -5,8 +5,8 @@
 README.md
 FAQ.md
 TODO.md
-CONDUCT.md
-LICENSE
+CODE_OF_CONDUCT.md
+LICENSE.md
 Makefile
 .Rprofile
 ^\.travis\.yml$
@@ -19,3 +19,4 @@ Makefile
 ^docs$
 ^pkgdown$
 ^\.github$
+^revdep$

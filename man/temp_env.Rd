@@ -74,7 +74,7 @@ element matching is done according to name of items.}
 
 \item{replace.existing}{Do we replace an existing variable?}
 
-\item{mode}{The mode of the seeked variable}
+\item{mode}{The mode of the seek variable}
 
 \item{default}{The default value to return, in case the variable or the item
 does not exist.}
