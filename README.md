@@ -2,7 +2,7 @@
 # svMisc
 
 <!-- badges: start -->
-[![Linux build status](https://travis-ci.org/SciViews/svMisc.svg )](https://travis-ci.org/SciViews/svMisc)
+[![Linux build status](https://travis-ci.com/SciViews/svMisc.svg )](https://travis-ci.com/SciViews/svMisc)
 [![Win build status](https://ci.appveyor.com/api/projects/status/github/SciViews/svMisc?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svMisc)
 [![Coverage status](https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg)
 ](https://codecov.io/github/SciViews/svMisc?branch=master)
