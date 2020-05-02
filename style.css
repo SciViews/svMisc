@@ -182,20 +182,6 @@ body {
   color: #fff;
 }
 
-/* preloader */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 img {
   vertical-align: middle;
   border: 0;
@@ -2847,4 +2833,38 @@ a > code {
     text-align: center;
     pointer-events: none;
     color: #aaa;
+}
+
+/* preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader2 {
+  top: 55px;
+  left: 5px;
+  height: 50px;
+  width: 66px;
+  opacity: 0.3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Increase the top padding of contents and pkgdown-sidebar
+to avoid being covered by the top bar*/
+.contents {
+  margin-top: 80px;
+}
+
+/* Was 30px */
+#pkgdown-sidebar {
+  margin-top: 110px;
 }
