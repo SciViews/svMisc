@@ -136,12 +136,6 @@ RStudio (server), and is_jgr() indicate if the R GUI is JGR." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svMisc.html">Get started</a>
 </li>
 <li>
@@ -202,39 +196,39 @@ default). <code>is_rstudio()</code> and <code>is_rstudio_server()</code> check i
 RStudio (server), and <code>is_jgr()</code> indicate if the R GUI is JGR.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is_help</span>(<span class='no'>topic</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>lib.loc</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>is_help</span><span class='op'>(</span><span class='va'>topic</span>, package <span class='op'>=</span> <span class='cn'>NULL</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>is_win</span>()
+<span class='fu'>is_win</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_rgui</span>()
+<span class='fu'>is_rgui</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_sdi</span>()
+<span class='fu'>is_sdi</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_mac</span>()
+<span class='fu'>is_mac</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_aqua</span>()
+<span class='fu'>is_aqua</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_rstudio</span>()
+<span class='fu'>is_rstudio</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_rstudio_desktop</span>()
+<span class='fu'>is_rstudio_desktop</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_rstudio_server</span>()
+<span class='fu'>is_rstudio_server</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>is_jgr</span>()
+<span class='fu'>is_jgr</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isHelp</span>(<span class='no'>topic</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>lib.loc</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>isHelp</span><span class='op'>(</span><span class='va'>topic</span>, package <span class='op'>=</span> <span class='cn'>NULL</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>isWin</span>()
+<span class='fu'>isWin</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isRgui</span>()
+<span class='fu'>isRgui</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isSDI</span>()
+<span class='fu'>isSDI</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isMac</span>()
+<span class='fu'>isMac</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isAqua</span>()
+<span class='fu'>isAqua</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isJGR</span>()</pre>
+<span class='fu'>isJGR</span><span class='op'>(</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -278,12 +272,24 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/utils/example.html'>example()</a></code>, <code><a href='https://rdrr.io/r/utils/help.html'>help()</a></code>, <code><a href='https://rdrr.io/r/base/capabilities.html'>capabilities()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>is_help</span>(<span class='st'>"help"</span>)         <span class='co'># Help and example</span></div><div class='output co'>#&gt;    help example 
-#&gt;    TRUE    TRUE </div><div class='input'><span class='fu'>is_help</span>(<span class='st'>"Rtangle"</span>)      <span class='co'># Help but no example</span></div><div class='output co'>#&gt;    help example 
-#&gt;    TRUE    TRUE </div><div class='input'><span class='fu'>is_help</span>(<span class='st'>"notopic"</span>)      <span class='co'># No help or example</span></div><div class='output co'>#&gt;    help example 
+    <pre class="examples"><div class='input'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"help"</span><span class='op'>)</span>    <span class='co'># Help and example</span>
+</div><div class='output co'>#&gt;    help example 
+#&gt;    TRUE    TRUE </div><div class='input'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"Rtangle"</span><span class='op'>)</span>  <span class='co'># Help but no example</span>
+</div><div class='output co'>#&gt;    help example 
+#&gt;    TRUE    TRUE </div><div class='input'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"notopic"</span><span class='op'>)</span>  <span class='co'># No help or example</span>
+</div><div class='output co'>#&gt;    help example 
 #&gt;   FALSE   FALSE </div><div class='input'>
-<span class='fu'>is_win</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_mac</span>()</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='fu'>is_aqua</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rgui</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_sdi</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio_desktop</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio_server</span>()</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_jgr</span>()</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>is_win</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_mac</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>is_aqua</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rgui</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_sdi</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio_desktop</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio_server</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_jgr</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

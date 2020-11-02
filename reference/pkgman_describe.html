@@ -130,12 +130,6 @@ They implement the R-side code for the SciViews R package manager." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svMisc.html">Get started</a>
 </li>
 <li>
@@ -181,7 +175,7 @@ They implement the R-side code for the SciViews R package manager." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Functions to manage R side of the SciViews R package manager</h1>
-    <small class="dont-index">Source: <a href='https://github.com/SciViews/svMisc/blob/master/R/pkgman.R'><code>R/pkgman.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/SciViews/svMisc/blob/master/R/pkgMan.R'><code>R/pkgMan.R</code></a></small>
     <div class="hidden name"><code>pkgman_describe.Rd</code></div>
     </div>
 
@@ -190,57 +184,57 @@ They implement the R-side code for the SciViews R package manager." />
 They implement the R-side code for the SciViews <span style="R">R</span> package manager.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pkgman_describe</span>(<span class='no'>pkgname</span>, <span class='kw'>print.it</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>pkgman_describe</span><span class='op'>(</span><span class='va'>pkgname</span>, print.it <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_get_mirrors</span>()
+<span class='fu'>pkgman_get_mirrors</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_get_available</span>(
-  <span class='kw'>page</span> <span class='kw'>=</span> <span class='st'>"next"</span>,
-  <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>,
-  <span class='kw'>keep</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Package"</span>, <span class='st'>"Version"</span>, <span class='st'>"InstalledVersion"</span>, <span class='st'>"Status"</span>),
-  <span class='kw'>reload</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>";"</span>,
-  <span class='kw'>eol</span> <span class='kw'>=</span> <span class='st'>"\t\n"</span>
-)
+<span class='fu'>pkgman_get_available</span><span class='op'>(</span>
+  page <span class='op'>=</span> <span class='st'>"next"</span>,
+  pattern <span class='op'>=</span> <span class='st'>""</span>,
+  n <span class='op'>=</span> <span class='fl'>50</span>,
+  keep <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Package"</span>, <span class='st'>"Version"</span>, <span class='st'>"InstalledVersion"</span>, <span class='st'>"Status"</span><span class='op'>)</span>,
+  reload <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  sep <span class='op'>=</span> <span class='st'>";"</span>,
+  eol <span class='op'>=</span> <span class='st'>"\t\n"</span>
+<span class='op'>)</span>
 
-<span class='fu'>pkgman_get_installed</span>(<span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>";"</span>, <span class='kw'>eol</span> <span class='kw'>=</span> <span class='st'>"\t\n"</span>)
+<span class='fu'>pkgman_get_installed</span><span class='op'>(</span>sep <span class='op'>=</span> <span class='st'>";"</span>, eol <span class='op'>=</span> <span class='st'>"\t\n"</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_set_cran_mirror</span>(<span class='no'>url</span>)
+<span class='fu'>pkgman_set_cran_mirror</span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_install</span>(<span class='no'>pkgs</span>, <span class='kw'>install.deps</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ask</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>pkgman_install</span><span class='op'>(</span><span class='va'>pkgs</span>, install.deps <span class='op'>=</span> <span class='cn'>FALSE</span>, ask <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_remove</span>(<span class='no'>pkgname</span>)
+<span class='fu'>pkgman_remove</span><span class='op'>(</span><span class='va'>pkgname</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_load</span>(<span class='no'>pkgname</span>)
+<span class='fu'>pkgman_load</span><span class='op'>(</span><span class='va'>pkgname</span><span class='op'>)</span>
 
-<span class='fu'>pkgman_detach</span>(<span class='no'>pkgname</span>)
+<span class='fu'>pkgman_detach</span><span class='op'>(</span><span class='va'>pkgname</span><span class='op'>)</span>
 
-<span class='fu'>pkgManDescribe</span>(<span class='no'>pkgname</span>, <span class='kw'>print.it</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>pkgManDescribe</span><span class='op'>(</span><span class='va'>pkgname</span>, print.it <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>pkgManGetMirrors</span>()
+<span class='fu'>pkgManGetMirrors</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>pkgManGetAvailable</span>(
-  <span class='kw'>page</span> <span class='kw'>=</span> <span class='st'>"next"</span>,
-  <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>,
-  <span class='kw'>keep</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Package"</span>, <span class='st'>"Version"</span>, <span class='st'>"InstalledVersion"</span>, <span class='st'>"Status"</span>),
-  <span class='kw'>reload</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>";"</span>,
-  <span class='kw'>eol</span> <span class='kw'>=</span> <span class='st'>"\t\n"</span>
-)
+<span class='fu'>pkgManGetAvailable</span><span class='op'>(</span>
+  page <span class='op'>=</span> <span class='st'>"next"</span>,
+  pattern <span class='op'>=</span> <span class='st'>""</span>,
+  n <span class='op'>=</span> <span class='fl'>50</span>,
+  keep <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Package"</span>, <span class='st'>"Version"</span>, <span class='st'>"InstalledVersion"</span>, <span class='st'>"Status"</span><span class='op'>)</span>,
+  reload <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  sep <span class='op'>=</span> <span class='st'>";"</span>,
+  eol <span class='op'>=</span> <span class='st'>"\t\n"</span>
+<span class='op'>)</span>
 
-<span class='fu'>pkgManGetInstalled</span>(<span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>";"</span>, <span class='kw'>eol</span> <span class='kw'>=</span> <span class='st'>"\t\n"</span>)
+<span class='fu'>pkgManGetInstalled</span><span class='op'>(</span>sep <span class='op'>=</span> <span class='st'>";"</span>, eol <span class='op'>=</span> <span class='st'>"\t\n"</span><span class='op'>)</span>
 
-<span class='fu'>pkgManSetCRANMirror</span>(<span class='no'>url</span>)
+<span class='fu'>pkgManSetCRANMirror</span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span>
 
-<span class='fu'>pkgManInstall</span>(<span class='no'>pkgs</span>, <span class='kw'>install.deps</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ask</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>pkgManInstall</span><span class='op'>(</span><span class='va'>pkgs</span>, install.deps <span class='op'>=</span> <span class='cn'>FALSE</span>, ask <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>pkgManRemove</span>(<span class='no'>pkgname</span>)
+<span class='fu'>pkgManRemove</span><span class='op'>(</span><span class='va'>pkgname</span><span class='op'>)</span>
 
-<span class='fu'>pkgManLoad</span>(<span class='no'>pkgname</span>)
+<span class='fu'>pkgManLoad</span><span class='op'>(</span><span class='va'>pkgname</span><span class='op'>)</span>
 
-<span class='fu'>pkgManDetach</span>(<span class='no'>pkgname</span>)</pre>
+<span class='fu'>pkgManDetach</span><span class='op'>(</span><span class='va'>pkgname</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -306,6 +300,9 @@ SciViews <span style="R">R</span> package manager.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='package.html'>package()</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wuerzburg.de</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

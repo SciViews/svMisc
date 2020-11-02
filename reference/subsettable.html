@@ -132,12 +132,6 @@ indicate fun$variant(). See examples." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svMisc.html">Get started</a>
 </li>
 <li>
@@ -189,7 +183,7 @@ indicate fun$variant(). See examples." />
 
     <div class="ref-description">
     <p>In case a textual argument allows for selecting the result, for
-instance, if <code><a href='https://rdrr.io/r/base/plot.html'>plot()</a></code> allows for several charts that you can choose with a
+instance, if <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot()</a></code> allows for several charts that you can choose with a
 <code>type=</code> or <code>which=</code>, making the function 'subsettable' also allows to
 indicate <code>fun$variant()</code>. See examples.</p>
     </div>
@@ -215,15 +209,16 @@ $(x, name)</pre>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>foo</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span>(<span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"histogram"</span>, <span class='st'>"boxplot"</span>), <span class='no'>...</span>) {
-  <span class='no'>type</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/match.arg.html'>match.arg</a></span>(<span class='no'>type</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"histogram"</span>, <span class='st'>"boxplot"</span>))
-  <span class='fu'><a href='https://rdrr.io/r/base/switch.html'>switch</a></span>(<span class='no'>type</span>,
-    <span class='kw'>histogram</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>x</span>, <span class='no'>...</span>),
-    <span class='kw'>boxplot</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/graphics/boxplot.html'>boxplot</a></span>(<span class='no'>x</span>, <span class='no'>...</span>),
-    <span class='fu'><a href='https://rdrr.io/r/base/stop.html'>stop</a></span>(<span class='st'>"unknow type"</span>)
-  )
-}, <span class='kw'>class</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"function"</span>, <span class='st'>"subsettable_type"</span>))
-<span class='no'>foo</span></div><div class='output co'>#&gt; function(x, type = c("histogram", "boxplot"), ...) {
+    <pre class="examples"><div class='input'><span class='va'>foo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span><span class='op'>(</span><span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>type</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"histogram"</span>, <span class='st'>"boxplot"</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>type</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/match.arg.html'>match.arg</a></span><span class='op'>(</span><span class='va'>type</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"histogram"</span>, <span class='st'>"boxplot"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/switch.html'>switch</a></span><span class='op'>(</span><span class='va'>type</span>,
+    histogram <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>,
+    boxplot <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/graphics/boxplot.html'>boxplot</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>,
+    <span class='kw'><a href='https://rdrr.io/r/base/stop.html'>stop</a></span><span class='op'>(</span><span class='st'>"unknow type"</span><span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='op'>}</span>, class <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"function"</span>, <span class='st'>"subsettable_type"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>foo</span>
+</div><div class='output co'>#&gt; function(x, type = c("histogram", "boxplot"), ...) {
 #&gt;   type &lt;- match.arg(type, c("histogram", "boxplot"))
 #&gt;   switch(type,
 #&gt;     histogram = hist(x, ...),
@@ -231,12 +226,15 @@ $(x, name)</pre>
 #&gt;     stop("unknow type")
 #&gt;   )
 #&gt; }
-#&gt; &lt;environment: 0x7faa621eeb08&gt;
+#&gt; &lt;environment: 0x7fdec7e72f20&gt;
 #&gt; attr(,"class")
 #&gt; [1] "function"         "subsettable_type"</div><div class='input'>
 <span class='co'># This function can be used as usual:</span>
-<span class='fu'>foo</span>(<span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>50</span>), <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"histogram"</span>)</div><div class='img'><img src='subsettable-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># ... but also this way:</span>
-<span class='no'>foo</span>$<span class='fu'>histogram</span>(<span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>50</span>))</div><div class='img'><img src='subsettable-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='no'>foo</span>$<span class='fu'><a href='https://rdrr.io/r/graphics/boxplot.html'>boxplot</a></span>(<span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>50</span>))</div><div class='img'><img src='subsettable-3.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>foo</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>50</span><span class='op'>)</span>, type <span class='op'>=</span> <span class='st'>"histogram"</span><span class='op'>)</span>
+</div><div class='img'><img src='subsettable-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># ... but also this way:</span>
+<span class='va'>foo</span><span class='op'>$</span><span class='fu'>histogram</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>50</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='subsettable-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>foo</span><span class='op'>$</span><span class='fu'>boxplot</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>50</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='subsettable-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

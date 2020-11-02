@@ -134,12 +134,6 @@ list can be automatically used by Install()." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svMisc.html">Get started</a>
 </li>
 <li>
@@ -195,18 +189,18 @@ possible (with <code>warn/message = FALSE</code>) and it returns <code>TRUE</cod
 packages are loaded successfully. If at least one loading fails, a short
 message is printed, by default. For all packages that were not found, an
 entry is recorded in <code>.packages_to_install</code> in <code>SciViews:TempEnv</code>, and that
-list can be automatically used by <code><a href='install.html'>Install()</a></code>.</p>
+list can be automatically used by <code><a href='Install.html'>Install()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>package</span>(
-  <span class='no'>...</span>,
-  <span class='kw'>stop</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>message</span> <span class='kw'>=</span> <span class='no'>stop</span>,
-  <span class='kw'>warn.conflicts</span> <span class='kw'>=</span> <span class='no'>message</span>,
-  <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
-  <span class='kw'>lib.loc</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"verbose"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>package</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  stop <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  message <span class='op'>=</span> <span class='va'>stop</span>,
+  warn.conflicts <span class='op'>=</span> <span class='va'>message</span>,
+  pos <span class='op'>=</span> <span class='fl'>2L</span>,
+  lib.loc <span class='op'>=</span> <span class='cn'>NULL</span>,
+  verbose <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"verbose"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -271,18 +265,21 @@ work-around to pass name(s) of packages as a variable with an arguments
 <p>If several packages are provided, they are loaded and attached in reverse
 order, so that the order in the search path is the same one as the order in
 the provided vector.</p>
-<p>The <code><a href='https://rdrr.io/pkg/.../man'>library(help = ...)</a></code> version is not implemented here.</p>
+<p>The <code>library(help = ...)</code> version is not implemented here.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/library.html'>require()</a></code>, <code><a href='https://rdrr.io/r/base/library.html'>library()</a></code>, <code><a href='install.html'>Install()</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/library.html'>require()</a></code>, <code><a href='https://rdrr.io/r/base/library.html'>library()</a></code>, <code><a href='Install.html'>Install()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># This should work...</span>
-<span class='kw'>if</span> (<span class='fu'>package</span>(<span class='st'>'tools'</span>, <span class='st'>'methods'</span>, <span class='kw'>stop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)) <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"Fine!"</span>)</div><div class='output co'>#&gt; <span class='message'>Fine!</span></div><div class='input'><span class='co'># ... but this not (note that there are no details here!)</span>
-<span class='kw'>if</span> (!<span class='fu'>package</span>(<span class='st'>'tools'</span>, <span class='st'>'badname'</span>, <span class='kw'>stop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)) <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"Not fine!"</span>)</div><div class='output co'>#&gt; <span class='message'>Not fine!</span></div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='fu'>package</span><span class='op'>(</span><span class='st'>'tools'</span>, <span class='st'>'methods'</span>, stop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='op'>(</span><span class='st'>"Fine!"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Fine!</span></div><div class='input'><span class='co'># ... but this not (note that there are no details here!)</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='fu'>package</span><span class='op'>(</span><span class='st'>'tools'</span>, <span class='st'>'badname'</span>, stop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='op'>(</span><span class='st'>"Not fine!"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Not fine!</span></div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Get an error</span>
-<span class='fu'>package</span>(<span class='st'>'badname'</span>)
-}</div></pre>
+<span class='fu'>package</span><span class='op'>(</span><span class='st'>'badname'</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

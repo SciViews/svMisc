@@ -73,12 +73,6 @@
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="articles/svMisc.html">Get started</a>
 </li>
 <li>
@@ -131,11 +125,14 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of ‘svMisc’ from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"svMisc"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span></pre></div>
 <p>You can also install the latest developement version. Make sure you have the ‘devtools’ R package installed:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></pre></div>
 <p>Use <code>install_github()</code> to install the ‘svMisc’ package from Github (source from <strong>master</strong> branch will be recompiled on your machine):</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"SciViews/svMisc"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"SciViews/svMisc"</span><span class="op">)</span></pre></div>
 <p>R should install all required dependencies automatically, and then it should compile and install ‘svMisc’.</p>
 <p>Latest devel version of ‘svMisc’ (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from <a href="https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts">appveyor</a>.</p>
 </div>
@@ -143,11 +140,13 @@
 <h2 class="hasAnchor">
 <a href="#further-explore-svmisc" class="anchor"></a>Further explore ‘svMisc’</h2>
 <p>You can get further help about this package this way: Make the ‘svMisc’ package available in your R session:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"svMisc"</span>)</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/SciViews/svMisc">"svMisc"</a></span><span class="op">)</span></pre></div>
 <p>Get help about this package:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">help</span> <span class="kw">=</span> <span class="st">"svMisc"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="st">"svMisc-package"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"svMisc"</span>) <span class="co"># None is installed with install_github()</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span>help <span class="op">=</span> <span class="st">"svMisc"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"svMisc-package"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span> <span class="co"># None is installed with install_github()</span></pre></div>
 <p>For further instructions, please, refer to the help pages at <a href="https://www.sciviews.org/svMisc/" class="uri">https://www.sciviews.org/svMisc/</a>.</p>
 </div>
 <div id="code-of-conduct" class="section level2">

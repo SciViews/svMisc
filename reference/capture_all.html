@@ -135,12 +135,6 @@ warnings if options(warn = 0)." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svMisc.html">Get started</a>
 </li>
 <li>
@@ -199,9 +193,9 @@ conditions are treated as usual, including the delayed display of the
 warnings if <code><a href='https://rdrr.io/r/base/options.html'>options(warn = 0)</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>capture_all</span>(<span class='no'>expr</span>, <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>echo</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>markStdErr</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+    <pre class="usage"><span class='fu'>capture_all</span><span class='op'>(</span><span class='va'>expr</span>, split <span class='op'>=</span> <span class='cn'>TRUE</span>, echo <span class='op'>=</span> <span class='cn'>TRUE</span>, file <span class='op'>=</span> <span class='cn'>NULL</span>, markStdErr <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>captureAll</span>(<span class='no'>expr</span>, <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>echo</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>markStdErr</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'>captureAll</span><span class='op'>(</span><span class='va'>expr</span>, split <span class='op'>=</span> <span class='cn'>TRUE</span>, echo <span class='op'>=</span> <span class='cn'>TRUE</span>, file <span class='op'>=</span> <span class='cn'>NULL</span>, markStdErr <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -255,25 +249,30 @@ application... the function only returns <code>NA</code> instead of a character 
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/parse.html'>parse()</a></code>, <code><a href='https://rdrr.io/r/base/expression.html'>expression()</a></code>, <code><a href='https://rdrr.io/r/utils/capture.output.html'>capture.output()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='fu'>capture_all</span>(<span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span>(<span class='fl'>1</span> + <span class='fl'>1</span>), <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; :&gt; 1 + 1
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='fu'>capture_all</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span><span class='op'>(</span><span class='fl'>1</span> <span class='op'>+</span> <span class='fl'>1</span><span class='op'>)</span>, split <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; :&gt; 1 + 1
 #&gt; [1] 2
-#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='fu'>capture_all</span>(<span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span>(<span class='fl'>1</span> + <span class='fl'>1</span>), <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; :&gt; 1 + 1
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='fu'>capture_all</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span><span class='op'>(</span><span class='fl'>1</span> <span class='op'>+</span> <span class='fl'>1</span><span class='op'>)</span>, split <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; :&gt; 1 + 1
 #&gt; [1] 2
 #&gt; :&gt; 1 + 1
 #&gt; [1] 2
-#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='fu'>capture_all</span>(<span class='fu'><a href='parse_text.html'>parse_text</a></span>(<span class='st'>"search()"</span>), <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; :&gt; search()
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='fu'>capture_all</span><span class='op'>(</span><span class='fu'><a href='parse_text.html'>parse_text</a></span><span class='op'>(</span><span class='st'>"search()"</span><span class='op'>)</span>, split <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; :&gt; search()
 #&gt;  [1] ".GlobalEnv"        "package:svMisc"    "package:stats"    
 #&gt;  [4] "package:graphics"  "package:grDevices" "package:utils"    
 #&gt;  [7] "package:datasets"  "package:methods"   "SciViews:TempEnv" 
 #&gt; [10] "Autoloads"         "package:base"     
-#&gt; </div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='fu'>capture_all</span>(<span class='fu'><a href='parse_text.html'>parse_text</a></span>(<span class='st'>'1:2 + 1:3'</span>), <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='fu'>capture_all</span>(<span class='fu'><a href='parse_text.html'>parse_text</a></span>(<span class='st'>"badname"</span>), <span class='kw'>split</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))
-}
+#&gt; </div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='fu'>capture_all</span><span class='op'>(</span><span class='fu'><a href='parse_text.html'>parse_text</a></span><span class='op'>(</span><span class='st'>'1:2 + 1:3'</span><span class='op'>)</span>, split <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='fu'>capture_all</span><span class='op'>(</span><span class='fu'><a href='parse_text.html'>parse_text</a></span><span class='op'>(</span><span class='st'>"badname"</span><span class='op'>)</span>, split <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
 
 <span class='co'># Management of incomplete lines</span>
-<span class='no'>capt_res</span> <span class='kw'>&lt;-</span> <span class='fu'>capture_all</span>(<span class='fu'><a href='parse_text.html'>parse_text</a></span>(<span class='st'>"1 +"</span>)) <span class='co'># Clearly an incomplete command</span>
-<span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span>(<span class='no'>capt_res</span>)) <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='st'>"Incomplete line!\n"</span>) <span class='kw'>else</span> <span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='no'>capt_res</span>)</div><div class='output co'>#&gt; Incomplete line!</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span>(<span class='no'>capt_res</span>)</div></pre>
+<span class='va'>capt_res</span> <span class='op'>&lt;-</span> <span class='fu'>capture_all</span><span class='op'>(</span><span class='fu'><a href='parse_text.html'>parse_text</a></span><span class='op'>(</span><span class='st'>"1 +"</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># Clearly an incomplete command</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>capt_res</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='st'>"Incomplete line!\n"</span><span class='op'>)</span> <span class='kw'>else</span> <span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='va'>capt_res</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Incomplete line!</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>capt_res</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
