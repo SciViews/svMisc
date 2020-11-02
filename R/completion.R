@@ -23,7 +23,7 @@
 #' should the already used named arguments be omitted?
 #' @param sep The separator to use between returned items.
 #' @param field.sep Character string to separate fields for each entry.
-#' @param completion.or.addition Should we return the completion name, addition string, or both?
+#' @param name.or.addition Should we return the completion name, addition string, or both?
 #' @return If `types == NA` and `description = FALSE`, a character vector giving
 #' the completions, otherwise a data frame with two columns: 'completion', and
 #' 'type' when `description = FALSE`, or with four columns: 'completion',

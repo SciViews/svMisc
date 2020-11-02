@@ -1,6 +1,6 @@
 # svMisc 1.1.2
 
-- A new argument is added to `completion()`: `completion.or.addition=` which determines if the function returns the completion name, completion additions or both. Thanks to @rhuffy.
+- A new argument is added to `completion()`: `name.or.addition=` which determines if the function returns the completion name, completion additions or both. Thanks to @rhuffy.
 
 # svMisc 1.1.1
 

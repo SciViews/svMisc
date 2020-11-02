@@ -55,7 +55,7 @@ should the already used named arguments be omitted?}
 
 \item{field.sep}{Character string to separate fields for each entry.}
 
-\item{completion.or.addition}{Should we return the completion name, addition string, or both?}
+\item{name.or.addition}{Should we return the completion name, addition string, or both?}
 }
 \value{
 If \code{types == NA} and \code{description = FALSE}, a character vector giving

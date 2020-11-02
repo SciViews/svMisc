@@ -29,7 +29,7 @@ URL: https://github.com/SciViews/svMisc, https://www.sciviews.org/svMisc/
 BugReports: https://github.com/SciViews/svMisc/issues
 LazyData: yes
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US
