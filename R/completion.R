@@ -23,10 +23,12 @@
 #' should the already used named arguments be omitted?
 #' @param sep The separator to use between returned items.
 #' @param field.sep Character string to separate fields for each entry.
+#' @param completion.or.addition Should we return the completion name, addition string, or both?
 #' @return If `types == NA` and `description = FALSE`, a character vector giving
 #' the completions, otherwise a data frame with two columns: 'completion', and
 #' 'type' when `description = FALSE`, or with four columns: 'completion',
-#' 'type', 'desc' and 'context' when `description = TRUE`.\cr
+#' 'type', 'desc' and 'context' when `description = TRUE`. If name.or.addition == 'both',
+#' an 'addition' column is also returned.\cr
 #' Attributes:\cr
 #' `attr(, "token")` - a completed token.\cr
 #' `attr(, "triggerPos")` - number of already typed characters.\cr
@@ -101,9 +103,10 @@
 completion <- function(code, pos = nchar(code), min.length = 2,
 print = FALSE, types = c("default", "scintilla"), addition = FALSE, sort = TRUE,
 what = c("arguments", "functions", "packages"), description = FALSE,
-max.fun = 100, skip.used.args = TRUE, sep = "\n", field.sep = "\t") {
+max.fun = 100, skip.used.args = TRUE, sep = "\n", field.sep = "\t",
+name.or.addition = c("name", "addition", "both")) {
 
-  finalize <- function(completions) {
+  finalize <- function(completions, additions = NULL) {
     # Construct a data frame with completions
     ret <- data.frame(completion = completions, stringsAsFactors = FALSE)
 
@@ -204,6 +207,10 @@ max.fun = 100, skip.used.args = TRUE, sep = "\n", field.sep = "\t") {
       }
     }
 
+    # Do we add addition strings as a separate column?
+    if(!is.null(additions))
+      ret <- cbind(ret, data.frame(addition = additions))
+
     # Do we sort results alphabetically?
     if (isTRUE(sort)) ret <- ret[order(completions), ]
 
@@ -285,6 +292,7 @@ max.fun = 100, skip.used.args = TRUE, sep = "\n", field.sep = "\t") {
   # The standard utils:::.completeToken() is replaced by our own version:
   .complete_token_ext()
   completions <- utils$.retrieveCompletions()
+  additions <- NULL
   triggerPos <- pos - completion_env[["start"]]
   token <- completion_env[["token"]]
 
@@ -344,8 +352,10 @@ max.fun = 100, skip.used.args = TRUE, sep = "\n", field.sep = "\t") {
     completions <- completions[-i]
 
   # Do we return only additional strings for the completion?
-  if (isTRUE(addition) && triggerPos > 0L)
+  if ((isTRUE(addition) || match.arg(name.or.addition) == "addition") && triggerPos > 0L)
     completions <- substring(completions, triggerPos + 1)
+  else if (match.arg(name.or.addition) == "both")
+    additions <- substring(completions, triggerPos + 1)
 
   # In case of [[, restore original code
   if (dblBrackets) {  # Substitute var$name by var[["name"
@@ -357,7 +367,7 @@ max.fun = 100, skip.used.args = TRUE, sep = "\n", field.sep = "\t") {
   # Finalize processing of the completion list
   funargs <- completion_env$funargs
   isFirstArg <- completion_env$isFirstArg
-  finalize(completions)
+  finalize(completions, additions)
 }
 
 .reserved_words <- c("if", "else", "repeat", "while", "function", "for", "in",

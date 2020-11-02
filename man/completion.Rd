@@ -17,7 +17,8 @@ completion(
   max.fun = 100,
   skip.used.args = TRUE,
   sep = "\\n",
-  field.sep = "\\t"
+  field.sep = "\\t",
+  name.or.addition = c("name", "addition", "both")
 )
 }
 \arguments{
@@ -53,12 +54,15 @@ should the already used named arguments be omitted?}
 \item{sep}{The separator to use between returned items.}
 
 \item{field.sep}{Character string to separate fields for each entry.}
+
+\item{completion.or.addition}{Should we return the completion name, addition string, or both?}
 }
 \value{
 If \code{types == NA} and \code{description = FALSE}, a character vector giving
 the completions, otherwise a data frame with two columns: 'completion', and
 'type' when \code{description = FALSE}, or with four columns: 'completion',
-'type', 'desc' and 'context' when \code{description = TRUE}.\cr
+'type', 'desc' and 'context' when \code{description = TRUE}. If name.or.addition == 'both',
+an 'addition' column is also returned.\cr
 Attributes:\cr
 \code{attr(, "token")} - a completed token.\cr
 \code{attr(, "triggerPos")} - number of already typed characters.\cr
