@@ -1,3 +1,7 @@
+# svMisc 1.1.2
+
+- A new argument is added to `completion()`: `completion.or.addition=` which determines if the function returns the completion name, completion additions or both. Thanks to @rhuffy.
+
 # svMisc 1.1.1
 
 - `News.md` reworked in `R CMD build`-compatible format, and `TODO` reworked as `TODO.md`.
