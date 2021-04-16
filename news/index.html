@@ -83,9 +83,15 @@
   gtag('config', 'UA-462421-8');
 </script>-->
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-news">
       <header>
       <!-- preloader start -->
@@ -149,14 +155,14 @@
 </li>
         <li>
   <a href="https://github.com/SciViews/svMisc/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.1.2</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.1.3</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -175,6 +181,15 @@
       <small>Source: <a href='https://github.com/SciViews/svMisc/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="svmisc-113" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.3">
+<a href="#svmisc-113" class="anchor"></a>svMisc 1.1.3<small> Unreleased </small>
+</h1>
+<ul>
+<li>
+<code>.Traceback</code> is not set any more in the base environment by <code><a href="../reference/capture_all.html">capture_all()</a></code> because CRAN policy does not allow it. The variable <code>.Traceback_capture_all</code> is set in <code><a href="../reference/temp_env.html">temp_env()</a></code> instead. It can be retrieved with <code><a href="../reference/temp_env.html">get_temp(".Traceback_capture_all")</a></code>.</li>
+</ul>
+</div>
     <div id="svmisc-112" class="section level1">
 <h1 class="page-header" data-toc-text="1.1.2">
 <a href="#svmisc-112" class="anchor"></a>svMisc 1.1.2<small> Unreleased </small>
@@ -226,7 +241,7 @@
 <li><p>New, snake_case names of all the functions. Old camelCase functions names are kept for compatibility, e.g., <code><a href="../reference/capture_all.html">captureAll()</a></code> -&gt; <code><a href="../reference/capture_all.html">capture_all()</a></code>.</p></li>
 <li><p>All documentation converted to Roxygen2 format.</p></li>
 <li><p>Tests converted to <code>testthat</code> format.</p></li>
-<li><p><code><a href="../reference/package.html">package()</a></code> is reworked to record packages it cannot install, and the <code><a href="../reference/Install.html">Install()</a></code> function uses these automatically.</p></li>
+<li><p><code><a href="../reference/package.html">package()</a></code> is reworked to record packages it cannot install, and the <code><a href="../reference/install.html">Install()</a></code> function uses these automatically.</p></li>
 </ul>
 </div>
     <div id="svmisc-09-73" class="section level1">
@@ -263,7 +278,7 @@
 <ul>
 <li><p>Deprecated functions <code>Args()</code>, <code>CallTip()</code>, <code>clipsource()</code>, <code>Complete()</code>, <code>CompletePlus()</code>, <code>getEnvironment()</code>, <code>Parse()</code>, <code>r()</code>, <code>Sys.tempdir()</code>, <code>Sys.userdir()</code> are now defunct and eliminated from the package.</p></li>
 <li><p>Function <code>pkg()</code> is renamed <code><a href="../reference/package.html">package()</a></code>.</p></li>
-<li><p>Reworked code that was using <code><a href="https://rdrr.io/r/base/ns-dblcolon.html">:::</a></code>.</p></li>
+<li><p>Reworked code that was using <code><a href="https://rdrr.io/r/base/ns-dblcolon.html" class="external-link">:::</a></code>.</p></li>
 </ul>
 </div>
     <div id="svmisc-09-69" class="section level1">
@@ -271,8 +286,8 @@
 <a href="#svmisc-09-69" class="anchor"></a>svMisc 0.9-69<small> 2013-03-18 </small>
 </h1>
 <ul>
-<li><p>On MacOS &gt;= 10.7, the package could not load because of a warning (converted into an error) in <code><a href="https://rdrr.io/r/base/ns-hooks.html">.onLoad()</a></code>. Solved. (thanks Travis Porco for bug report).</p></li>
-<li><p><code><a href="../reference/is_help.html">isHelp()</a></code> now uses <code><a href="https://rdrr.io/r/base/find.package.html">find.package()</a></code> instead of the deprecated <code><a href="https://rdrr.io/r/base/base-defunct.html">.find.package()</a></code>.</p></li>
+<li><p>On MacOS &gt;= 10.7, the package could not load because of a warning (converted into an error) in <code><a href="https://rdrr.io/r/base/ns-hooks.html" class="external-link">.onLoad()</a></code>. Solved. (thanks Travis Porco for bug report).</p></li>
+<li><p><code><a href="../reference/is_help.html">isHelp()</a></code> now uses <code><a href="https://rdrr.io/r/base/find.package.html" class="external-link">find.package()</a></code> instead of the deprecated <code><a href="https://rdrr.io/r/base/base-defunct.html" class="external-link">.find.package()</a></code>.</p></li>
 </ul>
 </div>
     <div id="svmisc-09-68" class="section level1">
@@ -308,8 +323,8 @@
 </h1>
 <ul>
 <li><p>Partial argument matching in <code><a href="../reference/completion.html">completion()</a></code>, <code><a href="../reference/progress.html">progress()</a></code> and <code><a href="../reference/temp_env.html">rmTemp()</a></code> code fixed.</p></li>
-<li><p>Call to <code><a href="https://rdrr.io/r/base/Internal.html">.Internal(...)</a></code> in <code><a href="../reference/capture_all.html">captureAll()</a></code> eliminated, but need to call <code><a href="https://rdrr.io/r/base/conditions.html">.signalSimpleWarning()</a></code> that is not intended for external use anyway.</p></li>
-<li><p>Call to <code><a href="https://rdrr.io/r/base/Internal.html">.Internal(dput(....))</a></code> in <code><a href="../reference/to_rjson.html">toRjson()</a></code> eliminated.</p></li>
+<li><p>Call to <code><a href="https://rdrr.io/r/base/Internal.html" class="external-link">.Internal(...)</a></code> in <code><a href="../reference/capture_all.html">captureAll()</a></code> eliminated, but need to call <code><a href="https://rdrr.io/r/base/conditions.html" class="external-link">.signalSimpleWarning()</a></code> that is not intended for external use anyway.</p></li>
+<li><p>Call to <code><a href="https://rdrr.io/r/base/Internal.html" class="external-link">.Internal(dput(....))</a></code> in <code><a href="../reference/to_rjson.html">toRjson()</a></code> eliminated.</p></li>
 </ul>
 </div>
     <div id="svmisc-09-64" class="section level1">
@@ -335,10 +350,10 @@
 <a href="#svmisc-09-62" class="anchor"></a>svMisc 0.9-62<small> Unreleased </small>
 </h1>
 <ul>
-<li><p><code><a href="../reference/capture_all.html">captureAll()</a></code> now handles user interrupts and allows for <code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code> afterwards and default value for <code>split=</code> now changed to <code>TRUE</code>. The <code>echo =</code> argument allows for echoing expressions being evaluated, like in the usual R console, but a mechanism allows to abbreviate very long expressions.</p></li>
+<li><p><code><a href="../reference/capture_all.html">captureAll()</a></code> now handles user interrupts and allows for <code><a href="https://rdrr.io/r/base/traceback.html" class="external-link">traceback()</a></code> afterwards and default value for <code>split=</code> now changed to <code>TRUE</code>. The <code>echo =</code> argument allows for echoing expressions being evaluated, like in the usual R console, but a mechanism allows to abbreviate very long expressions.</p></li>
 <li><p><code><a href="../reference/parse_text.html">parseText()</a></code> is reworked internally and it uses the <code>srcfile</code>/<code>srcref</code> mechanism introduced in R recently. <code>firstline =</code>, <code>srcfilename =</code> and <code>encoding =</code> arguments are added.</p></li>
 <li><p>Unit tests added (should run with both ‘svUnit’ (advised) and ‘RUnit’).</p></li>
-<li><p>A bug in <code><a href="../reference/obj_browse.html">objList()</a></code> is corrected: if the list of objects in the environment is cleared, e.g., by <code><a href="https://rdrr.io/r/base/rm.html">rm(list = ls())</a></code>, the function returned as if nothing was changed with <code>compare = TRUE</code>. Now, an attribute <code>changed =</code> is set to <code>TRUE</code> or <code>FALSE</code> to differentiate between “no changes” and “changes towards an empty environment”.</p></li>
+<li><p>A bug in <code><a href="../reference/obj_browse.html">objList()</a></code> is corrected: if the list of objects in the environment is cleared, e.g., by <code><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm(list = ls())</a></code>, the function returned as if nothing was changed with <code>compare = TRUE</code>. Now, an attribute <code>changed =</code> is set to <code>TRUE</code> or <code>FALSE</code> to differentiate between “no changes” and “changes towards an empty environment”.</p></li>
 </ul>
 </div>
     <div id="svmisc-09-61" class="section level1">
@@ -358,7 +373,7 @@
 <li><p><code><a href="../reference/capture_all.html">captureAll()</a></code> now returns <code>NA</code> in case of incomplete line of code parsed by <code><a href="../reference/parse_text.html">parseText()</a></code>. It also detects if <code>expr =</code> is a valid language expression or is <code>NA</code>.</p></li>
 <li><p><code><a href="../reference/is_help.html">isMac()</a></code> was not working correctly on Mac OS X Leopard and Snow Leopard (bug corrected).</p></li>
 <li><p><code>Sys.userdir()</code> did not expanded tilde in recent R versions (corrected).</p></li>
-<li><p>Little change in <code><a href="../reference/def.html">def()</a></code> arguments: <code>length.out =</code> instead of <code>length =</code> to use the same name as corresponding argument in <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code>. Coercion to logical is now done using <code><a href="https://rdrr.io/r/base/logical.html">as.logical()</a></code>… the result may differ from previous implementations.</p></li>
+<li><p>Little change in <code><a href="../reference/def.html">def()</a></code> arguments: <code>length.out =</code> instead of <code>length =</code> to use the same name as corresponding argument in <code><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep()</a></code>. Coercion to logical is now done using <code><a href="https://rdrr.io/r/base/logical.html" class="external-link">as.logical()</a></code>… the result may differ from previous implementations.</p></li>
 <li><p>For <code><a href="../reference/list_methods.html">listTypes()</a></code>, the convention has changed. Method/type is now separated by an underscore instead as with two dots (like in <code>view_text.default</code>).</p></li>
 <li><p><code>Sys.tempdir()</code> and <code>Sys.userdir()</code> are deprecated in favor of the new more general functions <code><a href="../reference/system_file.html">systemFile()</a></code> and <code><a href="../reference/system_file.html">systemDir()</a></code>.</p></li>
 <li><p><code>r()</code> is deprecated in favor of <code>pkg()</code> (<code>r()</code> is not informative enough and more susceptible to be used elsewhere too).</p></li>
@@ -371,7 +386,7 @@
 <a href="#svmisc-09-59" class="anchor"></a>svMisc 0.9-59<small> Unreleased </small>
 </h1>
 <ul>
-<li><p>RJSON objects now use a customized <code><a href="https://rdrr.io/r/base/list.html">list()</a></code> function to build lists, but also structures and new S4 objects.</p></li>
+<li><p>RJSON objects now use a customized <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code> function to build lists, but also structures and new S4 objects.</p></li>
 <li><p><code><a href="../reference/capture_all.html">captureAll()</a></code> has now a <code>split =</code> argument that allows to output to the R console, while capturing output.</p></li>
 <li><p>Bug correction in <code><a href="../reference/capture_all.html">captureAll()</a></code>: call[[1L]] is not subsettable.</p></li>
 </ul>
@@ -486,7 +501,7 @@
 <a href="#svmisc-09-46" class="anchor"></a>svMisc 0.9-46<small> 2009-01-23 </small>
 </h1>
 <ul>
-<li><p>Added <code><a href="../reference/obj_browse.html">objList()</a></code>, <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> method for ‘objList’ objects and <code><a href="../reference/obj_browse.html">write.objList()</a></code> [KB].</p></li>
+<li><p>Added <code><a href="../reference/obj_browse.html">objList()</a></code>, <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> method for ‘objList’ objects and <code><a href="../reference/obj_browse.html">write.objList()</a></code> [KB].</p></li>
 <li><p>Localization complete and French local file done.</p></li>
 </ul>
 </div>
@@ -525,7 +540,7 @@
 <ul>
 <li><p><code><a href="../reference/obj_browse.html">objList()</a></code> did not place each item in a line when result is written in a file.</p></li>
 <li><p><code>objXXX()</code> functions did not always returned results invisibly. Solved.</p></li>
-<li><p><code>Args()</code> is more robust against bad <code>name =</code> parameter because it now calls <code><a href="https://rdrr.io/r/utils/getAnywhere.html">argsAnywhere()</a></code> within a <code><a href="https://rdrr.io/r/base/try.html">try()</a></code>.</p></li>
+<li><p><code>Args()</code> is more robust against bad <code>name =</code> parameter because it now calls <code><a href="https://rdrr.io/r/utils/getAnywhere.html" class="external-link">argsAnywhere()</a></code> within a <code><a href="https://rdrr.io/r/base/try.html" class="external-link">try()</a></code>.</p></li>
 </ul>
 </div>
     <div id="svmisc-09-41" class="section level1">
@@ -690,6 +705,8 @@
 
   
 
+
+  
 
   </body>
 </html>
