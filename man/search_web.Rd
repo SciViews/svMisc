@@ -46,5 +46,4 @@ search_web("volatility", type = "google")   # Google search
 \seealso{
 \code{\link[=RSiteSearch]{RSiteSearch()}}, \code{\link[=help.search]{help.search()}}
 }
-\concept{search help engine archive, google}
 \keyword{utilities}

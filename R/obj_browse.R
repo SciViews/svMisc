@@ -60,7 +60,6 @@
 #' @export
 #' @seealso [completion()], [call_tip()]
 #' @keywords misc
-#' @concept graphical user interface (GUI), object explorer
 #' @examples
 #' # Create various context menus
 #' data(iris)

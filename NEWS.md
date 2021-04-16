@@ -1,3 +1,7 @@
+# svMisc 1.1.4
+
+- Minor changes in the documentation to avoid notes in latest devel R CMD check.
+
 # svMisc 1.1.3
 
 - `.Traceback` is not set any more in the base environment by `capture_all()` because CRAN policy does not allow it. The variable `.Traceback_capture_all` is set in `temp_env()` instead. It can be retrieved with `get_temp(".Traceback_capture_all")`.

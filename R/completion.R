@@ -77,7 +77,6 @@
 #' @export
 #' @seealso [rc.settings()]
 #' @keywords utilities
-#' @concept graphical user interface (GUI) control, completion
 #' @examples
 #' # A data frame
 #' data(iris)

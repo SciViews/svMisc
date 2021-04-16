@@ -222,5 +222,4 @@ rm(iris, trees)
 Philippe Grosjean \href{mailto:phgrosjean@sciviews.org}{phgrosjean@sciviews.org} &
 Kamil Barton \href{mailto:kamil.barton@uni-wuerzburg.de}{kamil.barton@uni-wuerzburg.de}
 }
-\concept{graphical user interface (GUI), object explorer}
 \keyword{misc}

@@ -42,7 +42,6 @@
 #' @export
 #' @seealso [obj_menu()]
 #' @keywords utilities
-#' @concept classes, objects and methods
 #' @examples
 #' # Generic functions
 #' list_methods("t.test")               # S3

@@ -31,7 +31,6 @@
 #' @export
 #' @seealso [example()], [help()], [capabilities()]
 #' @keywords utilities
-#' @concept help and example, and OS system platform
 #' @examples
 #' is_help("help")		# Help and example
 #' is_help("Rtangle")	# Help but no example

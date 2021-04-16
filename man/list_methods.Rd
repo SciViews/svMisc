@@ -102,5 +102,4 @@ list_types("view", "data.frame", TRUE) # None, except if you defined custom view
 \seealso{
 \code{\link[=obj_menu]{obj_menu()}}
 }
-\concept{classes, objects and methods}
 \keyword{utilities}

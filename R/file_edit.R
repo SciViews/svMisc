@@ -57,7 +57,7 @@
 #' code completion and much more. So, it is strongly recommended to install it
 #' (see <http://notepad-plus-plus.org/>) and use it with `file-edit()`. There is
 #' also a plugin to submit code to R directly from Notepad++:
-#' <http://sourceforge.net/projects/npptor/>.
+#' <https://sourceforge.net/projects/npptor/>.
 #'
 #' Of course, you can use your own text editor, just indicate it in the
 #' `fileEditor` option. Note, however, that you should use only lightweight and

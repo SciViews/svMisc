@@ -58,5 +58,4 @@ parse_text("log)")
 \seealso{
 \code{\link[=parse]{parse()}}, \code{\link[=capture_all]{capture_all()}}
 }
-\concept{parsing expression, incomplete code}
 \keyword{IO}

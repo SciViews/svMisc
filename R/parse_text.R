@@ -20,7 +20,6 @@
 #' @export
 #' @seealso [parse()], [capture_all()]
 #' @keywords IO
-#' @concept parsing expression, incomplete code
 #' @examples
 #' parse_text("1 + 1")
 #' parse_text("1 + 1; log(10)")

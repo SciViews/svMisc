@@ -65,7 +65,6 @@
 #' @export
 #' @seealso [parse_text()]
 #' @keywords utilities
-#' @concept object serialization, JavaScript Object Notation
 #' @examples
 #' # A complex R object
 #' obj <- structure(list(

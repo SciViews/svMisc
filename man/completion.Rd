@@ -144,5 +144,4 @@ rm(iris, t1)
 Philippe Grosjean \href{mailto:phgrosjean@sciviews.org}{phgrosjean@sciviews.org} &
 Kamil Barton \href{mailto:kamil.barton@uni-wuerzburg.de}{kamil.barton@uni-wuerzburg.de}
 }
-\concept{graphical user interface (GUI) control, completion}
 \keyword{utilities}

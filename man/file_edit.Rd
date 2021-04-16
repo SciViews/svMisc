@@ -94,7 +94,7 @@ application, in particular because it can handle various line end types
 code completion and much more. So, it is strongly recommended to install it
 (see \url{http://notepad-plus-plus.org/}) and use it with \code{file-edit()}. There is
 also a plugin to submit code to R directly from Notepad++:
-\url{http://sourceforge.net/projects/npptor/}.
+\url{https://sourceforge.net/projects/npptor/}.
 
 Of course, you can use your own text editor, just indicate it in the
 \code{fileEditor} option. Note, however, that you should use only lightweight and

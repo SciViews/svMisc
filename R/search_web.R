@@ -20,7 +20,6 @@
 #' @export
 #' @seealso [RSiteSearch()], [help.search()]
 #' @keywords utilities
-#' @concept search help engine archive, google
 #' @examples
 #' \dontrun{
 #' search_web("volatility")                    # R site search, by default
