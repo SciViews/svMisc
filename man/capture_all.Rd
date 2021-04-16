@@ -49,6 +49,9 @@ instead of an indication of an incomplete code line. Use
 \code{parse_text("<some_code>")} instead, like in the examples bellow.
 Of course, you have to deal with incomplete line management in your GUI/CLI
 application... the function only returns \code{NA} instead of a character string.
+Starting from version 1.1.3, \code{.Traceback} is not set any more in the base
+environment, but it is \code{.Traceback_capture_all} that is set in \code{temp_env()}.
+You can get its value with \code{get_temp(".Traceback_capture_all")}.
 }
 \examples{
 writeLines(capture_all(expression(1 + 1), split = FALSE))

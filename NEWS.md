@@ -1,3 +1,7 @@
+# svMisc 1.1.3
+
+- `.Traceback` is not set any more in the base environment by `capture_all()` because CRAN policy does not allow it. The variable `.Traceback_capture_all` is set in `temp_env()` instead. It can be retrieved with `get_temp(".Traceback_capture_all")`.
+
 # svMisc 1.1.2
 
 - A new argument is added to `completion()`: `name.or.addition=` which determines if the function returns the completion name, completion additions or both. Thanks to @rhuffy.

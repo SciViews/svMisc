@@ -30,6 +30,9 @@
 #' `parse_text("<some_code>")` instead, like in the examples bellow.
 #' Of course, you have to deal with incomplete line management in your GUI/CLI
 #' application... the function only returns `NA` instead of a character string.
+#' Starting from version 1.1.3, `.Traceback` is not set any more in the base
+#' environment, but it is `.Traceback_capture_all` that is set in `temp_env()`.
+#' You can get its value with `get_temp(".Traceback_capture_all")`.
 #' @export
 #' @seealso [parse()], [expression()], [capture.output()]
 #' @keywords IO
@@ -270,7 +273,7 @@ markStdErr = FALSE) {
   on.exit()
 
   # Allow for tracebacks of this call stack:
-  assign(".Traceback", lapply(Traceback, deparse), envir = baseenv())
+  assign_temp(".Traceback_capture_all", lapply(Traceback, deparse))
 
   # Make sure last line ends up with \n
   l <- length(ret_val)
