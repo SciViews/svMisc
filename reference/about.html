@@ -173,7 +173,7 @@ also further document your custom objects easily in their source files!" />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.1.4</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -241,18 +241,18 @@ returned invisibly.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>about</span><span class='op'>(</span><span class='st'>"nonexisting"</span><span class='op'>)</span> <span class='co'># Not found on search path, but help pages</span>
-</div><div class='output co'>#&gt; <span class='message'>'nonexisting' not found</span></div><div class='output co'>#&gt; <span class='message'>Searching keyword in all R help pages for ''...</span></div><div class='input'><span class='fu'>about</span><span class='op'>(</span><span class='st'>"htgdsfgfdsgf"</span><span class='op'>)</span> <span class='co'># Not found anywhere</span>
-</div><div class='output co'>#&gt; <span class='message'>'htgdsfgfdsgf' not found</span></div><div class='output co'>#&gt; <span class='message'>Searching keyword in all R help pages for ''...</span></div><div class='output co'>#&gt; No vignettes or demos or help files found with alias or concept or
+</div><div class='co'>#&gt; 'nonexisting' not found</div><div class='co'>#&gt; Searching keyword in all R help pages for ''...</div><div class='input'><span class='fu'>about</span><span class='op'>(</span><span class='st'>"htgdsfgfdsgf"</span><span class='op'>)</span> <span class='co'># Not found anywhere</span>
+</div><div class='co'>#&gt; 'htgdsfgfdsgf' not found</div><div class='co'>#&gt; Searching keyword in all R help pages for ''...</div><div class='co'>#&gt; No vignettes or demos or help files found with alias or concept or
 #&gt; title matching ‘htgdsfgfdsgf’ using fuzzy matching.</div><div class='input'><span class='co'>#library(tidyverse)</span>
 <span class='co'>#about("group_by") # Just one page</span>
 <span class='co'>#about("filter") # Several items</span>
 <span class='fu'>about</span><span class='op'>(</span><span class='st'>"stats::filter"</span><span class='op'>)</span> <span class='co'># OK</span>
-</div><div class='output co'>#&gt; <span class='message'>Displaying help page...</span></div><div class='input'><span class='co'>#about("dplyr::filter") # OK too</span>
+</div><div class='co'>#&gt; Displaying help page...</div><div class='input'><span class='co'>#about("dplyr::filter") # OK too</span>
 <span class='fu'>about</span><span class='op'>(</span><span class='st'>"base::filter"</span><span class='op'>)</span> <span class='co'># Not found there</span>
-</div><div class='output co'>#&gt; <span class='message'>'filter' not found in package 'base', do you mean?</span></div><div class='output co'>#&gt; <span class='message'>stats::filter, base::Filter</span></div><div class='output co'>#&gt; <span class='message'>Searching keyword in all R help pages for 'base'...</span></div><div class='input'><span class='co'># Objects with comment: print comment</span>
+</div><div class='co'>#&gt; 'filter' not found in package 'base', do you mean?</div><div class='co'>#&gt; stats::filter, base::Filter</div><div class='co'>#&gt; Searching keyword in all R help pages for 'base'...</div><div class='input'><span class='co'># Objects with comment: print comment</span>
 <span class='va'>vec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, comment <span class='op'>=</span> <span class='st'>"A simple vector"</span><span class='op'>)</span>
 <span class='fu'>about</span><span class='op'>(</span><span class='st'>"vec"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>'vec' not found, do you mean?</span></div><div class='output co'>#&gt; <span class='message'>base::as.data.frame.vector, base::as.vector, base::as.vector.factor, base::is.vector, base::mat.or.vec, methods::removeClass, utils::RweaveChunkPrefix, base::vector, base::Vectorize</span></div><div class='output co'>#&gt; <span class='message'>Searching keyword in all R help pages for ''...</span></div><div class='input'><span class='co'># If there is a srcfile attribute in the comment, also display the file</span>
+</div><div class='co'>#&gt; 'vec' not found, do you mean?</div><div class='co'>#&gt; base::as.data.frame.vector, base::as.vector, base::as.vector.factor, base::is.vector, base::mat.or.vec, methods::removeClass, utils::RweaveChunkPrefix, base::vector, base::Vectorize</div><div class='co'>#&gt; Searching keyword in all R help pages for ''...</div><div class='input'><span class='co'># If there is a srcfile attribute in the comment, also display the file</span>
 <span class='co'># Hint: integrate some help in the header!</span>
 <span class='co'>#library(data)</span>
 <span class='co'>#(iris &lt;- read(data_example("iris.csv")))</span>
@@ -261,8 +261,8 @@ returned invisibly.</p>
 <span class='co'>#urchin &lt;- read("urchin_bio", package = "data")</span>
 <span class='co'>#about("urchin")</span>
 <span class='va'>.</span><span class='op'>?</span><span class='va'>filter</span>
-</div><div class='output co'>#&gt; <span class='message'>Displaying help page...</span></div><div class='input'><span class='va'>.</span><span class='op'>?</span><span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span>
-</div><div class='output co'>#&gt; <span class='message'>Displaying help page...</span></div></pre>
+</div><div class='co'>#&gt; Displaying help page...</div><div class='input'><span class='va'>.</span><span class='op'>?</span><span class='fu'>stats</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span>
+</div><div class='co'>#&gt; Displaying help page...</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

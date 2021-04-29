@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • svMisc</title>
+<title>Create the path to a file in the p-Cloud drive — pcloud • svMisc</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -60,7 +60,18 @@
 <!-- end of addition for svPkgdown -->
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Create the path to a file in the p-Cloud drive — pcloud" />
+<meta property="og:description" content="Similar to file.path() but creates a path to a file located
+somewhere in a p-Cloud drive. p-Cloud is a
+cloud storage system that comes with an application for Windows, MacOS or
+Linux. It creates a virtual drive on the PC where files can be managed as if
+they were local. However, the path to these files differ between OSes. This
+function abstracts out the first part of the path for you. So, you just have
+to provide the folders and files and it constructs a valid absolute path, no
+matter which OS you are using. The pcloud_crypto() function does the same
+for the special Crypo Folder that p-Cloud creates if you subscribe to the
+encryption option." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -92,7 +103,7 @@
   <body data-spy="scroll" data-target="#toc">
     
 
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <!-- preloader start -->
 <div class="preloader">
@@ -177,20 +188,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Create the path to a file in the p-Cloud drive</h1>
+    <small class="dont-index">Source: <a href='https://github.com/SciViews/svMisc/blob/master/R/pcloud.R'><code>R/pcloud.R</code></a></small>
+    <div class="hidden name"><code>pcloud.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="svMisc.html">svMisc - Miscellaneous Functions</a></dt>
-        <dd></dt>
-        <dt><a href="temporary_environment.html">Temporary environment</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Similar to <code><a href='https://rdrr.io/r/base/file.path.html'>file.path()</a></code> but creates a path to a file located
+somewhere in a p-Cloud drive. <a href='https://www.pcloud.com/eu.html'>p-Cloud</a> is a
+cloud storage system that comes with an application for Windows, MacOS or
+Linux. It creates a virtual drive on the PC where files can be managed as if
+they were local. However, the path to these files differ between OSes. This
+function abstracts out the first part of the path for you. So, you just have
+to provide the folders and files and it constructs a valid absolute path, no
+matter which OS you are using. The <code>pcloud_crypto()</code> function does the same
+for the special <code>Crypo Folder</code> that p-Cloud creates if you subscribe to the
+encryption option.</p>
     </div>
+
+    <pre class="usage"><span class='fu'>pcloud</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
+
+<span class='fu'>pcloud_crypto</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>...</th>
+      <td><p>The folder, subfolder and file to form the path, starting to the
+root of the p-Cloud drive, or the <code>Crypto Folder</code>.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A character string with the absolute path to the file or folder.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='system_file.html'>system_file()</a></code>, <code><a href='source_clipboard.html'>source_clipboard()</a></code>, <code><a href='https://rdrr.io/r/base/file.path.html'>file.path()</a></code></p></div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>pcloud</span><span class='op'>(</span><span class='st'>"subfolder"</span>, <span class='st'>"file.txt"</span><span class='op'>)</span>
+</div><div class='co'>#&gt; [1] "~/pCloud Drive/subfolder/file.txt"</div><div class='input'><span class='co'># Only valid with the encryption option and the Crypto Folder is unlocked</span>
+<span class='fu'>pcloud_crypto</span><span class='op'>(</span><span class='st'>"subfolder1"</span>, <span class='st'>"subfolder2"</span>, <span class='st'>"crypted_file.txt"</span><span class='op'>)</span>
+</div><div class='co'>#&gt; [1] "~/pCloud Drive/Crypto Folder/subfolder1/subfolder2/crypted_file.txt"</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

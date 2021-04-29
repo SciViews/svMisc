@@ -165,7 +165,7 @@ complete object browser in a GUI client." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.1.4</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -402,7 +402,7 @@ Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wue
     <pre class="examples"><div class='input'><span class='co'># Create various context menus</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span>
 <span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>object <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "'data.frame':\t150 obs. of  5 variables:"                                                 
+</div><div class='co'>#&gt; [1] "'data.frame':\t150 obs. of  5 variables:"                                                 
 #&gt; [2] " $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ..."                            
 #&gt; [3] " $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ..."                          
 #&gt; [4] " $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ..."                        
@@ -411,7 +411,7 @@ Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wue
 #&gt; [7] "Estimated size: 7.086 bytes kb"                                                           </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>trees</span><span class='op'>)</span>
 <span class='co'># For one object</span>
 <span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           widget            value
+</div><div class='co'>#&gt;           widget            value
 #&gt; help        item             Help
 #&gt; example     item          Example
 #&gt; sep          sep                -
@@ -490,7 +490,7 @@ Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wue
 #&gt; sep.2                               FALSE    FALSE  FALSE        
 #&gt; remove              rm(iris)        FALSE    FALSE  FALSE        </div><div class='input'><span class='co'># For multiple objects</span>
 <span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"iris"</span>, <span class='st'>"trees"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;        widget      value
+</div><div class='co'>#&gt;        widget      value
 #&gt; save     item Save as...
 #&gt; remove   item     Remove
 #&gt;                                                             tip
@@ -500,15 +500,15 @@ Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wue
 #&gt; save   guiSave(iris, trees)        FALSE    FALSE  FALSE        
 #&gt; remove      rm(iris, trees)        FALSE    FALSE  FALSE        </div><div class='input'><span class='co'># For inexistant object (return "")</span>
 <span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>object <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] ""</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] widget   value    tip      code     icon     checked  disabled hidden  
+</div><div class='co'>#&gt; [1] ""</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='co'>#&gt; [1] widget   value    tip      code     icon     checked  disabled hidden  
 #&gt; [9] options 
 #&gt; &lt;0 rows&gt; (or 0-length row.names)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>iris</span>, <span class='va'>trees</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: object 'iris' not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: object 'trees' not found</span></div><div class='input'>
+</div><div class='co'>#&gt; <span class='warning'>Warning: </span>object 'iris' not found</div><div class='co'>#&gt; <span class='warning'>Warning: </span>object 'trees' not found</div><div class='input'>
 <span class='co'># For environments</span>
 <span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "Global environment\n\n          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)\nNcells  914755 48.9    1802520 96.3         NA  1293424 69.1\nVcells 1918819 14.7    8388608 64.0      16384  3906300 29.9"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;        widget     value                                              tip
+</div><div class='co'>#&gt; [1] "Global environment\n\n          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)\nNcells  915237 48.9    1808342 96.6         NA  1284531 68.7\nVcells 1917512 14.7    8388608 64.0      16384  4154663 31.7"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='co'>#&gt;        widget     value                                              tip
 #&gt; load     item   Load...                                   Load R objects
 #&gt; source   item Source...                                    Source R code
 #&gt; import   item Import...                                 Import data in R
@@ -520,13 +520,13 @@ Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wue
 #&gt; import                   guiImport()        FALSE    FALSE  FALSE        
 #&gt; sep                                         FALSE    FALSE  FALSE        
 #&gt; detach            detach(.GlobalEnv)        FALSE     TRUE  FALSE        </div><div class='input'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "SciViews temporary variables environment"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;        widget  value                                              tip
+</div><div class='co'>#&gt; [1] "SciViews temporary variables environment"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='co'>#&gt;        widget  value                                              tip
 #&gt; detach   item Detach Detach an object or package from the search path
 #&gt;                            code icon checked disabled hidden options
 #&gt; detach detach(SciViews:TempEnv)        FALSE     TRUE  FALSE        </div><div class='input'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "Package:       datasets\nVersion:       4.0.5\nPriority:      base\nTitle:         The R Datasets Package\nAuthor:        R Core Team and contributors worldwide\nMaintainer:    R Core Team &lt;R-core@r-project.org&gt;\nDescription:   Base R datasets.\nLicense:       Part of R 4.0.5\nBuilt:         R 4.0.5; ; 2021-04-01 02:35:00 UTC; unix"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;              widget             value
+</div><div class='co'>#&gt; [1] "Package:       datasets\nVersion:       4.0.5\nPriority:      base\nTitle:         The R Datasets Package\nAuthor:        R Core Team and contributors worldwide\nMaintainer:    R Core Team &lt;R-core@r-project.org&gt;\nDescription:   Base R datasets.\nLicense:       Part of R 4.0.5\nBuilt:         R 4.0.5; ; 2021-04-01 02:35:00 UTC; unix"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='co'>#&gt;              widget             value
 #&gt; pkgInfo        item      Package info
 #&gt; sep             sep                 -
 #&gt; detach         item            Detach
@@ -547,8 +547,8 @@ Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wue
 #&gt; detach              
 #&gt; detachUnload        </div><div class='input'><span class='co'># For an environment that does not exist on the search path (return "")</span>
 <span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] ""</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] widget   value    tip      code     icon     checked  disabled hidden  
+</div><div class='co'>#&gt; [1] ""</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='co'>#&gt; [1] widget   value    tip      code     icon     checked  disabled hidden  
 #&gt; [9] options 
 #&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
   </div>

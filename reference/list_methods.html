@@ -170,7 +170,7 @@ plot.lm(), respectively." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.1.4</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -270,9 +270,9 @@ by default)?</p></td>
 
     <p>For <code>list_methods()</code>, if <code>mixed = TRUE</code>, a list with components:</p><ul>
 <li><p><code>S3</code> The S3 methods for the generic function or the class, or
-<code><a href='https://rdrr.io/r/base/character.html'>character(0)</a></code> if none</p></li>
+<code>character(0)</code> if none</p></li>
 <li><p><code>S4</code> The S4 methods for the generic function or the class, or
-<code><a href='https://rdrr.io/r/base/character.html'>character(0)</a></code> if none.</p></li>
+<code>character(0)</code> if none.</p></li>
 </ul>
 
 <p>Otherwise, a character vector with the requested methods.</p>
@@ -291,8 +291,8 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Generic functions</span>
 <span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"t.test"</span><span class='op'>)</span>               <span class='co'># S3</span>
-</div><div class='output co'>#&gt; [1] "x=\"default\"" "x=\"formula\""</div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"show"</span>, mixed <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>  <span class='co'># S4</span>
-</div><div class='output co'>#&gt; $S3
+</div><div class='co'>#&gt; [1] "x=\"default\"" "x=\"formula\""</div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"show"</span>, mixed <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>  <span class='co'># S4</span>
+</div><div class='co'>#&gt; $S3
 #&gt; character(0)
 #&gt; 
 #&gt; $S4
@@ -318,19 +318,19 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
 #&gt; [20] "object=\"sourceEnvironment\""        
 #&gt; [21] "object=\"traceable\""                
 #&gt; </div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span> <span class='co'># None, not a generic function!</span>
-</div><div class='output co'>#&gt; character(0)</div><div class='input'>
+</div><div class='co'>#&gt; character(0)</div><div class='input'>
 <span class='co'># Classes</span>
 <span class='co'># Only the following methods are considered</span>
 <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"gui.methods"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "formula" "head"    "plot"    "summary" "tail"   </div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"lm"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "anova"     "confint"   "formula"   "logLik"    "plot"      "predict"  
+</div><div class='co'>#&gt; NULL</div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span>
+</div><div class='co'>#&gt; [1] "formula" "head"    "plot"    "summary" "tail"   </div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"lm"</span><span class='op'>)</span>
+</div><div class='co'>#&gt; [1] "anova"     "confint"   "formula"   "logLik"    "plot"      "predict"  
 #&gt; [7] "residuals" "summary"   "vcov"     </div><div class='input'>
 <span class='co'># List method types</span>
 <span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span><span class='op'>)</span>  <span class='co'># All default view types currently defined</span>
-</div><div class='output co'>#&gt; character(0)</div><div class='input'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; character(0)</div><div class='input'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span>, <span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># None, except if you defined custom views!</span>
-</div><div class='output co'>#&gt; character(0)</div></pre>
+</div><div class='co'>#&gt; character(0)</div><div class='input'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span><span class='op'>)</span>
+</div><div class='co'>#&gt; character(0)</div><div class='input'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span>, <span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># None, except if you defined custom views!</span>
+</div><div class='co'>#&gt; character(0)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

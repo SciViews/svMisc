@@ -169,7 +169,7 @@ list can be automatically used by Install()." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.1.4</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -279,9 +279,9 @@ the provided vector.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># This should work...</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='fu'>package</span><span class='op'>(</span><span class='st'>'tools'</span>, <span class='st'>'methods'</span>, stop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='op'>(</span><span class='st'>"Fine!"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Fine!</span></div><div class='input'><span class='co'># ... but this not (note that there are no details here!)</span>
+</div><div class='co'>#&gt; Fine!</div><div class='input'><span class='co'># ... but this not (note that there are no details here!)</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='fu'>package</span><span class='op'>(</span><span class='st'>'tools'</span>, <span class='st'>'badname'</span>, stop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='op'>(</span><span class='st'>"Not fine!"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Not fine!</span></div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+</div><div class='co'>#&gt; Not fine!</div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Get an error</span>
 <span class='fu'>package</span><span class='op'>(</span><span class='st'>'badname'</span><span class='op'>)</span>
 <span class='op'>}</span>
