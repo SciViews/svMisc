@@ -23,6 +23,7 @@ Suggests:
     covr,
     knitr,
     markdown,
+    rmarkdown,
     testthat,
     spelling
 License: GPL-2
