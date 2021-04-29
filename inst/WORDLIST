@@ -9,6 +9,7 @@ BBEdit
 calltip
 camelCase
 CLI
+CMD
 de
 desc
 devtools
@@ -54,6 +55,7 @@ sddout
 stderr
 STX
 subdirs
+subfolder
 subpath
 subpaths
 subsettable

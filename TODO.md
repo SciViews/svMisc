@@ -1,5 +1,7 @@
 # svMisc To Do list
 
+- Same as `pCloud()`, but for OneDrive, Google Drive & Dropbox.
+
 - For `install()`, allow to specify the list of packages in `...`, but how to specify installation arguments then? Also, allows to specify from where to install the packages (github, etc. should be also accepted).
 
 - A function derived from `import::from()`, but that populates `.packages_to_install`; idem for `::`, `:::`, `library()` and `require()`.

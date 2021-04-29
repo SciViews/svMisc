@@ -1,3 +1,7 @@
+# svMisc 1.2.0
+
+- Two new functions `pcloud()` and `pcloud_crypto()` ease the management of files that are located in a p-Cloud drive (p-Cloud is a cloud storage system).
+
 # svMisc 1.1.4
 
 - Minor changes in the documentation to avoid notes in latest devel R CMD check.
