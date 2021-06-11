@@ -3,12 +3,15 @@
 \name{capture_all}
 \alias{capture_all}
 \alias{captureAll}
+\alias{warnings2}
 \title{Run an R expression and capture output and messages in a similar way as it
 would be done at the command line}
 \usage{
 capture_all(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 
 captureAll(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
+
+warnings2(...)
 }
 \arguments{
 \item{expr}{A  valid R expression to evaluate (names and calls are also
@@ -28,6 +31,8 @@ is returned as a character string by the function.}
 
 \item{markStdErr}{If \code{TRUE}, stderr is separated from sddout by STX/ETX
 characters.}
+
+\item{...}{Items passed directly to \code{warnings2()}.}
 }
 \value{
 Returns a string with the result of the evaluation done in the user
@@ -52,6 +57,9 @@ application... the function only returns \code{NA} instead of a character string
 Starting from version 1.1.3, \code{.Traceback} is not set any more in the base
 environment, but it is \code{.Traceback_capture_all} that is set in \code{temp_env()}.
 You can get its value with \code{get_temp(".Traceback_capture_all")}.
+Also, if there are many warnings, those are now assigned in \code{temp_env()}
+instead of \code{baseenv()}. Consequently, they cannot be viewer with \code{\link[=warnings]{warnings()}}
+but use \code{warnings2()} in this case.
 }
 \examples{
 writeLines(capture_all(expression(1 + 1), split = FALSE))

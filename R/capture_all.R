@@ -33,6 +33,9 @@
 #' Starting from version 1.1.3, `.Traceback` is not set any more in the base
 #' environment, but it is `.Traceback_capture_all` that is set in `temp_env()`.
 #' You can get its value with `get_temp(".Traceback_capture_all")`.
+#' Also, if there are many warnings, those are now assigned in `temp_env()`
+#' instead of `baseenv()`. Consequently, they cannot be viewer with [warnings()]
+#' but use `warnings2()` in this case.
 #' @export
 #' @seealso [parse()], [expression()], [capture.output()]
 #' @keywords IO
@@ -243,7 +246,8 @@ markStdErr = FALSE) {
 
   if (get_warn_level() == 0L) {
     n_warn <- length(last.warning)
-    assign("last.warning", last.warning, envir = baseenv())
+    # was: assign("last.warning", last.warning, envir = baseenv())
+    assign_temp("last.warning", last.warning)
 
     if (n_warn > 0L) put_mark(FALSE, 6)
     if (n_warn <= 10L) {
@@ -253,14 +257,14 @@ markStdErr = FALSE) {
       #cat(gettextf("There were %d warnings (use warnings() to see them)\n",
       #  n_warn, domain = "R"))
       msg <- ngettext(1,
-        "There were %d warnings (use warnings() to see them)\n",
-        "There were %d warnings (use warnings() to see them)\n",
+        "There were %d warnings (use warnings2() to see them)\n",
+        "There were %d warnings (use warnings2() to see them)\n",
         domain = "R")
       cat(sprintf(msg, n_warn))
     } else {
       cat(ngettext(1,
-        "There were 50 or more warnings (use warnings() to see the first 50)\n",
-        "There were 50 or more warnings (use warnings() to see the first 50)\n",
+        "There were 50 or more warnings (use warnings2() to see the first 50)\n",
+        "There were 50 or more warnings (use warnings2() to see the first 50)\n",
         domain = "R"))
     }
   }
@@ -286,3 +290,11 @@ markStdErr = FALSE) {
 #' @export
 #' @rdname capture_all
 captureAll <- capture_all
+
+#' @export
+#' @rdname capture_all
+#' @param ... Items passed directly to `warnings2()`.
+warnings2 <- function(...) {
+  if (length(last.warning <- get_temp("last.warning")))
+    structure(last.warning, dots = list(...), class = "warnings")
+}

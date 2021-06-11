@@ -1,3 +1,7 @@
+# svMisc 1.2.1
+
+- No more assignation (`last.warning`) into base environment: not permitted any more in R >= 4.1.0.
+
 # svMisc 1.2.0
 
 - Two new functions `pcloud()` and `pcloud_crypto()` ease the management of files that are located in a p-Cloud drive (p-Cloud is a cloud storage system).
