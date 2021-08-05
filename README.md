@@ -11,35 +11,35 @@
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->
 
-'svMisc' provides a series of functions that are used by the other SciViews packages. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.
+{svMisc} provides a series of functions that are used by the other SciViews packages. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.
 
 ## Installation
 
-You can install the released version of 'svMisc' from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of {svMisc} from [CRAN](https://CRAN.R-project.org) with:
 
 ```r
 install.packages("svMisc")
 ```
 
-You can also install the latest developement version. Make sure you have the 'devtools' R package installed:
+You can also install the latest developement version. Make sure you have the {remotes} R package installed:
 
 ```r
-install.packages("devtools")
+install.packages("remotes")
 ```
 
-Use `install_github()` to install the 'svMisc' package from Github (source from **master** branch will be recompiled on your machine):
+Use `install_github()` to install the {svMisc} package from Github (source from **master** branch will be recompiled on your machine):
 
 ```r
-devtools::install_github("SciViews/svMisc")
+remotes::install_github("SciViews/svMisc")
 ```
 
-R should install all required dependencies automatically, and then it should compile and install 'svMisc'.
+R should install all required dependencies automatically, and then it should compile and install {svMisc}.
 
-Latest devel version of 'svMisc' (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
+Latest devel version of {svMisc} (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
 
-## Further explore 'svMisc'
+## Further explore {svMisc}
 
-You can get further help about this package this way: Make the 'svMisc' package available in your R session:
+You can get further help about this package this way: Make the {svMisc} package available in your R session:
 
 ```r
 library("svMisc")
