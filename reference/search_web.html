@@ -164,7 +164,7 @@
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -188,9 +188,9 @@
     <p>Retrieve web documents, or search with Google for <code>what</code> string.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>search_web</span><span class='op'>(</span><span class='va'>what</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"R"</span>, <span class='st'>"google"</span><span class='op'>)</span>, browse <span class='op'>=</span> <span class='cn'>TRUE</span>, msg <span class='op'>=</span> <span class='va'>browse</span>, <span class='va'>...</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>search_web</span><span class='op'>(</span><span class='va'>what</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"R"</span>, <span class='st'>"google"</span><span class='op'>)</span>, browse <span class='op'>=</span> <span class='cn'>TRUE</span>, msg <span class='op'>=</span> <span class='va'>browse</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>helpSearchWeb</span><span class='op'>(</span><span class='va'>what</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"R"</span>, <span class='st'>"google"</span><span class='op'>)</span>, browse <span class='op'>=</span> <span class='cn'>TRUE</span>, msg <span class='op'>=</span> <span class='va'>browse</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>helpSearchWeb</span><span class='op'>(</span><span class='va'>what</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"R"</span>, <span class='st'>"google"</span><span class='op'>)</span>, browse <span class='op'>=</span> <span class='cn'>TRUE</span>, msg <span class='op'>=</span> <span class='va'>browse</span>, <span class='va'>...</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -236,11 +236,11 @@ opening the Web browser with the search result, when <code>browse = TRUE</code>)
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/utils/RSiteSearch.html'>RSiteSearch()</a></code>, <code><a href='https://rdrr.io/r/utils/help.search.html'>help.search()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>search_web</span><span class='op'>(</span><span class='st'>"volatility"</span><span class='op'>)</span>                    <span class='co'># R site search, by default</span>
-<span class='fu'>search_web</span><span class='op'>(</span><span class='st'>"volatility"</span>, type <span class='op'>=</span> <span class='st'>"google"</span><span class='op'>)</span>   <span class='co'># Google search</span>
-<span class='op'>}</span>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='fu'>search_web</span><span class='op'>(</span><span class='st'>"volatility"</span><span class='op'>)</span>                    <span class='co'># R site search, by default</span></span>
+<span class='r-in'><span class='fu'>search_web</span><span class='op'>(</span><span class='st'>"volatility"</span>, type <span class='op'>=</span> <span class='st'>"google"</span><span class='op'>)</span>   <span class='co'># Google search</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

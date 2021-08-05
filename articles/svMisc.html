@@ -100,7 +100,7 @@
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -119,7 +119,7 @@
       <h1 data-toc-skip>svMisc - Miscellaneous Functions</h1>
                         <h4 data-toc-skip class="author">Philippe Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 data-toc-skip class="date">2021-04-29</h4>
+            <h4 data-toc-skip class="date">2021-08-05</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/vignettes/svMisc.Rmd" class="external-link"><code>vignettes/svMisc.Rmd</code></a></small>
       <div class="hidden name"><code>svMisc.Rmd</code></div>
@@ -178,17 +178,21 @@
 <span class="fu"><a href="../reference/batch.html">batch</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>, <span class="va">fake_process</span><span class="op">)</span>
 <span class="co">#&gt; Running the batch process with fake_process...</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Progress:  1 on 10  Progress:  2 on 10</span>
-<span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file2</span>
+<span class="co">#&gt; Progress:  1 on 10</span>
+<span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Progress:  3 on 10</span>
+<span class="co">#&gt; Progress:  2 on 10  Progress:  3 on 10</span>
 <span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file3</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Progress:  4 on 10  Progress:  5 on 10</span>
-<span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file5</span>
+<span class="co">#&gt; Progress:  4 on 10  Progress:  5 on 10  Progress:  6 on 10  Progress:  7 on 10</span>
+<span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file7</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Progress:  6 on 10  Progress:  7 on 10  Progress:  8 on 10  Progress:  9 on 10  Progress: 10 on 10                      </span>
-<span class="co">#&gt; Processed successfully 7 items on 10 (see .last.batch)</span></code></pre></div>
+<span class="co">#&gt; Progress:  8 on 10</span>
+<span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file8</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Progress:  9 on 10  Progress: 10 on 10</span>
+<span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file10</span>
+<span class="co">#&gt; Processed successfully 5 items on 10 (see .last.batch)</span></code></pre></div>
 <p>In case an error occurred, the information is recorded i, <code>.last.batch</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">.last.batch</span>
@@ -197,7 +201,7 @@
 <span class="co">#&gt;  [1] "file1"  "file2"  "file3"  "file4"  "file5"  "file6"  "file7"  "file8" </span>
 <span class="co">#&gt;  [9] "file9"  "file10"</span>
 <span class="co">#&gt; attr(,"ok")</span>
-<span class="co">#&gt;  [1]  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</span></code></pre></div>
+<span class="co">#&gt;  [1] FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE</span></code></pre></div>
 <p>The <code>items</code> and <code>ok</code> attributes are also available from that object for further inspection and action.</p>
 <p>If you run <code><a href="../reference/batch.html">batch()</a></code> in R, you noted also the <code><a href="../reference/progress.html">progress()</a></code>ion message that appeared. Indeed the <code><a href="../reference/progress.html">progress()</a></code> function allows to display such a message, either as a text at the R console, or in a dialog box. There are many different forms, see the man page <code><a href="../reference/progress.html">?progress</a></code>. for instance, here is a progress bar in percent, stopped at 75% () you need to call <code><a href="../reference/progress.html">progress()</a></code> with a value higher than <code>max.value =</code> to dismiss it):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -303,12 +307,12 @@
 <span class="co">#&gt;  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,                                                                                  </span>
 <span class="co">#&gt;  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := list("Data_" := c(1,                                                               </span>
 <span class="co">#&gt;  [6]     2, 1), "levels" := c("a", "b"), "class" := "factor"),                                                                              </span>
-<span class="co">#&gt;  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-0.64830673754152,                                            </span>
-<span class="co">#&gt;  [8]     -1.06464045864836, 0.88712329845206, -0.06458857560009), "dim" := c(2,                                                             </span>
-<span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(-0.63998627127236,                                                                  </span>
-<span class="co">#&gt; [10]     -0.53759846050004, 0.65164098640295), "fact" := list("Data_" := c(2,                                                               </span>
+<span class="co">#&gt;  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(0.22786947412604,                                             </span>
+<span class="co">#&gt;  [8]     -2.26407650683354, -0.33556161165691, 1.34484135540337), "dim" := c(2,                                                             </span>
+<span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(1.16195856251138,                                                                   </span>
+<span class="co">#&gt; [10]     2.12711501211228, 2.30340469907391), "fact" := list("Data_" := c(2,                                                                </span>
 <span class="co">#&gt; [11]     1, 2), "levels" := c("a", "b"), "class" := "factor")),                                                                             </span>
-<span class="co">#&gt; [12]     "i" := list("Data_" := 18746., "class" := "Date"),                                                                                 </span>
+<span class="co">#&gt; [12]     "i" := list("Data_" := 18844., "class" := "Date"),                                                                                 </span>
 <span class="co">#&gt; [13]     "j" := list("" := seq(1, 5), "y" := "another item")), "comment" := "My comment", "anAttrib" := seq(1, 10), "anotherAttrib" := list(</span>
 <span class="co">#&gt; [14]     "" := TRUE, "y" := seq(1, 4)))</span>
 <span class="co"># Get back an R object from Rjson</span>
@@ -335,16 +339,16 @@
 <span class="co">#&gt; [1] "this is a \"string\" with quote"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $g</span>
-<span class="co">#&gt;            [,1]        [,2]</span>
-<span class="co">#&gt; [1,] -0.6483067  0.88712330</span>
-<span class="co">#&gt; [2,] -1.0646405 -0.06458858</span>
+<span class="co">#&gt;            [,1]       [,2]</span>
+<span class="co">#&gt; [1,]  0.2278695 -0.3355616</span>
+<span class="co">#&gt; [2,] -2.2640765  1.3448414</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $`h&amp;$@`</span>
 <span class="co">#&gt; $`h&amp;$@`$x</span>
 <span class="co">#&gt; [1] 1 2 3</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $`h&amp;$@`$y</span>
-<span class="co">#&gt; [1] -0.6399863 -0.5375985  0.6516410</span>
+<span class="co">#&gt; [1] 1.161959 2.127115 2.303405</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $`h&amp;$@`$fact</span>
 <span class="co">#&gt; [1] b a b</span>
@@ -352,7 +356,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $i</span>
-<span class="co">#&gt; [1] "2021-04-29"</span>
+<span class="co">#&gt; [1] "2021-08-05"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $j</span>
 <span class="co">#&gt; $j[[1]]</span>
@@ -383,7 +387,7 @@
 </ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/system_file.html">system_dir</a></span><span class="op">(</span><span class="st">"temp"</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpSbqrZu"</span></code></pre></div>
+<span class="co">#&gt; [1] "/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//Rtmp1c9UjF"</span></code></pre></div>
 <ul>
 <li>Get the system temporary directory</li>
 </ul>
@@ -482,7 +486,7 @@
 </ul>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/temp_var.html">temp_var</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span>
-<span class="co">#&gt; [1] "my_var22499"</span></code></pre></div>
+<span class="co">#&gt; [1] "my_var79741"</span></code></pre></div>
 <ul>
 <li>Manage a temporary environment attached to the search path using <code><a href="../reference/temp_env.html">TempEnv()</a></code> and the <code>temp_XXX()</code> functions. The <strong>temporary_environment</strong> vignette gives more details on this series of functions.</li>
 </ul>
@@ -505,7 +509,7 @@
 <span class="co">#&gt; [1] 1 2 3 4 5</span>
 <span class="co"># List variables in the temporary environment</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span>envir <span class="op">=</span> <span class="fu"><a href="../reference/temp_env.html">TempEnv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1] "my_var"</span>
+<span class="co">#&gt; [1] "last.warning" "my_var"</span>
 <span class="co"># Delete the variable</span>
 <span class="fu"><a href="../reference/temp_env.html">rm_temp</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></code></pre></div>
 </div>

@@ -165,7 +165,7 @@ fragment." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -190,7 +190,7 @@ fragment." />
 fragment.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>completion</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>completion</span><span class='op'>(</span>
   <span class='va'>code</span>,
   pos <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>code</span><span class='op'>)</span>,
   min.length <span class='op'>=</span> <span class='fl'>2</span>,
@@ -205,7 +205,7 @@ fragment.</p>
   sep <span class='op'>=</span> <span class='st'>"\n"</span>,
   field.sep <span class='op'>=</span> <span class='st'>"\t"</span>,
   name.or.addition <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"name"</span>, <span class='st'>"addition"</span>, <span class='st'>"both"</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -329,278 +329,287 @@ will give numeric codes that can be used with "scintilla.autoCShow" function
 Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wuerzburg.de</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># A data frame</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span>
-<span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item &lt;- iris$"</span><span class='op'>)</span>
-</div><div class='co'>#&gt;          completion     type
-#&gt; 3 iris$Petal.Length variable
-#&gt; 4  iris$Petal.Width variable
-#&gt; 1 iris$Sepal.Length variable
-#&gt; 2  iris$Sepal.Width variable
-#&gt; 5      iris$Species variable</div><div class='input'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item &lt;- iris[["</span><span class='op'>)</span>
-</div><div class='co'>#&gt;             completion     type
-#&gt; 3 iris[["Petal.Length" variable
-#&gt; 4  iris[["Petal.Width" variable
-#&gt; 1 iris[["Sepal.Length" variable
-#&gt; 2  iris[["Sepal.Width" variable
-#&gt; 5      iris[["Species" variable</div><div class='input'>
-<span class='co'># An S4 object</span>
-<span class='kw'>setClass</span><span class='op'>(</span><span class='st'>"track"</span>, <span class='fu'>representation</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"numeric"</span>, y <span class='op'>=</span> <span class='st'>"numeric"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>t1</span> <span class='op'>&lt;-</span> <span class='fu'>new</span><span class='op'>(</span><span class='st'>"track"</span>, x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span>, y <span class='op'>=</span> <span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span><span class='op'>)</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span>
-<span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item2 &lt;- t1@"</span><span class='op'>)</span>
-</div><div class='co'>#&gt;   completion     type
-#&gt; 1        t1@ variable</div><div class='input'>
-<span class='co'># A namespace</span>
-<span class='fu'>completion</span><span class='op'>(</span><span class='st'>"utils::"</span>, description <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='co'>#&gt;                                       completion     type desc context
-#&gt; 65                                      utils::? variable        utils
-#&gt; 26                           utils::.DollarNames variable        utils
-#&gt; 131                               utils::.romans variable        utils
-#&gt; 55                      utils::.RtangleCodeLabel variable        utils
-#&gt; 129                            utils::.S3methods variable        utils
-#&gt; 190                                 utils::adist variable        utils
-#&gt; 28                                  utils::alarm variable        utils
-#&gt; 214                               utils::apropos variable        utils
-#&gt; 48                               utils::aregexec variable        utils
-#&gt; 12                           utils::argsAnywhere variable        utils
-#&gt; 219                             utils::as.person variable        utils
-#&gt; 110                         utils::as.personList variable        utils
-#&gt; 67                          utils::as.relistable variable        utils
-#&gt; 215                              utils::as.roman variable        utils
-#&gt; 108                           utils::asDateBuilt variable        utils
-#&gt; 145                              utils::askYesNo variable        utils
-#&gt; 205                                utils::aspell variable        utils
-#&gt; 212                utils::aspell_package_C_files variable        utils
-#&gt; 117                utils::aspell_package_R_files variable        utils
-#&gt; 1                 utils::aspell_package_Rd_files variable        utils
-#&gt; 21               utils::aspell_package_vignettes variable        utils
-#&gt; 183 utils::aspell_write_personal_dictionary_file variable        utils
-#&gt; 201                   utils::assignInMyNamespace variable        utils
-#&gt; 24                      utils::assignInNamespace variable        utils
-#&gt; 72                     utils::available.packages variable        utils
-#&gt; 156                              utils::bibentry variable        utils
-#&gt; 83                              utils::browseEnv variable        utils
-#&gt; 203                             utils::browseURL variable        utils
-#&gt; 100                       utils::browseVignettes variable        utils
-#&gt; 95                             utils::bug.report variable        utils
-#&gt; 94                         utils::capture.output variable        utils
-#&gt; 80                           utils::changedFiles variable        utils
-#&gt; 30                              utils::checkCRAN variable        utils
-#&gt; 199                      utils::chooseBioCmirror variable        utils
-#&gt; 138                      utils::chooseCRANmirror variable        utils
-#&gt; 175                              utils::citation variable        utils
-#&gt; 128                                  utils::cite variable        utils
-#&gt; 73                             utils::citeNatbib variable        utils
-#&gt; 140                              utils::citEntry variable        utils
-#&gt; 167                             utils::citFooter variable        utils
-#&gt; 52                              utils::citHeader variable        utils
-#&gt; 142                          utils::close.socket variable        utils
-#&gt; 146                                 utils::combn variable        utils
-#&gt; 109                        utils::compareVersion variable        utils
-#&gt; 101                           utils::contrib.url variable        utils
-#&gt; 36                           utils::count.fields variable        utils
-#&gt; 61                          utils::CRAN.packages variable        utils
-#&gt; 37                            utils::create.post variable        utils
-#&gt; 192                                  utils::data variable        utils
-#&gt; 171                            utils::data.entry variable        utils
-#&gt; 174                             utils::dataentry variable        utils
-#&gt; 119                                    utils::de variable        utils
-#&gt; 14                               utils::de.ncols variable        utils
-#&gt; 50                             utils::de.restore variable        utils
-#&gt; 47                               utils::de.setup variable        utils
-#&gt; 170                             utils::debugcall variable        utils
-#&gt; 137                              utils::debugger variable        utils
-#&gt; 115                                  utils::demo variable        utils
-#&gt; 213                         utils::download.file variable        utils
-#&gt; 136                     utils::download.packages variable        utils
-#&gt; 33                            utils::dump.frames variable        utils
-#&gt; 116                                  utils::edit variable        utils
-#&gt; 176                                 utils::emacs variable        utils
-#&gt; 191                               utils::example variable        utils
-#&gt; 162                             utils::file_test variable        utils
-#&gt; 51                              utils::file.edit variable        utils
-#&gt; 97                           utils::fileSnapshot variable        utils
-#&gt; 187                                  utils::find variable        utils
-#&gt; 158                           utils::findLineNum variable        utils
-#&gt; 53                                    utils::fix variable        utils
-#&gt; 189                        utils::fixInNamespace variable        utils
-#&gt; 106                         utils::flush.console variable        utils
-#&gt; 184                              utils::formatOL variable        utils
-#&gt; 8                                utils::formatUL variable        utils
-#&gt; 82                            utils::getAnywhere variable        utils
-#&gt; 132                        utils::getCRANmirrors variable        utils
-#&gt; 111                      utils::getFromNamespace variable        utils
-#&gt; 152                          utils::getParseData variable        utils
-#&gt; 68                           utils::getParseText variable        utils
-#&gt; 144                           utils::getS3method variable        utils
-#&gt; 208                       utils::getSrcDirectory variable        utils
-#&gt; 163                        utils::getSrcFilename variable        utils
-#&gt; 124                        utils::getSrcLocation variable        utils
-#&gt; 92                              utils::getSrcref variable        utils
-#&gt; 78                      utils::getTxtProgressBar variable        utils
-#&gt; 149                               utils::glob2rx variable        utils
-#&gt; 85                        utils::globalVariables variable        utils
-#&gt; 23                                utils::hasName variable        utils
-#&gt; 177                                  utils::head variable        utils
-#&gt; 77                            utils::head.matrix variable        utils
-#&gt; 164                                  utils::help variable        utils
-#&gt; 127                          utils::help.request variable        utils
-#&gt; 87                            utils::help.search variable        utils
-#&gt; 45                             utils::help.start variable        utils
-#&gt; 198                               utils::history variable        utils
-#&gt; 202                            utils::hsearch_db variable        utils
-#&gt; 123                   utils::hsearch_db_concepts variable        utils
-#&gt; 98                    utils::hsearch_db_keywords variable        utils
-#&gt; 41                       utils::install.packages variable        utils
-#&gt; 166                    utils::installed.packages variable        utils
-#&gt; 25                          utils::is.relistable variable        utils
-#&gt; 118                            utils::isS3method variable        utils
-#&gt; 69                         utils::isS3stdGeneric variable        utils
-#&gt; 63                          utils::limitedLabels variable        utils
-#&gt; 147                           utils::loadhistory variable        utils
-#&gt; 135                       utils::localeToCharset variable        utils
-#&gt; 134                                utils::ls.str variable        utils
-#&gt; 125                               utils::lsf.str variable        utils
-#&gt; 71                             utils::maintainer variable        utils
-#&gt; 180                    utils::make.packages.html variable        utils
-#&gt; 207                           utils::make.socket variable        utils
-#&gt; 54              utils::makeRweaveLatexCodeRunner variable        utils
-#&gt; 186                          utils::memory.limit variable        utils
-#&gt; 194                           utils::memory.size variable        utils
-#&gt; 195                                  utils::menu variable        utils
-#&gt; 218                               utils::methods variable        utils
-#&gt; 169                           utils::mirror2html variable        utils
-#&gt; 70                             utils::modifyList variable        utils
-#&gt; 16                           utils::new.packages variable        utils
-#&gt; 42                                   utils::news variable        utils
-#&gt; 59                                    utils::nsl variable        utils
-#&gt; 84                            utils::object.size variable        utils
-#&gt; 150                          utils::old.packages variable        utils
-#&gt; 46                              utils::osVersion variable        utils
-#&gt; 88                       utils::package.skeleton variable        utils
-#&gt; 120                           utils::packageDate variable        utils
-#&gt; 104                    utils::packageDescription variable        utils
-#&gt; 155                           utils::packageName variable        utils
-#&gt; 113                         utils::packageStatus variable        utils
-#&gt; 86                         utils::packageVersion variable        utils
-#&gt; 182                                  utils::page variable        utils
-#&gt; 39                                 utils::person variable        utils
-#&gt; 18                             utils::personList variable        utils
-#&gt; 188                                  utils::pico variable        utils
-#&gt; 66                         utils::process.events variable        utils
-#&gt; 9                                  utils::prompt variable        utils
-#&gt; 161                            utils::promptData variable        utils
-#&gt; 178                          utils::promptImport variable        utils
-#&gt; 40                          utils::promptPackage variable        utils
-#&gt; 49                           utils::rc.getOption variable        utils
-#&gt; 74                             utils::rc.options variable        utils
-#&gt; 96                            utils::rc.settings variable        utils
-#&gt; 5                               utils::rc.status variable        utils
-#&gt; 196                              utils::read.csv variable        utils
-#&gt; 114                             utils::read.csv2 variable        utils
-#&gt; 13                             utils::read.delim variable        utils
-#&gt; 20                            utils::read.delim2 variable        utils
-#&gt; 122                              utils::read.DIF variable        utils
-#&gt; 173                          utils::read.fortran variable        utils
-#&gt; 60                               utils::read.fwf variable        utils
-#&gt; 17                            utils::read.socket variable        utils
-#&gt; 3                              utils::read.table variable        utils
-#&gt; 64                       utils::readCitationFile variable        utils
-#&gt; 112                               utils::recover variable        utils
-#&gt; 133                                utils::relist variable        utils
-#&gt; 151                       utils::remove.packages variable        utils
-#&gt; 179                          utils::removeSource variable        utils
-#&gt; 34                                  utils::Rprof variable        utils
-#&gt; 107                              utils::Rprofmem variable        utils
-#&gt; 11                               utils::RShowDoc variable        utils
-#&gt; 121                           utils::RSiteSearch variable        utils
-#&gt; 99                                  utils::rtags variable        utils
-#&gt; 75                                utils::Rtangle variable        utils
-#&gt; 157                          utils::RtangleSetup variable        utils
-#&gt; 159                       utils::RtangleWritedoc variable        utils
-#&gt; 181                     utils::RweaveChunkPrefix variable        utils
-#&gt; 62                      utils::RweaveEvalWithOpt variable        utils
-#&gt; 103                           utils::RweaveLatex variable        utils
-#&gt; 81                      utils::RweaveLatexFinish variable        utils
-#&gt; 7                      utils::RweaveLatexOptions variable        utils
-#&gt; 29                       utils::RweaveLatexSetup variable        utils
-#&gt; 185                   utils::RweaveLatexWritedoc variable        utils
-#&gt; 141                         utils::RweaveTryStop variable        utils
-#&gt; 139                           utils::savehistory variable        utils
-#&gt; 130                           utils::select.list variable        utils
-#&gt; 35                            utils::sessionInfo variable        utils
-#&gt; 76                          utils::setBreakpoint variable        utils
-#&gt; 31                        utils::setRepositories variable        utils
-#&gt; 90                      utils::setTxtProgressBar variable        utils
-#&gt; 93                                  utils::stack variable        utils
-#&gt; 211                               utils::Stangle variable        utils
-#&gt; 172                                   utils::str variable        utils
-#&gt; 217                            utils::strcapture variable        utils
-#&gt; 102                            utils::strOptions variable        utils
-#&gt; 89                           utils::summaryRprof variable        utils
-#&gt; 209                  utils::suppressForeignCheck variable        utils
-#&gt; 58                                 utils::Sweave variable        utils
-#&gt; 22                            utils::SweaveHooks variable        utils
-#&gt; 154                     utils::SweaveSyntaxLatex variable        utils
-#&gt; 105                     utils::SweaveSyntaxNoweb variable        utils
-#&gt; 15                         utils::SweaveSyntConv variable        utils
-#&gt; 79                                   utils::tail variable        utils
-#&gt; 38                            utils::tail.matrix variable        utils
-#&gt; 126                                   utils::tar variable        utils
-#&gt; 91                              utils::timestamp variable        utils
-#&gt; 27                               utils::toBibtex variable        utils
-#&gt; 165                               utils::toLatex variable        utils
-#&gt; 160                        utils::txtProgressBar variable        utils
-#&gt; 44                           utils::type.convert variable        utils
-#&gt; 210                           utils::undebugcall variable        utils
-#&gt; 168                               utils::unstack variable        utils
-#&gt; 204                                 utils::untar variable        utils
-#&gt; 57                                  utils::unzip variable        utils
-#&gt; 148                       utils::update.packages variable        utils
-#&gt; 10                                utils::upgrade variable        utils
-#&gt; 197                              utils::url.show variable        utils
-#&gt; 4                               utils::URLdecode variable        utils
-#&gt; 43                              utils::URLencode variable        utils
-#&gt; 2                                      utils::vi variable        utils
-#&gt; 200                                  utils::View variable        utils
-#&gt; 143                              utils::vignette variable        utils
-#&gt; 32                            utils::warnErrList variable        utils
-#&gt; 6                               utils::write.csv variable        utils
-#&gt; 193                            utils::write.csv2 variable        utils
-#&gt; 56                           utils::write.socket variable        utils
-#&gt; 19                            utils::write.table variable        utils
-#&gt; 153                                 utils::xedit variable        utils
-#&gt; 216                                utils::xemacs variable        utils
-#&gt; 206                                   utils::zip variable        utils</div><div class='input'>
-<span class='co'># A partial identifier</span>
-<span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item3 &lt;- va"</span>, description <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='co'>#&gt;       completion     type                                            desc
-#&gt; 1       validEnc function  Check if a Character Vector is Validly Encoded
-#&gt; 2    validObject function                  Test the Validity of an Object
-#&gt; 3 validSlotNames function        Utilities for Managing Class Definitions
-#&gt; 4      validUTF8 function  Check if a Character Vector is Validly Encoded
-#&gt; 5         vapply function          Apply a Function over a List or Vector
-#&gt; 6            var function Correlation, Variance and Covariance (Matrices)
-#&gt; 7       var.test function                 F Test to Compare Two Variances
-#&gt; 8 variable.names function        Case and Variable Names of Fitted Models
-#&gt; 9        varimax function            Rotation Methods for Factor Analysis
-#&gt;   context
-#&gt; 1    base
-#&gt; 2 methods
-#&gt; 3 methods
-#&gt; 4    base
-#&gt; 5    base
-#&gt; 6   stats
-#&gt; 7   stats
-#&gt; 8   stats
-#&gt; 9   stats</div><div class='input'>
-<span class='co'># Otherwise, a list with the content of .GlobalEnv</span>
-<span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item4 &lt;- "</span><span class='op'>)</span>
-</div><div class='co'>#&gt;   completion     type
-#&gt; 1       iris variable</div><div class='input'>
-<span class='co'># TODO: directory and filename completion!</span>
-<span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>iris</span>, <span class='va'>t1</span><span class='op'>)</span>
-</div><div class='co'>#&gt; <span class='warning'>Warning: </span>object 'iris' not found</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># A data frame</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item &lt;- iris$"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>          completion     type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 iris$Petal.Length variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  iris$Petal.Width variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 iris$Sepal.Length variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  iris$Sepal.Width variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5      iris$Species variable</span>
+<span class='r-in'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item &lt;- iris[["</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             completion     type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 iris[["Petal.Length" variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  iris[["Petal.Width" variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 iris[["Sepal.Length" variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  iris[["Sepal.Width" variable</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5      iris[["Species" variable</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># An S4 object</span></span>
+<span class='r-in'><span class='kw'>setClass</span><span class='op'>(</span><span class='st'>"track"</span>, <span class='fu'>representation</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"numeric"</span>, y <span class='op'>=</span> <span class='st'>"numeric"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>t1</span> <span class='op'>&lt;-</span> <span class='fu'>new</span><span class='op'>(</span><span class='st'>"track"</span>, x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span>, y <span class='op'>=</span> <span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span><span class='op'>)</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item2 &lt;- t1@"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   completion     type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1        t1@ variable</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># A namespace</span></span>
+<span class='r-in'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"utils::"</span>, description <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                       completion     type desc context</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26                           utils::.DollarNames variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 55                      utils::.RtangleCodeLabel variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 129                            utils::.S3methods variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 131                               utils::.romans variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 64                                      utils::? variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11                               utils::RShowDoc variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 121                           utils::RSiteSearch variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 34                                  utils::Rprof variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 106                              utils::Rprofmem variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 75                                utils::Rtangle variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 152                         utils::RtangleFinish variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 155                        utils::RtangleRuncode variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 159                          utils::RtangleSetup variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 161                       utils::RtangleWritedoc variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 183                     utils::RweaveChunkPrefix variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 61                      utils::RweaveEvalWithOpt variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 102                           utils::RweaveLatex variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 80                      utils::RweaveLatexFinish variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7                      utils::RweaveLatexOptions variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29                       utils::RweaveLatexSetup variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 187                   utils::RweaveLatexWritedoc variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 141                         utils::RweaveTryStop variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 213                               utils::Stangle variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 58                                 utils::Sweave variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22                            utils::SweaveHooks variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15                         utils::SweaveSyntConv variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 156                     utils::SweaveSyntaxLatex variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 104                     utils::SweaveSyntaxNoweb variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                               utils::URLdecode variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 43                              utils::URLencode variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 202                                  utils::View variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 192                                 utils::adist variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28                                  utils::alarm variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 216                               utils::apropos variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 48                               utils::aregexec variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12                           utils::argsAnywhere variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 221                             utils::as.person variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 110                         utils::as.personList variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 66                          utils::as.relistable variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 217                              utils::as.roman variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 107                           utils::asDateBuilt variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 145                              utils::askYesNo variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 207                                utils::aspell variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 214                utils::aspell_package_C_files variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 117                utils::aspell_package_R_files variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                 utils::aspell_package_Rd_files variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21               utils::aspell_package_vignettes variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 185 utils::aspell_write_personal_dictionary_file variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 203                   utils::assignInMyNamespace variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24                      utils::assignInNamespace variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 71                     utils::available.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 158                              utils::bibentry variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 82                              utils::browseEnv variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 205                             utils::browseURL variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 99                        utils::browseVignettes variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 94                             utils::bug.report variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 93                         utils::capture.output variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 79                           utils::changedFiles variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 109                             utils::charClass variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30                              utils::checkCRAN variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 201                      utils::chooseBioCmirror variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 138                      utils::chooseCRANmirror variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 140                              utils::citEntry variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 169                             utils::citFooter variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 52                              utils::citHeader variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 177                              utils::citation variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 128                                  utils::cite variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 72                             utils::citeNatbib variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 142                          utils::close.socket variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 146                                 utils::combn variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 108                        utils::compareVersion variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 100                           utils::contrib.url variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 36                           utils::count.fields variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 37                            utils::create.post variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 194                                  utils::data variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 173                            utils::data.entry variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 176                             utils::dataentry variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 119                                    utils::de variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14                               utils::de.ncols variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 50                             utils::de.restore variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 47                               utils::de.setup variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 172                             utils::debugcall variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 137                              utils::debugger variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 115                                  utils::demo variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 215                         utils::download.file variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 136                     utils::download.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 33                            utils::dump.frames variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 116                                  utils::edit variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 178                                 utils::emacs variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 193                               utils::example variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 51                              utils::file.edit variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 96                           utils::fileSnapshot variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 164                             utils::file_test variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 189                                  utils::find variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 160                           utils::findLineNum variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 53                                    utils::fix variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 191                        utils::fixInNamespace variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 105                         utils::flush.console variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 186                              utils::formatOL variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8                                utils::formatUL variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 81                            utils::getAnywhere variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 132                        utils::getCRANmirrors variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 111                      utils::getFromNamespace variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 153                          utils::getParseData variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 67                           utils::getParseText variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 144                           utils::getS3method variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 210                       utils::getSrcDirectory variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 165                        utils::getSrcFilename variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 124                        utils::getSrcLocation variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 91                              utils::getSrcref variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 77                      utils::getTxtProgressBar variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 149                               utils::glob2rx variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 84                        utils::globalVariables variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23                                utils::hasName variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 179                                  utils::head variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 76                            utils::head.matrix variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 166                                  utils::help variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 127                          utils::help.request variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86                            utils::help.search variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 45                             utils::help.start variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 200                               utils::history variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 204                            utils::hsearch_db variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 123                   utils::hsearch_db_concepts variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 97                    utils::hsearch_db_keywords variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 41                       utils::install.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 168                    utils::installed.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25                          utils::is.relistable variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 118                            utils::isS3method variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 68                         utils::isS3stdGeneric variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 62                          utils::limitedLabels variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 147                           utils::loadhistory variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 135                       utils::localeToCharset variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 134                                utils::ls.str variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 125                               utils::lsf.str variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 70                             utils::maintainer variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 182                    utils::make.packages.html variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 209                           utils::make.socket variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 54              utils::makeRweaveLatexCodeRunner variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 188                          utils::memory.limit variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 196                           utils::memory.size variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 197                                  utils::menu variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 220                               utils::methods variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 171                           utils::mirror2html variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 69                             utils::modifyList variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16                           utils::new.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 42                                   utils::news variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 59                                    utils::nsl variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 83                            utils::object.size variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 150                          utils::old.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 46                              utils::osVersion variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 87                       utils::package.skeleton variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 120                           utils::packageDate variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 103                    utils::packageDescription variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 157                           utils::packageName variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 113                         utils::packageStatus variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 85                         utils::packageVersion variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 184                                  utils::page variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 39                                 utils::person variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18                             utils::personList variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 190                                  utils::pico variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 65                         utils::process.events variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9                                  utils::prompt variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 163                            utils::promptData variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 180                          utils::promptImport variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 40                          utils::promptPackage variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 49                           utils::rc.getOption variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 73                             utils::rc.options variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 95                            utils::rc.settings variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                               utils::rc.status variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 122                              utils::read.DIF variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 198                              utils::read.csv variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 114                             utils::read.csv2 variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13                             utils::read.delim variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20                            utils::read.delim2 variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 175                          utils::read.fortran variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 60                               utils::read.fwf variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17                            utils::read.socket variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                              utils::read.table variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 63                       utils::readCitationFile variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 112                               utils::recover variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 133                                utils::relist variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 151                       utils::remove.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 181                          utils::removeSource variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 98                                  utils::rtags variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 139                           utils::savehistory variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 130                           utils::select.list variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 35                            utils::sessionInfo variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 74                          utils::setBreakpoint variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 31                        utils::setRepositories variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 89                      utils::setTxtProgressBar variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 92                                  utils::stack variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 174                                   utils::str variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 101                            utils::strOptions variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 219                            utils::strcapture variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 88                           utils::summaryRprof variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 211                  utils::suppressForeignCheck variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 78                                   utils::tail variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 38                            utils::tail.matrix variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 126                                   utils::tar variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 90                              utils::timestamp variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27                               utils::toBibtex variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 167                               utils::toLatex variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 162                        utils::txtProgressBar variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 44                           utils::type.convert variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 212                           utils::undebugcall variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 170                               utils::unstack variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 206                                 utils::untar variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 57                                  utils::unzip variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 148                       utils::update.packages variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10                                utils::upgrade variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 199                              utils::url.show variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                      utils::vi variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 143                              utils::vignette variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 32                            utils::warnErrList variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                               utils::write.csv variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 195                            utils::write.csv2 variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 56                           utils::write.socket variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19                            utils::write.table variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 154                                 utils::xedit variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 218                                utils::xemacs variable        utils</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 208                                   utils::zip variable        utils</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># A partial identifier</span></span>
+<span class='r-in'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item3 &lt;- va"</span>, description <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       completion     type                                            desc</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       validEnc function  Check if a Character Vector is Validly Encoded</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2    validObject function                  Test the Validity of an Object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 validSlotNames function        Utilities for Managing Class Definitions</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4      validUTF8 function  Check if a Character Vector is Validly Encoded</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5         vapply function          Apply a Function over a List or Vector</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6            var function Correlation, Variance and Covariance (Matrices)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7       var.test function                 F Test to Compare Two Variances</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8 variable.names function        Case and Variable Names of Fitted Models</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9        varimax function            Rotation Methods for Factor Analysis</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   context</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1    base</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 methods</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 methods</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    base</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5    base</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6   stats</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7   stats</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8   stats</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9   stats</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Otherwise, a list with the content of .GlobalEnv</span></span>
+<span class='r-in'><span class='fu'>completion</span><span class='op'>(</span><span class='st'>"item4 &lt;- "</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   completion     type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       iris variable</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># TODO: directory and filename completion!</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>iris</span>, <span class='va'>t1</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>object 'iris' not found</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

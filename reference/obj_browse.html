@@ -165,7 +165,7 @@ complete object browser in a GUI client." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -190,7 +190,7 @@ complete object browser in a GUI client." />
 complete object browser in a GUI client.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>obj_browse</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>obj_browse</span><span class='op'>(</span>
   id <span class='op'>=</span> <span class='st'>"default"</span>,
   envir <span class='op'>=</span> <span class='va'>.GlobalEnv</span>,
   all.names <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -282,7 +282,7 @@ complete object browser in a GUI client.</p>
   objects <span class='op'>=</span> <span class='st'>""</span>,
   sep <span class='op'>=</span> <span class='st'>"\t"</span>,
   path <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -399,158 +399,173 @@ explorer managed by the GUI client.</p>
 Kamil Barton <a href='mailto:kamil.barton@uni-wuerzburg.de'>kamil.barton@uni-wuerzburg.de</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Create various context menus</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span>
-<span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>object <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "'data.frame':\t150 obs. of  5 variables:"                                                 
-#&gt; [2] " $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ..."                            
-#&gt; [3] " $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ..."                          
-#&gt; [4] " $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ..."                        
-#&gt; [5] " $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ..."                        
-#&gt; [6] " $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ..."
-#&gt; [7] "Estimated size: 7.086 bytes kb"                                                           </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>trees</span><span class='op'>)</span>
-<span class='co'># For one object</span>
-<span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt;           widget            value
-#&gt; help        item             Help
-#&gt; example     item          Example
-#&gt; sep          sep                -
-#&gt; Functions   menu        Functions
-#&gt; print       item   |Print or show
-#&gt; generic     item       |summary()
-#&gt; generic.1   item          |plot()
-#&gt; names       item           |Names
-#&gt; str         item             |Str
-#&gt; sep.1        sep               |-
-#&gt; generic.2   item       |formula()
-#&gt; generic.3   item          |head()
-#&gt; generic.4   item          |tail()
-#&gt; View        menu             View
-#&gt; viewDef     item  |View (default)
-#&gt; require     item |Require svViews
-#&gt; report      item        Report...
-#&gt; edit        item             Edit
-#&gt; save        item       Save as...
-#&gt; Copy        menu             Copy
-#&gt; copyDef     item  |Copy (default)
-#&gt; require.1   item    |Require svIO
-#&gt; export      item        Export...
-#&gt; sep.2        sep                -
-#&gt; remove      item           Remove
-#&gt;                                                                tip
-#&gt; help                                             Help on an object
-#&gt; example                               Run examples for this object
-#&gt; sep                                                               
-#&gt; Functions                            Generic functions and methods
-#&gt; print                      Print or show the content of the object
-#&gt; generic                       Apply method summary() to the object
-#&gt; generic.1                        Apply method plot() to the object
-#&gt; names                   Names of variables contained in the object
-#&gt; str                      Compact str() representation of an object
-#&gt; sep.1                                                             
-#&gt; generic.2                     Apply method formula() to the object
-#&gt; generic.3                        Apply method head() to the object
-#&gt; generic.4                        Apply method tail() to the object
-#&gt; View                                               View the object
-#&gt; viewDef                               Default view for this object
-#&gt; require                                Require the package svViews
-#&gt; report                            Prepare a report for this object
-#&gt; edit                                                Edit an object
-#&gt; save                                                Save to a file
-#&gt; Copy                              Copy the object to the clipboard
-#&gt; copyDef         Copy this object to the clipboard (default format)
-#&gt; require.1                                 Require the package svIO
-#&gt; export                                       Export data to a file
-#&gt; sep.2                                                             
-#&gt; remove    Remove (permanently!) one or several objects from memory
-#&gt;                         code icon checked disabled hidden options
-#&gt; help              help(iris)        FALSE    FALSE  FALSE        
-#&gt; example        example(iris)        FALSE    FALSE  FALSE        
-#&gt; sep                                 FALSE    FALSE  FALSE        
-#&gt; Functions                           FALSE    FALSE  FALSE        
-#&gt; print                   iris        FALSE    FALSE  FALSE        
-#&gt; generic        summary(iris)        FALSE    FALSE  FALSE        
-#&gt; generic.1         plot(iris)        FALSE    FALSE  FALSE        
-#&gt; names            names(iris)        FALSE    FALSE  FALSE        
-#&gt; str                str(iris)        FALSE    FALSE  FALSE        
-#&gt; sep.1                               FALSE    FALSE  FALSE        
-#&gt; generic.2      formula(iris)        FALSE    FALSE  FALSE        
-#&gt; generic.3         head(iris)        FALSE    FALSE  FALSE        
-#&gt; generic.4         tail(iris)        FALSE    FALSE  FALSE        
-#&gt; View                                FALSE    FALSE  FALSE        
-#&gt; viewDef           view(iris)        FALSE     TRUE  FALSE        
-#&gt; require     require(svViews)        FALSE    FALSE  FALSE        
-#&gt; report       guiReport(iris)        FALSE     TRUE  FALSE        
-#&gt; edit      iris &lt;- edit(iris)        FALSE    FALSE  FALSE        
-#&gt; save           guiSave(iris)        FALSE    FALSE  FALSE        
-#&gt; Copy                                FALSE    FALSE  FALSE        
-#&gt; copyDef           copy(iris)        FALSE     TRUE  FALSE        
-#&gt; require.1      require(svIO)        FALSE    FALSE  FALSE        
-#&gt; export       guiExport(iris)        FALSE     TRUE  FALSE        
-#&gt; sep.2                               FALSE    FALSE  FALSE        
-#&gt; remove              rm(iris)        FALSE    FALSE  FALSE        </div><div class='input'><span class='co'># For multiple objects</span>
-<span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"iris"</span>, <span class='st'>"trees"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt;        widget      value
-#&gt; save     item Save as...
-#&gt; remove   item     Remove
-#&gt;                                                             tip
-#&gt; save                                             Save to a file
-#&gt; remove Remove (permanently!) one or several objects from memory
-#&gt;                        code icon checked disabled hidden options
-#&gt; save   guiSave(iris, trees)        FALSE    FALSE  FALSE        
-#&gt; remove      rm(iris, trees)        FALSE    FALSE  FALSE        </div><div class='input'><span class='co'># For inexistant object (return "")</span>
-<span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>object <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] ""</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] widget   value    tip      code     icon     checked  disabled hidden  
-#&gt; [9] options 
-#&gt; &lt;0 rows&gt; (or 0-length row.names)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>iris</span>, <span class='va'>trees</span><span class='op'>)</span>
-</div><div class='co'>#&gt; <span class='warning'>Warning: </span>object 'iris' not found</div><div class='co'>#&gt; <span class='warning'>Warning: </span>object 'trees' not found</div><div class='input'>
-<span class='co'># For environments</span>
-<span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "Global environment\n\n          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)\nNcells  915237 48.9    1808342 96.6         NA  1284531 68.7\nVcells 1917512 14.7    8388608 64.0      16384  4154663 31.7"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt;        widget     value                                              tip
-#&gt; load     item   Load...                                   Load R objects
-#&gt; source   item Source...                                    Source R code
-#&gt; import   item Import...                                 Import data in R
-#&gt; sep       sep         -                                                 
-#&gt; detach   item    Detach Detach an object or package from the search path
-#&gt;                                 code icon checked disabled hidden options
-#&gt; load     guiLoad(pos = ".GlobalEnv")        FALSE    FALSE  FALSE        
-#&gt; source guiSource(pos = ".GlobalEnv")        FALSE    FALSE  FALSE        
-#&gt; import                   guiImport()        FALSE    FALSE  FALSE        
-#&gt; sep                                         FALSE    FALSE  FALSE        
-#&gt; detach            detach(.GlobalEnv)        FALSE     TRUE  FALSE        </div><div class='input'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "SciViews temporary variables environment"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt;        widget  value                                              tip
-#&gt; detach   item Detach Detach an object or package from the search path
-#&gt;                            code icon checked disabled hidden options
-#&gt; detach detach(SciViews:TempEnv)        FALSE     TRUE  FALSE        </div><div class='input'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "Package:       datasets\nVersion:       4.0.5\nPriority:      base\nTitle:         The R Datasets Package\nAuthor:        R Core Team and contributors worldwide\nMaintainer:    R Core Team &lt;R-core@r-project.org&gt;\nDescription:   Base R datasets.\nLicense:       Part of R 4.0.5\nBuilt:         R 4.0.5; ; 2021-04-01 02:35:00 UTC; unix"</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt;              widget             value
-#&gt; pkgInfo        item      Package info
-#&gt; sep             sep                 -
-#&gt; detach         item            Detach
-#&gt; detachUnload   item Detach and unload
-#&gt;                                                              tip
-#&gt; pkgInfo               Show detailed information for this package
-#&gt; sep                                                             
-#&gt; detach          Detach an object or package from the search path
-#&gt; detachUnload Detach a package from the search path and unload it
-#&gt;                                         code icon checked disabled hidden
-#&gt; pkgInfo      &lt;&lt;&lt;H&gt;&gt;&gt;library(help = datasets)        FALSE    FALSE  FALSE
-#&gt; sep                                                 FALSE    FALSE  FALSE
-#&gt; detach              detach(package:datasets)        FALSE     TRUE  FALSE
-#&gt; detachUnload                                        FALSE     TRUE  FALSE
-#&gt;              options
-#&gt; pkgInfo             
-#&gt; sep                 
-#&gt; detach              
-#&gt; detachUnload        </div><div class='input'><span class='co'># For an environment that does not exist on the search path (return "")</span>
-<span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] ""</div><div class='input'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] widget   value    tip      code     icon     checked  disabled hidden  
-#&gt; [9] options 
-#&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># Create various context menus</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>object <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "'data.frame':\t150 obs. of  5 variables:"                                                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2] " $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ..."                            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [3] " $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ..."                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [4] " $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ..."                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [5] " $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ..."                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [6] " $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ..."</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [7] "Estimated size: 7.086 bytes kb"                                                           </span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>trees</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># For one object</span></span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>           widget            value</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> help        item             Help</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> example     item          Example</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep          sep                -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Functions   menu        Functions</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> print       item   |Print or show</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic     item       |summary()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.1   item          |plot()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names       item           |Names</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> str         item             |Str</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep.1        sep               |-</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.2   item       |formula()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.3   item          |head()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.4   item          |tail()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> View        menu             View</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> viewDef     item  |View (default)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> require     item |Require svViews</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> report      item        Report...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> edit        item             Edit</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> save        item       Save as...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Copy        menu             Copy</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> copyDef     item  |Copy (default)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> require.1   item    |Require svIO</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> export      item        Export...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep.2        sep                -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> remove      item           Remove</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                tip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> help                                             Help on an object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> example                               Run examples for this object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep                                                               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Functions                            Generic functions and methods</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> print                      Print or show the content of the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic                       Apply method summary() to the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.1                        Apply method plot() to the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names                   Names of variables contained in the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> str                      Compact str() representation of an object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep.1                                                             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.2                     Apply method formula() to the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.3                        Apply method head() to the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.4                        Apply method tail() to the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> View                                               View the object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> viewDef                               Default view for this object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> require                                Require the package svViews</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> report                            Prepare a report for this object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> edit                                                Edit an object</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> save                                                Save to a file</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Copy                              Copy the object to the clipboard</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> copyDef         Copy this object to the clipboard (default format)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> require.1                                 Require the package svIO</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> export                                       Export data to a file</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep.2                                                             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> remove    Remove (permanently!) one or several objects from memory</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                         code icon checked disabled hidden options</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> help              help(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> example        example(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep                                 FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Functions                           FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> print                   iris        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic        summary(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.1         plot(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names            names(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> str                str(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep.1                               FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.2      formula(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.3         head(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> generic.4         tail(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> View                                FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> viewDef           view(iris)        FALSE     TRUE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> require     require(svViews)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> report       guiReport(iris)        FALSE     TRUE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> edit      iris &lt;- edit(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> save           guiSave(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Copy                                FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> copyDef           copy(iris)        FALSE     TRUE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> require.1      require(svIO)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> export       guiExport(iris)        FALSE     TRUE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep.2                               FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> remove              rm(iris)        FALSE    FALSE  FALSE        </span>
+<span class='r-in'><span class='co'># For multiple objects</span></span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"iris"</span>, <span class='st'>"trees"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        widget      value</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> save     item Save as...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> remove   item     Remove</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                             tip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> save                                             Save to a file</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> remove Remove (permanently!) one or several objects from memory</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                        code icon checked disabled hidden options</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> save   guiSave(iris, trees)        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> remove      rm(iris, trees)        FALSE    FALSE  FALSE        </span>
+<span class='r-in'><span class='co'># For inexistant object (return "")</span></span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>object <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] ""</span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>objects <span class='op'>=</span> <span class='st'>"noobject"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] widget   value    tip      code     icon     checked  disabled hidden  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [9] options </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> &lt;0 rows&gt; (or 0-length row.names)</span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>iris</span>, <span class='va'>trees</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>object 'iris' not found</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>object 'trees' not found</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># For environments</span></span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Global environment\n\n          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)\nNcells  924432 49.4    1821165 97.3         NA  1306338 69.8\nVcells 1936167 14.8    8388608 64.0      16384  4058541 31.0"</span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>".GlobalEnv"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        widget     value                                              tip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> load     item   Load...                                   Load R objects</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> source   item Source...                                    Source R code</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> import   item Import...                                 Import data in R</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep       sep         -                                                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach   item    Detach Detach an object or package from the search path</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                 code icon checked disabled hidden options</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> load     guiLoad(pos = ".GlobalEnv")        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> source guiSource(pos = ".GlobalEnv")        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> import                   guiImport()        FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep                                         FALSE    FALSE  FALSE        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach            detach(.GlobalEnv)        FALSE     TRUE  FALSE        </span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "SciViews temporary variables environment"</span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"SciViews:TempEnv"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        widget  value                                              tip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach   item Detach Detach an object or package from the search path</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                            code icon checked disabled hidden options</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach detach(SciViews:TempEnv)        FALSE     TRUE  FALSE        </span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Package:       datasets\nVersion:       4.1.0\nPriority:      base\nTitle:         The R Datasets Package\nAuthor:        R Core Team and contributors worldwide\nMaintainer:    R Core Team &lt;do-use-Contact-address@r-project.org&gt;\nContact:       R-help mailing list &lt;r-help@r-project.org&gt;\nDescription:   Base R datasets.\nLicense:       Part of R 4.1.0\nBuilt:         R 4.1.0; ; 2021-05-19 20:55:21 UTC; unix"</span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"package:datasets"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>              widget             value</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> pkgInfo        item      Package info</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep             sep                 -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach         item            Detach</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detachUnload   item Detach and unload</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                              tip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> pkgInfo               Show detailed information for this package</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep                                                             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach          Detach an object or package from the search path</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detachUnload Detach a package from the search path and unload it</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                         code icon checked disabled hidden</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> pkgInfo      &lt;&lt;&lt;H&gt;&gt;&gt;library(help = datasets)        FALSE    FALSE  FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep                                                 FALSE    FALSE  FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach              detach(package:datasets)        FALSE     TRUE  FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detachUnload                                        FALSE     TRUE  FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>              options</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> pkgInfo             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> sep                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detach              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> detachUnload        </span>
+<span class='r-in'><span class='co'># For an environment that does not exist on the search path (return "")</span></span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_info</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] ""</span>
+<span class='r-in'><span class='op'>(</span><span class='fu'>obj_menu</span><span class='op'>(</span>envir <span class='op'>=</span> <span class='st'>"noenvir"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] widget   value    tip      code     icon     checked  disabled hidden  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [9] options </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> &lt;0 rows&gt; (or 0-length row.names)</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

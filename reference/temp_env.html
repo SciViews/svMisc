@@ -166,7 +166,7 @@ could easily access objects there." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -192,7 +192,7 @@ low enough on the search path so that all loaded packages (except <strong>base</
 could easily access objects there.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>temp_env</span><span class='op'>(</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>temp_env</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='fu'>add_items</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, use.names <span class='op'>=</span> <span class='cn'>TRUE</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
@@ -224,7 +224,7 @@ could easily access objects there.</p>
 
 <span class='fu'>getTemp</span><span class='op'>(</span><span class='va'>x</span>, default <span class='op'>=</span> <span class='cn'>NULL</span>, mode <span class='op'>=</span> <span class='st'>"any"</span>, item <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>rmTemp</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
+<span class='fu'>rmTemp</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -288,82 +288,96 @@ access to its objects.</p>
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/assign.html'>assign()</a></code>, <code><a href='https://rdrr.io/r/base/search.html'>search()</a></code>, <code><a href='temp_var.html'>temp_var()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/ls.html'>ls</a></span><span class='op'>(</span><span class='fu'>temp_env</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; character(0)</div><div class='input'>
-<span class='co'># I have a vector v1 with this:</span>
-<span class='va'>v1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='st'>"some v1 text"</span>, b <span class='op'>=</span> <span class='st'>"another v1 text"</span><span class='op'>)</span>
-<span class='co'># I want to add items whose name is missing in v1 from v2</span>
-<span class='va'>v2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='st'>"v2 text"</span>, c <span class='op'>=</span> <span class='st'>"the missign item"</span><span class='op'>)</span>
-<span class='fu'>add_items</span><span class='op'>(</span><span class='va'>v1</span>, <span class='va'>v2</span>, replace <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='co'>#&gt;                  a                  b                  c 
-#&gt;     "some v1 text"  "another v1 text" "the missign item" </div><div class='input'><span class='co'># Not the same as</span>
-<span class='fu'>add_items</span><span class='op'>(</span><span class='va'>v1</span>, <span class='va'>v2</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='co'>#&gt;                  a                  c                  b 
-#&gt;          "v2 text" "the missign item"  "another v1 text" </div><div class='input'><span class='co'># This yield different result (names not used and lost!)</span>
-<span class='fu'>add_items</span><span class='op'>(</span><span class='va'>v1</span>, <span class='va'>v2</span>, use.names <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "another v1 text"  "some v1 text"     "the missign item" "v2 text"         </div><div class='input'>
-<span class='fu'>add_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>1</span>, b <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-<span class='co'># Retrieve this variable</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt; a b 
-#&gt; 1 2 
-#&gt; </div><div class='input'><span class='co'># Add to item1 in this list without replacement</span>
-<span class='fu'>add_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>45</span>, c <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt; a b c 
-#&gt; 1 2 3 
-#&gt; </div><div class='input'><span class='co'># Same but with replacement of existing items</span>
-<span class='fu'>add_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>45</span>, c <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt;  a  c  b 
-#&gt; 45  3  2 
-#&gt; </div><div class='input'><span class='co'># Delete the whole variable</span>
-<span class='fu'>delete_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-
-<span class='fu'>assign_temp</span><span class='op'>(</span><span class='st'>"test"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span>
-<span class='co'># Retrieve this variable</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span>
-</div><div class='co'>#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</div><div class='input'>
-<span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span>
-<span class='co'># Retrieve this variable</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; </div><div class='input'><span class='co'># Create another item in the list</span>
-<span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item2"</span>, <span class='cn'>TRUE</span><span class='op'>)</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; 
-#&gt; $item2
-#&gt; [1] TRUE
-#&gt; </div><div class='input'><span class='co'># Change it</span>
-<span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item2"</span>, <span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; 
-#&gt; $item2
-#&gt; [1] FALSE
-#&gt; </div><div class='input'><span class='co'># Delete it (= assign NULL to the item)</span>
-<span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item2"</span>, <span class='cn'>NULL</span><span class='op'>)</span>
-<span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; $item1
-#&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-#&gt; </div><div class='input'><span class='co'># Delete the whole variable</span>
-<span class='fu'>delete_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span>
-
-<span class='fu'>assign_temp</span><span class='op'>(</span><span class='st'>"test"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span>
-<span class='co'># Check if this variable exists</span>
-<span class='fu'>exists_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># Remove it</span>
-<span class='fu'>delete_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span>
-<span class='co'># Does it still exists?</span>
-<span class='fu'>exists_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/ls.html'>ls</a></span><span class='op'>(</span><span class='fu'>temp_env</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "last.warning"</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># I have a vector v1 with this:</span></span>
+<span class='r-in'><span class='va'>v1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='st'>"some v1 text"</span>, b <span class='op'>=</span> <span class='st'>"another v1 text"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># I want to add items whose name is missing in v1 from v2</span></span>
+<span class='r-in'><span class='va'>v2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='st'>"v2 text"</span>, c <span class='op'>=</span> <span class='st'>"the missign item"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>add_items</span><span class='op'>(</span><span class='va'>v1</span>, <span class='va'>v2</span>, replace <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                  a                  b                  c </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     "some v1 text"  "another v1 text" "the missign item" </span>
+<span class='r-in'><span class='co'># Not the same as</span></span>
+<span class='r-in'><span class='fu'>add_items</span><span class='op'>(</span><span class='va'>v1</span>, <span class='va'>v2</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                  a                  c                  b </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>          "v2 text" "the missign item"  "another v1 text" </span>
+<span class='r-in'><span class='co'># This yield different result (names not used and lost!)</span></span>
+<span class='r-in'><span class='fu'>add_items</span><span class='op'>(</span><span class='va'>v1</span>, <span class='va'>v2</span>, use.names <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "another v1 text"  "some v1 text"     "the missign item" "v2 text"         </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>add_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>1</span>, b <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Retrieve this variable</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> a b </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 2 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Add to item1 in this list without replacement</span></span>
+<span class='r-in'><span class='fu'>add_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>45</span>, c <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> a b c </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 2 3 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Same but with replacement of existing items</span></span>
+<span class='r-in'><span class='fu'>add_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>45</span>, c <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  a  c  b </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 45  3  2 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Delete the whole variable</span></span>
+<span class='r-in'><span class='fu'>delete_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>assign_temp</span><span class='op'>(</span><span class='st'>"test"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Retrieve this variable</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item1"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Retrieve this variable</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Create another item in the list</span></span>
+<span class='r-in'><span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item2"</span>, <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] TRUE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Change it</span></span>
+<span class='r-in'><span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item2"</span>, <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Delete it (= assign NULL to the item)</span></span>
+<span class='r-in'><span class='fu'>change_temp</span><span class='op'>(</span><span class='st'>"tst"</span>, <span class='st'>"item2"</span>, <span class='cn'>NULL</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $item1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># Delete the whole variable</span></span>
+<span class='r-in'><span class='fu'>delete_temp</span><span class='op'>(</span><span class='st'>"tst"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>assign_temp</span><span class='op'>(</span><span class='st'>"test"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Check if this variable exists</span></span>
+<span class='r-in'><span class='fu'>exists_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] TRUE</span>
+<span class='r-in'><span class='co'># Remove it</span></span>
+<span class='r-in'><span class='fu'>delete_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Does it still exists?</span></span>
+<span class='r-in'><span class='fu'>exists_temp</span><span class='op'>(</span><span class='st'>"test"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

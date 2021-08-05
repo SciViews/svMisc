@@ -171,7 +171,7 @@ RStudio (server), and is_jgr() indicate if the R GUI is JGR." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -202,7 +202,7 @@ default). <code>is_rstudio()</code> and <code>is_rstudio_server()</code> check i
 RStudio (server), and <code>is_jgr()</code> indicate if the R GUI is JGR.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is_help</span><span class='op'>(</span><span class='va'>topic</span>, package <span class='op'>=</span> <span class='cn'>NULL</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>is_help</span><span class='op'>(</span><span class='va'>topic</span>, package <span class='op'>=</span> <span class='cn'>NULL</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='fu'>is_win</span><span class='op'>(</span><span class='op'>)</span>
 
@@ -234,7 +234,7 @@ RStudio (server), and <code>is_jgr()</code> indicate if the R GUI is JGR.</p>
 
 <span class='fu'>isAqua</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>isJGR</span><span class='op'>(</span><span class='op'>)</span></pre>
+<span class='fu'>isJGR</span><span class='op'>(</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -278,24 +278,36 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/utils/example.html'>example()</a></code>, <code><a href='https://rdrr.io/r/utils/help.html'>help()</a></code>, <code><a href='https://rdrr.io/r/base/capabilities.html'>capabilities()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"help"</span><span class='op'>)</span>    <span class='co'># Help and example</span>
-</div><div class='co'>#&gt;    help example 
-#&gt;    TRUE    TRUE </div><div class='input'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"Rtangle"</span><span class='op'>)</span>  <span class='co'># Help but no example</span>
-</div><div class='co'>#&gt;    help example 
-#&gt;    TRUE    TRUE </div><div class='input'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"notopic"</span><span class='op'>)</span>  <span class='co'># No help or example</span>
-</div><div class='co'>#&gt;    help example 
-#&gt;   FALSE   FALSE </div><div class='input'>
-<span class='fu'>is_win</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_mac</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='fu'>is_aqua</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rgui</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_sdi</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio_desktop</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_rstudio_server</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is_jgr</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] FALSE</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"help"</span><span class='op'>)</span>    <span class='co'># Help and example</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    help example </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    TRUE    TRUE </span>
+<span class='r-in'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"Rtangle"</span><span class='op'>)</span>  <span class='co'># Help but no example</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    help example </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    TRUE    TRUE </span>
+<span class='r-in'><span class='fu'>is_help</span><span class='op'>(</span><span class='st'>"notopic"</span><span class='op'>)</span>  <span class='co'># No help or example</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    help example </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   FALSE   FALSE </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>is_win</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_mac</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] TRUE</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>is_aqua</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_rgui</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_sdi</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_rstudio</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_rstudio_desktop</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_rstudio_server</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+<span class='r-in'><span class='fu'>is_jgr</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] FALSE</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

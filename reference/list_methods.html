@@ -170,7 +170,7 @@ plot.lm(), respectively." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -199,7 +199,7 @@ contrary to a usual <code>type =</code> or <code>which =</code> argument, like i
 <code><a href='https://rdrr.io/r/stats/plot.lm.html'>plot.lm()</a></code>, respectively.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>list_methods</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>list_methods</span><span class='op'>(</span>
   f <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='op'>)</span>,
   class <span class='op'>=</span> <span class='cn'>NULL</span>,
   S3 <span class='op'>=</span> <span class='cn'>TRUE</span>,
@@ -219,7 +219,7 @@ contrary to a usual <code>type =</code> or <code>which =</code> argument, like i
   filter <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"svGUI.methods"</span><span class='op'>)</span>
 <span class='op'>)</span>
 
-<span class='fu'>listTypes</span><span class='op'>(</span><span class='va'>method</span>, class <span class='op'>=</span> <span class='st'>"default"</span>, strict <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+<span class='fu'>listTypes</span><span class='op'>(</span><span class='va'>method</span>, class <span class='op'>=</span> <span class='st'>"default"</span>, strict <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -289,48 +289,57 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
     <div class='dont-index'><p><code><a href='obj_browse.html'>obj_menu()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Generic functions</span>
-<span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"t.test"</span><span class='op'>)</span>               <span class='co'># S3</span>
-</div><div class='co'>#&gt; [1] "x=\"default\"" "x=\"formula\""</div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"show"</span>, mixed <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>  <span class='co'># S4</span>
-</div><div class='co'>#&gt; $S3
-#&gt; character(0)
-#&gt; 
-#&gt; $S4
-#&gt;  [1] "object=\"ANY\""                      
-#&gt;  [2] "object=\"classGeneratorFunction\""   
-#&gt;  [3] "object=\"classRepresentation\""      
-#&gt;  [4] "object=\"envRefClass\""              
-#&gt;  [5] "object=\"externalRefMethod\""        
-#&gt;  [6] "object=\"genericFunction\""          
-#&gt;  [7] "object=\"genericFunctionWithTrace\"" 
-#&gt;  [8] "object=\"MethodDefinition\""         
-#&gt;  [9] "object=\"MethodDefinitionWithTrace\""
-#&gt; [10] "object=\"MethodSelectionReport\""    
-#&gt; [11] "object=\"MethodWithNext\""           
-#&gt; [12] "object=\"MethodWithNextWithTrace\""  
-#&gt; [13] "object=\"namedList\""                
-#&gt; [14] "object=\"ObjectsWithPackage\""       
-#&gt; [15] "object=\"oldClass\""                 
-#&gt; [16] "object=\"refClassRepresentation\""   
-#&gt; [17] "object=\"refMethodDef\""             
-#&gt; [18] "object=\"refObjectGenerator\""       
-#&gt; [19] "object=\"signature\""                
-#&gt; [20] "object=\"sourceEnvironment\""        
-#&gt; [21] "object=\"traceable\""                
-#&gt; </div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span> <span class='co'># None, not a generic function!</span>
-</div><div class='co'>#&gt; character(0)</div><div class='input'>
-<span class='co'># Classes</span>
-<span class='co'># Only the following methods are considered</span>
-<span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"gui.methods"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; NULL</div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "formula" "head"    "plot"    "summary" "tail"   </div><div class='input'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"lm"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "anova"     "confint"   "formula"   "logLik"    "plot"      "predict"  
-#&gt; [7] "residuals" "summary"   "vcov"     </div><div class='input'>
-<span class='co'># List method types</span>
-<span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span><span class='op'>)</span>  <span class='co'># All default view types currently defined</span>
-</div><div class='co'>#&gt; character(0)</div><div class='input'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; character(0)</div><div class='input'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span>, <span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># None, except if you defined custom views!</span>
-</div><div class='co'>#&gt; character(0)</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># Generic functions</span></span>
+<span class='r-in'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"t.test"</span><span class='op'>)</span>               <span class='co'># S3</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "x=\"default\"" "x=\"formula\""</span>
+<span class='r-in'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"show"</span>, mixed <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>  <span class='co'># S4</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $S3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> character(0)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $S4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1] "object=\"ANY\""                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [2] "object=\"MethodDefinition\""         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [3] "object=\"MethodDefinitionWithTrace\""</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [4] "object=\"MethodSelectionReport\""    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [5] "object=\"MethodWithNext\""           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [6] "object=\"MethodWithNextWithTrace\""  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [7] "object=\"ObjectsWithPackage\""       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [8] "object=\"classGeneratorFunction\""   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [9] "object=\"classRepresentation\""      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [10] "object=\"envRefClass\""              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [11] "object=\"externalRefMethod\""        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [12] "object=\"genericFunction\""          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [13] "object=\"genericFunctionWithTrace\"" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [14] "object=\"namedList\""                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [15] "object=\"oldClass\""                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [16] "object=\"refClassRepresentation\""   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [17] "object=\"refMethodDef\""             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [18] "object=\"refObjectGenerator\""       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [19] "object=\"signature\""                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [20] "object=\"sourceEnvironment\""        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [21] "object=\"traceable\""                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='fu'>list_methods</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span> <span class='co'># None, not a generic function!</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> character(0)</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Classes</span></span>
+<span class='r-in'><span class='co'># Only the following methods are considered</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"gui.methods"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> NULL</span>
+<span class='r-in'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "formula" "head"    "plot"    "summary" "tail"   </span>
+<span class='r-in'><span class='fu'>list_methods</span><span class='op'>(</span>class <span class='op'>=</span> <span class='st'>"lm"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "anova"     "confint"   "formula"   "logLik"    "plot"      "predict"  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [7] "residuals" "summary"   "vcov"     </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># List method types</span></span>
+<span class='r-in'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span><span class='op'>)</span>  <span class='co'># All default view types currently defined</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> character(0)</span>
+<span class='r-in'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> character(0)</span>
+<span class='r-in'><span class='fu'>list_types</span><span class='op'>(</span><span class='st'>"view"</span>, <span class='st'>"data.frame"</span>, <span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># None, except if you defined custom views!</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> character(0)</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

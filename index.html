@@ -103,7 +103,7 @@
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="index.html"><p class="h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="index.html"><p class="h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -122,26 +122,26 @@
 
 <!-- badges: start -->
 
-<p>‘svMisc’ provides a series of functions that are used by the other SciViews packages. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.</p>
+<p>{svMisc} provides a series of functions that are used by the other SciViews packages. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
-<p>You can install the released version of ‘svMisc’ from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
+<p>You can install the released version of {svMisc} from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span></code></pre></div>
-<p>You can also install the latest developement version. Make sure you have the ‘devtools’ R package installed:</p>
+<p>You can also install the latest developement version. Make sure you have the {remotes} R package installed:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></code></pre></div>
-<p>Use <code>install_github()</code> to install the ‘svMisc’ package from Github (source from <strong>master</strong> branch will be recompiled on your machine):</p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></code></pre></div>
+<p>Use <code>install_github()</code> to install the {svMisc} package from Github (source from <strong>master</strong> branch will be recompiled on your machine):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"SciViews/svMisc"</span><span class="op">)</span></code></pre></div>
-<p>R should install all required dependencies automatically, and then it should compile and install ‘svMisc’.</p>
-<p>Latest devel version of ‘svMisc’ (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from <a href="https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts" class="external-link">appveyor</a>.</p>
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"SciViews/svMisc"</span><span class="op">)</span></code></pre></div>
+<p>R should install all required dependencies automatically, and then it should compile and install {svMisc}.</p>
+<p>Latest devel version of {svMisc} (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from <a href="https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts" class="external-link">appveyor</a>.</p>
 </div>
 <div id="further-explore-svmisc" class="section level2">
 <h2 class="hasAnchor">
-<a href="#further-explore-svmisc" class="anchor" aria-hidden="true"></a>Further explore ‘svMisc’</h2>
-<p>You can get further help about this package this way: Make the ‘svMisc’ package available in your R session:</p>
+<a href="#further-explore-svmisc" class="anchor" aria-hidden="true"></a>Further explore {svMisc}</h2>
+<p>You can get further help about this package this way: Make the {svMisc} package available in your R session:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/SciViews/svMisc" class="external-link">"svMisc"</a></span><span class="op">)</span></code></pre></div>
 <p>Get help about this package:</p>
@@ -149,7 +149,7 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span>help <span class="op">=</span> <span class="st">"svMisc"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"svMisc-package"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span> <span class="co"># None is installed with install_github()</span></code></pre></div>
-<p>For further instructions, please, refer to the help pages at https://www.sciviews.org/svMisc/.</p>
+<p>For further instructions, please, refer to the help pages at <a href="https://www.sciviews.org/svMisc/" class="uri">https://www.sciviews.org/svMisc/</a>.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">

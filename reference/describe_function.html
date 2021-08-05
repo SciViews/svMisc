@@ -171,7 +171,7 @@ has a similar purpose to show how some code could be completed." />
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.0</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svMisc <small>v1.2.1</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -202,7 +202,7 @@ human-readable textual description of function arguments in a better way than
 has a similar purpose to show how some code could be completed.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>describe_function</span><span class='op'>(</span><span class='va'>fun</span>, <span class='va'>package</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>describe_function</span><span class='op'>(</span><span class='va'>fun</span>, <span class='va'>package</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='fu'>describe_args</span><span class='op'>(</span><span class='va'>fun</span>, args <span class='op'>=</span> <span class='cn'>NULL</span>, package <span class='op'>=</span> <span class='cn'>NULL</span>, lib.loc <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
@@ -230,7 +230,7 @@ has a similar purpose to show how some code could be completed.</p>
   description <span class='op'>=</span> <span class='cn'>FALSE</span>,
   methods <span class='op'>=</span> <span class='cn'>FALSE</span>,
   width <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"width"</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -315,32 +315,40 @@ function, especially for generic functions that have many methods like
     <div class='dont-index'><p><code><a href='completion.html'>completion()</a></code>, <code><a href='https://rdrr.io/r/base/args.html'>args()</a></code>, <code><a href='https://rdrr.io/r/utils/getAnywhere.html'>argsAnywhere()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"ls"</span>, <span class='st'>"base"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "List Objects"</div><div class='input'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"library"</span>, <span class='st'>"base"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "Loading/Attaching and Listing of Packages"</div><div class='input'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"descFun"</span>, <span class='st'>"svMisc"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "Get textual help on function or function arguments, or get a call tip"</div><div class='input'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"descArgs"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "Get textual help on function or function arguments, or get a call tip"</div><div class='input'>
-<span class='fu'>describe_args</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span>
-</div><div class='co'>#&gt;                                                                                                                                                                                                                                                   name 
-#&gt; "which environment to use in listing the available objects.\n    Defaults to the current environment.  Although called\n    name for back compatibility, in fact this argument can\n    specify the environment in any form; see the Details section." 
-#&gt;                                                                                                                                                                                                                                                    pos 
-#&gt;                                                                                                     "an alternative argument to name for specifying the\n    environment as a position in the search list.  Mostly there for\n    back compatibility." 
-#&gt;                                                                                                                                                                                                                                                  envir 
-#&gt;                                                                                                                                           "an alternative argument to name for specifying the\n    environment.  Mostly there for back compatibility." 
-#&gt;                                                                                                                                                                                                                                              all.names 
-#&gt;                                                                                                                               "a logical value.  If TRUE, all\n    object names are returned.  If FALSE, names which begin with a\n    . are omitted." 
-#&gt;                                                                                                                                                                                                                                                pattern 
-#&gt;                                                                                       "an optional regular expression.  Only names\n    matching pattern are returned.  glob2rx can be\n    used to convert wildcard patterns to regular expressions." 
-#&gt;                                                                                                                                                                                                                                                 sorted 
-#&gt;                                                                                                  "logical indicating if the resulting\n    character should be sorted alphabetically.  Note that\n    this is part of ls() may take most of the time." </div><div class='input'><span class='fu'>describe_args</span><span class='op'>(</span><span class='st'>"library"</span>, args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"package"</span>, <span class='st'>"pos"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt;                                                                                                                                                                     package 
-#&gt; "the name of a package, given as a name or\n    literal character string, or a character string, depending on\n    whether character.only is FALSE (default) or\n    TRUE." 
-#&gt;                                                                                                                                                                         pos 
-#&gt;   "the position on the search list at which to attach the\n    loaded namespace.  Can also be the name of a position on the current\n    search list as given by search()." </div><div class='input'>
-<span class='fu'>args_tip</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "ls(name, pos = -1L, envir = as.environment(pos), all.names = FALSE, pattern,\n    sorted = TRUE)"</div><div class='input'>
-<span class='fu'>call_tip</span><span class='op'>(</span><span class='st'>"myvar &lt;- lm("</span><span class='op'>)</span>
-</div><div class='co'>#&gt; [1] "lm(formula, data, subset, weights, na.action, method = \"qr\", model = TRUE, x =\n    FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, contrasts = NULL, offset,\n    ...)"</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"ls"</span>, <span class='st'>"base"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "List Objects"</span>
+<span class='r-in'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"library"</span>, <span class='st'>"base"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Loading/Attaching and Listing of Packages"</span>
+<span class='r-in'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"descFun"</span>, <span class='st'>"svMisc"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Get textual help on function or function arguments, or get a call tip"</span>
+<span class='r-in'><span class='fu'>describe_function</span><span class='op'>(</span><span class='st'>"descArgs"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Get textual help on function or function arguments, or get a call tip"</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>describe_args</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                                                                                                   name </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "which environment to use in listing the available objects.\n    Defaults to the current environment.  Although called\n    name for back compatibility, in fact this argument can\n    specify the environment in any form; see the Details section." </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                                                                                                    pos </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                     "an alternative argument to name for specifying the\n    environment as a position in the search list.  Mostly there for\n    back compatibility." </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                                                                                                  envir </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                           "an alternative argument to name for specifying the\n    environment.  Mostly there for back compatibility." </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                                                                                              all.names </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                               "a logical value.  If TRUE, all\n    object names are returned.  If FALSE, names which begin with a\n    . are omitted." </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                                                                                                pattern </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                       "an optional regular expression.  Only names\n    matching pattern are returned.  glob2rx can be\n    used to convert wildcard patterns to regular expressions." </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                                                                                                 sorted </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                  "logical indicating if the resulting\n    character should be sorted alphabetically.  Note that\n    this is part of ls() may take most of the time." </span>
+<span class='r-in'><span class='fu'>describe_args</span><span class='op'>(</span><span class='st'>"library"</span>, args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"package"</span>, <span class='st'>"pos"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                     package </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "the name of a package, given as a name or\n    literal character string, or a character string, depending on\n    whether character.only is FALSE (default) or\n    TRUE." </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                                                         pos </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   "the position on the search list at which to attach the\n    loaded namespace.  Can also be the name of a position on the current\n    search list as given by search()." </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>args_tip</span><span class='op'>(</span><span class='st'>"ls"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "ls(name, pos = -1L, envir = as.environment(pos), all.names = FALSE, pattern,\n    sorted = TRUE)"</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>call_tip</span><span class='op'>(</span><span class='st'>"myvar &lt;- lm("</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "lm(formula, data, subset, weights, na.action, method = \"qr\", model = TRUE, x =\n    FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, contrasts = NULL, offset,\n    ...)"</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
