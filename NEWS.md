@@ -1,3 +1,7 @@
+# svMisc 1.2.2
+
+- Link to a JSS paper replaced by the DOI link.
+
 # svMisc 1.2.1
 
 - No more assignation (`last.warning`) into base environment: not permitted any more in R >= 4.1.0.

@@ -22,7 +22,7 @@ The 'svMisc' package contains a large collection of functions that are useful in
 
 ## Help
 
-In R, you access man pages for the various R objects with `help(topic)`, or `?topic`. But, if `topic` is not found, these function do not return a very useful information. For instance, if you want to make a [Kalman filtering](https://www.jstatsoft.org/article/view/v039i02) in R, you may be inclined to search for the topic `kalman`
+In R, you access man pages for the various R objects with `help(topic)`, or `?topic`. But, if `topic` is not found, these function do not return a very useful information. For instance, if you want to make a [Kalman filtering](https://doi.org/10.18637/jss.v039.i02) in R, you may be inclined to search for the topic `kalman`
 
 ```{r}
 ?kalman

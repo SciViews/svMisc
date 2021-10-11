@@ -21,13 +21,13 @@ You can install the released version of {svMisc} from [CRAN](https://CRAN.R-proj
 install.packages("svMisc")
 ```
 
-You can also install the latest developement version. Make sure you have the {remotes} R package installed:
+You can also install the latest development version. Make sure you have the {remotes} R package installed:
 
 ```r
 install.packages("remotes")
 ```
 
-Use `install_github()` to install the {svMisc} package from Github (source from **master** branch will be recompiled on your machine):
+Use `install_github()` to install the {svMisc} package from GitHub (source from **master** branch will be recompiled on your machine):
 
 ```r
 remotes::install_github("SciViews/svMisc")
