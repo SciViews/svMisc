@@ -76,7 +76,7 @@ also further document your custom objects easily in their source files!"><meta n
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.2</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -131,30 +131,18 @@ returned invisibly.</p>
     <div class="dont-index"><p><code><a href="https://rdrr.io/r/utils/help.html">help()</a></code>, <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code>, <code><a href="https://rdrr.io/r/utils/apropos.html">apropos()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"nonexisting"</span><span class="op">)</span> <span class="co"># Not found on search path, but help pages</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 'nonexisting' not found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Searching keyword in all R help pages for ''...</span>
+    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"nonexisting"</span><span class="op">)</span> <span class="co"># Not found on search path, but help pages</span></span>
 <span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"htgdsfgfdsgf"</span><span class="op">)</span> <span class="co"># Not found anywhere</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 'htgdsfgfdsgf' not found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Searching keyword in all R help pages for ''...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> No vignettes or demos or help files found with alias or concept or</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> title matching ‘htgdsfgfdsgf’ using fuzzy matching.</span>
 <span class="r-in"><span class="co">#library(tidyverse)</span></span>
 <span class="r-in"><span class="co">#about("group_by") # Just one page</span></span>
 <span class="r-in"><span class="co">#about("filter") # Several items</span></span>
 <span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"stats::filter"</span><span class="op">)</span> <span class="co"># OK</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Displaying help page...</span>
 <span class="r-in"><span class="co">#about("dplyr::filter") # OK too</span></span>
 <span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"base::filter"</span><span class="op">)</span> <span class="co"># Not found there</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 'filter' not found in package 'base', do you mean?</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> base::Filter, stats::filter</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Searching keyword in all R help pages for 'base'...</span>
 <span class="r-in"><span class="co"># Objects with comment: print comment</span></span>
 <span class="r-in"><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html">structure</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, comment <span class="op">=</span> <span class="st">"A simple vector"</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"vec"</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 'vec' not found, do you mean?</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> utils::RweaveChunkPrefix, base::Vectorize, base::as.data.frame.vector, base::as.vector, base::as.vector.factor, base::is.vector, base::mat.or.vec, methods::removeClass, base::vector</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Searching keyword in all R help pages for ''...</span>
 <span class="r-in"><span class="co"># If there is a srcfile attribute in the comment, also display the file</span></span>
 <span class="r-in"><span class="co"># Hint: integrate some help in the header!</span></span>
 <span class="r-in"><span class="co">#library(data)</span></span>
@@ -164,9 +152,8 @@ returned invisibly.</p>
 <span class="r-in"><span class="co">#urchin &lt;- read("urchin_bio", package = "data")</span></span>
 <span class="r-in"><span class="co">#about("urchin")</span></span>
 <span class="r-in"><span class="va">.</span><span class="op">?</span><span class="va">filter</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Displaying help page...</span>
 <span class="r-in"><span class="va">.</span><span class="op">?</span><span class="fu">stats</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Displaying help page...</span>
+<span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
