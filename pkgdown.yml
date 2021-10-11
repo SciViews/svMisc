@@ -1,10 +1,10 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1.9001
-pkgdown_sha: ce9781a15c7ea07df9fb17a11295ba4abec0b54b
+pkgdown: 1.9000.9000.9000
+pkgdown_sha: 429aac8401b58b0275b76b045b569c28ad1287ba
 articles:
   svMisc: svMisc.html
   temporary_environment: temporary_environment.html
-last_built: 2021-08-05T11:50Z
+last_built: 2021-10-11T15:21Z
 urls:
   reference: https://www.sciviews.org/svMisc/reference
   article: https://www.sciviews.org/svMisc/articles
