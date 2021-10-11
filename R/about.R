@@ -21,6 +21,7 @@
 #' @keywords utilities
 #' @concept help and information about objects
 #' @examples
+#' \dontrun{
 #' about("nonexisting") # Not found on search path, but help pages
 #' about("htgdsfgfdsgf") # Not found anywhere
 #' #library(tidyverse)
@@ -42,6 +43,7 @@
 #' #about("urchin")
 #' .?filter
 #' .?stats::filter
+#' }
 about <- function(topic, ...) {
   if (!is.character(topic) || length(topic) != 1 || nchar(topic) < 1)
     stop("topic must be a single character string")

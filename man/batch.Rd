@@ -39,6 +39,7 @@ A function can be run in batch mode if it never fails (replace
 errors by warnings) and returns \code{TRUE} in case of success, or \code{FALSE} otherwise.
 }
 \examples{
+\dontrun{
 # Here is a fake batchable process
 fake_process <- function(file) {
   message("Processing ", file, "...")
@@ -53,6 +54,7 @@ fake_process <- function(file) {
 # Run it in batch mode on five items
 files <- paste0("file", 1:5)
 batch(files, fake_process)
+}
 }
 \seealso{
 \code{\link[=progress]{progress()}}

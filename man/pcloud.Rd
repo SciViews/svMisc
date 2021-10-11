@@ -29,9 +29,11 @@ for the special \verb{Crypo Folder} that p-Cloud creates if you subscribe to the
 encryption option.
 }
 \examples{
+\dontrun{
 pcloud("subfolder", "file.txt")
 # Only valid with the encryption option and the Crypto Folder is unlocked
 pcloud_crypto("subfolder1", "subfolder2", "crypted_file.txt")
+}
 }
 \seealso{
 \code{\link[=system_file]{system_file()}}, \code{\link[=source_clipboard]{source_clipboard()}}, \code{\link[=file.path]{file.path()}}

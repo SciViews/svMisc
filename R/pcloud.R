@@ -19,9 +19,11 @@
 #' @keywords utilities
 #' @concept file path
 #' @examples
+#' \dontrun{
 #' pcloud("subfolder", "file.txt")
 #' # Only valid with the encryption option and the Crypto Folder is unlocked
 #' pcloud_crypto("subfolder1", "subfolder2", "crypted_file.txt")
+#' }
 pcloud <- function(...) {
   if (is_win()) {
     root <- "P:" # TODO: manage the case it is Q: or R: instead

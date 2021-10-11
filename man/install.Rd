@@ -23,7 +23,7 @@ invoked for its side-effect of installing \R packages.
 This is similar to \code{\link[=install.packages]{install.packages()}}, except it takes by
 default the list of packages from \code{.packages_to_install} in
 \code{SciViews:TempEnv}. That list is populated automatically by infructuous calls
-to \code{package()}, so that just a call to \code{install()} without arguments is
+to \code{package()}, so that just a call to \code{Install()} without arguments is
 generally sufficient.
 }
 \seealso{

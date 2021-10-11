@@ -20,6 +20,7 @@
 #' @keywords utilities
 #' @concept batch processing
 #' @examples
+#' \dontrun{
 #' # Here is a fake batchable process
 #' fake_process <- function(file) {
 #'   message("Processing ", file, "...")
@@ -34,6 +35,7 @@
 #' # Run it in batch mode on five items
 #' files <- paste0("file", 1:5)
 #' batch(files, fake_process)
+#' }
 batch <- function(items, fun, ..., show.progress = !is_aqua() && !is_jgr(),
 suppress.messages = show.progress, verbose = TRUE) {
   if (!is.function(fun))

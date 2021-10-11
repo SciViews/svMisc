@@ -75,6 +75,7 @@ for (i in 0:101) {
   if (i == 101) message("Done!")
 }
 
+\dontrun{
 # 2) A progress indicator with 'x on y'
 for (i in 0:31) {
   progress(i, 30)
@@ -94,6 +95,7 @@ for (i in 0:21) {
   progress(i, 20, progress.bar = TRUE)
   Sys.sleep(0.03)
   if (i == 21) message("Done!")
+}
 }
 
 # 5) A progression dialog box with Tcl/Tk

@@ -37,6 +37,7 @@ comment. In this case, it is the source file that is displayed. So, you can
 also further document your custom objects easily in their source files!
 }
 \examples{
+\dontrun{
 about("nonexisting") # Not found on search path, but help pages
 about("htgdsfgfdsgf") # Not found anywhere
 #library(tidyverse)
@@ -58,6 +59,7 @@ about("vec")
 #about("urchin")
 .?filter
 .?stats::filter
+}
 }
 \seealso{
 \code{\link[=help]{help()}}, \code{\link[=help.search]{help.search()}}, \code{\link[=apropos]{apropos()}}

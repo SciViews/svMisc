@@ -1,3 +1,7 @@
+# svMisc 1.2.3
+
+- Several examples set as \dontrun{} because time to run all examples is too long on CRAN.
+
 # svMisc 1.2.2
 
 - Link to a JSS paper replaced by the DOI link.
