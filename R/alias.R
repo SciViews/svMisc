@@ -3,7 +3,7 @@
 #' @param obj An R object.
 #' @param full.name The full qualified name of the original object whose help
 #' page should be retained as `pkg::name`. If `NULL` (by default), use `obj`.
-#' @param comment A comment to place in `obj`.
+#' @param comment A comment to place in `obj` (will also be printed when calling `.?obj`).
 #'
 #' @return The original `obj` with the `comment` attribute set or replaced with `comment =` plus a `src`attribute set to `full.name =`
 #' @export
@@ -17,7 +17,7 @@
 #' library(svMisc)
 #' .?is.true
 #'}
-alias <- function(obj, full.name = NULL, comment = "alias") {
+alias <- function(obj, full.name = NULL, comment = "") {
   if (is.null(full.name))
     full.name <- deparse(substitute(obj))
   attr(comment, "src") <- full.name
