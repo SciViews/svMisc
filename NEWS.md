@@ -1,3 +1,9 @@
+# svMisc 1.3.0
+
+- Function `alias()` added to "alias" on R object, that is, attach information required to finds its original help page with `.?obj`.
+
+- Function `._(x, code)` allows to use a concise syntax to pass a left-hand side argument to dot (`.`) into the right-hand side of a pipe operator, even if it does not support the dot itself (like the standard R pipe `|>` in R >= 4.1).
+
 # svMisc 1.2.3
 
 - Several examples set as \dontrun{} because time to run all examples is too long on CRAN.
