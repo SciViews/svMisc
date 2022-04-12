@@ -32,7 +32,7 @@ RStudio (server), and is_jgr() indicate if the R GUI is JGR."><meta name="twitte
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -55,7 +55,7 @@ RStudio (server), and is_jgr() indicate if the R GUI is JGR."><meta name="twitte
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -68,13 +68,13 @@ RStudio (server), and is_jgr() indicate if the R GUI is JGR."><meta name="twitte
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -88,7 +88,7 @@ RStudio (server), and is_jgr() indicate if the R GUI is JGR."><meta name="twitte
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Check for the existence of an help file, or some context</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/is_xxx.R"><code>R/is_xxx.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/is_xxx.R" class="external-link"><code>R/is_xxx.R</code></a></small>
     <div class="hidden name"><code>is_help.Rd</code></div>
     </div>
 
@@ -103,7 +103,8 @@ default). <code>is_rstudio()</code> and <code>is_rstudio_server()</code> check i
 RStudio (server), and <code>is_jgr()</code> indicate if the R GUI is JGR.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">is_help</span><span class="op">(</span><span class="va">topic</span>, package <span class="op">=</span> <span class="cn">NULL</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">is_help</span><span class="op">(</span><span class="va">topic</span>, package <span class="op">=</span> <span class="cn">NULL</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 
 <span class="fu">is_win</span><span class="op">(</span><span class="op">)</span>
 
@@ -136,40 +137,47 @@ RStudio (server), and <code>is_jgr()</code> indicate if the R GUI is JGR.</p>
 <span class="fu">isAqua</span><span class="op">(</span><span class="op">)</span>
 
 <span class="fu">isJGR</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>topic</th>
-      <td><p>Name or literal character string: the online help topic to
-look for.</p></td>
-    </tr><tr><th>package</th>
-      <td><p>A character vector giving the package names to look into for
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>topic</dt>
+<dd><p>Name or literal character string: the online help topic to
+look for.</p></dd>
+<dt>package</dt>
+<dd><p>A character vector giving the package names to look into for
 help or example code, or <code>NULL</code>. By default, all packages in the search
-path are used.</p></td>
-    </tr><tr><th>lib.loc</th>
-      <td><p>A character vector of directory names of <span style="R">R</span> libraries, or
+path are used.</p></dd>
+<dt>lib.loc</dt>
+<dd><p>A character vector of directory names of <span style="R">R</span> libraries, or
 <code>NULL</code>. The default value of <code>NULL</code> corresponds to all libraries currently
 known. If the default is used, the loaded packages are searched before the
-libraries.</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+libraries.</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>All these functions return either <code>TRUE</code> or <code>FALSE</code> depending on the
 tested item, except for <code>is_help()</code>, which returns a logical vector with two
 elements. The first one indicating if there is a help file, and the second
 one indicating if there are examples associated with this help file.</p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
+    </div>
+    <div id="note">
+    <h2>Note</h2>
     <p>The code of <code>is_help()</code> is largely inspired from the first part of
-<code><a href="https://rdrr.io/r/utils/example.html">example()</a></code>.</p>
+<code><a href="https://rdrr.io/r/utils/example.html" class="external-link">example()</a></code>.</p>
 <p>Under <strong>Rgui</strong>, to switch fro MDI to SDI more, go to the menu entry
 'Edit' -&gt; 'GUI preferences' to change the Rgui mode, or start Rgui with the
 '--SDI' argument line parameter. Under another platform than Windows or if it
 is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/r/utils/example.html" class="external-link">example()</a></code>, <code><a href="https://rdrr.io/r/utils/help.html" class="external-link">help()</a></code>, <code><a href="https://rdrr.io/r/base/capabilities.html" class="external-link">capabilities()</a></code></p></div>
+    </div>
 
-    <div class="dont-index"><p><code><a href="https://rdrr.io/r/utils/example.html">example()</a></code>, <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code>, <code><a href="https://rdrr.io/r/base/capabilities.html">capabilities()</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">is_help</span><span class="op">(</span><span class="st">"help"</span><span class="op">)</span>    <span class="co"># Help and example</span></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">is_help</span><span class="op">(</span><span class="st">"help"</span><span class="op">)</span>    <span class="co"># Help and example</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    help example </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    TRUE    TRUE </span>
 <span class="r-in"><span class="fu">is_help</span><span class="op">(</span><span class="st">"Rtangle"</span><span class="op">)</span>  <span class="co"># Help but no example</span></span>
@@ -199,6 +207,7 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
 <span class="r-in"><span class="fu">is_jgr</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -216,19 +225,19 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -239,23 +248,23 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -263,23 +272,23 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -304,7 +313,7 @@ is not Rgui, then <code>is_sdi()</code> always returns <code>FALSE</code>.`</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

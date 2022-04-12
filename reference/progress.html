@@ -29,7 +29,7 @@ console, or a true progression bar widget in a GUI.'><meta name="twitter:card" c
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -52,7 +52,7 @@ console, or a true progression bar widget in a GUI.'><meta name="twitter:card" c
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -65,13 +65,13 @@ console, or a true progression bar widget in a GUI.'><meta name="twitter:card" c
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -85,7 +85,7 @@ console, or a true progression bar widget in a GUI.'><meta name="twitter:card" c
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Display progression of a long calculation at the R console and/or in a GUI</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/progress.R"><code>R/progress.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/progress.R" class="external-link"><code>R/progress.R</code></a></small>
     <div class="hidden name"><code>progress.Rd</code></div>
     </div>
 
@@ -97,7 +97,8 @@ either through a message, or through a text-based "progression bar" on the
 console, or a true progression bar widget in a GUI.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">progress</span><span class="op">(</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">progress</span><span class="op">(</span>
   <span class="va">value</span>,
   max.value <span class="op">=</span> <span class="cn">NULL</span>,
   progress.bar <span class="op">=</span> <span class="cn">FALSE</span>,
@@ -106,40 +107,44 @@ console, or a true progression bar widget in a GUI.</p>
   console <span class="op">=</span> <span class="cn">TRUE</span>,
   gui <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>value</th>
-      <td><p>Current value of the progression (use a value higher than
-<code>max.value</code> to dismiss the progression indication automatically.</p></td>
-    </tr><tr><th>max.value</th>
-      <td><p>Maximum value to be achieved.</p></td>
-    </tr><tr><th>progress.bar</th>
-      <td><p>Should we display a progression bar on the console? If
-<code>FALSE</code>, a temporary message is used.</p></td>
-    </tr><tr><th>char</th>
-      <td><p>The character to use to fill the progress bar in the console. not
-used for the alternate display, or for GUI display of progression.</p></td>
-    </tr><tr><th>init</th>
-      <td><p>Do we have to initialize the progress bar? It is usually done the
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>value</dt>
+<dd><p>Current value of the progression (use a value higher than
+<code>max.value</code> to dismiss the progression indication automatically.</p></dd>
+<dt>max.value</dt>
+<dd><p>Maximum value to be achieved.</p></dd>
+<dt>progress.bar</dt>
+<dd><p>Should we display a progression bar on the console? If
+<code>FALSE</code>, a temporary message is used.</p></dd>
+<dt>char</dt>
+<dd><p>The character to use to fill the progress bar in the console. not
+used for the alternate display, or for GUI display of progression.</p></dd>
+<dt>init</dt>
+<dd><p>Do we have to initialize the progress bar? It is usually done the
 first time the function is used, and the default value <code>init = (value == 0)</code>
 is correct most of the time. You must specify <code>init = TRUE</code> in two cases:
 (1) if the first value to display is different from zero, and (2) if your
 code issues some text on screen during progression display. Hence, you must
-force redraw of the progression bar.</p></td>
-    </tr><tr><th>console</th>
-      <td><p>Do we display progression on the console?</p></td>
-    </tr><tr><th>gui</th>
-      <td><p>Do we display progression in a dialog box, or any other GUI widget?
+force redraw of the progression bar.</p></dd>
+<dt>console</dt>
+<dd><p>Do we display progression on the console?</p></dd>
+<dt>gui</dt>
+<dd><p>Do we display progression in a dialog box, or any other GUI widget?
 See "details" and "examples" hereunder to know how to implement your own GUI
-progression indicator.</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+progression indicator.</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>This function returns <code>NULL</code> invisibly. It is invoked for its side
 effects.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
+    </div>
+    <div id="details">
+    <h2>Details</h2>
     <p>The function <code>progress()</code> proposes different styles of progression
-indicators than the standard <code><a href="https://rdrr.io/r/utils/txtProgressBar.html">txtProgressBar()</a></code> in package 'utils'.</p>
+indicators than the standard <code><a href="https://rdrr.io/r/utils/txtProgressBar.html" class="external-link">txtProgressBar()</a></code> in package 'utils'.</p>
 <p>The function uses backspace (\8) to erase characters at the console.</p>
 <p>With <code>gui = TRUE</code>, it looks for all functions defined in the <code>.progress</code> list
 located in the <code>SciViews:TempEnv</code> environment. Each function is executed in
@@ -150,16 +155,19 @@ the <code>.progress</code> list. See also example (5) hereunder.</p>
 calculation (for instance, using a 'Cancel' button), you are responsible to
 pass this info to your code doing the long calculation and to stop it there.
 Example (5) shows how to do this.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
+    <div class="dont-index"><p><code><a href="batch.html">batch()</a></code>, <code><a href="https://rdrr.io/r/utils/txtProgressBar.html" class="external-link">txtProgressBar()</a></code></p></div>
+    </div>
 
-    <div class="dont-index"><p><code><a href="batch.html">batch()</a></code>, <code><a href="https://rdrr.io/r/utils/txtProgressBar.html">txtProgressBar()</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># 1) A simple progress indicator in percent</span></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># 1) A simple progress indicator in percent</span></span>
 <span class="r-in"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span><span class="fl">101</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">  <span class="fu">progress</span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">101</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span></span>
+<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">101</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Progress:   0%  Progress:   1%  Progress:   2%  Progress:   3%  Progress:   4%  Progress:   5%  Progress:   6%  Progress:   7%  Progress:   8%  Progress:   9%  Progress:  10%  Progress:  11%  Progress:  12%  Progress:  13%  Progress:  14%  Progress:  15%  Progress:  16%  Progress:  17%  Progress:  18%  Progress:  19%  Progress:  20%  Progress:  21%  Progress:  22%  Progress:  23%  Progress:  24%  Progress:  25%  Progress:  26%  Progress:  27%  Progress:  28%  Progress:  29%  Progress:  30%  Progress:  31%  Progress:  32%  Progress:  33%  Progress:  34%  Progress:  35%  Progress:  36%  Progress:  37%  Progress:  38%  Progress:  39%  Progress:  40%  Progress:  41%  Progress:  42%  Progress:  43%  Progress:  44%  Progress:  45%  Progress:  46%  Progress:  47%  Progress:  48%  Progress:  49%  Progress:  50%  Progress:  51%  Progress:  52%  Progress:  53%  Progress:  54%  Progress:  55%  Progress:  56%  Progress:  57%  Progress:  58%  Progress:  59%  Progress:  60%  Progress:  61%  Progress:  62%  Progress:  63%  Progress:  64%  Progress:  65%  Progress:  66%  Progress:  67%  Progress:  68%  Progress:  69%  Progress:  70%  Progress:  71%  Progress:  72%  Progress:  73%  Progress:  74%  Progress:  75%  Progress:  76%  Progress:  77%  Progress:  78%  Progress:  79%  Progress:  80%  Progress:  81%  Progress:  82%  Progress:  83%  Progress:  84%  Progress:  85%  Progress:  86%  Progress:  87%  Progress:  88%  Progress:  89%  Progress:  90%  Progress:  91%  Progress:  92%  Progress:  93%  Progress:  94%  Progress:  95%  Progress:  96%  Progress:  97%  Progress:  98%  Progress:  99%  Progress: 100%                  </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
@@ -168,86 +176,87 @@ Example (5) shows how to do this.</p>
 <span class="r-in"><span class="co"># 2) A progress indicator with 'x on y'</span></span>
 <span class="r-in"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span><span class="fl">31</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">  <span class="fu">progress</span><span class="op">(</span><span class="va">i</span>, <span class="fl">30</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.02</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">31</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.02</span><span class="op">)</span></span>
+<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">31</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># 3) A progress bar in percent</span></span>
 <span class="r-in"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span><span class="fl">101</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">  <span class="fu">progress</span><span class="op">(</span><span class="va">i</span>, progress.bar <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">101</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span></span>
+<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">101</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># 4) A progress indicator with 'x on y'</span></span>
 <span class="r-in"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">  <span class="fu">progress</span><span class="op">(</span><span class="va">i</span>, <span class="fl">20</span>, progress.bar <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.03</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">21</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.03</span><span class="op">)</span></span>
+<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">21</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 <span class="r-in"><span class="op">}</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># 5) A progression dialog box with Tcl/Tk</span></span>
 <span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va">tcltk</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va">tcltk</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">  <span class="va">gui_progress</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">value</span>, <span class="va">max.value</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">    <span class="co"># Do we need to destroy the progression dialog box?</span></span>
 <span class="r-in">    <span class="kw">if</span> <span class="op">(</span><span class="va">value</span> <span class="op">&gt;</span> <span class="va">max.value</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="kw"><a href="https://rdrr.io/r/base/try.html">try</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html">tkdestroy</a></span><span class="op">(</span><span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">"gui_progress_window"</span><span class="op">)</span><span class="op">)</span>, silent <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="temp_env.html">delete_temp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gui_progress_state"</span>, <span class="st">"gui_progress_window"</span>,</span>
+<span class="r-in">      <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html" class="external-link">tkdestroy</a></span><span class="op">(</span><span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">"gui_progress_window"</span><span class="op">)</span><span class="op">)</span>, silent <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in">      <span class="fu"><a href="temp_env.html">delete_temp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gui_progress_state"</span>, <span class="st">"gui_progress_window"</span>,</span>
 <span class="r-in">        <span class="st">"gui_progress_cancel"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in">      <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in">    <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="temp_env.html">exists_temp</a></span><span class="op">(</span><span class="st">"gui_progress_window"</span><span class="op">)</span> <span class="op">&amp;&amp;</span></span>
-<span class="r-in">      <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/class.html">inherits</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/try.html">try</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html">tkwm.deiconify</a></span><span class="op">(</span><span class="va">tt</span> <span class="op">&lt;-</span> <span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">"gui_progress_window"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">inherits</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html" class="external-link">tkwm.deiconify</a></span><span class="op">(</span><span class="va">tt</span> <span class="op">&lt;-</span> <span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">"gui_progress_window"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">        silent <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="st">"try-error"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">      <span class="co"># The progression dialog box exists</span></span>
 <span class="r-in">      <span class="co"># Focus on it and change progress value</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html">tkfocus</a></span><span class="op">(</span><span class="va">tt</span><span class="op">)</span></span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html" class="external-link">tkfocus</a></span><span class="op">(</span><span class="va">tt</span><span class="op">)</span></span>
 <span class="r-in">      <span class="va">state</span> <span class="op">&lt;-</span> <span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">"gui_progress_state"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html">tclvalue</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">value</span></span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html" class="external-link">tclvalue</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">value</span></span>
 <span class="r-in">    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
 <span class="r-in">      <span class="co"># The progression dialog box must be (re)created</span></span>
 <span class="r-in">      <span class="co"># First, make sure there is no remaining "gui_progress_cancel"</span></span>
 <span class="r-in">      <span class="fu"><a href="temp_env.html">delete_temp</a></span><span class="op">(</span><span class="st">"gui_progress_cancel"</span><span class="op">)</span></span>
 <span class="r-in">      <span class="co"># Create a Tcl variable to hold current progression state</span></span>
-<span class="r-in">      <span class="va">state</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html">tclVar</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span>
+<span class="r-in">      <span class="va">state</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html" class="external-link">tclVar</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span>
 <span class="r-in">      <span class="fu"><a href="temp_env.html">assign_temp</a></span><span class="op">(</span><span class="st">"gui_progress_state"</span>, <span class="va">state</span><span class="op">)</span></span>
 <span class="r-in">      <span class="co"># Create the progression dialog box</span></span>
-<span class="r-in">      <span class="va">tt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TkWidgets.html">tktoplevel</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in">      <span class="va">tt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TkWidgets.html" class="external-link">tktoplevel</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in">      <span class="fu"><a href="temp_env.html">assign_temp</a></span><span class="op">(</span><span class="st">"gui_progress_window"</span>, <span class="va">tt</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html">tktitle</a></span><span class="op">(</span><span class="va">tt</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"Waiting..."</span></span>
-<span class="r-in">      <span class="va">sc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TkWidgets.html">tkscale</a></span><span class="op">(</span><span class="va">tt</span>, orient <span class="op">=</span> <span class="st">"h"</span>, state <span class="op">=</span> <span class="st">"disabled"</span>, to <span class="op">=</span> <span class="va">max.value</span>,</span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html" class="external-link">tktitle</a></span><span class="op">(</span><span class="va">tt</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"Waiting..."</span></span>
+<span class="r-in">      <span class="va">sc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TkWidgets.html" class="external-link">tkscale</a></span><span class="op">(</span><span class="va">tt</span>, orient <span class="op">=</span> <span class="st">"h"</span>, state <span class="op">=</span> <span class="st">"disabled"</span>, to <span class="op">=</span> <span class="va">max.value</span>,</span>
 <span class="r-in">        label <span class="op">=</span> <span class="st">"Progress:"</span>, length <span class="op">=</span> <span class="fl">200</span>, variable <span class="op">=</span> <span class="va">state</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html">tkpack</a></span><span class="op">(</span><span class="va">sc</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">but</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TkWidgets.html">tkbutton</a></span><span class="op">(</span><span class="va">tt</span>, text <span class="op">=</span> <span class="st">"Cancel"</span>, command <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html" class="external-link">tkpack</a></span><span class="op">(</span><span class="va">sc</span><span class="op">)</span></span>
+<span class="r-in">      <span class="va">but</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/tcltk/TkWidgets.html" class="external-link">tkbutton</a></span><span class="op">(</span><span class="va">tt</span>, text <span class="op">=</span> <span class="st">"Cancel"</span>, command <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">        <span class="co"># Set a flag telling to stop running calculation</span></span>
 <span class="r-in">        <span class="fu"><a href="temp_env.html">assign_temp</a></span><span class="op">(</span><span class="st">"gui_progress_cancel"</span>, <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># Content is not important!</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html">tkdestroy</a></span><span class="op">(</span><span class="va">tt</span><span class="op">)</span></span>
+<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/tcltk/TclInterface.html" class="external-link">tkdestroy</a></span><span class="op">(</span><span class="va">tt</span><span class="op">)</span></span>
 <span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html">tkpack</a></span><span class="op">(</span><span class="va">but</span><span class="op">)</span></span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/tcltk/TkCommands.html" class="external-link">tkpack</a></span><span class="op">(</span><span class="va">but</span><span class="op">)</span></span>
 <span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span class="r-in">  <span class="op">}</span></span>
 <span class="r-in">  <span class="co"># Register it as function to use in progress()</span></span>
 <span class="r-in">  <span class="fu"><a href="temp_env.html">change_temp</a></span><span class="op">(</span><span class="st">".progress"</span>, <span class="st">"gui_progress"</span>, <span class="va">gui_progress</span>,</span>
 <span class="r-in">    replace.existing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">gui_progress</span><span class="op">)</span> <span class="co"># Don't need this any more</span></span>
+<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">gui_progress</span><span class="op">)</span> <span class="co"># Don't need this any more</span></span>
 <span class="r-in">  <span class="co"># Test it...</span></span>
 <span class="r-in">  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span><span class="fl">101</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">    <span class="fu">progress</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="co"># Could also set console = FALSE for using the GUI only</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.05</span><span class="op">)</span></span>
+<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.05</span><span class="op">)</span></span>
 <span class="r-in">    <span class="co"># The code to stop long calc when user presses "Cancel"</span></span>
 <span class="r-in">    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="temp_env.html">exists_temp</a></span><span class="op">(</span><span class="st">"gui_progress_cancel"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">      <span class="fu">progress</span><span class="op">(</span><span class="fl">101</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="co"># Make sure to clean up everything</span></span>
 <span class="r-in">      <span class="kw">break</span></span>
 <span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">    <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">101</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
+<span class="r-in">    <span class="kw">if</span> <span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="fl">101</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Done!"</span><span class="op">)</span></span>
 <span class="r-in">  <span class="op">}</span></span>
 <span class="r-in">  <span class="co"># Unregister the GUI for progress</span></span>
 <span class="r-in">  <span class="fu"><a href="temp_env.html">change_temp</a></span><span class="op">(</span><span class="st">".progress"</span>, <span class="st">"gui_progress"</span>, <span class="cn">NULL</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -265,19 +274,19 @@ Example (5) shows how to do this.</p>
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -288,23 +297,23 @@ Example (5) shows how to do this.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -312,23 +321,23 @@ Example (5) shows how to do this.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -353,7 +362,7 @@ Example (5) shows how to do this.</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

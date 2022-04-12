@@ -26,7 +26,7 @@ They implement the R-side code for the SciViews R package manager."><meta name="
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -49,7 +49,7 @@ They implement the R-side code for the SciViews R package manager."><meta name="
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -62,13 +62,13 @@ They implement the R-side code for the SciViews R package manager."><meta name="
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -82,7 +82,7 @@ They implement the R-side code for the SciViews R package manager."><meta name="
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Functions to manage R side of the SciViews R package manager</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/pkgman.R"><code>R/pkgman.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/pkgman.R" class="external-link"><code>R/pkgman.R</code></a></small>
     <div class="hidden name"><code>pkgman_describe.Rd</code></div>
     </div>
 
@@ -91,7 +91,8 @@ They implement the R-side code for the SciViews R package manager."><meta name="
 They implement the R-side code for the SciViews <span style="R">R</span> package manager.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">pkgman_describe</span><span class="op">(</span><span class="va">pkgname</span>, print.it <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pkgman_describe</span><span class="op">(</span><span class="va">pkgname</span>, print.it <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="fu">pkgman_get_mirrors</span><span class="op">(</span><span class="op">)</span>
 
@@ -99,7 +100,7 @@ They implement the R-side code for the SciViews <span style="R">R</span> package
   page <span class="op">=</span> <span class="st">"next"</span>,
   pattern <span class="op">=</span> <span class="st">""</span>,
   n <span class="op">=</span> <span class="fl">50</span>,
-  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Package"</span>, <span class="st">"Version"</span>, <span class="st">"InstalledVersion"</span>, <span class="st">"Status"</span><span class="op">)</span>,
+  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Package"</span>, <span class="st">"Version"</span>, <span class="st">"InstalledVersion"</span>, <span class="st">"Status"</span><span class="op">)</span>,
   reload <span class="op">=</span> <span class="cn">FALSE</span>,
   sep <span class="op">=</span> <span class="st">";"</span>,
   eol <span class="op">=</span> <span class="st">"\t\n"</span>
@@ -125,7 +126,7 @@ They implement the R-side code for the SciViews <span style="R">R</span> package
   page <span class="op">=</span> <span class="st">"next"</span>,
   pattern <span class="op">=</span> <span class="st">""</span>,
   n <span class="op">=</span> <span class="fl">50</span>,
-  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Package"</span>, <span class="st">"Version"</span>, <span class="st">"InstalledVersion"</span>, <span class="st">"Status"</span><span class="op">)</span>,
+  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Package"</span>, <span class="st">"Version"</span>, <span class="st">"InstalledVersion"</span>, <span class="st">"Status"</span><span class="op">)</span>,
   reload <span class="op">=</span> <span class="cn">FALSE</span>,
   sep <span class="op">=</span> <span class="st">";"</span>,
   eol <span class="op">=</span> <span class="st">"\t\n"</span>
@@ -142,44 +143,50 @@ They implement the R-side code for the SciViews <span style="R">R</span> package
 <span class="fu">pkgManLoad</span><span class="op">(</span><span class="va">pkgname</span><span class="op">)</span>
 
 <span class="fu">pkgManDetach</span><span class="op">(</span><span class="va">pkgname</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>pkgname</th>
-      <td><p>The name of one R package (character string).</p></td>
-    </tr><tr><th>print.it</th>
-      <td><p>Should the result be printed?</p></td>
-    </tr><tr><th>page</th>
-      <td><p>Which page to get?</p></td>
-    </tr><tr><th>pattern</th>
-      <td><p>Selection pattern.</p></td>
-    </tr><tr><th>n</th>
-      <td><p>The number of items to retrieve.</p></td>
-    </tr><tr><th>keep</th>
-      <td><p>The columns to keep in the resulting data frame.</p></td>
-    </tr><tr><th>reload</th>
-      <td><p>Do we force reload of the data and ignore cache version?</p></td>
-    </tr><tr><th>sep</th>
-      <td><p>Field separator to use.</p></td>
-    </tr><tr><th>eol</th>
-      <td><p>End-of-line sequence to use.</p></td>
-    </tr><tr><th>url</th>
-      <td><p>The URL to use for the current CRAN mirror.</p></td>
-    </tr><tr><th>pkgs</th>
-      <td><p>A list of packages to install.</p></td>
-    </tr><tr><th>install.deps</th>
-      <td><p>Do we also install dependencies?</p></td>
-    </tr><tr><th>ask</th>
-      <td><p>Do we prompt the user for package installation?</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>pkgname</dt>
+<dd><p>The name of one R package (character string).</p></dd>
+<dt>print.it</dt>
+<dd><p>Should the result be printed?</p></dd>
+<dt>page</dt>
+<dd><p>Which page to get?</p></dd>
+<dt>pattern</dt>
+<dd><p>Selection pattern.</p></dd>
+<dt>n</dt>
+<dd><p>The number of items to retrieve.</p></dd>
+<dt>keep</dt>
+<dd><p>The columns to keep in the resulting data frame.</p></dd>
+<dt>reload</dt>
+<dd><p>Do we force reload of the data and ignore cache version?</p></dd>
+<dt>sep</dt>
+<dd><p>Field separator to use.</p></dd>
+<dt>eol</dt>
+<dd><p>End-of-line sequence to use.</p></dd>
+<dt>url</dt>
+<dd><p>The URL to use for the current CRAN mirror.</p></dd>
+<dt>pkgs</dt>
+<dd><p>A list of packages to install.</p></dd>
+<dt>install.deps</dt>
+<dd><p>Do we also install dependencies?</p></dd>
+<dt>ask</dt>
+<dd><p>Do we prompt the user for package installation?</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>These functions return data that is intended to be used by the
 SciViews <span style="R">R</span> package manager.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
     <div class="dont-index"><p><code><a href="package.html">package()</a></code></p></div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
+    </div>
+    <div id="author">
+    <h2>Author</h2>
     <p>Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wuerzburg.de</a></p>
+    </div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -198,19 +205,19 @@ SciViews <span style="R">R</span> package manager.</p>
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -221,23 +228,23 @@ SciViews <span style="R">R</span> package manager.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -245,23 +252,23 @@ SciViews <span style="R">R</span> package manager.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -286,7 +293,7 @@ SciViews <span style="R">R</span> package manager.</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

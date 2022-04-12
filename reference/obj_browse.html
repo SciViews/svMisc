@@ -26,7 +26,7 @@ complete object browser in a GUI client."><meta name="twitter:card" content="sum
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -49,7 +49,7 @@ complete object browser in a GUI client."><meta name="twitter:card" content="sum
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -62,13 +62,13 @@ complete object browser in a GUI client."><meta name="twitter:card" content="sum
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -82,7 +82,7 @@ complete object browser in a GUI client."><meta name="twitter:card" content="sum
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Functions to implement an object browser</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/obj_browse.R"><code>R/obj_browse.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/obj_browse.R" class="external-link"><code>R/obj_browse.R</code></a></small>
     <div class="hidden name"><code>obj_browse.Rd</code></div>
     </div>
 
@@ -91,7 +91,8 @@ complete object browser in a GUI client."><meta name="twitter:card" content="sum
 complete object browser in a GUI client.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">obj_browse</span><span class="op">(</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">obj_browse</span><span class="op">(</span>
   id <span class="op">=</span> <span class="st">"default"</span>,
   envir <span class="op">=</span> <span class="va">.GlobalEnv</span>,
   all.names <span class="op">=</span> <span class="cn">NULL</span>,
@@ -125,12 +126,12 @@ complete object browser in a GUI client.</p>
 <span class="fu">write.objList</span><span class="op">(</span><span class="va">x</span>, <span class="va">path</span>, sep <span class="op">=</span> <span class="st">"\t"</span>, <span class="va">...</span><span class="op">)</span>
 
 <span class="co"># S3 method for objList</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span>
   <span class="va">x</span>,
   sep <span class="op">=</span> <span class="cn">NA</span>,
   eol <span class="op">=</span> <span class="st">"\n"</span>,
-  header <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"all.info"</span><span class="op">)</span>,
-  raw.output <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">sep</span><span class="op">)</span>,
+  header <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"all.info"</span><span class="op">)</span>,
+  raw.output <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">sep</span><span class="op">)</span>,
   <span class="va">...</span>
 <span class="op">)</span>
 
@@ -184,62 +185,66 @@ complete object browser in a GUI client.</p>
   sep <span class="op">=</span> <span class="st">"\t"</span>,
   path <span class="op">=</span> <span class="cn">NULL</span>
 <span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>id</th>
-      <td><p>The id of the object browser (you can run several ones
-concurrently, providing you give them different ids).</p></td>
-    </tr><tr><th>envir</th>
-      <td><p>An environment, or the name of the environment, or the position
-in the <code><a href="https://rdrr.io/r/base/search.html">search()</a></code> path.</p></td>
-    </tr><tr><th>all.names</th>
-      <td><p>Do we display all names (including hidden variables starting
-with '.')?</p></td>
-    </tr><tr><th>pattern</th>
-      <td><p>A pattern to match for selecting variables.</p></td>
-    </tr><tr><th>group</th>
-      <td><p>A group to filter.</p></td>
-    </tr><tr><th>sep</th>
-      <td><p>Separator to use between items (if path is not <code>NULL</code>).</p></td>
-    </tr><tr><th>path</th>
-      <td><p>The path where to write a temporary file with the requested
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>id</dt>
+<dd><p>The id of the object browser (you can run several ones
+concurrently, providing you give them different ids).</p></dd>
+<dt>envir</dt>
+<dd><p>An environment, or the name of the environment, or the position
+in the <code><a href="https://rdrr.io/r/base/search.html" class="external-link">search()</a></code> path.</p></dd>
+<dt>all.names</dt>
+<dd><p>Do we display all names (including hidden variables starting
+with '.')?</p></dd>
+<dt>pattern</dt>
+<dd><p>A pattern to match for selecting variables.</p></dd>
+<dt>group</dt>
+<dd><p>A group to filter.</p></dd>
+<dt>sep</dt>
+<dd><p>Separator to use between items (if path is not <code>NULL</code>).</p></dd>
+<dt>path</dt>
+<dd><p>The path where to write a temporary file with the requested
 information. Set to NULL (default) if you don't pass this data to your GUI
-client by mean of a file.</p></td>
-    </tr><tr><th>regenerate</th>
-      <td><p>Do we force to regenerate the information?</p></td>
-    </tr><tr><th>object</th>
-      <td><p>Name of the object selected in the object browser,
-components/arguments of which should be listed.</p></td>
-    </tr><tr><th>all.info</th>
-      <td><p>Do we return all the information (envir as first column or
-not (by default).</p></td>
-    </tr><tr><th>compare</th>
-      <td><p>If TRUE, result is compared with last cached value and the
-client is updated only if something changed.</p></td>
-    </tr><tr><th>...</th>
-      <td><p>Further arguments, passed to <code><a href="https://rdrr.io/r/utils/write.table.html">write.table()</a></code>.</p></td>
-    </tr><tr><th>x</th>
-      <td><p>Object returned by <code>obj_list()</code>.</p></td>
-    </tr><tr><th>eol</th>
-      <td><p>Separator to use between object entries, default is to list each
-item in a separate line.</p></td>
-    </tr><tr><th>header</th>
-      <td><p>If <code>TRUE</code>, two-line header is printed, of the form: <br>
+client by mean of a file.</p></dd>
+<dt>regenerate</dt>
+<dd><p>Do we force to regenerate the information?</p></dd>
+<dt>object</dt>
+<dd><p>Name of the object selected in the object browser,
+components/arguments of which should be listed.</p></dd>
+<dt>all.info</dt>
+<dd><p>Do we return all the information (envir as first column or
+not (by default).</p></dd>
+<dt>compare</dt>
+<dd><p>If TRUE, result is compared with last cached value and the
+client is updated only if something changed.</p></dd>
+<dt>...</dt>
+<dd><p>Further arguments, passed to <code><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">write.table()</a></code>.</p></dd>
+<dt>x</dt>
+<dd><p>Object returned by <code>obj_list()</code>.</p></dd>
+<dt>eol</dt>
+<dd><p>Separator to use between object entries, default is to list each
+item in a separate line.</p></dd>
+<dt>header</dt>
+<dd><p>If <code>TRUE</code>, two-line header is printed, of the form: <br>
 Environment = environment name <br>
 Object = object name <br>
-Default is not to print header if <code>all.info == TRUE</code>.</p></td>
-    </tr><tr><th>raw.output</th>
-      <td><p>If <code>TRUE</code>, a compact, better suited for parsing output is
-produced.</p></td>
-    </tr><tr><th>objects</th>
-      <td><p>A list with selected items in the object browser.</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+Default is not to print header if <code>all.info == TRUE</code>.</p></dd>
+<dt>raw.output</dt>
+<dd><p>If <code>TRUE</code>, a compact, better suited for parsing output is
+produced.</p></dd>
+<dt>objects</dt>
+<dd><p>A list with selected items in the object browser.</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>Depending on the function, a list, a string, a reference to an
 external, temporary file or <code>TRUE</code> in case of success or <code>FALSE</code> otherwise
 is returned invisibly.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
+    </div>
+    <div id="details">
+    <h2>Details</h2>
     <p><code>obj_browse()</code> does the horse work. <code>obj_dir()</code> gets the temporary
 directory where exchange files with the GUI client are stored, in case you
 exchange data through files. You can use a better way to communicate with
@@ -253,17 +258,21 @@ object or function argument.</p>
 <p>obj_menu()` computes a context menu for selected object(s) in the object
 explorer managed by the GUI client.</p>
 <p><code>print.objList()</code> print method for <code>objList</code> objects.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
     <div class="dont-index"><p><code><a href="completion.html">completion()</a></code>, <code><a href="describe_function.html">call_tip()</a></code></p></div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
+    </div>
+    <div id="author">
+    <h2>Author</h2>
     <p>Philippe Grosjean <a href="mailto:phgrosjean@sciviews.org">phgrosjean@sciviews.org</a> &amp;
 Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wuerzburg.de</a></p>
+    </div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Create various context menus</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Create various context menus</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">(</span><span class="fu">obj_info</span><span class="op">(</span>object <span class="op">=</span> <span class="st">"iris"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "'data.frame':\t150 obs. of  5 variables:"                                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [2] " $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ..."                            </span>
@@ -272,7 +281,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> [5] " $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ..."                        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [6] " $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ..."</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [7] "Estimated size: 7.086 bytes kb"                                                           </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">trees</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">trees</span><span class="op">)</span></span>
 <span class="r-in"><span class="co"># For one object</span></span>
 <span class="r-in"><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>objects <span class="op">=</span> <span class="st">"iris"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           widget            value</span>
@@ -354,7 +363,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> sep.2                               FALSE    FALSE  FALSE        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> remove              rm(iris)        FALSE    FALSE  FALSE        </span>
 <span class="r-in"><span class="co"># For multiple objects</span></span>
-<span class="r-in"><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>objects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"iris"</span>, <span class="st">"trees"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>objects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"iris"</span>, <span class="st">"trees"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        widget      value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> save     item Save as...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> remove   item     Remove</span>
@@ -371,13 +380,13 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] widget   value    tip      code     icon     checked  disabled hidden  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [9] options </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;0 rows&gt; (or 0-length row.names)</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">trees</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">trees</span><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>object 'iris' not found</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>object 'trees' not found</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># For environments</span></span>
 <span class="r-in"><span class="op">(</span><span class="fu">obj_info</span><span class="op">(</span>envir <span class="op">=</span> <span class="st">".GlobalEnv"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Global environment\n\n          used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)\nNcells  892661 47.7    1720081 91.9         NA  1326912 70.9\nVcells 1723443 13.2    8388608 64.0      16384  2871734 22.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Global environment\n\n          used (Mb) gc trigger  (Mb) limit (Mb) max used  (Mb)\nNcells 1132155 60.5    2084115 111.4         NA  2084115 111.4\nVcells 5921910 45.2   12255594  93.6      16384  8370064  63.9"</span>
 <span class="r-in"><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>envir <span class="op">=</span> <span class="st">".GlobalEnv"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        widget     value                                              tip</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> load     item   Load...                                   Load R objects</span>
@@ -399,7 +408,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span>                            code icon checked disabled hidden options</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> detach detach(SciViews:TempEnv)        FALSE     TRUE  FALSE        </span>
 <span class="r-in"><span class="op">(</span><span class="fu">obj_info</span><span class="op">(</span>envir <span class="op">=</span> <span class="st">"package:datasets"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Package:       datasets\nVersion:       4.1.1\nPriority:      base\nTitle:         The R Datasets Package\nAuthor:        R Core Team and contributors worldwide\nMaintainer:    R Core Team &lt;do-use-Contact-address@r-project.org&gt;\nContact:       R-help mailing list &lt;r-help@r-project.org&gt;\nDescription:   Base R datasets.\nLicense:       Part of R 4.1.1\nBuilt:         R 4.1.1; ; 2021-08-10 22:22:15 UTC; unix"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Package:       datasets\nVersion:       4.1.3\nPriority:      base\nTitle:         The R Datasets Package\nAuthor:        R Core Team and contributors worldwide\nMaintainer:    R Core Team &lt;do-use-Contact-address@r-project.org&gt;\nContact:       R-help mailing list &lt;r-help@r-project.org&gt;\nDescription:   Base R datasets.\nLicense:       Part of R 4.1.3\nBuilt:         R 4.1.3; ; 2022-03-11 01:17:46 UTC; unix"</span>
 <span class="r-in"><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>envir <span class="op">=</span> <span class="st">"package:datasets"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              widget             value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> pkgInfo        item      Package info</span>
@@ -429,6 +438,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> [9] options </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;0 rows&gt; (or 0-length row.names)</span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -446,19 +456,19 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -469,23 +479,23 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -493,23 +503,23 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -534,7 +544,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

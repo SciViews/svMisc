@@ -28,7 +28,7 @@ indicate fun$variant(). See examples."><meta name="twitter:card" content="summar
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -51,7 +51,7 @@ indicate fun$variant(). See examples."><meta name="twitter:card" content="summar
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -64,13 +64,13 @@ indicate fun$variant(). See examples."><meta name="twitter:card" content="summar
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -84,37 +84,43 @@ indicate fun$variant(). See examples."><meta name="twitter:card" content="summar
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Define a function as being 'subsettable' using $ operator</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/subsettable.R"><code>R/subsettable.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/subsettable.R" class="external-link"><code>R/subsettable.R</code></a></small>
     <div class="hidden name"><code>subsettable.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>In case a textual argument allows for selecting the result, for
-instance, if <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> allows for several charts that you can choose with a
+instance, if <code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot()</a></code> allows for several charts that you can choose with a
 <code>type=</code> or <code>which=</code>, making the function 'subsettable' also allows to
 indicate <code>fun$variant()</code>. See examples.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre><code># S3 method for subsettable_type
+    <div id="ref-usage">
+    <div class="sourceCode"><pre><code># S3 method for subsettable_type
 $(x, name)
 
 # S3 method for subsettable_which
 $(x, name)</code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>x</th>
-      <td><p>A <code>subsettable_type</code> function.</p></td>
-    </tr><tr><th>name</th>
-      <td><p>The value to use for the <code>type=</code> argument.</p></td>
-    </tr></table><h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">foo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html">structure</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">type</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">type</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html">match.arg</a></span><span class="op">(</span><span class="va">type</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/switch.html">switch</a></span><span class="op">(</span><span class="va">type</span>,</span>
-<span class="r-in">    histogram <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>,</span>
-<span class="r-in">    boxplot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="kw"><a href="https://rdrr.io/r/base/stop.html">stop</a></span><span class="op">(</span><span class="st">"unknow type"</span><span class="op">)</span></span>
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>x</dt>
+<dd><p>A <code>subsettable_type</code> function.</p></dd>
+<dt>name</dt>
+<dd><p>The value to use for the <code>type=</code> argument.</p></dd>
+</dl></div>
+
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">foo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">type</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in">  <span class="va">type</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html" class="external-link">match.arg</a></span><span class="op">(</span><span class="va">type</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/switch.html" class="external-link">switch</a></span><span class="op">(</span><span class="va">type</span>,</span>
+<span class="r-in">    histogram <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>,</span>
+<span class="r-in">    boxplot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>,</span>
+<span class="r-in">    <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="st">"unknow type"</span><span class="op">)</span></span>
 <span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span>, class <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"function"</span>, <span class="st">"subsettable_type"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="op">}</span>, class <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"function"</span>, <span class="st">"subsettable_type"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">foo</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> function(x, type = c("histogram", "boxplot"), ...) {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   type &lt;- match.arg(type, c("histogram", "boxplot"))</span>
@@ -124,19 +130,20 @@ $(x, name)</code></pre></div>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     stop("unknow type")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   )</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x7ff77ebb0200&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x7ff02b2feb38&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "function"         "subsettable_type"</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># This function can be used as usual:</span></span>
-<span class="r-in"><span class="fu">foo</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"histogram"</span><span class="op">)</span></span>
-<span class="r-plt"><img src="subsettable-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span class="fu">foo</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"histogram"</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="subsettable-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span class="co"># ... but also this way:</span></span>
-<span class="r-in"><span class="va">foo</span><span class="op">$</span><span class="fu">histogram</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-plt"><img src="subsettable-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="va">foo</span><span class="op">$</span><span class="fu">boxplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-plt"><img src="subsettable-3.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span class="va">foo</span><span class="op">$</span><span class="fu">histogram</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="subsettable-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span class="va">foo</span><span class="op">$</span><span class="fu">boxplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="subsettable-3.png" alt="" width="700" height="433"></span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -154,19 +161,19 @@ $(x, name)</code></pre></div>
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -177,23 +184,23 @@ $(x, name)</code></pre></div>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -201,23 +208,23 @@ $(x, name)</code></pre></div>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -242,7 +249,7 @@ $(x, name)</code></pre></div>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

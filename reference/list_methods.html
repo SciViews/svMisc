@@ -31,7 +31,7 @@ plot.lm(), respectively."><meta name="twitter:card" content="summary"><!-- Mathj
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -54,7 +54,7 @@ plot.lm(), respectively."><meta name="twitter:card" content="summary"><!-- Mathj
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -67,13 +67,13 @@ plot.lm(), respectively."><meta name="twitter:card" content="summary"><!-- Mathj
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -88,7 +88,7 @@ plot.lm(), respectively."><meta name="twitter:card" content="summary"><!-- Mathj
     <div class="page-header">
     <h1>List all methods associated with a generic function or a class, or all types
 associated with a method</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/list_methods.R"><code>R/list_methods.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/list_methods.R" class="external-link"><code>R/list_methods.R</code></a></small>
     <div class="hidden name"><code>list_methods.Rd</code></div>
     </div>
 
@@ -96,78 +96,86 @@ associated with a method</h1>
     <p>List all S3 and/or S4 methods for a generic function or for a
 class. List all types for a method; types are variants for a given method
 defined in a way it is easy to add other variants dynamically (on the
-contrary to a usual <code>type =</code> or <code>which =</code> argument, like in <code><a href="https://rdrr.io/r/stats/plot.ts.html">plot.ts()</a></code> or
-<code><a href="https://rdrr.io/r/stats/plot.lm.html">plot.lm()</a></code>, respectively.</p>
+contrary to a usual <code>type =</code> or <code>which =</code> argument, like in <code><a href="https://rdrr.io/r/stats/plot.ts.html" class="external-link">plot.ts()</a></code> or
+<code><a href="https://rdrr.io/r/stats/plot.lm.html" class="external-link">plot.lm()</a></code>, respectively.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">list_methods</span><span class="op">(</span>
-  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span>,
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">list_methods</span><span class="op">(</span>
+  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,
   class <span class="op">=</span> <span class="cn">NULL</span>,
   S3 <span class="op">=</span> <span class="cn">TRUE</span>,
   S4 <span class="op">=</span> <span class="cn">TRUE</span>,
   mixed <span class="op">=</span> <span class="cn">TRUE</span>,
-  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span>
+  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="fu">list_types</span><span class="op">(</span><span class="va">method</span>, class <span class="op">=</span> <span class="st">"default"</span>, strict <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="fu">listMethods</span><span class="op">(</span>
-  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span>,
+  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,
   class <span class="op">=</span> <span class="cn">NULL</span>,
   S3 <span class="op">=</span> <span class="cn">TRUE</span>,
   S4 <span class="op">=</span> <span class="cn">TRUE</span>,
   mixed <span class="op">=</span> <span class="cn">TRUE</span>,
-  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span>
+  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="fu">listTypes</span><span class="op">(</span><span class="va">method</span>, class <span class="op">=</span> <span class="st">"default"</span>, strict <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>f</th>
-      <td><p>The name of the generic function (character string), used only when
-<code>class = NULL</code>.</p></td>
-    </tr><tr><th>class</th>
-      <td><p>The name of a class.</p></td>
-    </tr><tr><th>S3</th>
-      <td><p>If <code>TRUE</code>, list of S3 methods.</p></td>
-    </tr><tr><th>S4</th>
-      <td><p>If <code>TRUE</code>, list of S4 methods.</p></td>
-    </tr><tr><th>mixed</th>
-      <td><p>If <code>TRUE</code>, S3 and S4 methods are mixed together in a character
-vector, otherwise, S3 and S4 methods are reported separately in a list.</p></td>
-    </tr><tr><th>filter</th>
-      <td><p>A list of methods to consider when listing class methods. Only
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>f</dt>
+<dd><p>The name of the generic function (character string), used only when
+<code>class = NULL</code>.</p></dd>
+<dt>class</dt>
+<dd><p>The name of a class.</p></dd>
+<dt>S3</dt>
+<dd><p>If <code>TRUE</code>, list of S3 methods.</p></dd>
+<dt>S4</dt>
+<dd><p>If <code>TRUE</code>, list of S4 methods.</p></dd>
+<dt>mixed</dt>
+<dd><p>If <code>TRUE</code>, S3 and S4 methods are mixed together in a character
+vector, otherwise, S3 and S4 methods are reported separately in a list.</p></dd>
+<dt>filter</dt>
+<dd><p>A list of methods to consider when listing class methods. Only
 classes in this list that are defined for the class are returned. Store the
 list of methods you want in the options <code>"svGUI.methods"</code>. The package
 proposes a reasonable starting point on loading if this option is not defined
-yet.</p></td>
-    </tr><tr><th>method</th>
-      <td><p>The method name.</p></td>
-    </tr><tr><th>strict</th>
-      <td><p>Do we list only types for the class (<code>TRUE</code>), or all
+yet.</p></dd>
+<dt>method</dt>
+<dd><p>The method name.</p></dd>
+<dt>strict</dt>
+<dd><p>Do we list only types for the class (<code>TRUE</code>), or all
 possible types, including for inherited objects, and default ones <code>FALSE</code>,
-by default)?</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+by default)?</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>For <code>list_methods()</code>, if <code>mixed = TRUE</code>, a list with components:</p><ul><li><p><code>S3</code> The S3 methods for the generic function or the class, or
 <code>character(0)</code> if none</p></li>
 <li><p><code>S4</code> The S4 methods for the generic function or the class, or
 <code>character(0)</code> if none.</p></li>
-</ul><p>Otherwise, a character vector with the requested methods.</p>
-<p>For <code>list_types()</code>, a vector with character strings with methods' type names.</p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
+</ul><p>Otherwise, a character vector with the requested methods.
+For <code>list_types()</code>, a vector with character strings with methods' type names.</p>
+    </div>
+    <div id="note">
+    <h2>Note</h2>
     <p><code>list_types()</code> is only useful for special generic functions with type
 argument like <code>view</code>, <code>copy</code> or <code>export</code>. These functions offer a mechanism
 to easily add custom types, and the present function list them. For S3
 objects a type is simply a function whose name is : <em>method</em>_<em>type</em>.<em>class</em>.
 So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
     <div class="dont-index"><p><code><a href="obj_browse.html">obj_menu()</a></code></p></div>
+    </div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Generic functions</span></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Generic functions</span></span>
 <span class="r-in"><span class="fu">list_methods</span><span class="op">(</span><span class="st">"t.test"</span><span class="op">)</span>               <span class="co"># S3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "x=\"default\"" "x=\"formula\""</span>
 <span class="r-in"><span class="fu">list_methods</span><span class="op">(</span><span class="st">"show"</span>, mixed <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>  <span class="co"># S4</span></span>
@@ -202,7 +210,7 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Classes</span></span>
 <span class="r-in"><span class="co"># Only the following methods are considered</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"gui.methods"</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"gui.methods"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"data.frame"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "formula" "head"    "plot"    "summary" "tail"   </span>
@@ -218,6 +226,7 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
 <span class="r-in"><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span>, <span class="st">"data.frame"</span>, <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># None, except if you defined custom views!</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -235,19 +244,19 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -258,23 +267,23 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -282,23 +291,23 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -323,7 +332,7 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

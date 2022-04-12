@@ -29,7 +29,7 @@ between R and SciViews GUIs like Komodo/SciViews-K."><meta name="twitter:card" c
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -52,7 +52,7 @@ between R and SciViews GUIs like Komodo/SciViews-K."><meta name="twitter:card" c
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -65,13 +65,13 @@ between R and SciViews GUIs like Komodo/SciViews-K."><meta name="twitter:card" c
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -85,7 +85,7 @@ between R and SciViews GUIs like Komodo/SciViews-K."><meta name="twitter:card" c
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Convert R object to and from RJSON specification</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/rjson.R"><code>R/rjson.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/rjson.R" class="external-link"><code>R/rjson.R</code></a></small>
     <div class="hidden name"><code>to_rjson.Rd</code></div>
     </div>
 
@@ -97,7 +97,8 @@ in both languages. RJSON objects are used by SciViews to exchange data
 between <span style="R">R</span> and SciViews GUIs like Komodo/SciViews-K.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">to_rjson</span><span class="op">(</span><span class="va">x</span>, attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">to_rjson</span><span class="op">(</span><span class="va">x</span>, attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="fu">eval_rjson</span><span class="op">(</span><span class="va">rjson</span><span class="op">)</span>
 
@@ -108,38 +109,41 @@ between <span style="R">R</span> and SciViews GUIs like Komodo/SciViews-K.</p>
 <span class="fu">evalRjson</span><span class="op">(</span><span class="va">rjson</span><span class="op">)</span>
 
 <span class="fu">listToJson</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>x</th>
-      <td><p>Any <span style="R">R</span> object to be converted into RJSON (do not work with objects
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>x</dt>
+<dd><p>Any <span style="R">R</span> object to be converted into RJSON (do not work with objects
 containing C pointers, environments, promises or expressions, but should
-work with almost all other <span style="R">R</span> objects).</p></td>
-    </tr><tr><th>attributes</th>
-      <td><p>If <code>FALSE</code> (by default), a simple object is created by
+work with almost all other <span style="R">R</span> objects).</p></dd>
+<dt>attributes</dt>
+<dd><p>If <code>FALSE</code> (by default), a simple object is created by
 ignoring all attributes. This is usually the suitable option to transfer data
 to another language, like JavaScript that do not understand R attributes
 anyway. With <code>attributes = TRUE</code>, the complete information about the object
 is written, so that the object could be recreated (almost) identical when
-evaluated in <span style="R">R</span> (but prefer <code><a href="https://rdrr.io/r/base/save.html">save()</a></code> and <code><a href="https://rdrr.io/r/base/load.html">load()</a></code> to transfer objects between
-<span style="R">R</span> sessions!).</p></td>
-    </tr><tr><th>rjson</th>
-      <td><p>A string containing an object specified in RJSON notation. The
+evaluated in <span style="R">R</span> (but prefer <code><a href="https://rdrr.io/r/base/save.html" class="external-link">save()</a></code> and <code><a href="https://rdrr.io/r/base/load.html" class="external-link">load()</a></code> to transfer objects between
+<span style="R">R</span> sessions!).</p></dd>
+<dt>rjson</dt>
+<dd><p>A string containing an object specified in RJSON notation. The
 specification is evaluated in <span style="R">R</span>... and it can contain also R code. There is
 no protection provided against execution of bad code. So, you must trust the
-source!</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+source!</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>For <code>to_rjson()</code>, a character string vector with the RJSON
-specification of the argument.</p>
-<p>For <code>eval_rjson()</code>, the corresponding <span style="R">R</span> object in case of a pure RJSON
-object specification, or the result of evaluating the code, if it contains <span style="R">R</span>
-commands (for instance, a RJSONp -RJSON with padding- item where a RJSON
+specification of the argument.
+For <code>eval_rjson()</code>, the corresponding <span style="R">R</span> object in case of a pure RJSON
+object specification, or the result of evaluating the code, if it contains <span style="R">R</span>commands (for instance, a RJSONp -RJSON with padding- item where a RJSON
 object is an argument of an <span style="R">R</span> function that is evaluated. In this case, the
-result of the evaluation is returned).</p>
-<p>For <code>list_to_json()</code>, correct (standard) JSON code is generated if <code>x</code> is a
+result of the evaluation is returned).
+For <code>list_to_json()</code>, correct (standard) JSON code is generated if <code>x</code> is a
 list of character strings, or lists.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
+    </div>
+    <div id="details">
+    <h2>Details</h2>
     <p>JSON (JavaScript Object Notation) allows to specify fairly complex
 objects that can be rather easily exchanged between languages. The notation
 is also human-readable and not too difficult to edit manually (although not
@@ -167,43 +171,46 @@ objects that you want to convert to RJSON notation.</p>
 tabulation, etc. in names. If you want to make your names most compatible
 with JavaScript, note that the dot is not allowed in syntactically valid
 names, but the dollar sign is allowed.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
     <div class="dont-index"><p><code><a href="parse_text.html">parse_text()</a></code></p></div>
+    </div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># A complex R object</span></span>
-<span class="r-in"><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html">structure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span class="r-in">  a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/double.html">as.double</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span>,</span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># A complex R object</span></span>
+<span class="r-in"><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span class="r-in">  a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/double.html" class="external-link">as.double</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">  <span class="va">LETTERS</span>,</span>
-<span class="r-in">  c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>c1 <span class="op">=</span> <span class="fl">4.5</span>, c2 <span class="op">=</span> <span class="fl">7.8</span>, c3 <span class="op">=</span> <span class="cn">Inf</span>, c4 <span class="op">=</span> <span class="op">-</span><span class="cn">Inf</span>, <span class="cn">NA</span>, c6 <span class="op">=</span> <span class="cn">NaN</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
-<span class="r-in">  e <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span class="r-in">  c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>c1 <span class="op">=</span> <span class="fl">4.5</span>, c2 <span class="op">=</span> <span class="fl">7.8</span>, c3 <span class="op">=</span> <span class="cn">Inf</span>, c4 <span class="op">=</span> <span class="op">-</span><span class="cn">Inf</span>, <span class="cn">NA</span>, c6 <span class="op">=</span> <span class="cn">NaN</span><span class="op">)</span>,</span>
+<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
+<span class="r-in">  e <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">  f <span class="op">=</span> <span class="st">'this is a "string" with quote'</span>,</span>
-<span class="r-in">  g <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">  `h&amp;$@` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span>
-<span class="r-in">    fact <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"b"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">  i <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">  j <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, y <span class="op">=</span> <span class="st">"another item"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span class="r-in">  g <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
+<span class="r-in">  `h&amp;$@` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span>
+<span class="r-in">    fact <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"b"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span class="r-in">  i <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span class="r-in">  j <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, y <span class="op">=</span> <span class="st">"another item"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">  comment <span class="op">=</span> <span class="st">"My comment"</span>,</span>
 <span class="r-in">  anAttrib <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,</span>
-<span class="r-in">  anotherAttrib <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="cn">TRUE</span>, y <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in">  anotherAttrib <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="cn">TRUE</span>, y <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Convert to simplest RJSON, without attributes</span></span>
 <span class="r-in"><span class="va">rjson1</span> <span class="op">&lt;-</span> <span class="fu">to_rjson</span><span class="op">(</span><span class="va">obj</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">rjson1</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] list("a" := c(1., 2., 3., 4., 5., 6.), "" := c("A",              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2] "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"),     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := c("a",       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6]     "b", "a"), "f" := "this is a \\"string\\" with quote",       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "g" := c(0.198039678518267, -0.636883239193912,              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     -1.14897594290424, 0.311232464545936), "h&amp;$@" := list(       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9]         "x" := seq(1, 3), "y" := c(-0.124542211664829,           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         2.20781652943302, -0.399958233959299), "fact" := c("b",  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         "a", "b")), "i" := "2021-10-11", "j" := list(            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [12]         "" := seq(1, 5), "y" := "another item"))                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] list("a" := c(1., 2., 3., 4., 5., 6.), "" := c("A",                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2] "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"),          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := c("a",            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6]     "b", "a"), "f" := "this is a \\"string\\" with quote",            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "g" := c(-0.40877115420841, -1.20825234139548, 0.666833615103046, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     0.312530515184749), "h&amp;$@" := list("x" := seq(1, 3),              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9]         "y" := c(-0.200761294276087, 0.5835246181101,                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         -0.531281962156915), "fact" := c("b", "a", "b"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         )), "i" := "2022-04-12", "j" := list(                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [12]         "" := seq(1, 5), "y" := "another item"))                      </span>
 <span class="r-in"><span class="fu">eval_rjson</span><span class="op">(</span><span class="va">rjson1</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3 4 5 6</span>
@@ -226,21 +233,21 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "this is a \"string\" with quote"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $g</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0.1980397 -0.6368832 -1.1489759  0.3112325</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.4087712 -1.2082523  0.6668336  0.3125305</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`$x</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`$y</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.1245422  2.2078165 -0.3999582</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.2007613  0.5835246 -0.5312820</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`$fact</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b" "a" "b"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $i</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2021-10-11"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-04-12"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j[[1]]</span>
@@ -260,13 +267,13 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,                                                                                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := list("Data_" := c(1,                                                               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6]     2, 1), "levels" := c("a", "b"), "class" := "factor"),                                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(0.198039678518267,                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     -0.636883239193912, -1.14897594290424, 0.311232464545936), "dim" := c(2,                                                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-0.40877115420841,                                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     -1.20825234139548, 0.666833615103046, 0.312530515184749), "dim" := c(2,                                                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [9]     2)), "h&amp;$@" := list("Data_" := list("x" := seq(1, 3),                                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         "y" := c(-0.124542211664829, 2.20781652943302,                                                                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         -0.399958233959299), "fact" := list("Data_" := c(2,                                                                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         "y" := c(-0.200761294276087, 0.5835246181101,                                                                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         -0.531281962156915), "fact" := list("Data_" := c(2,                                                                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [12]         1, 2), "levels" := c("a", "b"), "class" := "factor")), "row.names" := seq(1, 3), "class" := "data.frame"),                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13]     "i" := list("Data_" := 18911., "class" := "Date"),                                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13]     "i" := list("Data_" := 19094., "class" := "Date"),                                                                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [14]     "j" := list("" := seq(1, 5), "y" := "another item")), "comment" := "My comment", "anAttrib" := seq(1, 10), "anotherAttrib" := list(</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [15]     "" := TRUE, "y" := seq(1, 4)))                                                                                                     </span>
 <span class="r-in"><span class="va">obj2</span> <span class="op">&lt;-</span> <span class="fu">eval_rjson</span><span class="op">(</span><span class="va">rjson2</span><span class="op">)</span></span>
@@ -293,18 +300,18 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "this is a \"string\" with quote"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $g</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            [,1]       [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1,]  0.1980397 -1.1489759</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2,] -0.6368832  0.3112325</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            [,1]      [,2]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1,] -0.4087712 0.6668336</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2,] -1.2082523 0.3125305</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   x          y fact</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 -0.1245422    b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2  2.2078165    a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 3 -0.3999582    b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 -0.2007613    b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2  0.5835246    a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 3 -0.5312820    b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $i</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2021-10-11"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-04-12"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j[[1]]</span>
@@ -324,11 +331,12 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3 4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span class="co"># Numbers near equivalence comparison (note: identical(Robj, Robj2) is FALSE)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/all.equal.html">all.equal</a></span><span class="op">(</span><span class="va">obj</span>, <span class="va">obj2</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/all.equal.html" class="external-link">all.equal</a></span><span class="op">(</span><span class="va">obj</span>, <span class="va">obj2</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">obj</span>, <span class="va">obj2</span>, <span class="va">rjson1</span>, <span class="va">rjson2</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">obj</span>, <span class="va">obj2</span>, <span class="va">rjson1</span>, <span class="va">rjson2</span><span class="op">)</span></span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -346,19 +354,19 @@ names, but the dollar sign is allowed.</p>
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -369,23 +377,23 @@ names, but the dollar sign is allowed.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -393,23 +401,23 @@ names, but the dollar sign is allowed.</p>
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -434,7 +442,7 @@ names, but the dollar sign is allowed.</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>

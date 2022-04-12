@@ -25,7 +25,7 @@
       </button>
       <div class="navbar-brand-container">
        <div class="navbar-brand-logo">
-         <a class="navbar-brand" href="https://www.sciviews.org">
+         <a class="external-link navbar-brand" href="https://www.sciviews.org">
           <img src="../logo_full.png" alt="SciViews"></a>
        </div>
        <div class="navbar-brand-package">
@@ -48,7 +48,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -61,13 +61,13 @@
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/SciViews/svMisc/">
+  <a href="https://github.com/SciViews/svMisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.2.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -81,7 +81,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Search web documents about R and R functions</h1>
-    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/master/R/search_web.R"><code>R/search_web.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/R/search_web.R" class="external-link"><code>R/search_web.R</code></a></small>
     <div class="hidden name"><code>search_web.Rd</code></div>
     </div>
 
@@ -89,45 +89,54 @@
     <p>Retrieve web documents, or search with Google for <code>what</code> string.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">search_web</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">search_web</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span>
 
-<span class="fu">helpSearchWeb</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+<span class="fu">helpSearchWeb</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>what</th>
-      <td><p>The string(s) to search. In case of several strings, or several
-words, any of these words are searched.</p></td>
-    </tr><tr><th>type</th>
-      <td><p>The search engine, or location to use.</p></td>
-    </tr><tr><th>browse</th>
-      <td><p>Do we actually show the page in the Web browser? If
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>what</dt>
+<dd><p>The string(s) to search. In case of several strings, or several
+words, any of these words are searched.</p></dd>
+<dt>type</dt>
+<dd><p>The search engine, or location to use.</p></dd>
+<dt>browse</dt>
+<dd><p>Do we actually show the page in the Web browser? If
 <code>type = "R"</code>, this argument is ignored and the result is always displayed in
-the Web browser.</p></td>
-    </tr><tr><th>msg</th>
-      <td><p>Do we issue a message indicating that a page should be displayed
+the Web browser.</p></dd>
+<dt>msg</dt>
+<dd><p>Do we issue a message indicating that a page should be displayed
 shortly in the Web browser? If <code>type = "R"</code>, this argument is ignored and a
-message is always displayed.</p></td>
-    </tr><tr><th>...</th>
-      <td><p>Further arguments to format the result page in case of
-<code>type = "R"</code>. These are the same arguments as for <code><a href="https://rdrr.io/r/utils/RSiteSearch.html">RSiteSearch()</a></code>.</p></td>
-    </tr></table><h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
+message is always displayed.</p></dd>
+<dt>...</dt>
+<dd><p>Further arguments to format the result page in case of
+<code>type = "R"</code>. These are the same arguments as for <code><a href="https://rdrr.io/r/utils/RSiteSearch.html" class="external-link">RSiteSearch()</a></code>.</p></dd>
+</dl></div>
+    <div id="value">
+    <h2>Value</h2>
     <p>Returns the URL used invisibly (invoked for its side effect of
 opening the Web browser with the search result, when <code>browse = TRUE</code>).</p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p>The <code><a href="https://rdrr.io/r/utils/RSiteSearch.html">RSiteSearch()</a></code> function in the 'utils' package is used when
+    </div>
+    <div id="note">
+    <h2>Note</h2>
+    <p>The <code><a href="https://rdrr.io/r/utils/RSiteSearch.html" class="external-link">RSiteSearch()</a></code> function in the 'utils' package is used when
 <code>type = "R"</code>.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/r/utils/RSiteSearch.html" class="external-link">RSiteSearch()</a></code>, <code><a href="https://rdrr.io/r/utils/help.search.html" class="external-link">help.search()</a></code></p></div>
+    </div>
 
-    <div class="dont-index"><p><code><a href="https://rdrr.io/r/utils/RSiteSearch.html">RSiteSearch()</a></code>, <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in"><span class="fu">search_web</span><span class="op">(</span><span class="st">"volatility"</span><span class="op">)</span>                    <span class="co"># R site search, by default</span></span>
 <span class="r-in"><span class="fu">search_web</span><span class="op">(</span><span class="st">"volatility"</span>, type <span class="op">=</span> <span class="st">"google"</span><span class="op">)</span>   <span class="co"># Google search</span></span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -145,19 +154,19 @@ opening the Web browser with the search result, when <code>browse = TRUE</code>)
                         <img class="mb-30" src="https://www.sciviews.org/images/logo-footer.png" alt="logo"><p class="text-white mb-30"> We build software for reproducible research with R</p>
                         <!-- social icon -->
                         <ul class="list-inline"><li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://github.com/SciViews">
+                                <a class="external-link social-icon-outline" href="https://github.com/SciViews">
                                     <i class="ti-github"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://twitter.com/PhilGrosjean">
+                                <a class="external-link social-icon-outline" href="https://twitter.com/PhilGrosjean">
                                     <i class="ti-twitter-alt"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
+                                <a class="external-link social-icon-outline" href="https://www.linkedin.com/in/philippe-grosjean-5b6b29a2/">
                                     <i class="ti-linkedin"></i>
                                 </a>
                             </li>
@@ -168,23 +177,23 @@ opening the Web browser with the search result, when <code>browse = TRUE</code>)
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Related</p>
                     <ul class="footer-links"><li>
-                            <a href="http://econum.umons.ac.be">Our Lab</a>
+                            <a href="http://econum.umons.ac.be" class="external-link">Our Lab</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/fs/en/">Our Faculty</a>
+                            <a href="https://web.umons.ac.be/fs/en/" class="external-link">Our Faculty</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/complexys/en/">Complexys</a>
+                            <a href="https://web.umons.ac.be/complexys/en/" class="external-link">Complexys</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/infortech/en/">InforTech</a>
+                            <a href="https://web.umons.ac.be/infortech/en/" class="external-link">InforTech</a>
                         </li>
 
                         <li>
-                            <a href="https://web.umons.ac.be/en/">UMONS</a>
+                            <a href="https://web.umons.ac.be/en/" class="external-link">UMONS</a>
                         </li>
 
                     </ul></div>
@@ -192,23 +201,23 @@ opening the Web browser with the search result, when <code>browse = TRUE</code>)
                 <div class="col-lg-2 col-md-4 col-6">
                     <p class="h4 text-white mb-4">Quick Link</p>
                     <ul class="footer-links"><li>
-                            <a href="https://www.sciviews.org/software/svbox">SciViews Box</a>
+                            <a href="https://www.sciviews.org/software/svbox" class="external-link">SciViews Box</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/sciviews-r">SciViews::R</a>
+                            <a href="https://www.sciviews.org/software/sciviews-r" class="external-link">SciViews::R</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/software/zooimage">Zoo/PhytoImage</a>
+                            <a href="https://www.sciviews.org/software/zooimage" class="external-link">Zoo/PhytoImage</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/blog">Blog</a>
+                            <a href="https://www.sciviews.org/blog" class="external-link">Blog</a>
                         </li>
 
                         <li>
-                            <a href="https://www.sciviews.org/about">About</a>
+                            <a href="https://www.sciviews.org/about" class="external-link">About</a>
                         </li>
 
                     </ul></div>
@@ -233,7 +242,7 @@ opening the Web browser with the search result, when <code>browse = TRUE</code>)
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right"><li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                            <a class="font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
+                            <a class="external-link font-secondary text-white" href="https://creativecommons.org/licenses/by/4.0/">Site content under CC-BY 4.0 license</a>
                         </li>
 
                     </ul></div>
