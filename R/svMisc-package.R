@@ -24,7 +24,7 @@
 #'   help.search apropos find
 #' @importFrom methods findFunction existsFunction new getMethods isGeneric
 #'   showMethods slot slotNames
-#' @importFrom stats runif
+#' @importFrom stats quantile runif
 #' @importFrom tools file_path_as_absolute
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
