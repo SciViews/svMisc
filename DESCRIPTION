@@ -17,15 +17,7 @@ Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 2.13.0)
 Imports: utils, methods, stats, tools
-Suggests: 
-    rJava,
-    tcltk,
-    covr,
-    knitr,
-    markdown,
-    rmarkdown,
-    testthat,
-    spelling
+Suggests: rJava, tcltk, covr, knitr, markdown, rmarkdown, testthat, spelling
 License: GPL-2
 URL: https://github.com/SciViews/svMisc, https://www.sciviews.org/svMisc/
 BugReports: https://github.com/SciViews/svMisc/issues
