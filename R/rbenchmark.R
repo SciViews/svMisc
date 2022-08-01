@@ -122,9 +122,9 @@ rbenchmark <- function(runs = 3L) {
     c <- 0
     invisible(gc())
     times[5L, i] <- system.time({
-      # Was in version 2.5
-      #c <- solve(crossprod(a), crossprod(a, b))
-      c <- lsfit(a, b, intercept = FALSE)$coef
+      c <- solve(crossprod(a), crossprod(a, b))
+      # Another solution, sometimes slower, sometimes faster
+      #c <- lsfit(a, b, intercept = FALSE)$coef
     })[3]
 
     # This is the old method
