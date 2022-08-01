@@ -21,10 +21,10 @@
 #'   capture.output compareVersion file.edit file_test flush.console
 #'   getCRANmirrors getS3method install.packages installed.packages methods
 #'   object.size packageDescription remove.packages str tail write.table ? help
-#'   help.search apropos find
+#'   help.search apropos find txtProgressBar setTxtProgressBar
 #' @importFrom methods findFunction existsFunction new getMethods isGeneric
 #'   showMethods slot slotNames
-#' @importFrom stats quantile runif
+#' @importFrom stats cor fft quantile lsfit rnorm runif
 #' @importFrom tools file_path_as_absolute
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
