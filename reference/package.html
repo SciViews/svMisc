@@ -100,52 +100,67 @@ list can be automatically used by <code><a href="install.html">Install()</a></co
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">package</span><span class="op">(</span>
-  <span class="va">...</span>,
-  stop <span class="op">=</span> <span class="cn">TRUE</span>,
-  message <span class="op">=</span> <span class="va">stop</span>,
-  warn.conflicts <span class="op">=</span> <span class="va">message</span>,
-  pos <span class="op">=</span> <span class="fl">2L</span>,
-  lib.loc <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"verbose"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">package</span><span class="op">(</span></span>
+<span>  <span class="va">...</span>,</span>
+<span>  stop <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  message <span class="op">=</span> <span class="va">stop</span>,</span>
+<span>  warn.conflicts <span class="op">=</span> <span class="va">message</span>,</span>
+<span>  pos <span class="op">=</span> <span class="fl">2L</span>,</span>
+<span>  lib.loc <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"verbose"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>...</dt>
 <dd><p>The name of one or several R packages to load (character strings).</p></dd>
+
+
 <dt>stop</dt>
 <dd><p>If <code>TRUE</code>, issue an error in case the package(s) cannot be
 loaded.</p></dd>
+
+
 <dt>message</dt>
 <dd><p>Do we display introductory message of the package? If a
 package displays such a message, there is often a good reason. So, it is
 <strong>not</strong> a good idea to disable it in <em>interactive</em> sessions. However, in
 other contexts, like in non-interactive use, inside an R Markdown document,
 etc., it is more convenient not to display it.</p></dd>
+
+
 <dt>warn.conflicts</dt>
 <dd><p>As for <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code>: "logical. If TRUE, warnings are
 printed about conflicts from attaching the new package. A conflict is a
 function masking a function, or a non-function masking a non-function.</p></dd>
+
+
 <dt>pos</dt>
 <dd><p>As for <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code>: "the position on the search list at which to
 attach the loaded namespace. Can also be the name of a position on the
 current search list as given by <code><a href="https://rdrr.io/r/base/search.html" class="external-link">search()</a></code>". Only one position can be
 provided here, even if several packages, and they will be all inserted one
 after the other at the given position.</p></dd>
+
+
 <dt>lib.loc</dt>
 <dd><p>As for <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code>: "a character vector describing the
 location of <span style="R">R</span> library trees to search through, or <code>NULL</code>. The default value
 of <code>NULL</code> corresponds to all libraries currently known to <code><a href="https://rdrr.io/r/base/libPaths.html" class="external-link">.libPaths()</a></code>.
 Non-existent library trees are silently ignored".</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>A logical indicating if additional diagnostic messages are
 printed.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p><code>TRUE</code> if all packages are loaded correctly, <code>FALSE</code> otherwise, with
+    
+
+<p><code>TRUE</code> if all packages are loaded correctly, <code>FALSE</code> otherwise, with
 a <code>details</code> attribute indicating which package was loaded or not.</p>
     </div>
     <div id="note">
@@ -168,16 +183,16 @@ the provided vector.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># This should work...</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu">package</span><span class="op">(</span><span class="st">'tools'</span>, <span class="st">'methods'</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Fine!"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># This should work...</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu">package</span><span class="op">(</span><span class="st">'tools'</span>, <span class="st">'methods'</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Fine!"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Fine!</span>
-<span class="r-in"><span class="co"># ... but this not (note that there are no details here!)</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">package</span><span class="op">(</span><span class="st">'tools'</span>, <span class="st">'badname'</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Not fine!"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co"># ... but this not (note that there are no details here!)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">package</span><span class="op">(</span><span class="st">'tools'</span>, <span class="st">'badname'</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Not fine!"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Not fine!</span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co"># Get an error</span></span>
-<span class="r-in"><span class="fu">package</span><span class="op">(</span><span class="st">'badname'</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># Get an error</span></span></span>
+<span class="r-in"><span><span class="fu">package</span><span class="op">(</span><span class="st">'badname'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>

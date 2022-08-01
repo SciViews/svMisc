@@ -92,69 +92,113 @@ fragment.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">completion</span><span class="op">(</span>
-  <span class="va">code</span>,
-  pos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nchar.html" class="external-link">nchar</a></span><span class="op">(</span><span class="va">code</span><span class="op">)</span>,
-  min.length <span class="op">=</span> <span class="fl">2</span>,
-  print <span class="op">=</span> <span class="cn">FALSE</span>,
-  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"scintilla"</span><span class="op">)</span>,
-  addition <span class="op">=</span> <span class="cn">FALSE</span>,
-  sort <span class="op">=</span> <span class="cn">TRUE</span>,
-  what <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"arguments"</span>, <span class="st">"functions"</span>, <span class="st">"packages"</span><span class="op">)</span>,
-  description <span class="op">=</span> <span class="cn">FALSE</span>,
-  max.fun <span class="op">=</span> <span class="fl">100</span>,
-  skip.used.args <span class="op">=</span> <span class="cn">TRUE</span>,
-  sep <span class="op">=</span> <span class="st">"\n"</span>,
-  field.sep <span class="op">=</span> <span class="st">"\t"</span>,
-  name.or.addition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"addition"</span>, <span class="st">"both"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">completion</span><span class="op">(</span></span>
+<span>  <span class="va">code</span>,</span>
+<span>  pos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nchar.html" class="external-link">nchar</a></span><span class="op">(</span><span class="va">code</span><span class="op">)</span>,</span>
+<span>  min.length <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  print <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"scintilla"</span><span class="op">)</span>,</span>
+<span>  addition <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  sort <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  what <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"arguments"</span>, <span class="st">"functions"</span>, <span class="st">"packages"</span><span class="op">)</span>,</span>
+<span>  description <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  max.fun <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  skip.used.args <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  sep <span class="op">=</span> <span class="st">"\n"</span>,</span>
+<span>  field.sep <span class="op">=</span> <span class="st">"\t"</span>,</span>
+<span>  name.or.addition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"addition"</span>, <span class="st">"both"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>code</dt>
 <dd><p>A partial R code to be completed.</p></dd>
+
+
 <dt>pos</dt>
 <dd><p>The position of the cursor in this code.</p></dd>
+
+
 <dt>min.length</dt>
 <dd><p>The minimal length in characters of <code>code</code> required before
 the completion list is calculated.</p></dd>
+
+
 <dt>print</dt>
 <dd><p>Logical, print result and return invisibly. See details.</p></dd>
+
+
 <dt>types</dt>
 <dd><p>A named list giving names of types. Set to <code>NA</code> to give
 only names. See details.</p></dd>
+
+
 <dt>addition</dt>
 <dd><p>Should only addition string be returned?</p></dd>
+
+
 <dt>sort</dt>
 <dd><p>Do we sort the list of completions alphabetically?</p></dd>
+
+
 <dt>what</dt>
 <dd><p>What are we looking for? Allow to restrict search for faster
 calculation.</p></dd>
+
+
 <dt>description</dt>
 <dd><p>Do we describe items in the completion list
 (could be slow)?</p></dd>
+
+
 <dt>max.fun</dt>
 <dd><p>In the case where we describe items, the maximum number of
 functions to process (if longer, no description is returned for function)
 because it can be very slow otherwise.</p></dd>
+
+
 <dt>skip.used.args</dt>
 <dd><p>Logical, if completion is within function arguments,
 should the already used named arguments be omitted?</p></dd>
+
+
 <dt>sep</dt>
 <dd><p>The separator to use between returned items.</p></dd>
+
+
 <dt>field.sep</dt>
 <dd><p>Character string to separate fields for each entry.</p></dd>
+
+
 <dt>name.or.addition</dt>
 <dd><p>Should we return the completion name, addition string, or both?</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>If <code>types == NA</code> and <code>description = FALSE</code>, a character vector giving
+    
+
+<p>If <code>types == NA</code> and <code>description = FALSE</code>, a character vector giving
 the completions, otherwise a data frame with two columns: 'completion', and
 'type' when <code>description = FALSE</code>, or with four columns: 'completion',
 'type', 'desc' and 'context' when <code>description = TRUE</code>. If name.or.addition == 'both',
-an 'addition' column is also returned.<br>Attributes:<br><code>attr(, "token")</code> - a completed token.<br><code>attr(, "triggerPos")</code> - number of already typed characters.<br><code>attr(, "fguess")</code> - name of guessed function.<br>`attr(, "isFirstArg")`` - is this a first argument?</p>
+an 'addition' column is also returned.<br></p>
+
+
+<p>Attributes:<br></p>
+
+
+<p><code>attr(, "token")</code> - a completed token.<br></p>
+
+
+<p><code>attr(, "triggerPos")</code> - number of already typed characters.<br></p>
+
+
+<p><code>attr(, "fguess")</code> - name of guessed function.<br></p>
+
+
+<p>`attr(, "isFirstArg")`` - is this a first argument?</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -203,32 +247,32 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># A data frame</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">completion</span><span class="op">(</span><span class="st">"item &lt;- iris$"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># A data frame</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">completion</span><span class="op">(</span><span class="st">"item &lt;- iris$"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          completion     type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 iris$Petal.Length variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4  iris$Petal.Width variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 iris$Sepal.Length variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  iris$Sepal.Width variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5      iris$Species variable</span>
-<span class="r-in"><span class="fu">completion</span><span class="op">(</span><span class="st">"item &lt;- iris[["</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">completion</span><span class="op">(</span><span class="st">"item &lt;- iris[["</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             completion     type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 iris[["Petal.Length" variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4  iris[["Petal.Width" variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 iris[["Sepal.Length" variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  iris[["Sepal.Width" variable</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5      iris[["Species" variable</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># An S4 object</span></span>
-<span class="r-in"><span class="kw">setClass</span><span class="op">(</span><span class="st">"track"</span>, <span class="fu">representation</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"numeric"</span>, y <span class="op">=</span> <span class="st">"numeric"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">t1</span> <span class="op">&lt;-</span> <span class="fu">new</span><span class="op">(</span><span class="st">"track"</span>, x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span>, y <span class="op">=</span> <span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">completion</span><span class="op">(</span><span class="st">"item2 &lt;- t1@"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># An S4 object</span></span></span>
+<span class="r-in"><span><span class="kw">setClass</span><span class="op">(</span><span class="st">"track"</span>, <span class="fu">representation</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"numeric"</span>, y <span class="op">=</span> <span class="st">"numeric"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">t1</span> <span class="op">&lt;-</span> <span class="fu">new</span><span class="op">(</span><span class="st">"track"</span>, x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span>, y <span class="op">=</span> <span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">completion</span><span class="op">(</span><span class="st">"item2 &lt;- t1@"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   completion     type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1        t1@ variable</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># A namespace</span></span>
-<span class="r-in"><span class="fu">completion</span><span class="op">(</span><span class="st">"utils::"</span>, description <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># A namespace</span></span></span>
+<span class="r-in"><span><span class="fu">completion</span><span class="op">(</span><span class="st">"utils::"</span>, description <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                       completion     type desc context</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 27                           utils::.DollarNames variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60                      utils::.RtangleCodeLabel variable        utils</span>
@@ -239,7 +283,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128                           utils::RSiteSearch variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36                                  utils::Rprof variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 113                              utils::Rprofmem variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80                                utils::Rtangle variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79                                utils::Rtangle variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 160                         utils::RtangleFinish variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 163                        utils::RtangleRuncode variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 167                          utils::RtangleSetup variable        utils</span>
@@ -252,7 +296,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 30                       utils::RweaveLatexSetup variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 195                   utils::RweaveLatexWritedoc variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148                         utils::RweaveTryStop variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 221                               utils::Stangle variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222                               utils::Stangle variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 63                                 utils::Sweave variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23                            utils::SweaveHooks variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16                         utils::SweaveSyntConv variable        utils</span>
@@ -260,37 +304,37 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 111                     utils::SweaveSyntaxNoweb variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                               utils::URLdecode variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 46                              utils::URLencode variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 210                                  utils::View variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211                                  utils::View variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 200                                 utils::adist variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 29                                  utils::alarm variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 224                               utils::apropos variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225                               utils::apropos variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 51                               utils::aregexec variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12                           utils::argsAnywhere variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 230                             utils::as.person variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231                             utils::as.person variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 117                         utils::as.personList variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71                          utils::as.relistable variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 225                              utils::as.roman variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226                              utils::as.roman variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 114                           utils::asDateBuilt variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 152                              utils::askYesNo variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 215                                utils::aspell variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 222                utils::aspell_package_C_files variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216                                utils::aspell variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223                utils::aspell_package_C_files variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 124                utils::aspell_package_R_files variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                 utils::aspell_package_Rd_files variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22               utils::aspell_package_vignettes variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 193 utils::aspell_write_personal_dictionary_file variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 211                   utils::assignInMyNamespace variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212                   utils::assignInMyNamespace variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 25                      utils::assignInNamespace variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 76                     utils::available.packages variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 166                              utils::bibentry variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 88                              utils::browseEnv variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 213                             utils::browseURL variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214                             utils::browseURL variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 106                       utils::browseVignettes variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 101                            utils::bug.report variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100                        utils::capture.output variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 84                           utils::changedFiles variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 116                             utils::charClass variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 31                              utils::checkCRAN variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209                      utils::chooseBioCmirror variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210                      utils::chooseBioCmirror variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145                      utils::chooseCRANmirror variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 147                              utils::citEntry variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 177                             utils::citFooter variable        utils</span>
@@ -305,7 +349,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 107                           utils::contrib.url variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39                           utils::count.fields variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40                            utils::create.post variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 202                                  utils::data variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203                                  utils::data variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 181                            utils::data.entry variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 184                             utils::dataentry variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 126                                    utils::de variable        utils</span>
@@ -315,7 +359,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180                             utils::debugcall variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144                              utils::debugger variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 122                                  utils::demo variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 223                         utils::download.file variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224                         utils::download.file variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143                     utils::download.packages variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35                            utils::dump.frames variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 123                                  utils::edit variable        utils</span>
@@ -325,6 +369,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 103                          utils::fileSnapshot variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172                             utils::file_test variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197                                  utils::find variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202                        utils::findCRANmirror variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 168                           utils::findLineNum variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58                                    utils::fix variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199                        utils::fixInNamespace variable        utils</span>
@@ -337,7 +382,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 161                          utils::getParseData variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72                           utils::getParseText variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 151                           utils::getS3method variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 218                       utils::getSrcDirectory variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219                       utils::getSrcDirectory variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173                        utils::getSrcFilename variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131                        utils::getSrcLocation variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97                              utils::getSrcref variable        utils</span>
@@ -353,8 +398,8 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134                          utils::help.request variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 92                            utils::help.search variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 48                             utils::help.start variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 208                               utils::history variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 212                            utils::hsearch_db variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209                               utils::history variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213                            utils::hsearch_db variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130                   utils::hsearch_db_concepts variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 104                   utils::hsearch_db_keywords variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 44                       utils::install.packages variable        utils</span>
@@ -370,13 +415,13 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132                               utils::lsf.str variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 75                             utils::maintainer variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 190                    utils::make.packages.html variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 217                           utils::make.socket variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218                           utils::make.socket variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59              utils::makeRweaveLatexCodeRunner variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 53                                utils::maphash variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 196                          utils::memory.limit variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 204                           utils::memory.size variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 205                                  utils::menu variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 228                               utils::methods variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205                           utils::memory.size variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206                                  utils::menu variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229                               utils::methods variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179                           utils::mirror2html variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 74                             utils::modifyList variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 17                           utils::new.packages variable        utils</span>
@@ -406,7 +451,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102                           utils::rc.settings variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                               utils::rc.status variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129                              utils::read.DIF variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 206                              utils::read.csv variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207                              utils::read.csv variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 121                             utils::read.csv2 variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13                             utils::read.delim variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 21                            utils::read.delim2 variable        utils</span>
@@ -424,16 +469,16 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146                           utils::savehistory variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 137                           utils::select.list variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 38                            utils::sessionInfo variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79                          utils::setBreakpoint variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80                          utils::setBreakpoint variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 32                        utils::setRepositories variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 95                      utils::setTxtProgressBar variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34                                utils::sethash variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98                                  utils::stack variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 182                                   utils::str variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 108                            utils::strOptions variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 227                            utils::strcapture variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228                            utils::strcapture variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 94                           utils::summaryRprof variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 219                  utils::suppressForeignCheck variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220                  utils::suppressForeignCheck variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 83                                   utils::tail variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41                            utils::tail.matrix variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 133                                   utils::tar variable        utils</span>
@@ -442,27 +487,27 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175                               utils::toLatex variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 170                        utils::txtProgressBar variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 47                           utils::type.convert variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229                               utils::typhash variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 220                           utils::undebugcall variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230                               utils::typhash variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221                           utils::undebugcall variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178                               utils::unstack variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214                                 utils::untar variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215                                 utils::untar variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62                                  utils::unzip variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 155                       utils::update.packages variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10                                utils::upgrade variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207                              utils::url.show variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208                              utils::url.show variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                      utils::vi variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 150                              utils::vignette variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33                            utils::warnErrList variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                               utils::write.csv variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203                            utils::write.csv2 variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204                            utils::write.csv2 variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 61                           utils::write.socket variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 20                            utils::write.table variable        utils</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 162                                 utils::xedit variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 226                                utils::xemacs variable        utils</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 216                                   utils::zip variable        utils</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># A partial identifier</span></span>
-<span class="r-in"><span class="fu">completion</span><span class="op">(</span><span class="st">"item3 &lt;- va"</span>, description <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227                                utils::xemacs variable        utils</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217                                   utils::zip variable        utils</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># A partial identifier</span></span></span>
+<span class="r-in"><span><span class="fu">completion</span><span class="op">(</span><span class="st">"item3 &lt;- va"</span>, description <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       completion     type                                            desc</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       validEnc function  Check if a Character Vector is Validly Encoded</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    validObject function                  Test the Validity of an Object</span>
@@ -483,14 +528,14 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-out co"><span class="r-pr">#&gt;</span> 7   stats</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8   stats</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9   stats</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Otherwise, a list with the content of .GlobalEnv</span></span>
-<span class="r-in"><span class="fu">completion</span><span class="op">(</span><span class="st">"item4 &lt;- "</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Otherwise, a list with the content of .GlobalEnv</span></span></span>
+<span class="r-in"><span><span class="fu">completion</span><span class="op">(</span><span class="st">"item4 &lt;- "</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   completion     type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       iris variable</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># TODO: directory and filename completion!</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">t1</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># TODO: directory and filename completion!</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">t1</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>object 'iris' not found</span>
 </code></pre></div>
     </div>

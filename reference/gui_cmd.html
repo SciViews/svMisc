@@ -94,49 +94,54 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">gui_cmd</span><span class="op">(</span><span class="va">command</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_load</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_source</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_save</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_import</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_export</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_report</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">gui_setwd</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiCmd</span><span class="op">(</span><span class="va">command</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiLoad</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiSource</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiSave</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiImport</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiExport</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiReport</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">guiSetwd</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">gui_cmd</span><span class="op">(</span><span class="va">command</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_load</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_source</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_save</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_import</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_export</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_report</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">gui_setwd</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiCmd</span><span class="op">(</span><span class="va">command</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiLoad</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiSource</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiSave</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiImport</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiExport</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiReport</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">guiSetwd</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>command</dt>
 <dd><p>The command string to execute in the GUI client.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Parameters provided for the command to execute in the GUI client.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The result of the command if it succeed, or <code>NULL</code> if the command
+    
+
+<p>The result of the command if it succeed, or <code>NULL</code> if the command
 cannot be run (i.e., <code>.guiCmd()</code> is not defined in <code>SciViews:TempEnv</code>).</p>
     </div>
     <div id="details">

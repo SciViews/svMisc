@@ -127,13 +127,13 @@
 </h2>
 <p>You can install the released version of {svMisc} from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span></span></code></pre></div>
 <p>You can also install the latest development version. Make sure you have the {remotes} R package installed:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span></code></pre></div>
 <p>Use <code>install_github()</code> to install the {svMisc} package from GitHub (source from <strong>master</strong> branch will be recompiled on your machine):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"SciViews/svMisc"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"SciViews/svMisc"</span><span class="op">)</span></span></code></pre></div>
 <p>R should install all required dependencies automatically, and then it should compile and install {svMisc}.</p>
 <p>Latest devel version of {svMisc} (source + Windows binaries for the latest stable version of R at the time of compilation) is also available from <a href="https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts" class="external-link">appveyor</a>.</p>
 </div>
@@ -142,12 +142,12 @@
 </h2>
 <p>You can get further help about this package this way: Make the {svMisc} package available in your R session:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/SciViews/svMisc" class="external-link">"svMisc"</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/SciViews/svMisc" class="external-link">"svMisc"</a></span><span class="op">)</span></span></code></pre></div>
 <p>Get help about this package:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span>help <span class="op">=</span> <span class="st">"svMisc"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"svMisc-package"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span> <span class="co"># None is installed with install_github()</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span>help <span class="op">=</span> <span class="st">"svMisc"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"svMisc-package"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span> <span class="co"># None is installed with install_github()</span></span></code></pre></div>
 <p>For further instructions, please, refer to the help pages at <a href="https://www.sciviews.org/svMisc/" class="uri">https://www.sciviews.org/svMisc/</a>.</p>
 </div>
 <div class="section level2">
@@ -204,17 +204,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/SciViews/svMisc/actions" class="external-link"><img src="https://github.com/SciViews/svMisc/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://ci.appveyor.com/project/phgrosjean/svMisc" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/SciViews/svMisc?branch=master&amp;svg=true" alt="Win build status"></a></li>
-<li><a href="https://codecov.io/github/SciViews/svMisc?branch=master" class="external-link"><img src="https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg" alt="Coverage status"></a></li>
-<li><a href="https://cran.r-project.org/package=svMisc" class="external-link"><img src="https://www.r-pkg.org/badges/version/svMisc" alt="CRAN status"></a></li>
-<li><a href="https://www.gnu.org/licenses/gpl-2.0.html" class="external-link"><img src="https://img.shields.io/badge/license-GPL-blue.svg" alt="License"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-</ul>
-</div>
+
 
   </div>
 </div>

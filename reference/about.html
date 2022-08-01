@@ -108,9 +108,9 @@ also further document your custom objects easily in their source files!</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">about</span><span class="op">(</span><span class="va">topic</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">`?`</span><span class="op">(</span><span class="va">type</span>, <span class="va">topic</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">about</span><span class="op">(</span><span class="va">topic</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">`?`</span><span class="op">(</span><span class="va">type</span>, <span class="va">topic</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -118,17 +118,24 @@ also further document your custom objects easily in their source files!</p>
     <dl><dt>topic</dt>
 <dd><p>The name of an object, or the topic to search for, if this is
 not the name of a known object.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Further arguments passed to <code><a href="https://rdrr.io/r/utils/help.html" class="external-link">help()</a></code>.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>First argument to <code>?</code>. If it is a dot, like <code>.?topic</code>, the second
 argument is a topic passed to the <code>about()</code> function. Otherwise, it is the
 first argument to restrict help pages, like <code>class</code>, <code>methods</code>, or <code>method</code>.
 See examples for how to use it.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A string with the location of all objects named <code>topic</code> are found is
+    
+
+<p>A string with the location of all objects named <code>topic</code> are found is
 returned invisibly.</p>
     </div>
     <div id="see-also">
@@ -138,29 +145,29 @@ returned invisibly.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"nonexisting"</span><span class="op">)</span> <span class="co"># Not found on search path, but help pages</span></span>
-<span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"htgdsfgfdsgf"</span><span class="op">)</span> <span class="co"># Not found anywhere</span></span>
-<span class="r-in"><span class="co">#library(tidyverse)</span></span>
-<span class="r-in"><span class="co">#about("group_by") # Just one page</span></span>
-<span class="r-in"><span class="co">#about("filter") # Several items</span></span>
-<span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"stats::filter"</span><span class="op">)</span> <span class="co"># OK</span></span>
-<span class="r-in"><span class="co">#about("dplyr::filter") # OK too</span></span>
-<span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"base::filter"</span><span class="op">)</span> <span class="co"># Not found there</span></span>
-<span class="r-in"><span class="co"># Objects with comment: print comment</span></span>
-<span class="r-in"><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, comment <span class="op">=</span> <span class="st">"A simple vector"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">about</span><span class="op">(</span><span class="st">"vec"</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># If there is a srcfile attribute in the comment, also display the file</span></span>
-<span class="r-in"><span class="co"># Hint: integrate some help in the header!</span></span>
-<span class="r-in"><span class="co">#library(data)</span></span>
-<span class="r-in"><span class="co">#(iris &lt;- read(data_example("iris.csv")))</span></span>
-<span class="r-in"><span class="co">#about("iris")</span></span>
-<span class="r-in"><span class="co"># If the comment has a src attribute, change the topic to that one</span></span>
-<span class="r-in"><span class="co">#urchin &lt;- read("urchin_bio", package = "data")</span></span>
-<span class="r-in"><span class="co">#about("urchin")</span></span>
-<span class="r-in"><span class="va">.</span><span class="op">?</span><span class="va">filter</span></span>
-<span class="r-in"><span class="va">.</span><span class="op">?</span><span class="fu">stats</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">about</span><span class="op">(</span><span class="st">"nonexisting"</span><span class="op">)</span> <span class="co"># Not found on search path, but help pages</span></span></span>
+<span class="r-in"><span><span class="fu">about</span><span class="op">(</span><span class="st">"htgdsfgfdsgf"</span><span class="op">)</span> <span class="co"># Not found anywhere</span></span></span>
+<span class="r-in"><span><span class="co">#library(tidyverse)</span></span></span>
+<span class="r-in"><span><span class="co">#about("group_by") # Just one page</span></span></span>
+<span class="r-in"><span><span class="co">#about("filter") # Several items</span></span></span>
+<span class="r-in"><span><span class="fu">about</span><span class="op">(</span><span class="st">"stats::filter"</span><span class="op">)</span> <span class="co"># OK</span></span></span>
+<span class="r-in"><span><span class="co">#about("dplyr::filter") # OK too</span></span></span>
+<span class="r-in"><span><span class="fu">about</span><span class="op">(</span><span class="st">"base::filter"</span><span class="op">)</span> <span class="co"># Not found there</span></span></span>
+<span class="r-in"><span><span class="co"># Objects with comment: print comment</span></span></span>
+<span class="r-in"><span><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, comment <span class="op">=</span> <span class="st">"A simple vector"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">about</span><span class="op">(</span><span class="st">"vec"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># If there is a srcfile attribute in the comment, also display the file</span></span></span>
+<span class="r-in"><span><span class="co"># Hint: integrate some help in the header!</span></span></span>
+<span class="r-in"><span><span class="co">#library(data)</span></span></span>
+<span class="r-in"><span><span class="co">#(iris &lt;- read(data_example("iris.csv")))</span></span></span>
+<span class="r-in"><span><span class="co">#about("iris")</span></span></span>
+<span class="r-in"><span><span class="co"># If the comment has a src attribute, change the topic to that one</span></span></span>
+<span class="r-in"><span><span class="co">#urchin &lt;- read("urchin_bio", package = "data")</span></span></span>
+<span class="r-in"><span><span class="co">#about("urchin")</span></span></span>
+<span class="r-in"><span><span class="va">.</span><span class="op">?</span><span class="va">filter</span></span></span>
+<span class="r-in"><span><span class="va">.</span><span class="op">?</span><span class="fu">stats</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>

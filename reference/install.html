@@ -98,7 +98,7 @@ generally sufficient.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Install</span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">".packages_to_install"</span><span class="op">)</span>, <span class="va">...</span>, ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Install</span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">".packages_to_install"</span><span class="op">)</span>, <span class="va">...</span>, ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -106,15 +106,22 @@ generally sufficient.</p>
     <dl><dt>pkgs</dt>
 <dd><p>The list of packages to install (character vector). If missing,
 the list is read from <code>packages_to_install</code>, which is cleared on success.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Further arguments passed to <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code>.</p></dd>
+
+
 <dt>ask</dt>
 <dd><p>If <code>TRUE</code> and <code>pkgs</code> is missing, ask first to install the
 packages.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns <code>TRUE</code> in case of success, <code>FALSE</code> otherwise. The function is
+    
+
+<p>Returns <code>TRUE</code> in case of success, <code>FALSE</code> otherwise. The function is
 invoked for its side-effect of installing <span style="R">R</span> packages.</p>
     </div>
     <div id="see-also">

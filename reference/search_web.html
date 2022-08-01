@@ -90,9 +90,9 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">search_web</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">helpSearchWeb</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">search_web</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">helpSearchWeb</span><span class="op">(</span><span class="va">what</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"google"</span><span class="op">)</span>, browse <span class="op">=</span> <span class="cn">TRUE</span>, msg <span class="op">=</span> <span class="va">browse</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -100,23 +100,34 @@
     <dl><dt>what</dt>
 <dd><p>The string(s) to search. In case of several strings, or several
 words, any of these words are searched.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>The search engine, or location to use.</p></dd>
+
+
 <dt>browse</dt>
 <dd><p>Do we actually show the page in the Web browser? If
 <code>type = "R"</code>, this argument is ignored and the result is always displayed in
 the Web browser.</p></dd>
+
+
 <dt>msg</dt>
 <dd><p>Do we issue a message indicating that a page should be displayed
 shortly in the Web browser? If <code>type = "R"</code>, this argument is ignored and a
 message is always displayed.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Further arguments to format the result page in case of
 <code>type = "R"</code>. These are the same arguments as for <code><a href="https://rdrr.io/r/utils/RSiteSearch.html" class="external-link">RSiteSearch()</a></code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the URL used invisibly (invoked for its side effect of
+    
+
+<p>Returns the URL used invisibly (invoked for its side effect of
 opening the Web browser with the search result, when <code>browse = TRUE</code>).</p>
     </div>
     <div id="note">
@@ -131,10 +142,10 @@ opening the Web browser with the search result, when <code>browse = TRUE</code>)
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">search_web</span><span class="op">(</span><span class="st">"volatility"</span><span class="op">)</span>                    <span class="co"># R site search, by default</span></span>
-<span class="r-in"><span class="fu">search_web</span><span class="op">(</span><span class="st">"volatility"</span>, type <span class="op">=</span> <span class="st">"google"</span><span class="op">)</span>   <span class="co"># Google search</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">search_web</span><span class="op">(</span><span class="st">"volatility"</span><span class="op">)</span>                    <span class="co"># R site search, by default</span></span></span>
+<span class="r-in"><span><span class="fu">search_web</span><span class="op">(</span><span class="st">"volatility"</span>, type <span class="op">=</span> <span class="st">"google"</span><span class="op">)</span>   <span class="co"># Google search</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>

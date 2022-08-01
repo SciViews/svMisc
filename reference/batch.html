@@ -92,14 +92,14 @@ errors by warnings) and returns <code>TRUE</code> in case of success, or <code>F
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">batch</span><span class="op">(</span>
-  <span class="va">items</span>,
-  <span class="va">fun</span>,
-  <span class="va">...</span>,
-  show.progress <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="is_help.html">is_aqua</a></span><span class="op">(</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="fu"><a href="is_help.html">is_jgr</a></span><span class="op">(</span><span class="op">)</span>,
-  suppress.messages <span class="op">=</span> <span class="va">show.progress</span>,
-  verbose <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">batch</span><span class="op">(</span></span>
+<span>  <span class="va">items</span>,</span>
+<span>  <span class="va">fun</span>,</span>
+<span>  <span class="va">...</span>,</span>
+<span>  show.progress <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="is_help.html">is_aqua</a></span><span class="op">(</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="fu"><a href="is_help.html">is_jgr</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  suppress.messages <span class="op">=</span> <span class="va">show.progress</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -107,23 +107,36 @@ errors by warnings) and returns <code>TRUE</code> in case of success, or <code>F
     <dl><dt>items</dt>
 <dd><p>The items (usually, arguments vector of character strings) on
 which to apply <code>fun</code> sequentially.</p></dd>
+
+
 <dt>fun</dt>
 <dd><p>The function to run (must return <code>TRUE</code> or <code>FALSE</code> and issue only
 warnings or messages to be a good candidate, batchable, function).</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Further arguments to pass the <code>fun</code>.</p></dd>
+
+
 <dt>show.progress</dt>
 <dd><p>Do we show progression as item x on y... message? This
 uses the <code><a href="progress.html">progress()</a></code> function.</p></dd>
+
+
 <dt>suppress.messages</dt>
 <dd><p>Are messages from the batchable function suppressed?
 Only warnings will be issued. Recommended if <code>show.progress = TRUE</code>.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>Display start and end messages if <code>TRUE</code> (default).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns invisibly the number of items that were correctly processed
+    
+
+<p>Returns invisibly the number of items that were correctly processed
 with attributes <code>items</code> and <code>ok</code> giving more details.</p>
     </div>
     <div id="see-also">
@@ -133,22 +146,22 @@ with attributes <code>items</code> and <code>ok</code> giving more details.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co"># Here is a fake batchable process</span></span>
-<span class="r-in"><span class="va">fake_process</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">file</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Processing "</span>, <span class="va">file</span>, <span class="st">"..."</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/utils/flush.console.html" class="external-link">flush.console</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span></span>
-<span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Fails</span></span>
-<span class="r-in">    <span class="kw"><a href="https://rdrr.io/r/base/warning.html" class="external-link">warning</a></span><span class="op">(</span><span class="st">"fake_process was unable to process "</span>, <span class="va">file</span><span class="op">)</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">}</span> <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Run it in batch mode on five items</span></span>
-<span class="r-in"><span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">batch</span><span class="op">(</span><span class="va">files</span>, <span class="va">fake_process</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># Here is a fake batchable process</span></span></span>
+<span class="r-in"><span><span class="va">fake_process</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">file</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Processing "</span>, <span class="va">file</span>, <span class="st">"..."</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/utils/flush.console.html" class="external-link">flush.console</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Fails</span></span></span>
+<span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/warning.html" class="external-link">warning</a></span><span class="op">(</span><span class="st">"fake_process was unable to process "</span>, <span class="va">file</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span> <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Run it in batch mode on five items</span></span></span>
+<span class="r-in"><span><span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">batch</span><span class="op">(</span><span class="va">files</span>, <span class="va">fake_process</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>

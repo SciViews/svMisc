@@ -104,35 +104,35 @@ has a similar purpose to show how some code could be completed.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">describe_function</span><span class="op">(</span><span class="va">fun</span>, <span class="va">package</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">describe_args</span><span class="op">(</span><span class="va">fun</span>, args <span class="op">=</span> <span class="cn">NULL</span>, package <span class="op">=</span> <span class="cn">NULL</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">args_tip</span><span class="op">(</span><span class="va">name</span>, only.args <span class="op">=</span> <span class="cn">FALSE</span>, width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu">call_tip</span><span class="op">(</span>
-  <span class="va">code</span>,
-  only.args <span class="op">=</span> <span class="cn">FALSE</span>,
-  location <span class="op">=</span> <span class="cn">FALSE</span>,
-  description <span class="op">=</span> <span class="cn">FALSE</span>,
-  methods <span class="op">=</span> <span class="cn">FALSE</span>,
-  width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="fu">descFun</span><span class="op">(</span><span class="va">fun</span>, <span class="va">package</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">descArgs</span><span class="op">(</span><span class="va">fun</span>, args <span class="op">=</span> <span class="cn">NULL</span>, package <span class="op">=</span> <span class="cn">NULL</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">argsTip</span><span class="op">(</span><span class="va">name</span>, only.args <span class="op">=</span> <span class="cn">FALSE</span>, width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu">callTip</span><span class="op">(</span>
-  <span class="va">code</span>,
-  only.args <span class="op">=</span> <span class="cn">FALSE</span>,
-  location <span class="op">=</span> <span class="cn">FALSE</span>,
-  description <span class="op">=</span> <span class="cn">FALSE</span>,
-  methods <span class="op">=</span> <span class="cn">FALSE</span>,
-  width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">describe_function</span><span class="op">(</span><span class="va">fun</span>, <span class="va">package</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">describe_args</span><span class="op">(</span><span class="va">fun</span>, args <span class="op">=</span> <span class="cn">NULL</span>, package <span class="op">=</span> <span class="cn">NULL</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">args_tip</span><span class="op">(</span><span class="va">name</span>, only.args <span class="op">=</span> <span class="cn">FALSE</span>, width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">call_tip</span><span class="op">(</span></span>
+<span>  <span class="va">code</span>,</span>
+<span>  only.args <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  location <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  description <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  methods <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">descFun</span><span class="op">(</span><span class="va">fun</span>, <span class="va">package</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">descArgs</span><span class="op">(</span><span class="va">fun</span>, args <span class="op">=</span> <span class="cn">NULL</span>, package <span class="op">=</span> <span class="cn">NULL</span>, lib.loc <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">argsTip</span><span class="op">(</span><span class="va">name</span>, only.args <span class="op">=</span> <span class="cn">FALSE</span>, width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">callTip</span><span class="op">(</span></span>
+<span>  <span class="va">code</span>,</span>
+<span>  only.args <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  location <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  description <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  methods <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"width"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -140,44 +140,67 @@ has a similar purpose to show how some code could be completed.</p>
     <dl><dt>fun</dt>
 <dd><p>A character string with the name of a function (several functions
 accepted too for <code>describe_function()</code>.</p></dd>
+
+
 <dt>package</dt>
 <dd><p>A character string with the name of the package that contains
 <code>fun</code>, or <code>NULL</code> for searching in all loaded packages.</p></dd>
+
+
 <dt>lib.loc</dt>
 <dd><p>A character vector of directory names of <span style="R">R</span> libraries, or
 <code>NULL</code>. The default value of <code>NULL</code> corresponds to all libraries currently
 known. If the default is used, the loaded packages are searched before the
 libraries.</p></dd>
+
+
 <dt>args</dt>
 <dd><p>Either <code>NULL</code> (by default) to return the description of all
 arguments from the corresponding man page, or a character vector with names
 of the arguments to search for.</p></dd>
+
+
 <dt>name</dt>
 <dd><p>A string with the name of a function.</p></dd>
+
+
 <dt>only.args</dt>
 <dd><p>Do we return only arguments of the function
 (<code>arg1, arg2 = TRUE, ...</code>), or the full call, like
 (<code>myfun(arg1, arg2 = TRUE, ...)</code>).</p></dd>
+
+
 <dt>width</dt>
 <dd><p>Reformat the tip to fit to fit in that width, except if
 <code>width = NULL</code>.</p></dd>
+
+
 <dt>code</dt>
 <dd><p>A fraction of R code ending with the name of a function,
 eventually followed by '('.</p></dd>
+
+
 <dt>location</dt>
 <dd><p>If <code>TRUE</code> then the location (in which package the function
 resides) is appended to the calltip between square brackets.</p></dd>
+
+
 <dt>description</dt>
 <dd><p>If <code>TRUE</code> then a short description of the function is
 added to the call_tip (in fact, the title of the corresponding help page, if
 it exists).</p></dd>
+
+
 <dt>methods</dt>
 <dd><p>If <code>TRUE</code> then a short message indicating if this is a generic
 function and that lists, in this case, available methods.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A string with the description of the function or of its arguments, or
+    
+
+<p>A string with the description of the function or of its arguments, or
 the calling syntax of the function, plus additional information depending on
 the flags used. If the man page is not found, a vector of empty strings is
 returned. Empty strings are also returned for arguments that are not found in
@@ -198,16 +221,16 @@ function, especially for generic functions that have many methods like
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">describe_function</span><span class="op">(</span><span class="st">"ls"</span>, <span class="st">"base"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">describe_function</span><span class="op">(</span><span class="st">"ls"</span>, <span class="st">"base"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "List Objects"</span>
-<span class="r-in"><span class="fu">describe_function</span><span class="op">(</span><span class="st">"library"</span>, <span class="st">"base"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">describe_function</span><span class="op">(</span><span class="st">"library"</span>, <span class="st">"base"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Loading/Attaching and Listing of Packages"</span>
-<span class="r-in"><span class="fu">describe_function</span><span class="op">(</span><span class="st">"descFun"</span>, <span class="st">"svMisc"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">describe_function</span><span class="op">(</span><span class="st">"descFun"</span>, <span class="st">"svMisc"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Get textual help on function or function arguments, or get a call tip"</span>
-<span class="r-in"><span class="fu">describe_function</span><span class="op">(</span><span class="st">"descArgs"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">describe_function</span><span class="op">(</span><span class="st">"descArgs"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Get textual help on function or function arguments, or get a call tip"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">describe_args</span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">describe_args</span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                   name </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "which environment to use in listing the available objects.\n    Defaults to the current environment.  Although called\n    name for back compatibility, in fact this argument can\n    specify the environment in any form; see the Details section." </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                    pos </span>
@@ -220,16 +243,16 @@ function, especially for generic functions that have many methods like
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                       "an optional regular expression.  Only names\n    matching pattern are returned.  glob2rx can be\n    used to convert wildcard patterns to regular expressions." </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                 sorted </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                  "logical indicating if the resulting\n    character should be sorted alphabetically.  Note that\n    this is part of ls() may take most of the time." </span>
-<span class="r-in"><span class="fu">describe_args</span><span class="op">(</span><span class="st">"library"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"package"</span>, <span class="st">"pos"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">describe_args</span><span class="op">(</span><span class="st">"library"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"package"</span>, <span class="st">"pos"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                     package </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "the name of a package, given as a name or\n    literal character string, or a character string, depending on\n    whether character.only is FALSE (default) or\n    TRUE." </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                         pos </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   "the position on the search list at which to attach the\n    loaded namespace.  Can also be the name of a position on the current\n    search list as given by search()." </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">args_tip</span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">args_tip</span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "ls(name, pos = -1L, envir = as.environment(pos), all.names = FALSE, pattern,\n    sorted = TRUE)"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">call_tip</span><span class="op">(</span><span class="st">"myvar &lt;- lm("</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">call_tip</span><span class="op">(</span><span class="st">"myvar &lt;- lm("</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "lm(formula, data, subset, weights, na.action, method = \"qr\", model = TRUE, x =\n    FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, contrasts = NULL, offset,\n    ...)"</span>
 </code></pre></div>
     </div>

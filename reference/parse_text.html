@@ -94,27 +94,36 @@ incorrect code, or <code>NA</code> if the (last) instruction is incomplete.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">parse_text</span><span class="op">(</span><span class="va">text</span>, firstline <span class="op">=</span> <span class="fl">1</span>, srcfilename <span class="op">=</span> <span class="cn">NULL</span>, encoding <span class="op">=</span> <span class="st">"unknown"</span><span class="op">)</span>
-
-<span class="fu">parseText</span><span class="op">(</span><span class="va">text</span>, firstline <span class="op">=</span> <span class="fl">1</span>, srcfilename <span class="op">=</span> <span class="cn">NULL</span>, encoding <span class="op">=</span> <span class="st">"unknown"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">parse_text</span><span class="op">(</span><span class="va">text</span>, firstline <span class="op">=</span> <span class="fl">1</span>, srcfilename <span class="op">=</span> <span class="cn">NULL</span>, encoding <span class="op">=</span> <span class="st">"unknown"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">parseText</span><span class="op">(</span><span class="va">text</span>, firstline <span class="op">=</span> <span class="fl">1</span>, srcfilename <span class="op">=</span> <span class="cn">NULL</span>, encoding <span class="op">=</span> <span class="st">"unknown"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>text</dt>
 <dd><p>The character string vector to parse into an R expression.</p></dd>
+
+
 <dt>firstline</dt>
 <dd><p>The index of first line being parsed in the file. If this is
 larger than <code>1</code>, empty lines are added in front of <code>text</code> in order to match
 the correct position in the file.</p></dd>
+
+
 <dt>srcfilename</dt>
 <dd><p>A character string with the name of the source file.</p></dd>
+
+
 <dt>encoding</dt>
 <dd><p>Encoding of `text``, as in <code><a href="https://rdrr.io/r/base/parse.html" class="external-link">parse()</a></code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns an expression with the parsed code or <code>NA</code> if the last
+    
+
+<p>Returns an expression with the parsed code or <code>NA</code> if the last
 instruction is correct but incomplete, or an object of class 'try-error' with
 the error message if the code is incorrect.</p>
     </div>
@@ -132,30 +141,30 @@ explicitly (<code>text = ...</code>).</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"1 + 1"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"1 + 1"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> expression(1 + 1)</span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"1 + 1; log(10)"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"1 + 1; log(10)"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> expression(1 + 1, log(10))</span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1 + 1"</span>, <span class="st">"log(10)"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1 + 1"</span>, <span class="st">"log(10)"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> expression(1 + 1, log(10))</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Incomplete instruction</span></span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"log("</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Incomplete instruction</span></span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"log("</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Incomplete strings</span></span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"text &lt;- \"some string"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Incomplete strings</span></span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"text &lt;- \"some string"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"text &lt;- 'some string"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"text &lt;- 'some string"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Incomplete names (don't write backtick quoted names on several lines!)</span></span>
-<span class="r-in"><span class="co"># ...but just in case</span></span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"`myvar"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Incomplete names (don't write backtick quoted names on several lines!)</span></span></span>
+<span class="r-in"><span><span class="co"># ...but just in case</span></span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"`myvar"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Incorrect expression</span></span>
-<span class="r-in"><span class="fu">parse_text</span><span class="op">(</span><span class="st">"log)"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Incorrect expression</span></span></span>
+<span class="r-in"><span><span class="fu">parse_text</span><span class="op">(</span><span class="st">"log)"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1:4: unexpected ')'\n1: log)\n       ^"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "try-error"</span>

@@ -101,27 +101,27 @@ contrary to a usual <code>type =</code> or <code>which =</code> argument, like i
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">list_methods</span><span class="op">(</span>
-  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,
-  class <span class="op">=</span> <span class="cn">NULL</span>,
-  S3 <span class="op">=</span> <span class="cn">TRUE</span>,
-  S4 <span class="op">=</span> <span class="cn">TRUE</span>,
-  mixed <span class="op">=</span> <span class="cn">TRUE</span>,
-  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="fu">list_types</span><span class="op">(</span><span class="va">method</span>, class <span class="op">=</span> <span class="st">"default"</span>, strict <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="fu">listMethods</span><span class="op">(</span>
-  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,
-  class <span class="op">=</span> <span class="cn">NULL</span>,
-  S3 <span class="op">=</span> <span class="cn">TRUE</span>,
-  S4 <span class="op">=</span> <span class="cn">TRUE</span>,
-  mixed <span class="op">=</span> <span class="cn">TRUE</span>,
-  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="fu">listTypes</span><span class="op">(</span><span class="va">method</span>, class <span class="op">=</span> <span class="st">"default"</span>, strict <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">list_methods</span><span class="op">(</span></span>
+<span>  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  class <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  S3 <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  S4 <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  mixed <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">list_types</span><span class="op">(</span><span class="va">method</span>, class <span class="op">=</span> <span class="st">"default"</span>, strict <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">listMethods</span><span class="op">(</span></span>
+<span>  f <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  class <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  S3 <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  S4 <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  mixed <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"svGUI.methods"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">listTypes</span><span class="op">(</span><span class="va">method</span>, class <span class="op">=</span> <span class="st">"default"</span>, strict <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -129,36 +129,55 @@ contrary to a usual <code>type =</code> or <code>which =</code> argument, like i
     <dl><dt>f</dt>
 <dd><p>The name of the generic function (character string), used only when
 <code>class = NULL</code>.</p></dd>
+
+
 <dt>class</dt>
 <dd><p>The name of a class.</p></dd>
+
+
 <dt>S3</dt>
 <dd><p>If <code>TRUE</code>, list of S3 methods.</p></dd>
+
+
 <dt>S4</dt>
 <dd><p>If <code>TRUE</code>, list of S4 methods.</p></dd>
+
+
 <dt>mixed</dt>
 <dd><p>If <code>TRUE</code>, S3 and S4 methods are mixed together in a character
 vector, otherwise, S3 and S4 methods are reported separately in a list.</p></dd>
+
+
 <dt>filter</dt>
 <dd><p>A list of methods to consider when listing class methods. Only
 classes in this list that are defined for the class are returned. Store the
 list of methods you want in the options <code>"svGUI.methods"</code>. The package
 proposes a reasonable starting point on loading if this option is not defined
 yet.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>The method name.</p></dd>
+
+
 <dt>strict</dt>
 <dd><p>Do we list only types for the class (<code>TRUE</code>), or all
 possible types, including for inherited objects, and default ones <code>FALSE</code>,
 by default)?</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>For <code>list_methods()</code>, if <code>mixed = TRUE</code>, a list with components:</p><ul><li><p><code>S3</code> The S3 methods for the generic function or the class, or
+    
+
+<p>For <code>list_methods()</code>, if <code>mixed = TRUE</code>, a list with components:</p><ul><li><p><code>S3</code> The S3 methods for the generic function or the class, or
 <code>character(0)</code> if none</p></li>
 <li><p><code>S4</code> The S4 methods for the generic function or the class, or
 <code>character(0)</code> if none.</p></li>
-</ul><p>Otherwise, a character vector with the requested methods.
-For <code>list_types()</code>, a vector with character strings with methods' type names.</p>
+</ul><p>Otherwise, a character vector with the requested methods.</p>
+
+
+<p>For <code>list_types()</code>, a vector with character strings with methods' type names.</p>
     </div>
     <div id="note">
     <h2>Note</h2>
@@ -175,10 +194,10 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Generic functions</span></span>
-<span class="r-in"><span class="fu">list_methods</span><span class="op">(</span><span class="st">"t.test"</span><span class="op">)</span>               <span class="co"># S3</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Generic functions</span></span></span>
+<span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span><span class="st">"t.test"</span><span class="op">)</span>               <span class="co"># S3</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "x=\"default\"" "x=\"formula\""</span>
-<span class="r-in"><span class="fu">list_methods</span><span class="op">(</span><span class="st">"show"</span>, mixed <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>  <span class="co"># S4</span></span>
+<span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span><span class="st">"show"</span>, mixed <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>  <span class="co"># S4</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $S3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -205,25 +224,25 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [20] "object=\"sourceEnvironment\""        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [21] "object=\"traceable\""                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span class="fu">list_methods</span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span> <span class="co"># None, not a generic function!</span></span>
+<span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span> <span class="co"># None, not a generic function!</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Classes</span></span>
-<span class="r-in"><span class="co"># Only the following methods are considered</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"gui.methods"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Classes</span></span></span>
+<span class="r-in"><span><span class="co"># Only the following methods are considered</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"gui.methods"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
-<span class="r-in"><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"data.frame"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"data.frame"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "formula" "head"    "plot"    "summary" "tail"   </span>
-<span class="r-in"><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "anova"     "confint"   "formula"   "logLik"    "plot"      "predict"  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [7] "residuals" "summary"   "vcov"     </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># List method types</span></span>
-<span class="r-in"><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span><span class="op">)</span>  <span class="co"># All default view types currently defined</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># List method types</span></span></span>
+<span class="r-in"><span><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span><span class="op">)</span>  <span class="co"># All default view types currently defined</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-in"><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span>, <span class="st">"data.frame"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span>, <span class="st">"data.frame"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
-<span class="r-in"><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span>, <span class="st">"data.frame"</span>, <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># None, except if you defined custom views!</span></span>
+<span class="r-in"><span><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span>, <span class="st">"data.frame"</span>, <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># None, except if you defined custom views!</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
 </code></pre></div>
     </div>

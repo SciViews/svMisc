@@ -101,16 +101,20 @@ not constrained, otherwise, it is fixed (possibly cutting or recycling
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">def</span><span class="op">(</span><span class="va">value</span>, default <span class="op">=</span> <span class="st">""</span>, mode <span class="op">=</span> <span class="st">"character"</span>, length.out <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">def</span><span class="op">(</span><span class="va">value</span>, default <span class="op">=</span> <span class="st">""</span>, mode <span class="op">=</span> <span class="st">"character"</span>, length.out <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>value</dt>
 <dd><p>The value to pass with default.</p></dd>
+
+
 <dt>default</dt>
 <dd><p>The default value to use, in case of <code>NULL</code>, or
 <code>length(value) == 0</code>.</p></dd>
+
+
 <dt>mode</dt>
 <dd><p>The mode of the resulting object: 'character', 'logical',
 'numeric' (and, if you want to be more precise: 'double', 'integer' or
@@ -119,14 +123,19 @@ specify 'factor' to make sure the result is a factor (thus, of mode
 'numeric', storage mode 'integer', with a levels attribute). Other modes are
 ignored, and <code>value</code> is NOT coerced (silently) in this case, i.e., if you
 don't want to force coercion of the resulting object, use anything else.</p></dd>
+
+
 <dt>length.out</dt>
 <dd><p>The desired length of the returned vector; use
 <code>length.out = NULL</code> (default) if you don't want to change the length of the
 vector.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A vector of given mode and length, with either <code>value</code> or <code>default</code>.</p>
+    
+
+<p>A vector of given mode and length, with either <code>value</code> or <code>default</code>.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -135,17 +144,17 @@ vector.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">def</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, length.out <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>                      <span class="co"># Convert into character and recycle</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">def</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, length.out <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>                      <span class="co"># Convert into character and recycle</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1" "2" "3" "1" "2"</span>
-<span class="r-in"><span class="fu">def</span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">2</span>, mode <span class="op">=</span> <span class="st">"logical"</span><span class="op">)</span>                    <span class="co"># Numbers to logical</span></span>
+<span class="r-in"><span><span class="fu">def</span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">2</span>, mode <span class="op">=</span> <span class="st">"logical"</span><span class="op">)</span>                    <span class="co"># Numbers to logical</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE  TRUE  TRUE</span>
-<span class="r-in"><span class="fu">def</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"TRUE"</span>, <span class="st">"FALSE"</span><span class="op">)</span>, mode <span class="op">=</span> <span class="st">"logical"</span><span class="op">)</span>     <span class="co"># Text to logical</span></span>
+<span class="r-in"><span><span class="fu">def</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"TRUE"</span>, <span class="st">"FALSE"</span><span class="op">)</span>, mode <span class="op">=</span> <span class="st">"logical"</span><span class="op">)</span>     <span class="co"># Text to logical</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]  TRUE FALSE</span>
-<span class="r-in"><span class="fu">def</span><span class="op">(</span><span class="cn">NULL</span>, <span class="st">"default text"</span><span class="op">)</span>                     <span class="co"># Default value used</span></span>
+<span class="r-in"><span><span class="fu">def</span><span class="op">(</span><span class="cn">NULL</span>, <span class="st">"default text"</span><span class="op">)</span>                     <span class="co"># Default value used</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "default text"</span>
-<span class="r-in"><span class="fu">def</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>, <span class="st">"default text"</span><span class="op">)</span>             <span class="co"># Idem</span></span>
+<span class="r-in"><span><span class="fu">def</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>, <span class="st">"default text"</span><span class="op">)</span>             <span class="co"># Idem</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "default text"</span>
-<span class="r-in"><span class="fu">def</span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">10</span>, mode <span class="op">=</span> <span class="st">"numeric"</span>, length.out <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># Vector of two numbers</span></span>
+<span class="r-in"><span><span class="fu">def</span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">10</span>, mode <span class="op">=</span> <span class="st">"numeric"</span>, length.out <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># Vector of two numbers</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA NA</span>
 </code></pre></div>
     </div>

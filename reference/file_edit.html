@@ -94,56 +94,71 @@ does not exists yet.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">file_edit</span><span class="op">(</span>
-  <span class="va">...</span>,
-  title <span class="op">=</span> <span class="va">files</span>,
-  editor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"fileEditor"</span><span class="op">)</span>,
-  file.encoding <span class="op">=</span> <span class="st">""</span>,
-  template <span class="op">=</span> <span class="cn">NULL</span>,
-  replace <span class="op">=</span> <span class="cn">FALSE</span>,
-  wait <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span>
-
-<span class="fu">fileEdit</span><span class="op">(</span>
-  <span class="va">...</span>,
-  title <span class="op">=</span> <span class="va">files</span>,
-  editor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"fileEditor"</span><span class="op">)</span>,
-  file.encoding <span class="op">=</span> <span class="st">""</span>,
-  template <span class="op">=</span> <span class="cn">NULL</span>,
-  replace <span class="op">=</span> <span class="cn">FALSE</span>,
-  wait <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">file_edit</span><span class="op">(</span></span>
+<span>  <span class="va">...</span>,</span>
+<span>  title <span class="op">=</span> <span class="va">files</span>,</span>
+<span>  editor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"fileEditor"</span><span class="op">)</span>,</span>
+<span>  file.encoding <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  template <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  replace <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  wait <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">fileEdit</span><span class="op">(</span></span>
+<span>  <span class="va">...</span>,</span>
+<span>  title <span class="op">=</span> <span class="va">files</span>,</span>
+<span>  editor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"fileEditor"</span><span class="op">)</span>,</span>
+<span>  file.encoding <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  template <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  replace <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  wait <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>...</dt>
 <dd><p>Path to one or more files to edit.</p></dd>
+
+
 <dt>title</dt>
 <dd><p>The title of the editor window (not honored by all editors,
 most external editors only display the file name or path).</p></dd>
+
+
 <dt>editor</dt>
 <dd><p>Editor to use. Either the name of the program, or a string
 containing the command to run, using \<!-- %s as replacement tag where to place -->
 the filename in the command, or a function with 'file', 'title' and 'wait'
 arguments to delegate process of the files.</p></dd>
+
+
 <dt>file.encoding</dt>
 <dd><p>Encoding of the files. If <code>""</code> or <code>native.enc</code>, the
 files are considered as being already in the right encoding.</p></dd>
+
+
 <dt>template</dt>
 <dd><p>One or more files to use as template if files must be
 created. If <code>NULL</code>, an empty file is created. This argument is recycled for
 all files to edit.</p></dd>
+
+
 <dt>replace</dt>
 <dd><p>Force replacement of files if <code>template=</code> is not null.</p></dd>
+
+
 <dt>wait</dt>
 <dd><p>Wait for edition to complete. If more than one file is edited,
 the program waits sequentially for each file to be edited in turn (with a
 message in the R console).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The function returns <code>TRUE</code> if it was able to edit the files or
+    
+
+<p>The function returns <code>TRUE</code> if it was able to edit the files or
 <code>FALSE</code> otherwise, invisibly. Encountered errors are reported as warnings.</p>
     </div>
     <div id="note">
@@ -204,22 +219,22 @@ or Unix line ending characters!</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co"># Create a template file in the tempdir...</span></span>
-<span class="r-in"><span class="va">template</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"template"</span>, fileext <span class="op">=</span> <span class="st">".txt"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Example template file to be used with file_edit()"</span>, file <span class="op">=</span> <span class="va">template</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># ... and edit a new file, starting from that template:</span></span>
-<span class="r-in"><span class="va">new_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"test"</span>, fileext <span class="op">=</span> <span class="st">".txt"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">file_edit</span><span class="op">(</span><span class="va">new_file</span>, template <span class="op">=</span> <span class="va">template</span>, wait <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Your file contains:"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">new_file</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Eliminate both the file and template</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">new_file</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">template</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># Create a template file in the tempdir...</span></span></span>
+<span class="r-in"><span><span class="va">template</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"template"</span>, fileext <span class="op">=</span> <span class="st">".txt"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Example template file to be used with file_edit()"</span>, file <span class="op">=</span> <span class="va">template</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># ... and edit a new file, starting from that template:</span></span></span>
+<span class="r-in"><span><span class="va">new_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"test"</span>, fileext <span class="op">=</span> <span class="st">".txt"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">file_edit</span><span class="op">(</span><span class="va">new_file</span>, template <span class="op">=</span> <span class="va">template</span>, wait <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Your file contains:"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">new_file</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Eliminate both the file and template</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">new_file</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">template</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>

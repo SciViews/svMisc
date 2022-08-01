@@ -37,6 +37,9 @@
     <loc>https://www.sciviews.org/svMisc/reference/add_actions.html</loc>
   </url>
   <url>
+    <loc>https://www.sciviews.org/svMisc/reference/aka.html</loc>
+  </url>
+  <url>
     <loc>https://www.sciviews.org/svMisc/reference/batch.html</loc>
   </url>
   <url>
@@ -58,16 +61,10 @@
     <loc>https://www.sciviews.org/svMisc/reference/describe_function.html</loc>
   </url>
   <url>
-    <loc>https://www.sciviews.org/svMisc/reference/dot-_.html</loc>
-  </url>
-  <url>
     <loc>https://www.sciviews.org/svMisc/reference/file_edit.html</loc>
   </url>
   <url>
     <loc>https://www.sciviews.org/svMisc/reference/gui_cmd.html</loc>
-  </url>
-  <url>
-    <loc>https://www.sciviews.org/svMisc/reference/hint.html</loc>
   </url>
   <url>
     <loc>https://www.sciviews.org/svMisc/reference/index.html</loc>
@@ -98,6 +95,9 @@
   </url>
   <url>
     <loc>https://www.sciviews.org/svMisc/reference/progress.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svMisc/reference/rbenchmark.html</loc>
   </url>
   <url>
     <loc>https://www.sciviews.org/svMisc/reference/search_web.html</loc>
