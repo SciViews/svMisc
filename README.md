@@ -1,4 +1,4 @@
-# svMisc
+# svMisc - Miscellaneous 'SciViews' Functions
 
 <!-- badges: start -->
 

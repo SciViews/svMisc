@@ -1,7 +1,6 @@
 Package: svMisc
 Type: Package
 Version: 1.3.0
-Date: 2022-03-22
 Title: 'SciViews' - Miscellaneous Functions
 Description: Miscellaneous functions for 'SciViews' or general use: manage a
   temporary environment attached to the search path for temporary variables you

@@ -1,4 +1,4 @@
-# Translation of R-tcltk.pot to French
+# Translation of R-svMisc.pot to French
 # Copyright (C) 2005 The R Foundation
 # This file is distributed under the same license as the svMisc R package.
 # Philippe Grosjean <phgrosjean@sciviews.org>, 2005-2009.
