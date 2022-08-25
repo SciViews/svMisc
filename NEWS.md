@@ -1,12 +1,10 @@
-# svMisc 1.3.1
+# svMisc 1.3.0
 
 -   Function `._(x, code)` is removed from here to be included into the {svFlow} package where it is more appropriate.
 
 -   Function `hint()` is renamed `aka()` (also known as) because the name is much more in line with what it does. `alias()` would have been an even better name, but there is already `stats::alias()` and we don't want a conflict on this function.
 
 -   `rbenchmark()` provides R Benchmark version 2.6 without needing to source external code.
-
-# svMisc 1.3.0
 
 -   Function `cut_quantile()` like `cut()`, but calculating breaks on quantiles in order to break down the vector into intervals of equal number of items.
 
