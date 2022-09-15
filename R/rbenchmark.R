@@ -5,6 +5,8 @@
 #' recursion, etc.
 #'
 #' @param runs Number of times each test is run (3 by default).
+#' @param x A **rbenchmark** object
+#' @param ... Further arguments (not used yet)
 #'
 #' @return An **rbenchmark** object with the timing of all 15 tests.
 #' @export
@@ -340,6 +342,8 @@ rbenchmark <- function(runs = 3L) {
   structure(times, version = version, class = "rbenchmark")
 }
 
+#' @export
+#' @rdname rbenchmark
 print.rbenchmark <- function(x, ...) {
   version <- attr(x, "version")
   runs <- ncol(x)

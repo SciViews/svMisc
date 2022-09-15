@@ -3,6 +3,7 @@
 S3method("$",subsettable_type)
 S3method("$",subsettable_which)
 S3method(print,objList)
+S3method(print,rbenchmark)
 export("?")
 export(Install)
 export(TempEnv)

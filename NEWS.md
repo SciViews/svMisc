@@ -1,3 +1,7 @@
+# svMisc 1.3.1
+
+-   Bug correction: `print.rbenchmark()` was not exported.
+
 # svMisc 1.3.0
 
 -   Function `._(x, code)` is removed from here to be included into the {svFlow} package where it is more appropriate.

@@ -2,12 +2,19 @@
 % Please edit documentation in R/rbenchmark.R
 \name{rbenchmark}
 \alias{rbenchmark}
+\alias{print.rbenchmark}
 \title{R Benchmark 2.6}
 \usage{
 rbenchmark(runs = 3L)
+
+\method{print}{rbenchmark}(x, ...)
 }
 \arguments{
 \item{runs}{Number of times each test is run (3 by default).}
+
+\item{x}{A \strong{rbenchmark} object}
+
+\item{...}{Further arguments (not used yet)}
 }
 \value{
 An \strong{rbenchmark} object with the timing of all 15 tests.
