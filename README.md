@@ -1,12 +1,12 @@
-# svMisc - Miscellaneous 'SciViews' Functions
+# svMisc - Miscellaneous 'SciViews::R' Functions <a href='https://www.sciviews.org/svMisc'><img src="man/figures/logo.png" align="right" height="139"/></a>
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/SciViews/svMisc/workflows/R-CMD-check/badge.svg)](https://github.com/SciViews/svMisc/actions) [![Win build status](https://ci.appveyor.com/api/projects/status/github/SciViews/svMisc?branch=master&svg=true)](https://ci.appveyor.com/project/phgrosjean/svMisc) [![Coverage status](https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg)](https://codecov.io/github/SciViews/svMisc?branch=master) [![CRAN status](https://www.r-pkg.org/badges/version/svMisc)](https://cran.r-project.org/package=svMisc) [![svMisc status badge](https://sciviews.r-universe.dev/badges/svMisc)](https://sciviews.r-universe.dev) [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![R-CMD-check](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml) [![Coverage status](https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg)](https://codecov.io/github/SciViews/svMisc?branch=master) [![CRAN status](https://www.r-pkg.org/badges/version/svMisc)](https://cran.r-project.org/package=svMisc) [![svMisc status badge](https://sciviews.r-universe.dev/badges/svMisc)](https://sciviews.r-universe.dev) [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 
 <!-- badges: end -->
 
-{svMisc} provides a series of functions that are used by the other SciViews packages. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.
+{svMisc} provides a series of functions that are used by the other packages that make the SciViews::R dialect. You can also use most of them directly, like a progress bar, a function to run analyses in batch (and recover in case of error), management of a temporary environment, etc.
 
 ## Installation
 
@@ -29,8 +29,6 @@ remotes::install_github("SciViews/svMisc")
 ```
 
 R should install all required dependencies automatically, and then it should compile and install {svMisc}.
-
-Latest devel version of {svMisc} (source + Windows binaries for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
 
 ## Further explore {svMisc}
 
