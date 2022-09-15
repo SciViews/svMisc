@@ -3,7 +3,7 @@
 better adapted to represent R objects (i.e., richer than JSON). It is also
 easier to parse and evaluate in both R and JavaScript to render the objects
 in both languages. RJSON objects are used by SciViews to exchange data
-between R and SciViews GUIs like Komodo/SciViews-K."><meta name="twitter:card" content="summary"><!-- Mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" async integrity="sha256-nlrDrBTHxJJlDDX22AS33xYI1OJHnGMDhiYMSe2U0e0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/config/TeX-AMS-MML_HTMLorMML.js" async integrity="sha256-4zys9A4hMQmtq2EUL+JRoXc0NZi8jVJMzb8onewOaSQ=" crossorigin="anonymous"></script><!-- Global site tag (gtag.js) - Google Analytics --><!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462421-8"></script>
+between R and SciViews GUIs like Komodo/SciViews-K."><meta property="og:image" content="https://www.sciviews.org/svMisc/logo.png"><meta name="twitter:card" content="summary"><!-- Mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" async integrity="sha256-nlrDrBTHxJJlDDX22AS33xYI1OJHnGMDhiYMSe2U0e0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/config/TeX-AMS-MML_HTMLorMML.js" async integrity="sha256-4zys9A4hMQmtq2EUL+JRoXc0NZi8jVJMzb8onewOaSQ=" crossorigin="anonymous"></script><!-- Global site tag (gtag.js) - Google Analytics --><!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462421-8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -219,11 +219,11 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := c("a",       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6]     "b", "a"), "f" := "this is a \\"string\\" with quote",       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "g" := c(-0.138524380402322, 0.0845309300398423,             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     -2.54256701300226, 0.359731034793737), "h&amp;$@" := list(       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9]         "x" := seq(1, 3), "y" := c(0.0109356216096494,           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         0.0985393562476154, -1.1471024226245), "fact" := c("b",  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         "a", "b")), "i" := "2022-08-29", "j" := list(            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "g" := c(-0.747663650617585, -0.0639234542270746,            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     -0.649148340505201, -0.247011568387549), "h&amp;$@" := list(     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9]         "x" := seq(1, 3), "y" := c(2.06786375605393,             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         0.379279196444903, 0.949761477575383), "fact" := c("b",  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         "a", "b")), "i" := "2022-09-15", "j" := list(            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [12]         "" := seq(1, 5), "y" := "another item"))                 </span>
 <span class="r-in"><span><span class="fu">eval_rjson</span><span class="op">(</span><span class="va">rjson1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
@@ -247,21 +247,21 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "this is a \"string\" with quote"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $g</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.13852438  0.08453093 -2.54256701  0.35973103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.74766365 -0.06392345 -0.64914834 -0.24701157</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`$x</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`$y</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0.01093562  0.09853936 -1.14710242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2.0678638 0.3792792 0.9497615</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`$fact</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b" "a" "b"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $i</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-08-29"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-09-15"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j[[1]]</span>
@@ -281,13 +281,13 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,                                                                                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := list("Data_" := c(1,                                                               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6]     2, 1), "levels" := c("a", "b"), "class" := "factor"),                                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-0.138524380402322,                                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     0.0845309300398423, -2.54256701300226, 0.359731034793737), "dim" := c(2,                                                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9]     2)), "h&amp;$@" := list("Data_" := list("x" := seq(1, 3),                                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         "y" := c(0.0109356216096494, 0.0985393562476154,                                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         -1.1471024226245), "fact" := list("Data_" := c(2,                                                                              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-0.747663650617585,                                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]     -0.0639234542270746, -0.649148340505201, -0.247011568387549                                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9]     ), "dim" := c(2, 2)), "h&amp;$@" := list("Data_" := list(                                                                              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10]         "x" := seq(1, 3), "y" := c(2.06786375605393,                                                                                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11]         0.379279196444903, 0.949761477575383), "fact" := list("Data_" := c(2,                                                          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [12]         1, 2), "levels" := c("a", "b"), "class" := "factor")), "row.names" := seq(1, 3), "class" := "data.frame"),                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13]     "i" := list("Data_" := 19233., "class" := "Date"),                                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13]     "i" := list("Data_" := 19250., "class" := "Date"),                                                                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [14]     "j" := list("" := seq(1, 5), "y" := "another item")), "comment" := "My comment", "anAttrib" := seq(1, 10), "anotherAttrib" := list(</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [15]     "" := TRUE, "y" := seq(1, 4)))                                                                                                     </span>
 <span class="r-in"><span><span class="va">obj2</span> <span class="op">&lt;-</span> <span class="fu">eval_rjson</span><span class="op">(</span><span class="va">rjson2</span><span class="op">)</span></span></span>
@@ -314,18 +314,18 @@ names, but the dollar sign is allowed.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "this is a \"string\" with quote"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $g</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             [,1]      [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1,] -0.13852438 -2.542567</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2,]  0.08453093  0.359731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             [,1]       [,2]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1,] -0.74766365 -0.6491483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2,] -0.06392345 -0.2470116</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`h&amp;$@`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   x           y fact</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1  0.01093562    b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2  0.09853936    a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 3 -1.14710242    b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   x         y fact</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 2.0678638    b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 0.3792792    a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 3 0.9497615    b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $i</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-08-29"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-09-15"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $j[[1]]</span>
