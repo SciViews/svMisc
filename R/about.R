@@ -105,9 +105,9 @@ about <- function(topic, ...) {
     if (!is.null(seealso)) {
       cat("\n")
       if (lang == "fr") {
-        message("Voir aussi :")
+        cat("- Voir aussi : ")
       } else {
-        message("See also:")
+        cat("- See also: ")
       }
       cat(paste(seealso, collapse = ", "), "\n", sep = "")
     }
@@ -115,9 +115,9 @@ about <- function(topic, ...) {
     if (!is.null(example)) {
       cat("\n")
       if (lang == "fr") {
-        message("Exemples (taper `ex` pour les lancer) :")
+        cat("- Exemples (taper `ex` pour les lancer) :\n")
       } else {
-        message("Examples (type `ex` to run them):")
+        message("- Examples (type `ex` to run them):\n")
       }
       assign_temp(".last.example", example)
       writeLines(example)
@@ -127,9 +127,9 @@ about <- function(topic, ...) {
       if (length(info) != 1 || info != "") {
         cat("\n")
         if (lang == "fr") {
-          message("Commentaire :")
+          cat("- Commentaire :\n")
         } else {
-          message("Comment:")
+          cat("- Comment:\n")
         }
         writeLines(info)
       }
