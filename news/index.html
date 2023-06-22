@@ -67,7 +67,7 @@
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.1</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.2</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -85,8 +85,13 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="1.3.2" id="svmisc-132">svMisc 1.3.2<a class="anchor" aria-label="anchor" href="#svmisc-132"></a></h2>
+<ul><li>First implementation of concise help pages for functions aliased with <code><a href="../reference/aka.html">aka()</a></code> (description + seealso + example).</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="1.3.1" id="svmisc-131">svMisc 1.3.1<a class="anchor" aria-label="anchor" href="#svmisc-131"></a></h2>
-<ul><li>Bug correction: <code><a href="../reference/rbenchmark.html">print.rbenchmark()</a></code> was not exported.</li></ul></div>
+<ul><li>Bug correction: <code><a href="../reference/rbenchmark.html">print.rbenchmark()</a></code> was not exported.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.3.0" id="svmisc-130">svMisc 1.3.0<a class="anchor" aria-label="anchor" href="#svmisc-130"></a></h2>
 <ul><li><p>Function <code>._(x, code)</code> is removed from here to be included into the {svFlow} package where it is more appropriate.</p></li>
@@ -98,26 +103,33 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.2.3" id="svmisc-123">svMisc 1.2.3<small>2021-10-11</small><a class="anchor" aria-label="anchor" href="#svmisc-123"></a></h2>
-<ul><li>Several examples set as  because time to run all examples is too long on CRAN.</li></ul></div>
+<ul><li>Several examples set as  because time to run all examples is too long on CRAN.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.2.2" id="svmisc-122">svMisc 1.2.2<a class="anchor" aria-label="anchor" href="#svmisc-122"></a></h2>
-<ul><li>Link to a JSS paper replaced by the DOI link.</li></ul></div>
+<ul><li>Link to a JSS paper replaced by the DOI link.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.2.1" id="svmisc-121">svMisc 1.2.1<a class="anchor" aria-label="anchor" href="#svmisc-121"></a></h2>
-<ul><li>No more assignation (<code>last.warning</code>) into base environment: not permitted any more in R &gt;= 4.1.0.</li></ul></div>
+<ul><li>No more assignation (<code>last.warning</code>) into base environment: not permitted any more in R &gt;= 4.1.0.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.2.0" id="svmisc-120">svMisc 1.2.0<a class="anchor" aria-label="anchor" href="#svmisc-120"></a></h2>
-<ul><li>Two new functions <code><a href="../reference/pcloud.html">pcloud()</a></code> and <code><a href="../reference/pcloud.html">pcloud_crypto()</a></code> ease the management of files that are located in a p-Cloud drive (p-Cloud is a cloud storage system).</li></ul></div>
+<ul><li>Two new functions <code><a href="../reference/pcloud.html">pcloud()</a></code> and <code><a href="../reference/pcloud.html">pcloud_crypto()</a></code> ease the management of files that are located in a p-Cloud drive (p-Cloud is a cloud storage system).</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.4" id="svmisc-114">svMisc 1.1.4<small>2021-04-16</small><a class="anchor" aria-label="anchor" href="#svmisc-114"></a></h2>
-<ul><li>Minor changes in the documentation to avoid notes in latest devel R CMD check.</li></ul></div>
+<ul><li>Minor changes in the documentation to avoid notes in latest devel R CMD check.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.3" id="svmisc-113">svMisc 1.1.3<a class="anchor" aria-label="anchor" href="#svmisc-113"></a></h2>
 <ul><li>
-<code>.Traceback</code> is not set any more in the base environment by <code><a href="../reference/capture_all.html">capture_all()</a></code> because CRAN policy does not allow it. The variable <code>.Traceback_capture_all</code> is set in <code><a href="../reference/temp_env.html">temp_env()</a></code> instead. It can be retrieved with <code>get_temp(".Traceback_capture_all")</code>.</li></ul></div>
+<code>.Traceback</code> is not set any more in the base environment by <code><a href="../reference/capture_all.html">capture_all()</a></code> because CRAN policy does not allow it. The variable <code>.Traceback_capture_all</code> is set in <code><a href="../reference/temp_env.html">temp_env()</a></code> instead. It can be retrieved with <code>get_temp(".Traceback_capture_all")</code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.2" id="svmisc-112">svMisc 1.1.2<a class="anchor" aria-label="anchor" href="#svmisc-112"></a></h2>
-<ul><li>A new argument is added to <code><a href="../reference/completion.html">completion()</a></code>: <code>name.or.addition=</code> which determines if the function returns the completion name, completion additions or both. Thanks to <a href="https://github.com/rhuffy" class="external-link">@rhuffy</a>.</li></ul></div>
+<ul><li>A new argument is added to <code><a href="../reference/completion.html">completion()</a></code>: <code>name.or.addition=</code> which determines if the function returns the completion name, completion additions or both. Thanks to <a href="https://github.com/rhuffy" class="external-link">@rhuffy</a>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.1" id="svmisc-111">svMisc 1.1.1<a class="anchor" aria-label="anchor" href="#svmisc-111"></a></h2>
 <ul><li><p><code>News.md</code> reworked in <code>R CMD build</code>-compatible format, and <code>TODO</code> reworked as <code>TODO.md</code>.</p></li>
@@ -131,10 +143,12 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.2" id="svmisc-102">svMisc 1.0.2<a class="anchor" aria-label="anchor" href="#svmisc-102"></a></h2>
 <ul><li>
-<code><a href="../reference/capture_all.html">captureAll()</a></code> and <code><a href="../reference/parse_text.html">parseText()</a></code> were not exported anymore after switching help pages to Roxygen2. Fixed.</li></ul></div>
+<code><a href="../reference/capture_all.html">captureAll()</a></code> and <code><a href="../reference/parse_text.html">parseText()</a></code> were not exported anymore after switching help pages to Roxygen2. Fixed.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0-1" id="svmisc-10-1">svMisc 1.0-1<small>2018-02-02</small><a class="anchor" aria-label="anchor" href="#svmisc-10-1"></a></h2>
-<ul><li>This is a minor update to avoid 2 notes on CRAN <code>R CMD check</code>.</li></ul></div>
+<ul><li>This is a minor update to avoid 2 notes on CRAN <code>R CMD check</code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0-0" id="svmisc-10-0">svMisc 1.0-0<a class="anchor" aria-label="anchor" href="#svmisc-10-0"></a></h2>
 <ul><li><p>New, snake_case names of all the functions. Old camelCase functions names are kept for compatibility, e.g., <code><a href="../reference/capture_all.html">captureAll()</a></code> -&gt; <code><a href="../reference/capture_all.html">capture_all()</a></code>.</p></li>
@@ -145,11 +159,13 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-73" id="svmisc-09-73">svMisc 0.9-73<a class="anchor" aria-label="anchor" href="#svmisc-09-73"></a></h2>
 <p>_ New <code><a href="../reference/is_help.html">is_rstudio()</a></code>, and <code><a href="../reference/is_help.html">is_rstudio_server()</a></code> functions. Also, <code><a href="../reference/file_edit.html">file_edit()</a></code> detects if RStudio is used and get an internal buffer to edit a file by default in that case.</p>
-<ul><li>Vignette added.</li></ul></div>
+<ul><li>Vignette added.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-72" id="svmisc-09-72">svMisc 0.9-72<a class="anchor" aria-label="anchor" href="#svmisc-09-72"></a></h2>
 <ul><li>
-<code><a href="../reference/to_rjson.html">toRjson()</a></code> adapted to be compatible with R &gt;= 3.5.0 (thanks to Martin Maechler).</li></ul></div>
+<code><a href="../reference/to_rjson.html">toRjson()</a></code> adapted to be compatible with R &gt;= 3.5.0 (thanks to Martin Maechler).</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-71" id="svmisc-09-71">svMisc 0.9-71<a class="anchor" aria-label="anchor" href="#svmisc-09-71"></a></h2>
 <ul><li><p>Switch to Github for development; CI added.</p></li>
@@ -168,7 +184,8 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-68" id="svmisc-09-68">svMisc 0.9-68<small>2013-01-27</small><a class="anchor" aria-label="anchor" href="#svmisc-09-68"></a></h2>
-<ul><li>The temporary environment that <code><a href="../reference/temp_env.html">TempEnv()</a></code> attaches to the search path is now called <code>'SciViews:TempEnv'</code> instead of simply <code>'TempEnv'</code> to avoid potential conflicts with other packages in CRAN.</li></ul></div>
+<ul><li>The temporary environment that <code><a href="../reference/temp_env.html">TempEnv()</a></code> attaches to the search path is now called <code>'SciViews:TempEnv'</code> instead of simply <code>'TempEnv'</code> to avoid potential conflicts with other packages in CRAN.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-67" id="svmisc-09-67">svMisc 0.9-67<a class="anchor" aria-label="anchor" href="#svmisc-09-67"></a></h2>
 <ul><li><p>Added the <code><a href="../reference/file_edit.html">fileEdit()</a></code> function.</p></li>
@@ -194,7 +211,8 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-63" id="svmisc-09-63">svMisc 0.9-63<small>2011-09-04</small><a class="anchor" aria-label="anchor" href="#svmisc-09-63"></a></h2>
 <ul><li>
-<code><a href="../reference/progress.html">progress()</a></code> used <code>\8</code>, that was treated as octal for R &lt; 2.14. Changed to <code>\b</code> in order to correct this bug. Thanks Duncan Murdoch for pointing me on this.</li></ul></div>
+<code><a href="../reference/progress.html">progress()</a></code> used <code>\8</code>, that was treated as octal for R &lt; 2.14. Changed to <code>\b</code> in order to correct this bug. Thanks Duncan Murdoch for pointing me on this.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-62" id="svmisc-09-62">svMisc 0.9-62<a class="anchor" aria-label="anchor" href="#svmisc-09-62"></a></h2>
 <ul><li><p><code><a href="../reference/capture_all.html">captureAll()</a></code> now handles user interrupts and allows for <code><a href="https://rdrr.io/r/base/traceback.html" class="external-link">traceback()</a></code> afterwards and default value for <code>split=</code> now changed to <code>TRUE</code>. The <code>echo =</code> argument allows for echoing expressions being evaluated, like in the usual R console, but a mechanism allows to abbreviate very long expressions.</p></li>
@@ -204,7 +222,8 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-61" id="svmisc-09-61">svMisc 0.9-61<small>2010-11-11</small><a class="anchor" aria-label="anchor" href="#svmisc-09-61"></a></h2>
-<ul><li>Better handling of non syntactically correct names in <code><a href="../reference/obj_browse.html">objList()</a></code>.</li></ul></div>
+<ul><li>Better handling of non syntactically correct names in <code><a href="../reference/obj_browse.html">objList()</a></code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-60" id="svmisc-09-60">svMisc 0.9-60<small>2010-09-27</small><a class="anchor" aria-label="anchor" href="#svmisc-09-60"></a></h2>
 <ul><li><p>A couple of functions are renamed: <code>Parse()</code> -&gt; <code><a href="../reference/parse_text.html">parseText()</a></code>, <code>clipsource()</code> -&gt; <code><a href="../reference/source_clipboard.html">sourceClipboard()</a></code>. Old names are declared deprecated, and will become defunct before version 1.0-0 of the package.</p></li>
@@ -226,7 +245,8 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-58" id="svmisc-09-58">svMisc 0.9-58<a class="anchor" aria-label="anchor" href="#svmisc-09-58"></a></h2>
-<ul><li>Additions of functions <code><a href="../reference/to_rjson.html">toRjson()</a></code> and <code><a href="../reference/to_rjson.html">evalRjson()</a></code> and specification of the RJSON (R-JavaScript Object Notation), an object exchange format not unlike JSON, but richer and more adapted to represent most R objects.</li></ul></div>
+<ul><li>Additions of functions <code><a href="../reference/to_rjson.html">toRjson()</a></code> and <code><a href="../reference/to_rjson.html">evalRjson()</a></code> and specification of the RJSON (R-JavaScript Object Notation), an object exchange format not unlike JSON, but richer and more adapted to represent most R objects.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-57" id="svmisc-09-57">svMisc 0.9-57<small>2010-04-22</small><a class="anchor" aria-label="anchor" href="#svmisc-09-57"></a></h2>
 <ul><li><p>Small changes to <code><a href="../reference/obj_browse.html">objList()</a></code> (now look at objects in their correct environment).</p></li>
@@ -234,13 +254,16 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-56" id="svmisc-09-56">svMisc 0.9-56<small>2009-10-29</small><a class="anchor" aria-label="anchor" href="#svmisc-09-56"></a></h2>
-<ul><li>Temporary code to disable <code>index.search()</code> in devel R 2.11 in <code><a href="../reference/is_help.html">isHelp()</a></code> and <code><a href="../reference/describe_function.html">descFun()</a></code>.</li></ul></div>
+<ul><li>Temporary code to disable <code>index.search()</code> in devel R 2.11 in <code><a href="../reference/is_help.html">isHelp()</a></code> and <code><a href="../reference/describe_function.html">descFun()</a></code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-55" id="svmisc-09-55">svMisc 0.9-55<a class="anchor" aria-label="anchor" href="#svmisc-09-55"></a></h2>
-<ul><li>Implement <code><a href="../reference/describe_function.html">descArgs()</a></code> using the new help system (<code>parse_Rd()</code>), this eliminates the need for the workaround of version 0.9-54</li></ul></div>
+<ul><li>Implement <code><a href="../reference/describe_function.html">descArgs()</a></code> using the new help system (<code>parse_Rd()</code>), this eliminates the need for the workaround of version 0.9-54</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-54" id="svmisc-09-54">svMisc 0.9-54<a class="anchor" aria-label="anchor" href="#svmisc-09-54"></a></h2>
-<ul><li>Cosmetic changes in Rd files to make them compatible with R 2.11 (devel). A part of the example of <code>CompletePlus()</code> is eliminated because it raises an error.</li></ul></div>
+<ul><li>Cosmetic changes in Rd files to make them compatible with R 2.11 (devel). A part of the example of <code>CompletePlus()</code> is eliminated because it raises an error.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-53" id="svmisc-09-53">svMisc 0.9-53<a class="anchor" aria-label="anchor" href="#svmisc-09-53"></a></h2>
 <ul><li><p><code>Complete()</code> now sorts items alphabetically and does not return completions as factor type in the data frame any more.</p></li>
@@ -250,11 +273,13 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-52" id="svmisc-09-52">svMisc 0.9-52<a class="anchor" aria-label="anchor" href="#svmisc-09-52"></a></h2>
 <ul><li>
-<code>Complete()</code> now manages cases where code is like <code>iris[</code>, <code>iris[[</code>, or where last parsed token is empty (in this case, it returns the list of objects loaded in <code>.GlobalEnv</code>).</li></ul></div>
+<code>Complete()</code> now manages cases where code is like <code>iris[</code>, <code>iris[[</code>, or where last parsed token is empty (in this case, it returns the list of objects loaded in <code>.GlobalEnv</code>).</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-51" id="svmisc-09-51">svMisc 0.9-51<a class="anchor" aria-label="anchor" href="#svmisc-09-51"></a></h2>
 <ul><li>
-<code>Complete()</code> now includes additions from <code>Complete2()</code> and <code>CompletePlus()</code>.</li></ul></div>
+<code>Complete()</code> now includes additions from <code>Complete2()</code> and <code>CompletePlus()</code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-50" id="svmisc-09-50">svMisc 0.9-50<a class="anchor" aria-label="anchor" href="#svmisc-09-50"></a></h2>
 <ul><li><p><code>CompletePlus()</code> removes the weird object names ( <code>.__M__</code>, …) which were causing trouble.</p></li>
@@ -263,15 +288,18 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-49" id="svmisc-09-49">svMisc 0.9-49<a class="anchor" aria-label="anchor" href="#svmisc-09-49"></a></h2>
 <ul><li>
-<code>Complete2()</code> is a temporary new version of <code>Complete()</code> for experiments.</li></ul></div>
+<code>Complete2()</code> is a temporary new version of <code>Complete()</code> for experiments.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-48" id="svmisc-09-48">svMisc 0.9-48<small>2009-06-28</small><a class="anchor" aria-label="anchor" href="#svmisc-09-48"></a></h2>
 <ul><li>
-<code>Parse()</code> does not detect incomplete R code any more, fixed [PhG].</li></ul></div>
+<code>Parse()</code> does not detect incomplete R code any more, fixed [PhG].</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-47" id="svmisc-09-47">svMisc 0.9-47<a class="anchor" aria-label="anchor" href="#svmisc-09-47"></a></h2>
 <ul><li>
-<code><a href="../reference/obj_browse.html">objList()</a></code>, <code>print.objectList()</code> and <code><a href="../reference/obj_browse.html">write.objList()</a></code> reworked [PhG].</li></ul></div>
+<code><a href="../reference/obj_browse.html">objList()</a></code>, <code>print.objectList()</code> and <code><a href="../reference/obj_browse.html">write.objList()</a></code> reworked [PhG].</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-46" id="svmisc-09-46">svMisc 0.9-46<small>2009-01-23</small><a class="anchor" aria-label="anchor" href="#svmisc-09-46"></a></h2>
 <ul><li><p>Added <code><a href="../reference/obj_browse.html">objList()</a></code>, <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> method for ‘objList’ objects and <code><a href="../reference/obj_browse.html">write.objList()</a></code> [KB].</p></li>
@@ -291,7 +319,8 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-43" id="svmisc-09-43">svMisc 0.9-43<a class="anchor" aria-label="anchor" href="#svmisc-09-43"></a></h2>
 <ul><li>
-<code>CompletePlus()</code> created to obtain information on the completion possibilities.</li></ul></div>
+<code>CompletePlus()</code> created to obtain information on the completion possibilities.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-42" id="svmisc-09-42">svMisc 0.9-42<a class="anchor" aria-label="anchor" href="#svmisc-09-42"></a></h2>
 <ul><li><p><code><a href="../reference/obj_browse.html">objList()</a></code> did not place each item in a line when result is written in a file.</p></li>
@@ -305,7 +334,8 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9-40" id="svmisc-09-40">svMisc 0.9-40<a class="anchor" aria-label="anchor" href="#svmisc-09-40"></a></h2>
-<ul><li>This is the first version distributed on R-forge. It is completely refactored from older versions (on CRAN since 2003) to make it run with SciViews-K and Komodo Edit (Tinn-R is also supported, but not SciViews-R Console any more).</li></ul></div>
+<ul><li>This is the first version distributed on R-forge. It is completely refactored from older versions (on CRAN since 2003) to make it run with SciViews-K and Komodo Edit (Tinn-R is also supported, but not SciViews-R Console any more).</li>
+</ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

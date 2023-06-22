@@ -101,7 +101,7 @@
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.1</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.2</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -118,9 +118,10 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Temporary environment</h1>
-                        <h4 data-toc-skip class="author">Philippe Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
+                        <h4 data-toc-skip class="author">Philippe
+Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 data-toc-skip class="date">2022-09-15</h4>
+            <h4 data-toc-skip class="date">2023-06-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/vignettes/temporary_environment.Rmd" class="external-link"><code>vignettes/temporary_environment.Rmd</code></a></small>
       <div class="hidden name"><code>temporary_environment.Rmd</code></div>
@@ -129,18 +130,29 @@
 
     
     
-<p>‘svMisc’ attaches <code>SciViews:TempEnv</code> at the fore last position in the search path, so that its content is accessible from any loaded R package (except ‘base’). This environment is a convenient place where temporary items that you do not want to see in the global environment, for instance, variables related to GUI (Graphical User Interface) and that are typically a nonsense to <code><a href="https://rdrr.io/r/base/save.html" class="external-link">save()</a></code> and re<code><a href="https://rdrr.io/r/base/load.html" class="external-link">load()</a></code> in the global environment.</p>
+<p>‘svMisc’ attaches <code>SciViews:TempEnv</code> at the fore last
+position in the search path, so that its content is accessible from any
+loaded R package (except ‘base’). This environment is a convenient place
+where temporary items that you do not want to see in the global
+environment, for instance, variables related to GUI (Graphical User
+Interface) and that are typically a nonsense to <code><a href="https://rdrr.io/r/base/save.html" class="external-link">save()</a></code> and
+re<code><a href="https://rdrr.io/r/base/load.html" class="external-link">load()</a></code> in the global environment.</p>
 <p><strong>TODO: show a couple of case where it is useful.</strong></p>
-<p>The following functions are available to ease access to these variables:</p>
+<p>The following functions are available to ease access to these
+variables:</p>
 <ul>
 <li>
 <code><a href="../reference/temp_env.html">temp_env()</a></code> get the environment itself,</li>
 <li>
-<code><a href="../reference/temp_env.html">assign_temp()</a></code>, <code><a href="../reference/temp_env.html">add_temp()</a></code>, and <code><a href="../reference/temp_env.html">change_temp()</a></code> place or modify data in the temporary environment,</li>
+<code><a href="../reference/temp_env.html">assign_temp()</a></code>, <code><a href="../reference/temp_env.html">add_temp()</a></code>, and
+<code><a href="../reference/temp_env.html">change_temp()</a></code> place or modify data in the temporary
+environment,</li>
 <li>
-<code><a href="../reference/temp_env.html">rm_temp()</a></code> or <code><a href="../reference/temp_env.html">delete_temp()</a></code> eliminate variables from there,</li>
+<code><a href="../reference/temp_env.html">rm_temp()</a></code> or <code><a href="../reference/temp_env.html">delete_temp()</a></code> eliminate
+variables from there,</li>
 <li>
-<code><a href="../reference/temp_env.html">exists_temp()</a></code> tests for the existence of objects it this environment,</li>
+<code><a href="../reference/temp_env.html">exists_temp()</a></code> tests for the existence of objects it
+this environment,</li>
 <li>
 <code><a href="../reference/temp_env.html">get_temp()</a></code> retrieves objects from there.</li>
 </ul>

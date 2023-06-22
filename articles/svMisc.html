@@ -101,7 +101,7 @@
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.1</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.2</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -118,9 +118,10 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>svMisc - Miscellaneous Functions</h1>
-                        <h4 data-toc-skip class="author">Philippe Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
+                        <h4 data-toc-skip class="author">Philippe
+Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 data-toc-skip class="date">2022-09-15</h4>
+            <h4 data-toc-skip class="date">2023-06-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/vignettes/svMisc.Rmd" class="external-link"><code>vignettes/svMisc.Rmd</code></a></small>
       <div class="hidden name"><code>svMisc.Rmd</code></div>
@@ -129,16 +130,26 @@
 
     
     
-<p>The ‘svMisc’ package contains a large collection of functions that are useful in the context of (G)UI (Graphical) User Interface development, and also, of more general usage. Here is a series of functions you should look at.</p>
+<p>The ‘svMisc’ package contains a large collection of functions that
+are useful in the context of (G)UI (Graphical) User Interface
+development, and also, of more general usage. Here is a series of
+functions you should look at.</p>
 <div class="section level2">
 <h2 id="help">Help<a class="anchor" aria-label="anchor" href="#help"></a>
 </h2>
-<p>In R, you access man pages for the various R objects with <code>help(topic)</code>, or <code>?topic</code>. But, if <code>topic</code> is not found, these function do not return a very useful information. For instance, if you want to make a <a href="https://doi.org/10.18637/jss.v039.i02" class="external-link">Kalman filtering</a> in R, you may be inclined to search for the topic <code>kalman</code></p>
+<p>In R, you access man pages for the various R objects with
+<code>help(topic)</code>, or <code>?topic</code>. But, if
+<code>topic</code> is not found, these function do not return a very
+useful information. For instance, if you want to make a <a href="https://doi.org/10.18637/jss.v039.i02" class="external-link">Kalman filtering</a> in R,
+you may be inclined to search for the topic <code>kalman</code></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="va">kalman</span></span>
 <span><span class="co">#&gt; No documentation for 'kalman' in specified packages and libraries:</span></span>
 <span><span class="co">#&gt; you could try '??kalman'</span></span></code></pre></div>
-<p>OK, it is suggested to use <code>??</code> to search the documentation for <code>kalman</code>. However, using <code><a href="../reference/about.html">about()</a></code> instead immediately produces a more useful result:</p>
+<p>OK, it is suggested to use <code>??</code> to search the
+documentation for <code>kalman</code>. However, using
+<code><a href="../reference/about.html">about()</a></code> instead immediately produces a more useful
+result:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/svMisc" class="external-link">svMisc</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -150,19 +161,46 @@
 <span><span class="co">#&gt; 'kalman' not found, do you mean?</span></span>
 <span><span class="co">#&gt; stats::KalmanForecast, stats::KalmanLike, stats::KalmanRun, stats::KalmanSmooth</span></span>
 <span><span class="co">#&gt; Searching keyword in all R help pages for ''...</span></span></code></pre></div>
-<p>… and it also provides a list of potential man pages that could interest you. In case the topic is found, <code><a href="../reference/about.html">about()</a></code> does the same as <code><a href="https://rdrr.io/r/utils/help.html" class="external-link">help()</a></code> and shows the page (try with <code>about("log")</code>, for instance). If you still have not found what you are looking for, you could try to search on the Web by using <code><a href="../reference/search_web.html">search_web()</a></code>.</p>
-<p>You may also be interested by <code><a href="../reference/is_help.html">is_help()</a></code> that indicates if an object is associated with a man page, and if it has a running example.</p>
+<p>… and it also provides a list of potential man pages that could
+interest you. In case the topic is found, <code><a href="../reference/about.html">about()</a></code> does the
+same as <code><a href="https://rdrr.io/r/utils/help.html" class="external-link">help()</a></code> and shows the page (try with
+<code>about("log")</code>, for instance). If you still have not found
+what you are looking for, you could try to search on the Web by using
+<code><a href="../reference/search_web.html">search_web()</a></code>.</p>
+<p>You may also be interested by <code><a href="../reference/is_help.html">is_help()</a></code> that indicates
+if an object is associated with a man page, and if it has a running
+example.</p>
 </div>
 <div class="section level2">
 <h2 id="packages">Packages<a class="anchor" aria-label="anchor" href="#packages"></a>
 </h2>
-<p>In R, the use of <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> to load a <strong>package</strong> is very confusing. Given the number of questions raised about it, one could consider another function to load R packages in memory. <code>svMisc</code> proposes <code><a href="../reference/package.html">package()</a></code>. That function loads one or several R packages as silently as possible and it returns <code>TRUE</code> only if <strong>all</strong> the packages are loaded. Otherwise, the list of missing packages is recorded<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, and one could simply issue <code><a href="../reference/install.html">Install()</a></code> to install them. This is indeed a semi-automatic installation mechanisms for R packages. The UseR still masters the process, but it is more straightforward.</p>
+<p>In R, the use of <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> to load a
+<strong>package</strong> is very confusing. Given the number of
+questions raised about it, one could consider another function to load R
+packages in memory. <code>svMisc</code> proposes <code><a href="../reference/package.html">package()</a></code>.
+That function loads one or several R packages as silently as possible
+and it returns <code>TRUE</code> only if <strong>all</strong> the
+packages are loaded. Otherwise, the list of missing packages is
+recorded<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, and one could simply issue
+<code><a href="../reference/install.html">Install()</a></code> to install them. This is indeed a semi-automatic
+installation mechanisms for R packages. The UseR still masters the
+process, but it is more straightforward.</p>
 </div>
 <div class="section level2">
 <h2 id="analyses-in-batch-and-show-progression">Analyses in batch and show progression<a class="anchor" aria-label="anchor" href="#analyses-in-batch-and-show-progression"></a>
 </h2>
-<p>If you need to perform an analysis in batch mode, you may be happy with <code><a href="../reference/batch.html">batch()</a></code> and <code><a href="../reference/progress.html">progress()</a></code>. The first function runs a function sequentially on all items <strong>allowing for an informative message in case of failure</strong>. Also, <code><a href="../reference/batch.html">batch()</a></code> provides a mechanism to recover from the error, so that following items in the list are also analyzed. Indeed, if you use a simple <code>for()</code> loop or <code>applyXXX()</code> functions, the execution is stopped at the first error encountered. Imagine 500 items to process, and an error that appears at the second one… it leaves you 498 items unanalyzed! allows to continue to the next item.</p>
-<p>The example shows a fake batch process of files, which fails randomly. Here is the function to run sequentially:</p>
+<p>If you need to perform an analysis in batch mode, you may be happy
+with <code><a href="../reference/batch.html">batch()</a></code> and <code><a href="../reference/progress.html">progress()</a></code>. The first
+function runs a function sequentially on all items <strong>allowing for
+an informative message in case of failure</strong>. Also,
+<code><a href="../reference/batch.html">batch()</a></code> provides a mechanism to recover from the error, so
+that following items in the list are also analyzed. Indeed, if you use a
+simple <code>for()</code> loop or <code>applyXXX()</code> functions, the
+execution is stopped at the first error encountered. Imagine 500 items
+to process, and an error that appears at the second one… it leaves you
+498 items unanalyzed! allows to continue to the next item.</p>
+<p>The example shows a fake batch process of files, which fails
+randomly. Here is the function to run sequentially:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fake_process</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">file</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="st">"Processing "</span>, <span class="va">file</span>, <span class="st">"..."</span><span class="op">)</span></span>
@@ -173,40 +211,38 @@
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span>  <span class="op">}</span> <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p>The key aspect here is that you function, instead of using <code><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop()</a></code> must use <code><a href="https://rdrr.io/r/base/warning.html" class="external-link">warning()</a></code> and return <code>FALSE</code>. Otherwise, in case of success, it should return <code>TRUE</code>. Then, calling your function on a series of objects is straightforward:</p>
+<p>The key aspect here is that you function, instead of using
+<code><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop()</a></code> must use <code><a href="https://rdrr.io/r/base/warning.html" class="external-link">warning()</a></code> and return
+<code>FALSE</code>. Otherwise, in case of success, it should return
+<code>TRUE</code>. Then, calling your function on a series of objects is
+straightforward:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run it in batch mode on ten items</span></span>
 <span><span class="fu"><a href="../reference/batch.html">batch</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>, <span class="va">fake_process</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Running the batch process with fake_process...</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  1 on 10  Progress:  2 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file2</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  3 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file3</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  4 on 10  Progress:  5 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file5</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  6 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file6</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  7 on 10  Progress:  8 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file8</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  9 on 10  Progress: 10 on 10                      </span></span>
-<span><span class="co">#&gt; Processed successfully 5 items on 10 (see .last.batch)</span></span></code></pre></div>
-<p>In case an error occurred, the information is recorded i, <code>.last.batch</code>:</p>
+<span><span class="co">#&gt; Progress:  1 on 10  Progress:  2 on 10  Progress:  3 on 10  Progress:  4 on 10  Progress:  5 on 10  Progress:  6 on 10  Progress:  7 on 10  Progress:  8 on 10  Progress:  9 on 10  Progress: 10 on 10                      </span></span>
+<span><span class="co">#&gt; Processed successfully 10 items on 10 (see .last.batch)</span></span></code></pre></div>
+<p>In case an error occurred, the information is recorded i,
+<code>.last.batch</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">.last.batch</span></span>
-<span><span class="co">#&gt; [1] FALSE</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
 <span><span class="co">#&gt; attr(,"items")</span></span>
 <span><span class="co">#&gt;  [1] "file1"  "file2"  "file3"  "file4"  "file5"  "file6"  "file7"  "file8" </span></span>
 <span><span class="co">#&gt;  [9] "file9"  "file10"</span></span>
 <span><span class="co">#&gt; attr(,"ok")</span></span>
-<span><span class="co">#&gt;  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE</span></span></code></pre></div>
-<p>The <code>items</code> and <code>ok</code> attributes are also available from that object for further inspection and action.</p>
-<p>If you run <code><a href="../reference/batch.html">batch()</a></code> in R, you noted also the <code><a href="../reference/progress.html">progress()</a></code>ion message that appeared. Indeed the <code><a href="../reference/progress.html">progress()</a></code> function allows to display such a message, either as a text at the R console, or in a dialog box. There are many different forms, see the man page <code><a href="../reference/progress.html">?progress</a></code>. for instance, here is a progress bar in percent, stopped at 75% () you need to call <code><a href="../reference/progress.html">progress()</a></code> with a value higher than <code>max.value =</code> to dismiss it):</p>
+<span><span class="co">#&gt;  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</span></span></code></pre></div>
+<p>The <code>items</code> and <code>ok</code> attributes are also
+available from that object for further inspection and action.</p>
+<p>If you run <code><a href="../reference/batch.html">batch()</a></code> in R, you noted also the
+<code><a href="../reference/progress.html">progress()</a></code>ion message that appeared. Indeed the
+<code><a href="../reference/progress.html">progress()</a></code> function allows to display such a message,
+either as a text at the R console, or in a dialog box. There are many
+different forms, see the man page <code><a href="../reference/progress.html">?progress</a></code>. for instance,
+here is a progress bar in percent, stopped at 75% () you need to call
+<code><a href="../reference/progress.html">progress()</a></code> with a value higher than
+<code>max.value =</code> to dismiss it):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span><span class="fl">75</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="../reference/progress.html">progress</a></span><span class="op">(</span><span class="va">i</span>, progress.bar <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -218,7 +254,9 @@
 <div class="section level2">
 <h2 id="subsettable-functions">Subsettable functions<a class="anchor" aria-label="anchor" href="#subsettable-functions"></a>
 </h2>
-<p>The <code>$</code> operator is not applicable on functions. It is not meaningful in that context. Yet, it may be convenient to use it in certain conditions. From the example of <code><a href="../reference/subsettable.html">?subsettable</a></code>:</p>
+<p>The <code>$</code> operator is not applicable on functions. It is not
+meaningful in that context. Yet, it may be convenient to use it in
+certain conditions. From the example of <code><a href="../reference/subsettable.html">?subsettable</a></code>:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">foo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">type</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">type</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html" class="external-link">match.arg</a></span><span class="op">(</span><span class="va">type</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span><span class="op">)</span></span>
@@ -254,7 +292,11 @@
 <div class="section level2">
 <h2 id="capture-and-parse-r-code">Capture and parse R code<a class="anchor" aria-label="anchor" href="#capture-and-parse-r-code"></a>
 </h2>
-<p>The <code><a href="https://rdrr.io/r/utils/capture.output.html" class="external-link">capture.output()</a></code> function from the ‘utils’ package can capture output usually send to the R console, but it does so in an imperfect way. If you want to capture output <em>exactly</em> as it would appear at the R console, you could use <code><a href="../reference/capture_all.html">capture_all()</a></code>:</p>
+<p>The <code><a href="https://rdrr.io/r/utils/capture.output.html" class="external-link">capture.output()</a></code> function from the ‘utils’ package
+can capture output usually send to the R console, but it does so in an
+imperfect way. If you want to capture output <em>exactly</em> as it
+would appear at the R console, you could use
+<code><a href="../reference/capture_all.html">capture_all()</a></code>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">captured</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/capture_all.html">capture_all</a></span><span class="op">(</span><span class="fu"><a href="../reference/parse_text.html">parse_text</a></span><span class="op">(</span><span class="st">'1:2 + 1:3'</span><span class="op">)</span>, split <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="va">captured</span></span>
@@ -262,14 +304,16 @@
 <span><span class="co">#&gt; [2] "[1] 2 4 4"                                                                       </span></span>
 <span><span class="co">#&gt; [3] "Warning message:"                                                                </span></span>
 <span><span class="co">#&gt; [4] "In 1:2 + 1:3 : longer object length is not a multiple of shorter object length\n"</span></span></code></pre></div>
-<p>Only the prompt is changed to <code>:&gt;</code>. You can use that content, or print it somewhere, for instance:</p>
+<p>Only the prompt is changed to <code>:&gt;</code>. You can use that
+content, or print it somewhere, for instance:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span><span class="va">captured</span><span class="op">)</span></span>
 <span><span class="co">#&gt; :&gt; 1:2 + 1:3</span></span>
 <span><span class="co">#&gt; [1] 2 4 4</span></span>
 <span><span class="co">#&gt; Warning message:</span></span>
 <span><span class="co">#&gt; In 1:2 + 1:3 : longer object length is not a multiple of shorter object length</span></span></code></pre></div>
-<p>The <code><a href="../reference/parse_text.html">parse_text()</a></code> function parse one or more character strings exactly as if they were commands entered at the R prompt:</p>
+<p>The <code><a href="../reference/parse_text.html">parse_text()</a></code> function parse one or more character
+strings exactly as if they were commands entered at the R prompt:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parse_text.html">parse_text</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1 + 1"</span>, <span class="st">"log(10)"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; expression(1 + 1, log(10))</span></span></code></pre></div>
@@ -277,12 +321,19 @@
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parse_text.html">parse_text</a></span><span class="op">(</span><span class="st">"log("</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] NA</span></span></code></pre></div>
-<p>The <code><a href="../reference/source_clipboard.html">source_clipboard()</a></code> source code directly from the clipboard. All these functions form the basis to simulate an R console in a different context (a console widget in your own GUI). You can combine this with <code><a href="../reference/to_rjson.html">to_rjson()</a></code>/<code>eval_rjson</code> to encode and decode R objects on both sides of a pipeline between the R process and your GUI.</p>
+<p>The <code><a href="../reference/source_clipboard.html">source_clipboard()</a></code> source code directly from the
+clipboard. All these functions form the basis to simulate an R console
+in a different context (a console widget in your own GUI). You can
+combine this with <code><a href="../reference/to_rjson.html">to_rjson()</a></code>/<code>eval_rjson</code> to
+encode and decode R objects on both sides of a pipeline between the R
+process and your GUI.</p>
 </div>
 <div class="section level2">
 <h2 id="encodedecode-r-objects-in-rjson">Encode/decode R objects in Rjson<a class="anchor" aria-label="anchor" href="#encodedecode-r-objects-in-rjson"></a>
 </h2>
-<p>Rjson is a version of <a href="https://www.json.org/json-en.html" class="external-link">JSON</a> that allows to encore and decode rapidly almost all R objects. From the example at <code><a href="../reference/to_rjson.html">?to_rjson</a></code>:</p>
+<p>Rjson is a version of <a href="https://www.json.org/json-en.html" class="external-link">JSON</a> that allows to encore
+and decode rapidly almost all R objects. From the example at
+<code><a href="../reference/to_rjson.html">?to_rjson</a></code>:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># A complex R object</span></span>
 <span><span class="co"># Note: we round doubles to 14 digits because precision is lost in the process</span></span>
@@ -310,12 +361,12 @@
 <span><span class="co">#&gt;  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,                                                                                  </span></span>
 <span><span class="co">#&gt;  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := list("Data_" := c(1,                                                               </span></span>
 <span><span class="co">#&gt;  [6]     2, 1), "levels" := c("a", "b"), "class" := "factor"),                                                                              </span></span>
-<span><span class="co">#&gt;  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(2.75921898176087,                                             </span></span>
-<span><span class="co">#&gt;  [8]     -0.49158892317241, -0.41326510769195, -1.01481292906186), "dim" := c(2,                                                            </span></span>
-<span><span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(1.51445481234005,                                                                   </span></span>
-<span><span class="co">#&gt; [10]     1.09024698795801, 0.37394753822453), "fact" := list("Data_" := c(2,                                                                </span></span>
+<span><span class="co">#&gt;  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-0.62971407098972,                                            </span></span>
+<span><span class="co">#&gt;  [8]     -2.02380497579504, -0.45491356823615, 0.86537017714182), "dim" := c(2,                                                             </span></span>
+<span><span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(-1.30546155192445,                                                                  </span></span>
+<span><span class="co">#&gt; [10]     0.4775367122574, 0.64991886105285), "fact" := list("Data_" := c(2,                                                                 </span></span>
 <span><span class="co">#&gt; [11]     1, 2), "levels" := c("a", "b"), "class" := "factor")),                                                                             </span></span>
-<span><span class="co">#&gt; [12]     "i" := list("Data_" := 19250., "class" := "Date"),                                                                                 </span></span>
+<span><span class="co">#&gt; [12]     "i" := list("Data_" := 19530., "class" := "Date"),                                                                                 </span></span>
 <span><span class="co">#&gt; [13]     "j" := list("" := seq(1, 5), "y" := "another item")), "comment" := "My comment", "anAttrib" := seq(1, 10), "anotherAttrib" := list(</span></span>
 <span><span class="co">#&gt; [14]     "" := TRUE, "y" := seq(1, 4)))</span></span>
 <span><span class="co"># Get back an R object from Rjson</span></span>
@@ -343,15 +394,15 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $g</span></span>
 <span><span class="co">#&gt;            [,1]       [,2]</span></span>
-<span><span class="co">#&gt; [1,]  2.7592190 -0.4132651</span></span>
-<span><span class="co">#&gt; [2,] -0.4915889 -1.0148129</span></span>
+<span><span class="co">#&gt; [1,] -0.6297141 -0.4549136</span></span>
+<span><span class="co">#&gt; [2,] -2.0238050  0.8653702</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`h&amp;$@`</span></span>
 <span><span class="co">#&gt; $`h&amp;$@`$x</span></span>
 <span><span class="co">#&gt; [1] 1 2 3</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`h&amp;$@`$y</span></span>
-<span><span class="co">#&gt; [1] 1.5144548 1.0902470 0.3739475</span></span>
+<span><span class="co">#&gt; [1] -1.3054616  0.4775367  0.6499189</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`h&amp;$@`$fact</span></span>
 <span><span class="co">#&gt; [1] b a b</span></span>
@@ -359,7 +410,7 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $i</span></span>
-<span><span class="co">#&gt; [1] "2022-09-15"</span></span>
+<span><span class="co">#&gt; [1] "2023-06-22"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $j</span></span>
 <span><span class="co">#&gt; $j[[1]]</span></span>
@@ -384,13 +435,18 @@
 <div class="section level2">
 <h2 id="get-system-file-or-directory">Get system file or directory<a class="anchor" aria-label="anchor" href="#get-system-file-or-directory"></a>
 </h2>
-<p>There are several different functions in R to access system files, or files inside R packages: <code><a href="https://rdrr.io/r/base/Rhome.html" class="external-link">R.home()</a></code>, <code><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file()</a></code>, <code><a href="https://rdrr.io/r/base/Sys.which.html" class="external-link">Sys.which()</a></code>, <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code>. The <code><a href="../reference/system_file.html">system_dir()</a></code> and <code><a href="../reference/system_file.html">system_file()</a></code> functions centralize their functionalities. For instance:</p>
+<p>There are several different functions in R to access system files, or
+files inside R packages: <code><a href="https://rdrr.io/r/base/Rhome.html" class="external-link">R.home()</a></code>,
+<code><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file()</a></code>, <code><a href="https://rdrr.io/r/base/Sys.which.html" class="external-link">Sys.which()</a></code>,
+<code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code>. The <code><a href="../reference/system_file.html">system_dir()</a></code> and
+<code><a href="../reference/system_file.html">system_file()</a></code> functions centralize their functionalities.
+For instance:</p>
 <ul>
 <li>Get the temporary directory used by this R process</li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/system_file.html">system_dir</a></span><span class="op">(</span><span class="st">"temp"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpeCXO0z"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/RtmpoThfso"</span></span></code></pre></div>
 <ul>
 <li>Get the system temporary directory</li>
 </ul>
@@ -408,7 +464,7 @@
 </ul>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/system_file.html">system_dir</a></span><span class="op">(</span><span class="st">"home"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/opt/R/4.2.1/lib/R"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/opt/R/4.3.1/lib/R"</span></span></code></pre></div>
 <ul>
 <li>Get the path to an executable</li>
 </ul>
@@ -426,21 +482,25 @@
 </ul>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/system_file.html">system_dir</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"stats"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/opt/R/4.2.1/lib/R/library/stats"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/opt/R/4.3.1/lib/R/library/stats"</span></span></code></pre></div>
 <ul>
 <li>Get a file from a package</li>
 </ul>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/system_file.html">system_file</a></span><span class="op">(</span><span class="st">"help"</span>, <span class="st">"AnIndex"</span>, package <span class="op">=</span> <span class="st">"splines"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/opt/R/4.2.1/lib/R/library/splines/help/AnIndex"</span></span></code></pre></div>
-<p>There are other possibilities. See <code><a href="../reference/system_file.html">?system_dir</a></code>. You may also be interested by <code><a href="../reference/file_edit.html">file_edit()</a></code> that allows to create and edit a text file from a template.</p>
+<span><span class="co">#&gt; [1] "/opt/R/4.3.1/lib/R/library/splines/help/AnIndex"</span></span></code></pre></div>
+<p>There are other possibilities. See <code><a href="../reference/system_file.html">?system_dir</a></code>. You may
+also be interested by <code><a href="../reference/file_edit.html">file_edit()</a></code> that allows to create and
+edit a text file from a template.</p>
 </div>
 <div class="section level2">
 <h2 id="various-information-functions">Various information functions<a class="anchor" aria-label="anchor" href="#various-information-functions"></a>
 </h2>
 <ul>
 <li>
-<code><a href="../reference/compare_r_version.html">compare_r_version()</a></code> conveniently compares the current R version with a specified one. It returns 1 if it is newer, 0, if it is equal and -1 if it is older.</li>
+<code><a href="../reference/compare_r_version.html">compare_r_version()</a></code> conveniently compares the current R
+version with a specified one. It returns 1 if it is newer, 0, if it is
+equal and -1 if it is older.</li>
 </ul>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/compare_r_version.html">compare_r_version</a></span><span class="op">(</span><span class="st">"5.6.0"</span><span class="op">)</span> <span class="co"># Probably older</span></span>
@@ -473,13 +533,16 @@
 <h2 id="miscellaneous">Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous"></a>
 </h2>
 <ul>
-<li>Make sure a vector is of a defined mode and length (possibly by applying recycling rule) using <code><a href="../reference/def.html">def()</a></code>:</li>
+<li>Make sure a vector is of a defined mode and length (possibly by
+applying recycling rule) using <code><a href="../reference/def.html">def()</a></code>:</li>
 </ul>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/def.html">def</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">2</span>, mode <span class="op">=</span> <span class="st">"logical"</span>, length.out <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="co"># logical, size 5</span></span>
 <span><span class="co">#&gt; [1] FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
 <ul>
-<li>Get a nicely formatted <code><a href="https://rdrr.io/r/base/args.html" class="external-link">args()</a></code> (see <code>?arg_tips</code> for other functions to get short textual information about functions):</li>
+<li>Get a nicely formatted <code><a href="https://rdrr.io/r/base/args.html" class="external-link">args()</a></code> (see
+<code>?arg_tips</code> for other functions to get short textual
+information about functions):</li>
 </ul>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/describe_function.html">args_tip</a></span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span></span>
@@ -489,9 +552,12 @@
 </ul>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/temp_var.html">temp_var</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "my_var84078"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "my_var9373"</span></span></code></pre></div>
 <ul>
-<li>Manage a temporary environment attached to the search path using <code><a href="../reference/temp_env.html">TempEnv()</a></code> and the <code>temp_XXX()</code> functions. The <strong>temporary_environment</strong> vignette gives more details on this series of functions.</li>
+<li>Manage a temporary environment attached to the search path using
+<code><a href="../reference/temp_env.html">TempEnv()</a></code> and the <code>temp_XXX()</code> functions. The
+<strong>temporary_environment</strong> vignette gives more details on
+this series of functions.</li>
 </ul>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/search.html" class="external-link">search</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -516,10 +582,12 @@
 <span><span class="co"># Delete the variable</span></span>
 <span><span class="fu"><a href="../reference/temp_env.html">rm_temp</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr>
 <ol>
-<li id="fn1"><p>The list of missing packages is written in a variable named <code>.packages_to_install</code> located in the <code>SciViews:TempEnv</code> environment<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>The list of missing packages is written in a variable
+named <code>.packages_to_install</code> located in the
+<code>SciViews:TempEnv</code> environment<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
   </div>
