@@ -1,3 +1,7 @@
+# svMisc 1.3.2
+
+-   First implementation of concise help pages for functions aliased with `aka()` (description + seealso + example).
+
 # svMisc 1.3.1
 
 -   Bug correction: `print.rbenchmark()` was not exported.

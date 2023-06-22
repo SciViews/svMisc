@@ -29,7 +29,7 @@
 #'
 #' On Unixes, "gedit", "kate" and "vi" are looked for in that order. Note that
 #' there is a gedit plugin to submit code directly to R:
-#' <http://rgedit.sourceforge.net/>. Since, gedit natively supports a lot of
+#' <https://rgedit.sourceforge.net/>. Since, gedit natively supports a lot of
 #' different syntax highlighting, including R, and is lightweight but feature
 #' rich, it is recommended as default text editor for `file_edit()` on Unixes.
 #' If JGR is run and the editor is "vi" or "internal", then the internal JGR
@@ -55,7 +55,7 @@
 #' application, in particular because it can handle various line end types
 #' (Unix, Mac or Windows) and encodings. It also supports syntax highlighting,
 #' code completion and much more. So, it is strongly recommended to install it
-#' (see <http://notepad-plus-plus.org/>) and use it with `file-edit()`. There is
+#' (see <https://notepad-plus-plus.org/>) and use it with `file-edit()`. There is
 #' also a plugin to submit code to R directly from Notepad++:
 #' <https://sourceforge.net/projects/npptor/>.
 #'

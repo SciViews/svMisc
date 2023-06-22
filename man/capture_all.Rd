@@ -29,7 +29,7 @@ is closed at the end, and the function returns \code{NULL} in this case. If
 \code{file = NULL} (by default), a \code{textConnection()} captures the output and it
 is returned as a character string by the function.}
 
-\item{markStdErr}{If \code{TRUE}, stderr is separated from sddout by STX/ETX
+\item{markStdErr}{If \code{TRUE}, stderr is separated from stddout by STX/ETX
 characters.}
 
 \item{...}{Items passed directly to \code{warnings2()}.}
