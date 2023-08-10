@@ -3,11 +3,17 @@
 \name{about}
 \alias{about}
 \alias{?}
+\alias{ex}
+\alias{print.runnable}
 \title{Get information and help about \R objects}
 \usage{
 about(topic, ...)
 
 `?`(type, topic)
+
+ex()
+
+\method{print}{runnable}(x, ...)
 }
 \arguments{
 \item{topic}{The name of an object, or the topic to search for, if this is
@@ -19,6 +25,8 @@ not the name of a known object.}
 argument is a topic passed to the \code{about()} function. Otherwise, it is the
 first argument to restrict help pages, like \code{class}, \code{methods}, or \code{method}.
 See examples for how to use it.}
+
+\item{x}{The name of a function.}
 }
 \value{
 A string with the location of all objects named \code{topic} are found is

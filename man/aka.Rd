@@ -4,9 +4,17 @@
 \alias{aka}
 \alias{print.aka}
 \alias{str.aka}
-\title{Create an alias (also known as) for an object whose comment and/or original help page can be viewed with .?obj.}
+\title{Create an alias (also known as) for an object whose a short help page and/or original help page can be viewed with .?obj.}
 \usage{
-aka(obj, alias = NULL, comment = "", url = NULL)
+aka(
+  obj,
+  alias = NULL,
+  comment = "",
+  description = NULL,
+  seealso = NULL,
+  example = NULL,
+  url = NULL
+)
 
 \method{print}{aka}(x, hyperlink_type = .hyperlink_type, ...)
 
@@ -20,6 +28,12 @@ page should be retained as \code{pkg::name}. If \code{NULL} (by default), use \c
 
 \item{comment}{A comment to place in \code{obj} (will also be printed when calling
 \code{.?obj}).}
+
+\item{description}{A description of the function for the sort man page.}
+
+\item{seealso}{A character string of functions in the form \code{fun} or \code{pkg::fun}.}
+
+\item{example}{A character string with code for a short example.}
 
 \item{url}{An http or https URL pointing to the help page for the function
 on the Internet.}
@@ -37,21 +51,24 @@ help page in the Help tab.}
 }
 \value{
 The original \code{obj} with the \code{comment} attribute set or replaced with
-\verb{comment =} plus a \code{src} attribute set to \verb{alias =}. If the object is a
-function, its class becomes \strong{aka} and \strong{function}.
+\verb{comment =} plus a \code{src} attribute set to \verb{alias =} and \code{description},
+\code{seealso}, \code{example}, and \code{url} attributes also possibly populated. If the
+object is a function, its class becomes \strong{aka} and \strong{function}.
 }
 \description{
 When a function or object is renamed, the link to its original
 help page is lost in R. Using \code{aka()} (also known as) with correct \verb{alias=}
 allows to keep track of the original help page and get it with \code{.?obj}.
-Moreover, one can also add a short comment message that is displayed at the
+Moreover, one can also populate a short man page with description, seealso and example or add a short comment message that is displayed at the
 same time in the R console.
 }
 \examples{
 # Say you prefer is.true() similar to is.na() or is.null()
 # but R provides isTRUE().
 library(svMisc)
-is.true <- aka(isTRUE)
+# Also defining a short man page
+is.true <- aka(isTRUE, description = "Check if an object is TRUE.",
+  seealso = c("is.false", "logical"), example = c("is.true(TRUE)", "is.true(FALSE)", "is.true(NA)"))
 # This way, you still got access to the right help page for is.true()
 \dontrun{
 .?is.true

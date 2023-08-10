@@ -96,9 +96,41 @@ about <- function(topic, ...) {
     # Is there comments, and is it a 'src' attribute too to substitute topic?
     obj <- get(topic)
     info <- comment(obj)
+    # Note: hard-coded for now, but these strings should be trnaslated in a regular way!
+    lang <- Sys.getenv("language", unset = "en")
+    description <- attr(info, "description")
+    if (!is.null(description))
+      writeLines((description))
+    seealso <- attr(info, "seealso")
+    if (!is.null(seealso)) {
+      cat("\n")
+      if (lang == "fr") {
+        cat("- Voir aussi : ")
+      } else {
+        cat("- See also: ")
+      }
+      cat(paste(seealso, collapse = ", "), "\n", sep = "")
+    }
+    example <- attr(info, "example")
+    if (!is.null(example)) {
+      cat("\n")
+      if (lang == "fr") {
+        cat("- Exemples (taper `ex` pour les lancer) :\n")
+      } else {
+        message("- Examples (type `ex` to run them):\n")
+      }
+      assign_temp(".last.example", example)
+      writeLines(example)
+      cat("\n")
+    }
     if (!is.null(info)) {
       if (length(info) != 1 || info != "") {
-        message("Comment:")
+        cat("\n")
+        if (lang == "fr") {
+          cat("- Commentaire :\n")
+        } else {
+          cat("- Comment:\n")
+        }
         writeLines(info)
       }
       # Is there a 'src_file' attribute?
@@ -160,4 +192,21 @@ about <- function(topic, ...) {
       do.call(utils::`?`, list(type, topic))
     }
   }
+}
+
+#' @rdname about
+#' @export
+ex <- structure(function() {
+  ex <- get_temp(".last.example")
+  if (is.null(ex))
+    return()
+  source(textConnection(ex), echo = TRUE)
+}, class = c("runnable", "function"))
+
+#' @rdname about
+#' @param x The name of a function.
+#' @export
+print.runnable <- function(x, ...) {
+  x()
+  invisible(x)
 }

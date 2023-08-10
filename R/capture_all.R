@@ -18,7 +18,7 @@
 #' is closed at the end, and the function returns `NULL` in this case. If
 #' `file = NULL` (by default), a `textConnection()` captures the output and it
 #' is returned as a character string by the function.
-#' @param markStdErr If `TRUE`, stderr is separated from sddout by STX/ETX
+#' @param markStdErr If `TRUE`, stderr is separated from stddout by STX/ETX
 #' characters.
 #' @return Returns a string with the result of the evaluation done in the user
 #' workspace.
