@@ -70,7 +70,7 @@ methods implemented."><meta property="og:image" content="https://www.sciviews.or
   </a>
 </li>
       </ul><div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.3.2</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svMisc <small>v1.4.0</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -133,15 +133,16 @@ integer vector is obtained).</p>
 <span class="r-in"><span><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fact</span> <span class="op">&lt;-</span> <span class="fu">cut_quantile</span><span class="op">(</span><span class="va">vec</span>, breaks <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fact</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] (0.223,0.487] (-1.45,0.168] (0.168,0.223] (-2.15,-1.45] (0.487,2.14] </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] (-1.45,0.168] (-1.45,0.168] (-2.15,-1.45] (0.168,0.223] (0.168,0.223]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11] (-1.45,0.168] (-2.15,-1.45] (-2.15,-1.45] (0.487,2.14]  (0.223,0.487]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] (0.487,2.14]  (0.223,0.487] (0.487,2.14]  (0.223,0.487] (0.168,0.223]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Levels: (-2.15,-1.45] (-1.45,0.168] (0.168,0.223] ... (0.487,2.14]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] (-0.18,0.111]   (0.111,0.362]   (-1.36,-0.887]  (0.111,0.362]  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] (-1.36,-0.887]  (-1.36,-0.887]  (0.111,0.362]   (-0.18,0.111]  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] (0.111,0.362]   (-1.36,-0.887]  (-0.887,-0.554] (-0.554,-0.18] </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] (-0.887,-0.554] (-0.554,-0.18]  (-0.18,0.111]   (-0.554,-0.18] </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17] (-0.18,0.111]   (-0.554,-0.18]  (-0.887,-0.554] (-0.887,-0.554]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Levels: (-1.36,-0.887] (-0.887,-0.554] (-0.554,-0.18] ... (0.111,0.362]</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">fact</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> fact</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> (-2.15,-1.45] (-1.45,0.168] (0.168,0.223] (0.223,0.487]  (0.487,2.14] </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             4             4             4             4             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  (-1.36,-0.887] (-0.887,-0.554]  (-0.554,-0.18]   (-0.18,0.111]   (0.111,0.362] </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               4               4               4               4               4 </span>
 </code></pre></div>
     </div>
   </div>
