@@ -1,3 +1,7 @@
+# svMisc 1.4.0
+
+-   The `aka()` function objects are now **aka** and **function** objects with `print()` and `str()` methods. A new argument `url=` allows to indicate an http(s) URL for the help page of the object.
+
 # svMisc 1.3.1
 
 -   Bug correction: `print.rbenchmark()` was not exported.

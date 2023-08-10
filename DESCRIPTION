@@ -1,6 +1,6 @@
 Package: svMisc
 Type: Package
-Version: 1.3.1
+Version: 1.4.0
 Title: 'SciViews' - Miscellaneous Functions
 Description: Miscellaneous functions for 'SciViews::R' or general use: manage a
   temporary environment attached to the search path for temporary variables you
@@ -19,7 +19,9 @@ Imports:
     methods,
     stats,
     tools,
-    utils
+    utils,
+    rlang (>= 1.1.1),
+    cli (>= 3.6.1)
 Suggests:
     rJava,
     tcltk,
@@ -33,7 +35,7 @@ License: GPL-2
 URL: https://github.com/SciViews/svMisc, https://www.sciviews.org/svMisc/
 BugReports: https://github.com/SciViews/svMisc/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US

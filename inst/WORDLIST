@@ -26,6 +26,7 @@ gedit
 gest
 Github
 GlobalEnv
+http
 https
 infructuous
 isFirstArg
@@ -64,6 +65,7 @@ SciViews
 sddout
 stderr
 Steinhaus
+str
 STX
 subdirs
 subfolder

@@ -2,9 +2,15 @@
 % Please edit documentation in R/aka.R
 \name{aka}
 \alias{aka}
+\alias{print.aka}
+\alias{str.aka}
 \title{Create an alias (also known as) for an object whose comment and/or original help page can be viewed with .?obj.}
 \usage{
-aka(obj, alias = NULL, comment = "")
+aka(obj, alias = NULL, comment = "", url = NULL)
+
+\method{print}{aka}(x, hyperlink_type = .hyperlink_type, ...)
+
+\method{str}{aka}(object, ...)
 }
 \arguments{
 \item{obj}{An R object.}
@@ -14,10 +20,25 @@ page should be retained as \code{pkg::name}. If \code{NULL} (by default), use \c
 
 \item{comment}{A comment to place in \code{obj} (will also be printed when calling
 \code{.?obj}).}
+
+\item{url}{An http or https URL pointing to the help page for the function
+on the Internet.}
+
+\item{x}{An aka object}
+
+\item{hyperlink_type}{The type of hyperlink supported. The default value
+should be ok. Use \code{"none"} to suppress hyperlink, \code{"href"} for http(s)://
+link that opens a web page, or \code{"help"} in RStudio to open the corresponding
+help page in the Help tab.}
+
+\item{...}{Further arguments (not used yet)}
+
+\item{object}{An aka object}
 }
 \value{
 The original \code{obj} with the \code{comment} attribute set or replaced with
-\verb{comment =} plus a \code{src} attribute set to \verb{alias =}
+\verb{comment =} plus a \code{src} attribute set to \verb{alias =}. If the object is a
+function, its class becomes \strong{aka} and \strong{function}.
 }
 \description{
 When a function or object is renamed, the link to its original

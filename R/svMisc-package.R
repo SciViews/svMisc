@@ -26,6 +26,7 @@
 #'   showMethods slot slotNames
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
+#' @importFrom rlang is_interactive
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start

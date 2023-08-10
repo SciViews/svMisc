@@ -6,7 +6,7 @@
 \alias{svMisc-package}
 \title{svMisc: 'SciViews' - Miscellaneous Functions}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 Miscellaneous functions for 'SciViews::R' or general use: manage a temporary environment attached to the search path for temporary variables you do not want to save() or load(), test if 'Aqua', 'Mac', 'Win', ... Show progress bar, etc.
 }
