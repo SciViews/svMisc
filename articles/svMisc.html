@@ -121,7 +121,7 @@
                         <h4 data-toc-skip class="author">Philippe
 Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 data-toc-skip class="date">2023-08-10</h4>
+            <h4 data-toc-skip class="date">2023-08-11</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/HEAD/vignettes/svMisc.Rmd" class="external-link"><code>vignettes/svMisc.Rmd</code></a></small>
       <div class="hidden name"><code>svMisc.Rmd</code></div>
@@ -221,21 +221,18 @@ straightforward:</p>
 <span><span class="fu"><a href="../reference/batch.html">batch</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>, <span class="va">fake_process</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Running the batch process with fake_process...</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  1 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file1</span></span>
+<span><span class="co">#&gt; Progress:  1 on 10  Progress:  2 on 10  Progress:  3 on 10  Progress:  4 on 10</span></span>
+<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file4</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  2 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file2</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  3 on 10</span></span>
-<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file3</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  4 on 10  Progress:  5 on 10  Progress:  6 on 10</span></span>
+<span><span class="co">#&gt; Progress:  5 on 10  Progress:  6 on 10</span></span>
 <span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file6</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Progress:  7 on 10  Progress:  8 on 10  Progress:  9 on 10  Progress: 10 on 10</span></span>
+<span><span class="co">#&gt; Progress:  7 on 10  Progress:  8 on 10  Progress:  9 on 10</span></span>
+<span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file9</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Progress: 10 on 10</span></span>
 <span><span class="co">#&gt; Warning in fun(item, ...): fake_process was unable to process file10</span></span>
-<span><span class="co">#&gt; Processed successfully 5 items on 10 (see .last.batch)</span></span></code></pre></div>
+<span><span class="co">#&gt; Processed successfully 6 items on 10 (see .last.batch)</span></span></code></pre></div>
 <p>In case an error occurred, the information is recorded i,
 <code>.last.batch</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -245,7 +242,7 @@ straightforward:</p>
 <span><span class="co">#&gt;  [1] "file1"  "file2"  "file3"  "file4"  "file5"  "file6"  "file7"  "file8" </span></span>
 <span><span class="co">#&gt;  [9] "file9"  "file10"</span></span>
 <span><span class="co">#&gt; attr(,"ok")</span></span>
-<span><span class="co">#&gt;  [1] FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE</span></span></code></pre></div>
+<span><span class="co">#&gt;  [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE</span></span></code></pre></div>
 <p>The <code>items</code> and <code>ok</code> attributes are also
 available from that object for further inspection and action.</p>
 <p>If you run <code><a href="../reference/batch.html">batch()</a></code> in R, you noted also the
@@ -374,12 +371,12 @@ and decode rapidly almost all R objects. From the example at
 <span><span class="co">#&gt;  [4]     "c" := c(c1 = 4.5, c2 = 7.8, c3 = Inf, c4 = -Inf,                                                                                  </span></span>
 <span><span class="co">#&gt;  [5]     NA, c6 = NaN), "" := c(TRUE, FALSE, NA), "e" := list("Data_" := c(1,                                                               </span></span>
 <span><span class="co">#&gt;  [6]     2, 1), "levels" := c("a", "b"), "class" := "factor"),                                                                              </span></span>
-<span><span class="co">#&gt;  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-0.25245188451067,                                            </span></span>
-<span><span class="co">#&gt;  [8]     0.43944367970625, -0.86866890228504, 0.56702311909292), "dim" := c(2,                                                              </span></span>
-<span><span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(0.60228303837687,                                                                   </span></span>
-<span><span class="co">#&gt; [10]     0.19253467449231, -0.17849803890465), "fact" := list("Data_" := c(2,                                                               </span></span>
+<span><span class="co">#&gt;  [7]     "f" := "this is a \\"string\\" with quote", "g" := list("Data_" := c(-1.75895130875953,                                            </span></span>
+<span><span class="co">#&gt;  [8]     2.0971317754532, -0.12044074162221, 0.88044942832533), "dim" := c(2,                                                               </span></span>
+<span><span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(0.87219172981376,                                                                   </span></span>
+<span><span class="co">#&gt; [10]     1.2398638278317, -1.2120865079935), "fact" := list("Data_" := c(2,                                                                 </span></span>
 <span><span class="co">#&gt; [11]     1, 2), "levels" := c("a", "b"), "class" := "factor")),                                                                             </span></span>
-<span><span class="co">#&gt; [12]     "i" := list("Data_" := 19579., "class" := "Date"),                                                                                 </span></span>
+<span><span class="co">#&gt; [12]     "i" := list("Data_" := 19580., "class" := "Date"),                                                                                 </span></span>
 <span><span class="co">#&gt; [13]     "j" := list("" := seq(1, 5), "y" := "another item")), "comment" := "My comment", "anAttrib" := seq(1, 10), "anotherAttrib" := list(</span></span>
 <span><span class="co">#&gt; [14]     "" := TRUE, "y" := seq(1, 4)))</span></span>
 <span><span class="co"># Get back an R object from Rjson</span></span>
@@ -406,16 +403,16 @@ and decode rapidly almost all R objects. From the example at
 <span><span class="co">#&gt; [1] "this is a \"string\" with quote"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $g</span></span>
-<span><span class="co">#&gt;            [,1]       [,2]</span></span>
-<span><span class="co">#&gt; [1,] -0.2524519 -0.8686689</span></span>
-<span><span class="co">#&gt; [2,]  0.4394437  0.5670231</span></span>
+<span><span class="co">#&gt;           [,1]       [,2]</span></span>
+<span><span class="co">#&gt; [1,] -1.758951 -0.1204407</span></span>
+<span><span class="co">#&gt; [2,]  2.097132  0.8804494</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`h&amp;$@`</span></span>
 <span><span class="co">#&gt; $`h&amp;$@`$x</span></span>
 <span><span class="co">#&gt; [1] 1 2 3</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`h&amp;$@`$y</span></span>
-<span><span class="co">#&gt; [1]  0.6022830  0.1925347 -0.1784980</span></span>
+<span><span class="co">#&gt; [1]  0.8721917  1.2398638 -1.2120865</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`h&amp;$@`$fact</span></span>
 <span><span class="co">#&gt; [1] b a b</span></span>
@@ -423,7 +420,7 @@ and decode rapidly almost all R objects. From the example at
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $i</span></span>
-<span><span class="co">#&gt; [1] "2023-08-10"</span></span>
+<span><span class="co">#&gt; [1] "2023-08-11"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $j</span></span>
 <span><span class="co">#&gt; $j[[1]]</span></span>
@@ -459,7 +456,7 @@ For instance:</p>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/system_file.html">system_dir</a></span><span class="op">(</span><span class="st">"temp"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp6G0Omd"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/RtmpsIuEXq"</span></span></code></pre></div>
 <ul>
 <li>Get the system temporary directory</li>
 </ul>
@@ -565,7 +562,7 @@ information about functions):</li>
 </ul>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/temp_var.html">temp_var</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "my_var80474"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "my_var92730"</span></span></code></pre></div>
 <ul>
 <li>Manage a temporary environment attached to the search path using
 <code><a href="../reference/temp_env.html">TempEnv()</a></code> and the <code>temp_XXX()</code> functions. The
