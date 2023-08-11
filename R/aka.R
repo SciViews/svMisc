@@ -53,20 +53,23 @@ seealso = NULL, example = NULL, url = NULL) {
   obj
 }
 
-# Internal object to cache the type of hyperlink that can be used
-.hyperlink_type <- {
+# Internal function to cache the type of hyperlink that can be used
+.hyperlink_type <- function() {
   if (rlang::is_interactive() && cli::ansi_has_hyperlink_support()) {
     types <- cli::ansi_hyperlink_types()
     if (isTRUE(types$help)) {
-      "help"
+      res <- "help"
     } else if (isTRUE(types$href)) {
-      "href"
+      res <- "href"
     } else {
-      "none"
+      res <- "none"
     }
   } else {
-    "none"
+    res <- "none"
   }
+  if (is.null(getOption("hyperlink_type")))
+    options(hyperlink_type = res)
+  res
 }
 
 #' @export
@@ -78,7 +81,8 @@ seealso = NULL, example = NULL, url = NULL) {
 #' help page in the Help tab.
 #' @param ... Further arguments (not used yet)
 #' @method print aka
-print.aka <- function(x, hyperlink_type = .hyperlink_type, ...) {
+print.aka <- function(x, hyperlink_type = getOption("hyperlink_type",
+default = .hyperlink_type()), ...) {
   src <- attr(comment(x), "src")
   link <- switch(hyperlink_type,
     help = {

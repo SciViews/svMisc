@@ -16,7 +16,11 @@ aka(
   url = NULL
 )
 
-\method{print}{aka}(x, hyperlink_type = .hyperlink_type, ...)
+\method{print}{aka}(
+  x,
+  hyperlink_type = getOption("hyperlink_type", default = .hyperlink_type()),
+  ...
+)
 
 \method{str}{aka}(object, ...)
 }
