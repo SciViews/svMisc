@@ -2,6 +2,8 @@
 
 -   The `aka()` function objects are now **aka** and **function** objects with `print()` and `str()` methods. A new argument `url=` allows to indicate an http(s) URL for the help page of the object.
 
+-  A function `section()` allows to document different sections in sets of objects.
+
 # svMisc 1.3.2
 
 -   First implementation of concise help pages for functions aliased with `aka()` (description + seealso + example).
