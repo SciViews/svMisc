@@ -1,24 +1,24 @@
 ---
-title: "svMisc - Miscellaneous Functions"
-author: "Philippe Grosjean (phgrosjean@sciviews.org)"
+title: "Miscellaneous Functions for 'SciViews::R'"
+author: "Philippe Grosjean"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 3
     fig_caption: yes
 vignette: >
-  %\VignetteIndexEntry{svMisc - Miscellaneous Functions}
+  %\VignetteIndexEntry{Miscellaneous Functions for 'SciViews::R'}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(svMisc)
 ```
 
-The 'svMisc' package contains a large collection of functions that are useful in the context of (G)UI (Graphical) User Interface development, and also, of more general usage. Here is a series of functions you should look at.
+The {svMisc} package contains a large collection of functions that are useful in the context of (G)UI (Graphical) User Interface development, and also, of more general usage. Here is a series of functions you should look at.
 
 ## Help
 

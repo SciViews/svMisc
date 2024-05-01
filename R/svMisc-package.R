@@ -1,5 +1,6 @@
-#' @details
-#' The 'svMisc' package is of general use among `SciViews::R`, a layer on top of
+#' Miscellaneous Functions for 'SciViews::R'
+#'
+#' The \{svMisc\} package is of general use among SciViews::R, a layer on top of
 #' R, and the tidyverse. This package collects together a series of general
 #' functions to manage a centralized environment for temporary variables, a
 #' progress bar and batch analysis mode, etc.
@@ -14,9 +15,10 @@
 #'
 #' - [parse_text()] to parse any R expression, including partial or incorrect
 #'   ones (fails gracefully).
-#' @keywords internal
-"_PACKAGE"
+#' @docType package
+#' @name svMisc-package
 
+## usethis namespace: start
 #' @importFrom utils RSiteSearch apropos available.packages browseURL
 #'   capture.output compareVersion file.edit file_test flush.console
 #'   getCRANmirrors getS3method install.packages installed.packages methods
@@ -27,8 +29,5 @@
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
 #' @importFrom rlang is_interactive
-# The following block is used by usethis to automatically manage
-# roxygen namespace tags. Modify with care!
-## usethis namespace: start
 ## usethis namespace: end
 NULL

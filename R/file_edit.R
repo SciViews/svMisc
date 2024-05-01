@@ -32,8 +32,6 @@
 #' <https://rgedit.sourceforge.net/>. Since, gedit natively supports a lot of
 #' different syntax highlighting, including R, and is lightweight but feature
 #' rich, it is recommended as default text editor for `file_edit()` on Unixes.
-#' If JGR is run and the editor is "vi" or "internal", then the internal JGR
-#' editor is used, otherwise, the provided editor is chosen.
 #'
 #' On MacOS, if the "bbedit" program exists, it is used (it is the command line
 #' program installed by BBEdit, see <http://www.barebones.com/products/>, a much
@@ -44,9 +42,9 @@
 #' `file_edit()` on MacOS. Specify "bbedit" to force using it. The default value
 #' is "textedit", the MacOS default text editor, but on R.app, and with
 #' `wait = FALSE`, the internal R.app editor is used instead in that case. If
-#' RStudio or JGR is run, and the editor is "textedit", "internal" or "vi", then,
-#' the RStudio or JGR internal editor is used instead. If `wait = TRUE` with an
-#' RStudio editor, it is enough to switch to another editor to continue.
+#' RStudio is run, and the editor is "textedit", "internal" or "vi", then, the
+#' RStudio internal editor is used instead. If `wait = TRUE` with an RStudio
+#' editor, it is enough to switch to another editor to continue.
 #'
 #' On Windows, if Notepad++ is installed in its default location, it is used,
 #' otherwise, the default "notepad" is used in Rterm and the internal editors
@@ -177,14 +175,15 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
     editor %in% c("notepad", "internal", "vi", "open -e -n -W \"%s\"")) {
     done <- FALSE
 
-    # 1) JGR
-    if (is_jgr()) {
-      for (i in 1:lf)
-        .file_edit_jgr(files[i], title = title[i], wait = wait)
-      done <- TRUE
+# We don't want to depend on rJava, so this code is commented out!
+#    # 1) JGR
+#    if (is_jgr()) {
+#      for (i in 1:lf)
+#        .file_edit_jgr(files[i], title = title[i], wait = wait)
+#      done <- TRUE
 
     # 2) Windows Rgui
-    } else if (is_rgui()) {
+    if (is_rgui()) {
       for (i in 1:lf)
         .file_edit_rgui(files[i], title = title[i], wait = wait)
       done <- TRUE
@@ -277,38 +276,39 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
   invisible(editor)
 }
 
-.file_edit_jgr <- function(file, title = file, wait = FALSE) {
-  file <- as.character(file)
-  if (length(file) != 1)
-    stop("Only one item for 'file' is accepted")
-  title <- as.character(title)
-  if (length(title) != 1)
-    stop("Only one item for 'title' is accepted")
-
-  # Check that JGR is running
-  if (!is_jgr()) {
-    message(".file_edit_jgr() cannot be used outside JGR.\n")
-    return(invisible(NULL))
-  }
-
-  # Create a new editor window and open the file in it
-  # Note that, if JGR is loaded, rJava is there too. So .jnew is available!
-  editor <- rJava::.jnew('org/rosuda/JGR/editor/Editor', as.character(file)[1])
-  # Set the title
-  if (title != file) editor$setTitle(title)
-
-  # Do we wait that the file is edited?
-  if (isTRUE(as.logical(wait))) {
-    message("Editing file '", basename(file),
-      "'... Close the editor to continue!")
-    while (editor$isVisible()) {
-      editor$setState(0L)   # Make sure it is not iconized
-      editor$toFront()      # Make the editor the frontmost window
-      Sys.sleep(0.3)
-    }
-  }
-  invisible(editor)
-}
+# We do not want to depend on rJava -> commented code!
+# .file_edit_jgr <- function(file, title = file, wait = FALSE) {
+#   file <- as.character(file)
+#   if (length(file) != 1)
+#     stop("Only one item for 'file' is accepted")
+#   title <- as.character(title)
+#   if (length(title) != 1)
+#     stop("Only one item for 'title' is accepted")
+#
+#   # Check that JGR is running
+#   if (!is_jgr()) {
+#     message(".file_edit_jgr() cannot be used outside JGR.\n")
+#     return(invisible(NULL))
+#   }
+#
+#   # Create a new editor window and open the file in it
+#   # Note that, if JGR is loaded, rJava is there too. So .jnew is available!
+#   editor <- rJava::.jnew('org/rosuda/JGR/editor/Editor', as.character(file)[1])
+#   # Set the title
+#   if (title != file) editor$setTitle(title)
+#
+#   # Do we wait that the file is edited?
+#   if (isTRUE(as.logical(wait))) {
+#     message("Editing file '", basename(file),
+#       "'... Close the editor to continue!")
+#     while (editor$isVisible()) {
+#       editor$setState(0L)   # Make sure it is not iconized
+#       editor$toFront()      # Make the editor the frontmost window
+#       Sys.sleep(0.3)
+#     }
+#   }
+#   invisible(editor)
+# }
 
 .file_edit_rgui <- function(file, title = file, wait = FALSE) {
   # Avoid errors in R CMD check about missing getWindowsHandles() function

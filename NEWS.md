@@ -1,3 +1,7 @@
+# svMisc 1.4.1
+
+-   The JGR version of `file_edit()` is not available any more because JGR is not maintained any more and we can eliminate the dependency to {rJava} and a Java installation.
+
 # svMisc 1.4.0
 
 -   The `aka()` function objects are now **aka** and **function** objects with `print()` and `str()` methods. A new argument `url=` allows to indicate an http(s) URL for the help page of the object.

@@ -1,36 +1,34 @@
 Package: svMisc
 Type: Package
-Version: 1.4.0
-Title: 'SciViews' - Miscellaneous Functions
-Description: Miscellaneous functions for 'SciViews::R' or general use: manage a
-  temporary environment attached to the search path for temporary variables you
-  do not want to save() or load(), test if 'Aqua', 'Mac', 'Win', ... Show
+Version: 1.4.1
+Title: Miscellaneous Functions for 'SciViews::R'
+Description: Functions required for the 'SciViews::R' dialect or for general
+  use: manage a temporary environment attached to the search path, define
+  synonyms for R functions using aka(), test if 'Aqua', 'Mac', 'Win' ... Show
   progress bar, etc.
-Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
-  email = "phgrosjean@sciviews.org",
-  comment = c(ORCID = "0000-0002-2694-9471")),
+Authors@R: c(
+  person("Philippe", "Grosjean", role = c("aut", "cre"),
+    email = "phgrosjean@sciviews.org",
+    comment = c(ORCID = "0000-0002-2694-9471")),
   person("Romain", "Francois", role = "ctb",
-  email = "romain@r-enthusiasts.com"),
+    email = "romain@r-enthusiasts.com"),
   person("Kamil", "Barton", role = "ctb",
-  email = "kamil.barton@uni-wuerzburg.de"))
+    email = "kamil.barton@uni-wuerzburg.de"))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
-Depends: R (>= 2.13.0)
+Depends: R (>= 4.2.0)
 Imports:
-    methods,
-    stats,
-    tools,
-    utils,
+    cli (>= 3.6.1),
+    methods (>= 4.2.0),
     rlang (>= 1.1.1),
-    cli (>= 3.6.1)
+    stats (>= 4.2.0),
+    tools (>= 4.2.0),
+    utils (>= 4.2.0)
 Suggests:
-    rJava,
-    tcltk,
-    covr,
-    knitr,
-    markdown,
-    rmarkdown,
-    spelling,
-    testthat
+    tcltk (>= 4.2.0),
+    knitr (>= 1.42),
+    rmarkdown (>= 2.21),
+    spelling (>= 2.2.1),
+    testthat (>= 3.0.0)
 License: GPL-2
 URL: https://github.com/SciViews/svMisc, https://www.sciviews.org/svMisc/
 BugReports: https://github.com/SciViews/svMisc/issues
@@ -39,3 +37,5 @@ RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US
+ByteCompile: yes
+Config/testthat/edition: 3

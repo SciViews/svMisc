@@ -1,9 +1,11 @@
 ---
 title: "Temporary environment"
-author: "Philippe Grosjean (phgrosjean@sciviews.org)"
+author: "Philippe Grosjean"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 3
     fig_caption: yes
 vignette: >
   %\VignetteIndexEntry{Temporary environment}
@@ -11,14 +13,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(svMisc)
 ```
 
-'svMisc' attaches `SciViews:TempEnv` at the fore last position in the search path, so that its content is accessible from any loaded R package (except 'base'). This environment is a convenient place where temporary items that you do not want to see in the global environment, for instance, variables related to GUI (Graphical User Interface) and that are typically a nonsense to `save()` and re`load()` in the global environment.
+{svMisc} attaches `SciViews:TempEnv` at the fore last position in the search path, so that its content is accessible from any loaded R package (except 'base'). This environment is a convenient place where temporary items that you do not want to see in the global environment, for instance, variables related to GUI (Graphical User Interface) and that are typically a nonsense to `save()` and re`load()` in the global environment.
 
 **TODO: show a couple of case where it is useful.**
 
