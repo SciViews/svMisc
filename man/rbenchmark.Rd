@@ -30,9 +30,9 @@ This code is reworked from the R Benchmark 2.5 adapted by Simon Urbanek
 itself inspired from Matlab code by Stephan Steinhaus. In comparison to
 version 2.5, this one is included in a function and returns a \strong{rbenchmark}
 objects that prints in a very similar way to the original code. However,
-only functions from base R packages (including {stats} and {utils}) are used,
-where previous versions also used recommended package {Matrix} and possibly
-CRAN package {SuppDists}. Expect some slight differences.
+only functions from base R packages (including \{stats\} and \{utils\}) are
+used, where previous versions also used recommended package \{Matrix\} and
+possibly CRAN package \{SuppDists\}. Expect some slight differences.
 
 Some tests in sections I and II use BLAS/LAPACK code. Their results are
 heavily dependent on the BLAS implementation that you choose. The default R
