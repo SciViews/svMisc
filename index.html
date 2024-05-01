@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SciViews - Miscellaneous Functions • svMisc</title>
+<title>Miscellaneous Functions for SciViews::R • svMisc</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -21,8 +21,8 @@
 <script src="pkgdown.js"></script><!-- svPkgdown --><script src="script.js"></script><!-- themify icon --><link rel="stylesheet" href="themify-icons.css?nocache=123">
 <!--<link rel="stylesheet" href="style.css?nocache=123">--><!-- bootstrat v4.1.1, required CSS from more recent version --><link rel="stylesheet" href="bootstrap.more.css?nocache=123">
 <link href="style.css?nocache=123" rel="stylesheet">
-<!-- end of addition for svPkgdown --><meta property="og:title" content="SciViews - Miscellaneous Functions">
-<meta property="og:description" content="Miscellaneous functions for SciViews::R or general use: manage a temporary environment attached to the search path for temporary variables you do not want to save() or load(), test if Aqua, Mac, Win, ... Show progress bar, etc.">
+<!-- end of addition for svPkgdown --><meta property="og:title" content="Miscellaneous Functions for SciViews::R">
+<meta property="og:description" content="Functions required for the SciViews::R dialect or for general use: manage a temporary environment attached to the search path, define synonyms for R functions using aka(), test if Aqua, Mac, Win ... Show progress bar, etc.">
 <meta property="og:image" content="https://www.sciviews.org/svMisc/logo.png">
 <meta name="twitter:card" content="summary">
 <!-- Mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" async integrity="sha256-nlrDrBTHxJJlDDX22AS33xYI1OJHnGMDhiYMSe2U0e0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/config/TeX-AMS-MML_HTMLorMML.js" async integrity="sha256-4zys9A4hMQmtq2EUL+JRoXc0NZi8jVJMzb8onewOaSQ=" crossorigin="anonymous"></script><!-- Global site tag (gtag.js) - Google Analytics --><!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462421-8"></script>
@@ -101,7 +101,7 @@
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="index.html"><p class="h2">svMisc <small>v1.4.0</small></p></a>
+        <a class="navbar-brand" href="index.html"><p class="h2">svMisc <small>v1.4.1</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -125,13 +125,15 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the released version of {svMisc} from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
+<p>{svMisc} is available from CRAN, but it is an old version. You should install it from the <a href="https://sciviews.r-universe.dev" class="external-link">SciViews R-Universe</a>. To install this package and its dependencies, run the following command in R:</p>
+<p><code>{r, eval=FALSE} install.packages('svMisc', repos = c('https://sciviews.r-universe.dev',   'https://cloud.r-project.org'))</code></p>
+<p>An older version of {svMisc} can be installed from <a href="http://cran.r-project.org" class="external-link">CRAN</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"svMisc"</span><span class="op">)</span></span></code></pre></div>
 <p>You can also install the latest development version. Make sure you have the {remotes} R package installed:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span></code></pre></div>
-<p>Use <code>install_github()</code> to install the {svMisc} package from GitHub (source from <strong>master</strong> branch will be recompiled on your machine):</p>
+<p>Use <code>install_github()</code> to install the {svMisc} package from GitHub (source from <strong>main</strong> branch will be recompiled on your machine):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"SciViews/svMisc"</span><span class="op">)</span></span></code></pre></div>
 <p>R should install all required dependencies automatically, and then it should compile and install {svMisc}.</p>
@@ -152,7 +154,7 @@
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
 </h2>
-<p>Please note that the {svMisc} package is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the {svMisc} package is released with a <a href="https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div class="section level2">
 <h2 id="note-to-developers">Note to developers<a class="anchor" aria-label="anchor" href="#note-to-developers"></a>
