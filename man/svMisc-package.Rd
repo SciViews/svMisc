@@ -2,6 +2,7 @@
 % Please edit documentation in R/svMisc-package.R
 \docType{package}
 \name{svMisc-package}
+\alias{svMisc}
 \alias{svMisc-package}
 \title{Miscellaneous Functions for 'SciViews::R'}
 \description{
@@ -21,3 +22,22 @@ ones (fails gracefully).
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/SciViews/svMisc}
+  \item \url{https://www.sciviews.org/svMisc/}
+  \item Report bugs at \url{https://github.com/SciViews/svMisc/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Philippe Grosjean \email{phgrosjean@sciviews.org} (\href{https://orcid.org/0000-0002-2694-9471}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Romain Francois \email{romain@r-enthusiasts.com} [contributor]
+  \item Kamil Barton \email{kamil.barton@uni-wuerzburg.de} [contributor]
+}
+
+}

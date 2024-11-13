@@ -1,3 +1,7 @@
+# svMisc 1.4.2
+
+-   The deprecated `methods::getMethods()` function was imported but not used any more. The import is dropped now.
+
 # svMisc 1.4.1
 
 -   The JGR version of `file_edit()` is not available any more because JGR is not maintained any more and we can eliminate the dependency to {rJava} and a Java installation.

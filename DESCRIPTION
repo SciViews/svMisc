@@ -1,6 +1,6 @@
 Package: svMisc
 Type: Package
-Version: 1.4.1
+Version: 1.4.2
 Title: Miscellaneous Functions for 'SciViews::R'
 Description: Functions required for the 'SciViews::R' dialect or for general
   use: manage a temporary environment attached to the search path, define
@@ -33,7 +33,7 @@ License: GPL-2
 URL: https://github.com/SciViews/svMisc, https://www.sciviews.org/svMisc/
 BugReports: https://github.com/SciViews/svMisc/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US

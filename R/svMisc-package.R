@@ -15,8 +15,6 @@
 #'
 #' - [parse_text()] to parse any R expression, including partial or incorrect
 #'   ones (fails gracefully).
-#' @docType package
-#' @name svMisc-package
 
 ## usethis namespace: start
 #' @importFrom utils RSiteSearch apropos available.packages browseURL
@@ -24,10 +22,10 @@
 #'   getCRANmirrors getS3method install.packages installed.packages methods
 #'   object.size packageDescription remove.packages str tail write.table ? help
 #'   help.search apropos find txtProgressBar setTxtProgressBar
-#' @importFrom methods findFunction existsFunction new getMethods isGeneric
+#' @importFrom methods findFunction existsFunction new isGeneric
 #'   showMethods slot slotNames
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
 #' @importFrom rlang is_interactive
 ## usethis namespace: end
-NULL
+"_PACKAGE"
