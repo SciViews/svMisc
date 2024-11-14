@@ -1,3 +1,7 @@
+# svMisc 1.4.3
+
+-   New bibentry format for the CITATION file.
+
 # svMisc 1.4.2
 
 -   The deprecated `methods::getMethods()` function was imported but not used any more. The import is dropped now.
