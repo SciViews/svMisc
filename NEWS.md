@@ -1,3 +1,7 @@
+# svMisc 1.5.0
+
+-   `get_text_lang()` added to get translation of one or more strings in a different language than the one currently defined in the R session.
+
 # svMisc 1.4.3
 
 -   New bibentry format for the CITATION file.
