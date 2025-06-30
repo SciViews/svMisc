@@ -1,5 +1,7 @@
 # svMisc 1.5.0
 
+-   Preparation of all the messages for internationalization, and French version done.
+
 -   `get_text_lang()` added to get translation of one or more strings in a different language than the one currently defined in the R session.
 
 -   Functions related to SciViews-K (interface between R and Komodo IDE) are deprecated because that interface is not developed any more. These are: `add_actions()`, `get_actions()`, `add_icons()`, `add_methods()`, `gui_cmd()`, `gui_load()`, `gui_source()`, `gui_save()`, `gui_import()`, `gui_export()`, `gui_report()`, `gui_setwd()`, `list_methods()`, `list_types()`, `obj_browse()`, `obj_clear()`, `obj_dir()`, `obj_info()`, `obj_list()`, `write.objList()`, `print_objList()`, `obj_menu()`, `pkgman_describe()`, `pkgman_get_mirrors()`, `pkgman_get_available()`, `pkgman_get_installed()`, `pkgman_set_cran_mirror()`, `pkgman_install()`, `pkgman_remove()`, `pkgman_load()`, `pkgman_detach()`.

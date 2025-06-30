@@ -234,8 +234,9 @@ description = FALSE, methods = FALSE, width = getOption("width")) {
       mets <- paste0(format(mets, width = 25), c(rep("  ", nitems - 1), "\n"),
         collapse = "")
       # Add this info to the call_tip
-      ctip <- paste0(ctip,
-        "\n\nGeneric function with methods for the following classes:\n", mets)
+      ctip <- paste0(ctip, "\n\n",
+        gettext("Generic function with methods for the following classes:"),
+        "\n", mets)
     }
   }
   ctip

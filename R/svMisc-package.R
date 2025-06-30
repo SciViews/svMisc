@@ -26,6 +26,7 @@
 #'   showMethods slot slotNames
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
+#' @importFrom compiler cmpfun
 #' @importFrom rlang is_interactive
 ## usethis namespace: end
 "_PACKAGE"

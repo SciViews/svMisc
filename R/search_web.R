@@ -39,8 +39,9 @@ browse = TRUE, msg = browse, ...) {
     if (isTRUE(browse))
       browseURL(search_url)
     if (isTRUE(msg)) {
-      cat(gettext("A search query has been submitted"), "\n")
-      cat(gettext("The results page should open in your browser shortly\n"))
+      cat(gettext("A search query has been submitted"), "\n", sep = "")
+      cat(gettext("The results page should open in your browser shortly"),
+        "\n", sep = "")
     }
   }
   invisible(search_url)

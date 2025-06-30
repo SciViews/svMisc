@@ -120,8 +120,9 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
         file.copy(template[i], new_files[i], overwrite = TRUE,
           copy.mode = FALSE)
       } else {# Template file not found!
-        warning("Template file '", template[i],
-          '" not found, starting from an empty file')
+        warning(gettextf(
+          "Template file '%s' not found, starting from an empty file",
+          template[i]))
         file.create(new_files[i])
       }
     }
@@ -219,10 +220,11 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
     } else {
       cmds <- paste('"', editor, '" "', files, '"', sep = "")
     }
-    if (is_mac()) msg <- "'... Close the editor (Cmd-Q) to continue!" else
-      msg <- "'... Close the editor to continue!"
     for (i in 1:length(cmds)) {
-      if (wait) message("Editing the file '", basename(files[i]), msg)
+      if (wait)
+        message(gettextf(
+          "Editing the file '%s'... Close the editor to continue!",
+          basename(files[i])))
       flush.console()
       if (is_win()) {
         res <- try(system(cmds[i], ignore.stdout = TRUE,
@@ -246,11 +248,11 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
   # Note that title is not used here!
   file <- as.character(file)
   if (length(file) != 1)
-    stop("Only one item for 'file' is accepted")
+    stop("only one item for 'file' is accepted")
 
   # Check that RStudio is running
   if (!is_rstudio()) {
-    message(".file_edit_rstudio() cannot be used outside RStudio.\n")
+    message(".file_edit_rstudio() cannot be used outside RStudio.")
     return(invisible(NULL))
   }
 
@@ -267,8 +269,9 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
       warning("impossible to get editor context... cannot honor wait = TRUE")
     Sys.sleep(0.5)
     path <- get_editor_context()$path
-    message("Editing file '", basename(file),
-      "'... Close the editor, or switch to another one to continue!")
+    message(gettextf(
+      "Editing file '%s'...\nClose the editor, or switch to another one to continue!",
+      basename(file)))
     while (get_editor_context()$path == path) {
       Sys.sleep(0.3)
     }
@@ -287,7 +290,7 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
 #
 #   # Check that JGR is running
 #   if (!is_jgr()) {
-#     message(".file_edit_jgr() cannot be used outside JGR.\n")
+#     message(".file_edit_jgr() cannot be used outside JGR.")
 #     return(invisible(NULL))
 #   }
 #
@@ -299,8 +302,8 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
 #
 #   # Do we wait that the file is edited?
 #   if (isTRUE(as.logical(wait))) {
-#     message("Editing file '", basename(file),
-#       "'... Close the editor to continue!")
+#     message(gettextf("Editing file '%s'...\nClose the editor to continue!",
+#       basename(file)))
 #     while (editor$isVisible()) {
 #       editor$setState(0L)   # Make sure it is not iconized
 #       editor$toFront()      # Make the editor the frontmost window
@@ -316,14 +319,14 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
 
   file <- as.character(file)
   if (length(file) != 1)
-    stop("Only one item for 'file' is accepted")
+    stop("only one item for 'file' is accepted")
   title <- as.character(title)
   if (length(title) != 1)
-    stop("Only one item for 'title' is accepted")
+    stop("only one item for 'title' is accepted")
 
   # Check if we are in RGui
   if (!is_rgui()) {
-    message(".file_edit_rgui() cannot be used outside Rgui.\n")
+    message(".file_edit_rgui() cannot be used outside Rgui.")
     return(invisible(NULL))
   }
 
@@ -336,8 +339,8 @@ file.encoding = "", template = NULL, replace = FALSE, wait = FALSE) {
 
   # Do we wait that the file is edited?
   if (isTRUE(as.logical(wait)) && length(editor) == 1) {
-    message("Editing file '", basename(file),
-      "'... Close the editor to continue!")
+    message(gettextf("Editing file '%s'...\nClose the editor to continue!",
+      basename(file)))
     flush.console()
     while (editor %in% getWindowsHandles(minimized = TRUE))
       Sys.sleep(0.3)

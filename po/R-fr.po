@@ -1,66 +1,86 @@
-# Translation of R-svMisc.pot to French
-# Copyright (C) 2005 The R Foundation
-# This file is distributed under the same license as the svMisc R package.
-# Philippe Grosjean <phgrosjean@sciviews.org>, 2005-2009.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: R 2.6.0\n"
-"Report-Msgid-Bugs-To: bugs@r-project.org\n"
-"POT-Creation-Date: 2009-01-22 15:56\n"
-"PO-Revision-Date: 2009-01-22 16:33+0100\n"
+"Project-Id-Version: svMisc 1.5.0\n"
+"POT-Creation-Date: 2025-06-30 20:12\n"
+"PO-Revision-Date: 2025-06-30 20:12+0200\n"
 "Last-Translator: Philippe Grosjean <phgrosjean@sciviews.org>\n"
-"Language-Team: French <R-core@r-project.org>\n"
+"Language-Team: French SciViews translation team\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "'topic' must be a single character string"
+msgstr "'topic' doit être une chaîne de caractères unique"
+
+msgid "'%s' not found, do you mean?"
+msgstr "'%s' introuvable, voulez-vous dire ?"
+
+msgid "'%s' not found in package '%s', do you mean?"
+msgstr "'%s' introuvable dans le package ‘%s', voulez-vous dire ?"
+
+msgid ","
+msgstr ","
+
+msgid "'%s' not found"
+msgstr "'%s' introuvable"
+
+msgid "'%s' not found in package '%s'"
+msgstr "'%s' introuvable dans le package '%s'"
+
+msgid "Searching keyword in all R help pages for '%s'..."
+msgstr "Recherche dans toutes les pages d'aide de R du mot clé ‘%s’…"
+
+msgid "'%s' was found multiple times in:"
+msgstr "'%s' a été retrouvée à plusieurs reprises dans :"
+
+msgid "Hint: use 'pkg::topic' to be more accurate"
+msgstr "Conseil : utilisez 'pkg::topic' pour plus de précision"
+
+msgid "- See also:"
+msgstr "- Voir aussi :"
+
+msgid "- Examples (type `ex` to run them):"
+msgstr "- Exemples (tapez `ex` pour les exécuter) :"
+
+msgid "- Comment:"
+msgstr "- Commentaire :"
+
+msgid "'%s' comes from '%s'."
+msgstr "'%s' vient de ‘%s’."
+
+msgid "Displaying that file..."
+msgstr "Affichage de ce fichier..."
+
+msgid "Matching help page is '%s'"
+msgstr "La page d'aide correspondante est '%s'"
+
+msgid "Possible methods for '%s':"
+msgstr "Méthodes possibles pour '%s' :"
+
+msgid "Displaying help page..."
+msgstr "Affichage de la page d'aide..."
+
+msgid "Searching all R help pages..."
+msgstr "Recherche dans toutes les pages d'aide de R..."
 
 msgid "'obj' should inherit from 'list'"
-msgstr "'obj' doit un objet 'list'"
+msgstr "'obj' doit être un objet 'list'"
 
 msgid "Data you add in actions must be a named character vector"
-msgstr "Les données que vous ajoutez dans les actions doivent être des vecteurs de chaînes de caractères nommées"
-
-msgid "'obj' should inherit from 'character'"
-msgstr "'obj' doit être un objet 'character'"
-
-msgid "Icons map you add must be a named character vector"
-msgstr "Le mappage des icônes que vous ajoutez doit être un vecteur de chaînes de caractères nommées"
-
-msgid "must be a list!"
-msgstr "doit être une liste!"
-
-msgid "'type' could be only 'google', 'archive' or 'wiki', currently!"
-msgstr "'type' ne peut être que 'google', 'archive' ou 'wiki', pour l'instant !"
-
-msgid "'f' must ba a character string!"
-msgstr "'f' doit être une chaîne de caractères !"
-
-msgid "Impossible to create the Object Browser 'path' directory!"
-msgstr "Impossible de créer le répertoire pour lexplorateur d'objets"
-
-msgid "'value' must be numeric!"
-msgstr "'value' doit être numérique !"
-
-msgid "'max.value' must be numeric or NULL!"
-msgstr "'max.value' doit être numérique ou NULL !"
-
-msgid "Progress:"
-msgstr "Progression :"
-
-msgid "on"
-msgstr "sur"
-
-msgid "'x' must be character string(s)!"
-msgstr "'x' doit une chaîne de caractères, ou un vecteur de chaînes de caractères !"
+msgstr ""
+"Les données que vous ajoutez dans les actions doivent être des vecteurs de "
+"chaînes de caractères nommées"
 
 msgid ""
 "Load...\n"
 "Load R objects"
 msgstr ""
 "Charger...\n"
-"Charger des objets R : load()"
+"Charger des objets R"
 
 msgid ""
 "Source...\n"
@@ -161,6 +181,13 @@ msgstr ""
 "Réparer un objet R"
 
 msgid ""
+"Load package(s)\n"
+"Load one or several R packages"
+msgstr ""
+"Charger un ou plusieurs packages\n"
+"Charger un ou plusieurs paquets R"
+
+msgid ""
 "Remove\n"
 "Remove (permanently!) one or several objects from memory"
 msgstr ""
@@ -173,13 +200,6 @@ msgid ""
 msgstr ""
 "Requière le <<<pkg>>>\n"
 "Requiérir le package <<<pkg>>>"
-
-msgid ""
-"Require (compact)\n"
-"Compact require one or several R packages"
-msgstr ""
-"Requiérir (forme compacte)\n"
-"Requiérir un ou plusieurs packages (forme compacte)"
 
 msgid ""
 "Attach\n"
@@ -265,60 +285,228 @@ msgstr ""
 "Copier\n"
 "Copier l'objet vers le presse-papier"
 
+msgid "'obj' should inherit from 'character'"
+msgstr "'obj' doit être un objet 'character'"
+
+msgid "Icons map you add must be a named character vector"
+msgstr ""
+"Le mappage des icônes que vous ajoutez doit être un vecteur de chaînes de "
+"caractères nommées"
+
+msgid "'fun' must be a function"
+msgstr "'fun’ doit être une fonction"
+
+msgid "Running the batch process with %s..."
+msgstr "Exécution du processus par lots avec %s…"
+
+msgid "No items to process!"
+msgstr "Aucun élément à traiter !"
+
+msgid "Processed successfully %i items on %i (see .last.batch)"
+msgstr "Traitement réussi de %i éléments sur les %i (voir .last.batch)"
+
+msgid "'expr' is NULL or of length zero. It must be an expression or NA"
+msgstr ""
+"‘expr’ est NULL or de longueur nulle. Il doit être une expression ou NA"
+
+msgid "'expr' must be an expression or NA"
+msgstr "‘expr’  doit être une expression ou NA"
+
+msgid "In addition:"
+msgstr "En outre :"
+
+msgid "<aborted!>"
+msgstr "<arrêté prématurément!>"
+
+msgid "<interrupted!>"
+msgstr "<interrompu!>"
+
+msgid "Generic function with methods for the following classes:"
+msgstr "Fonction générique avec des méthodes pour les classes suivantes :"
+
+msgid "You must provide at least one file path"
+msgstr "Vous devez fournir au moins un chemin d'accès au fichier"
+
+msgid "Template file '%s' not found, starting from an empty file"
+msgstr ""
+"Le fichier modèle '%s' n’a pas été trouvé, initialisation depuis un fichier "
+"vide"
+
+msgid "Cannot edit files: no editor or not in interactive mode"
+msgstr ""
+"Impossible de modifier les fichiers : pas d'éditeur ou pas en mode interactif"
+
+msgid "Editing the file '%s'... Close the editor to continue!"
+msgstr "Édition du fichier '%s'… Fermez l'éditeur pour continuer !"
+
+msgid "only one item for 'file' is accepted"
+msgstr "un seul élément pour \"fichier\" est accepté"
+
+msgid ".file_edit_rstudio() cannot be used outside RStudio."
+msgstr ".file_edit_rstudio() ne peut pas être utilisé en dehors de RStudio."
+
+msgid "impossible to get .rs.api.navigateToFile() function"
+msgstr "impossible d'obtenir la fonction .rs.api.navigateToFile()"
+
+msgid "impossible to get editor context... cannot honor wait = TRUE"
+msgstr ""
+"impossible d'obtenir le contexte de l'éditeur... impossible d'honorer wait = "
+"TRUE"
+
+msgid ""
+"Editing file '%s'...\n"
+"Close the editor, or switch to another one to continue!"
+msgstr ""
+"Édition du fichier ‘%s’…\n"
+"Fermez l'éditeur ou passez à un autre pour continuer !"
+
+msgid "only one item for 'title' is accepted"
+msgstr "un seul élément pour le ‘titre’ est accepté"
+
+msgid ".file_edit_rgui() cannot be used outside Rgui."
+msgstr ".file_edit_rgui() ne peut pas être utilisé en dehors de Rgui."
+
+msgid ""
+"Editing file '%s'...\n"
+"Close the editor to continue!"
+msgstr ""
+"Édition du fichier ‘%s’…\n"
+"Fermez l'éditeur pour continuer !"
+
+msgid "Natural language support is available on this system,"
+msgstr "Ce système offre une assistance en langage naturel,"
+
+msgid "but unable to properly switch language."
+msgstr "mais impossible de changer correctement de langue."
+
+msgid ""
+"Unable to switch to language '%s'. Using current language '%s' instead\n"
+"(displayed only once per session)."
+msgstr ""
+"Impossible de passer à la langue '%s'. Utilisation de la langue actuelle "
+"'%s' à la place\n"
+"(affiché une seule fois par session)."
+
+msgid "Test of svMisc's `gettext()` and `gettextf()`:"
+msgstr "Test des fonctions `gettext()` et `gettextf()` de svMisc :"
+
+msgid "This should be transtlated, if '%s' language is supported."
+msgstr "Ceci doit être traduit si la langue '%s' est prise en charge."
+
+msgid "This is message number %i"
+msgstr "Il s'agit du message numéro %i"
+
+msgid "Nothing to install."
+msgstr "Rien à installer."
+
+msgid "Install R package"
+msgstr "Installation d’un package R"
+
+msgid ""
+"The package '%s' will be installed.\n"
+"Proceed?"
+msgstr ""
+"Le package '%s' sera installé.\n"
+"Poursuivre ?"
+
+msgid "Install R packages"
+msgstr "Installation de packages R"
+
+msgid ""
+"The following packages will be installed:\n"
+"'%s'\n"
+"Proceed?"
+msgstr ""
+"Les packages suivants seront installés :\n"
+"'%s'\n"
+"Poursuivre ?"
+
+msgid "Clear the list of packages to install?"
+msgstr "Effacer la liste des packages à installer ?"
+
+msgid "'f' must be a character string!"
+msgstr "'f' doit être une chaîne de caractères !"
+
+msgid "Impossible to create the Object Browser 'path' directory!"
+msgstr "Impossible de créer le répertoire pour l’explorateur d'objets !"
+
+msgid "x must be an 'objList' object"
+msgstr "x doit être un objet ‘objList’"
+
 msgid "'strip' must be a 'svStripbar' object"
 msgstr "'strip' doit être un objet 'svStripbar'"
 
 msgid "'widgets' must be 'menu', 'item', 'sep' or 'space'"
 msgstr "'widgets' doit être 'menu', 'item', 'sep' ou 'space'"
 
-#~ msgid ""
-#~ "Package or bundle '%s' was not found in %s.  Would you like to install it "
-#~ "now?"
-#~ msgstr ""
-#~ "Le package ou le bundle '%s' est introuvable dans %s. Voulez-vous "
-#~ "l'installer maintenant ?"
-#~ msgid "Missing package or bundle '%s' was neither installed nor loaded"
-#~ msgstr "Package ou bundle '%s' manquant non installé, ni chargé"
-#~ msgid "Local Repository"
-#~ msgstr "Entrepot local"
-#~ msgid "Local Zip File"
-#~ msgstr "Fichier zip local"
-#~ msgid "Select the directory PACKAGES description file"
-#~ msgstr "Sélectionnez le fichier de description PACKAGES"
-#~ msgid "Packages description"
-#~ msgstr "Description de packages"
-#~ msgid "file:"
-#~ msgstr "fichier :"
-#~ msgid ""
-#~ "The repository '%s' does not appear to be a valid repository.\n"
-#~ "Would you like to try another repository?"
-#~ msgstr ""
-#~ "L'entrepot '%s' ne semble pas être un entrepot valide.\n"
-#~ "Voulez-vous essayer un autre entrepot ?"
-#~ msgid ""
-#~ "The package '%s' was not found in the selected repository (%s).\n"
-#~ "Would you like to try another repository?"
-#~ msgstr ""
-#~ "Le package '%s' est introuvable dans l'entrepot sélectionné (%s).\n"
-#~ "Voulez-vous essayer un autre entrepot ?"
-#~ msgid ""
-#~ "The selected file name does not contain the package name '%s'. Would you "
-#~ "like to select a different file instead?"
-#~ msgstr ""
-#~ "Le fichier sélectionné ne contient pas le package '%s'. Voulez-vous "
-#~ "sélectionner un autre fichier à la place ?"
-#~ msgid ""
-#~ "The selected file name does not end with '.zip'. Would you like to select "
-#~ "a different file instead?"
-#~ msgstr ""
-#~ "Le fichier sélectionné n'a pas une extension '.zip'. Voulez-vous "
-#~ "sélectionner un autre fichier à la la place ?"
-#~ msgid "The package or bundle was not found on %s"
-#~ msgstr "Le package ou bundle est introuvable dans %s"
-#~ msgid "Impossible to send the command: %s"
-#~ msgstr "Impossible d'envoyer la commande : %s"
-#~ msgid "bad argument"
-#~ msgstr "argument erroné"
-#~ msgid "'f' is not an existing function!"
-#~ msgstr "'f' n'est pas une fonction existante !"
+msgid "more than one 'pos' provided; Using only the first one"
+msgstr "plus d'un \"pos\" fourni ; utilisation du premier"
 
+msgid ""
+"Unable to load package '%s'!\n"
+"Use `Install()` to make it available..."
+msgstr ""
+"I’mpossible de charger le package '%s' !\n"
+"Utilisez `Install()` pour le rendre disponible..."
+
+msgid ""
+"Unable to load packages: '%s'!\n"
+"Use `Install()` to make them available..."
+msgstr ""
+"Impossible de charger les packages : '%s' !\n"
+"Utilisez `Install()` pour les rendre disponibles..."
+
+msgid "end of input"
+msgstr "fin d’entrée"
+
+msgid "This will install package %s."
+msgstr "Ceci installera le package %s."
+
+msgid "This will install packages: %s and %s."
+msgstr "Cela installera les packages %s and %s."
+
+msgid "'value' must be numeric"
+msgstr "'value' doit être numérique"
+
+msgid "'max.value' must be numeric or NULL"
+msgstr "'max.value' doit être numérique ou NULL"
+
+msgid "Progress:"
+msgstr "Progression :"
+
+msgid "on"
+msgstr "sur"
+
+msgid "runs must be a single integer between 1 and 10"
+msgstr "runs doit être un seul nombre entier entre 1 et 10"
+
+msgid "'type' could be only 'R', or 'google', currently!"
+msgstr "'type' ne peut être que ‘R’ ou ‘google’, pour l'instant !"
+
+msgid "A search query has been submitted"
+msgstr "Une demande de recherche a été soumise"
+
+msgid "The results page should open in your browser shortly"
+msgstr "La page des résultats devrait s'ouvrir dans votre navigateur sous peu"
+
+msgid "%s must be a list"
+msgstr "%s doit être une liste"
+
+msgid "'x' must be character"
+msgstr ""
+"'x' doit une chaîne de caractères, ou un vecteur de chaînes de caractères"
+
+msgid "Error: "
+msgid_plural "Error: "
+msgstr[0] "Erreur: "
+msgstr[1] "Erreur: "
+
+msgid "Error in "
+msgid_plural "Error in "
+msgstr[0] "Erreur dans "
+msgstr[1] "Erreur dans "
+
+msgid "There was %d warning (use warnings_() to see it)"
+msgid_plural "There were %d warnings (use warnings_() to see them)"
+msgstr[0] "Il y a eu %d avertissement (utilisez warnings_() pour le voir)"
+msgstr[1] "Il y a eu %d avertissements (utilisez warnings_() pour les voir)"

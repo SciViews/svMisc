@@ -46,7 +46,7 @@
 #' }
 about <- function(topic, ...) {
   if (!is.character(topic) || length(topic) != 1 || nchar(topic) < 1)
-    stop("topic must be a single character string")
+    stop("'topic' must be a single character string")
 
   # Is topic like pkg::topic?
   pkg_topic <- strsplit(topic, "::", fixed = TRUE)[[1]]
@@ -67,10 +67,10 @@ about <- function(topic, ...) {
     found <- apropos(topic, where = TRUE)
     if (length(found)) {
       if (is.null(package)) {
-        message("'", topic, "' not found, do you mean?")
+        message(gettextf("'%s' not found, do you mean?", topic))
       } else {
-        message("'", topic, "' not found in package '", package,
-          "', do you mean?")
+        message(gettextf("'%s' not found in package '%s', do you mean?"),
+          topic, package)
       }
       locations <- search()[as.numeric(names(found))]
       locations[!grepl("^package:", locations)] <- ""
@@ -78,65 +78,54 @@ about <- function(topic, ...) {
       message(paste0(locations, found, collapse = ", "))
     } else {
       if (is.null(package)) {
-        message("'", topic, "' not found")
+        message(gettextf("'%s' not found", topic))
       } else {
-        message("'", topic, "' not found in package '", package, "'")
+        message(gettextf("'%s' not found in package '%s'", topic, package))
       }
     }
-    message("Searching keyword in all R help pages for '", package, "'...")
+    message(gettextf("Searching keyword in all R help pages for '%s'...",
+      package))
     print(help.search(topic, package = package, ...))
 
   } else {# At least one found
     if (nitems > 1) {
-      message("'", topic, "' was found multiple times in:")
-      message(paste0(where, collapse = ", "))
+      message(gettextf("'%s' was found multiple times in:", topic))
+      msg <- paste0(where, collapse = ", ")
+      message(msg)
       message("Hint: use 'pkg::topic' to be more accurate")
     }
 
     # Is there comments, and is it a 'src' attribute too to substitute topic?
     obj <- get(topic)
     info <- comment(obj)
-    # Note: hard-coded for now, but these strings should be trnaslated in a regular way!
-    lang <- Sys.getenv("language", unset = "en")
+    # Note: hard-coded for now, but these strings should be translated in a
+    # regular way!
+    lang <- Sys.getenv("LANGUAGE", unset = "en")
     description <- attr(info, "description")
     if (!is.null(description))
       writeLines((description))
     seealso <- attr(info, "seealso")
     if (!is.null(seealso)) {
-      cat("\n")
-      if (lang == "fr") {
-        cat("- Voir aussi : ")
-      } else {
-        cat("- See also: ")
-      }
+      cat(gettext("\n- See also: "))
       cat(paste(seealso, collapse = ", "), "\n", sep = "")
     }
     example <- attr(info, "example")
     if (!is.null(example)) {
       cat("\n")
-      if (lang == "fr") {
-        cat("- Exemples (taper `ex` pour les lancer) :\n")
-      } else {
-        message("- Examples (type `ex` to run them):\n")
-      }
+      message("- Examples (type `ex` to run them):")
       assign_temp(".last.example", example)
       writeLines(example)
       cat("\n")
     }
     if (!is.null(info)) {
       if (length(info) != 1 || info != "") {
-        cat("\n")
-        if (lang == "fr") {
-          cat("- Commentaire :\n")
-        } else {
-          cat("- Comment:\n")
-        }
+        cat("\n", gettext("- Comment:"), "\n", sep = "")
         writeLines(info)
       }
       # Is there a 'src_file' attribute?
       src_file <- attr(info, "srcfile")
       if (!is.null(src_file)) {
-        message("'", topic, "' comes from '", src_file, "'. ")
+        message(gettextf("'%s' comes from '%s'. ", topic, src_file))
         message("Displaying that file...")
         file.show(src_file, title = topic)
         return(invisible(character(0))) # The object has no R help page
@@ -144,7 +133,7 @@ about <- function(topic, ...) {
       } else {# Look for a different help page in 'src' attribute
         src_topic <- attr(info, "src")
         if (!is.null(src_topic)) {
-          message("Matching help page is '", src_topic, "'")
+          message(gettextf("Matching help page is '%s'", src_topic))
           topic <- src_topic
           pkg_topic <- strsplit(topic, "::", fixed = TRUE)[[1]]
           if (length(pkg_topic) == 1) {
@@ -161,7 +150,7 @@ about <- function(topic, ...) {
     if (do.call(is_help, list(topic, package = package))[["help"]]) {
       meths <- try(methods(topic), silent = TRUE)
       if (!inherits(meths, "try-error") && length(meths)) {
-        message("Possible methods for '", topic, "':")
+        message(gettextf("Possible methods for '%s':", topic))
         print(meths)
       }
       message("Displaying help page...")

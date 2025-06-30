@@ -140,7 +140,7 @@
 progress <- function(value, max.value = NULL, progress.bar = FALSE, char = "|",
 init = (value == 0), console = TRUE, gui = TRUE) {
   if (!is.numeric(value))
-    stop("'value' must be numeric!")
+    stop("'value' must be numeric")
 
   if (is.null(max.value)) {
     max.value <- 100
@@ -148,7 +148,7 @@ init = (value == 0), console = TRUE, gui = TRUE) {
   } else percent <- FALSE
 
   if (!is.numeric(max.value))
-    stop("'max.value' must be numeric or NULL!")
+    stop("'max.value' must be numeric or NULL")
 
   # If value is higher than max.value, we erase the message
   erase_only <- (value > max.value)

@@ -97,12 +97,14 @@ pos = 2L, lib.loc = NULL, verbose = getOption("verbose")) {
     options(warn = owarn)
     if (stop) {
       if (length(bads) == 1) {
-        stop("Unable to load package '", bads,
-          "'!\nUse `Install()` to make it available...")
+        stop(gettextf(
+          "Unable to load package '%s'!\nUse `Install()` to make it available...",
+          bads))
       } else {
-        stop("Unable to load package(s): '",
-          paste(bads, collapse = "', '"),
-          "'!\nUse `Install()` to make them available...")
+        bads <- paste(bads, collapse = "', '")
+        stop(gettextf(
+          "Unable to load packages: '%s'!\nUse `Install()` to make them available...",
+          bads))
       }
     }
   }

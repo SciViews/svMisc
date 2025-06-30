@@ -1,7 +1,10 @@
-.get_text_lang_factory <- function() {
+.gettext_lang_factory <- function() {
   # This function makes necessary checkings only once and keeps the results
   # Also, it keeps memory of languages already used and languages that failed
   # to speed up switch from one language to another
+
+  # This is the original gettext() function
+  gettext_orig <- base::gettext
 
   # Is natural language supported?
   no_nls <- (!capabilities("NLS") || is.na(.popath) ||
@@ -34,17 +37,20 @@
 
   # The function that retrieves one or more translated character strings in a
   # given language (may be different to current R language)
-  get_text_lang_fun <- compiler::cmpfun(
+  gettext_lang_fun <- compiler::cmpfun(
     function(..., lang = getOption("data.io_lang",
       default = Sys.getenv("LANGUAGE", unset = "en")), domain = NULL,
       trim = TRUE) {
+
+      if (missing(lang)) # Use default base::gettext()
+        return(gettext_orig(..., domain = domain, trim = trim))
 
       # If no_nls or same as current language, or failed lang, just run gettext()
       lang <- as.character(lang)[1] # Use only first string, without warning
       cur_lang <- Sys.getenv("LANGUAGE", unset = "en")
       if (no_nls || lang == cur_lang || any(failed_lang == lang)) {
         #message("Optimisation #1!")
-        return(gettext(..., domain = domain, trim = trim))
+        return(gettext_orig(..., domain = domain, trim = trim))
       }
 
       # If the  language is already known, switch faster
@@ -61,17 +67,16 @@
           known_lang <<- c(known_lang, lang) # Record the new language
         } else {# Failed to switch to this lang
           failed_lang <<- c(failed_lang, lang) # Record the failed language
-          warning("Unable to switch to language '", lang, "'. ",
-            "Using current language '", cur_lang, "' instead ",
-            "(displayed only once per session).")
-          return(gettext(..., domain = domain, trim = trim))
+          warning(gettextf("Unable to switch to language '%s'. Using current language '%s' instead\n(displayed only once per session).",
+            lang, cur_lang))
+          return(gettext_orig(..., domain = domain, trim = trim))
         }
       }
 
       # Flush the cache of translations since we switch to another language
       bindtextdomain(NULL)
 
-      res <- gettext(..., domain = domain, trim = trim)
+      res <- gettext_orig(..., domain = domain, trim = trim)
 
       # Flush the cache of translations again before switching back to the
       # current language (done in on.exit)
@@ -80,13 +85,13 @@
       # This is for debugging purposes only
       #message(no_nls)
       #message(paste0(known_lang, collapse = ", "))
-      #message(paste0(failed_lang, collpase = ", "))
+      #message(paste0(failed_lang, collapse = ", "))
 
       res
     })
 
   # Return the function
-  get_text_lang_fun
+  gettext_lang_fun
 }
 
 #' Translate text messages in a different language than the one currently defined in the R session
@@ -104,20 +109,55 @@
 #' @examples
 #' old_lang <- Sys.setLanguage("fr") # Switch to French for R language
 #'
-#' # Retreive strings in same language
-#' get_text_lang("empty model supplied", "incompatible dimensions",
+#' # Retrieve strings in same language
+#' gettext("empty model supplied", "incompatible dimensions",
 #'  domain="R-stats", lang = "fr")
 #'
 #' # Retrieve strings in different languages
-#' get_text_lang("empty model supplied", "incompatible dimensions",
+#' gettext("empty model supplied", "incompatible dimensions",
 #'   domain="R-stats", lang = "en")
-#' get_text_lang("empty model supplied", "incompatible dimensions",
+#' gettext("empty model supplied", "incompatible dimensions",
 #'   domain="R-stats", lang = "de")
 #'
 #' # Try to get strings translated in an unknown language (just return the strings)
-#' get_text_lang("empty model supplied", "incompatible dimensions",
+#' gettext("empty model supplied", "incompatible dimensions",
 #'   domain="R-stats", lang = "xx")
+#'
+#' # Test with some translations from the svMisc package itself:
+#' test_gettext_lang()
+#' test_gettext_lang("fr")
+#' test_gettext_lang("en")
 #'
 #' Sys.setLanguage(old_lang) # Restore original language
 #' rm(old_lang)
-get_text_lang <- .get_text_lang_factory()
+gettext <- .gettext_lang_factory()
+
+#' @export
+#' @rdname gettext
+#' @param fmt  a character vector of format strings, each of up to 8192 bytes.
+gettextf <- function(fmt, ..., lang = getOption("data.io_lang",
+  default = Sys.getenv("LANGUAGE", unset = "en")), domain = NULL, trim = TRUE) {
+  if (missing(lang)) {
+    sprintf(base::gettext(fmt, domain = domain, trim = trim), ...)
+  } else {
+    sprintf(gettext(fmt, lang = lang, domain = domain, trim = trim), ...)
+  }
+}
+
+#' @export
+#' @rdname gettext
+test_gettext_lang <- function(lang = getOption("data.io_lang",
+    default = Sys.getenv("LANGUAGE", unset = "en"))) {
+  # You should import gettext() and gettextf() from svMisc instead of using the
+  # base functions to get the lang= argument working properly.
+  # Test the gettext() function with lang= attribute
+  res <- gettext("Test of svMisc's `gettext()` and `gettextf()`:",
+    "This should be transtlated, if '%s' language is supported.",
+    domain = "R-svMisc", lang = lang)
+  cat(res[1], "\n", sep = "")
+  cat(sprintf(res[2], lang), "\n", sep = "")
+  # It is easier to use gettextf() for formatted messages
+  cat(gettextf("This is message number %i", 3L,
+    domain = "R-svMisc", lang = lang), "\n", sep = "")
+  invisible(res)
+}

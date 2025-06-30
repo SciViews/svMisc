@@ -3,7 +3,7 @@
 \name{capture_all}
 \alias{capture_all}
 \alias{captureAll}
-\alias{warnings2}
+\alias{warnings_}
 \title{Run an R expression and capture output and messages in a similar way as it
 would be done at the command line}
 \usage{
@@ -11,7 +11,7 @@ capture_all(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 
 captureAll(expr, split = TRUE, echo = TRUE, file = NULL, markStdErr = FALSE)
 
-warnings2(...)
+warnings_(...)
 }
 \arguments{
 \item{expr}{A  valid R expression to evaluate (names and calls are also
@@ -32,7 +32,7 @@ is returned as a character string by the function.}
 \item{markStdErr}{If \code{TRUE}, stderr is separated from stddout by STX/ETX
 characters.}
 
-\item{...}{Items passed directly to \code{warnings2()}.}
+\item{...}{Items passed directly to \code{warnings_()}.}
 }
 \value{
 Returns a string with the result of the evaluation done in the user

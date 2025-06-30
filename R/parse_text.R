@@ -57,11 +57,11 @@ encoding = "unknown") {
     msg <- conditionMessage(res)
 
     # Incomplete string
-    if (regexpr(gettext("INCOMPLETE_STRING", domain = "R"), msg) > 0)
+    if (regexpr("INCOMPLETE_STRING", msg) > 0)
       return(NA)
 
     # Incomplete instruction
-    if (regexpr(gettext("end of input", domain = "R"), msg) > 0)
+    if (regexpr(gettext("end of input"), msg) > 0)
       return(NA)
 
     # This should be incorrect R code

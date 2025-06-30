@@ -1,53 +1,74 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: R 2.3.0\n"
-"Report-Msgid-Bugs-To: bugs@r-project.org\n"
-"POT-Creation-Date: 2009-01-22 15:56\n"
+"Project-Id-Version: svMisc 1.5.0\n"
+"POT-Creation-Date: 2025-06-30 20:12\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "'topic' must be a single character string"
+msgstr ""
+
+msgid "'%s' not found, do you mean?"
+msgstr ""
+
+msgid "'%s' not found in package '%s', do you mean?"
+msgstr ""
+
+msgid ","
+msgstr ""
+
+msgid "'%s' not found"
+msgstr ""
+
+msgid "'%s' not found in package '%s'"
+msgstr ""
+
+msgid "Searching keyword in all R help pages for '%s'..."
+msgstr ""
+
+msgid "'%s' was found multiple times in:"
+msgstr ""
+
+msgid "Hint: use 'pkg::topic' to be more accurate"
+msgstr ""
+
+msgid "- See also:"
+msgstr ""
+
+msgid "- Examples (type `ex` to run them):"
+msgstr ""
+
+msgid "- Comment:"
+msgstr ""
+
+msgid "'%s' comes from '%s'."
+msgstr ""
+
+msgid "Displaying that file..."
+msgstr ""
+
+msgid "Matching help page is '%s'"
+msgstr ""
+
+msgid "Possible methods for '%s':"
+msgstr ""
+
+msgid "Displaying help page..."
+msgstr ""
+
+msgid "Searching all R help pages..."
+msgstr ""
 
 msgid "'obj' should inherit from 'list'"
 msgstr ""
 
 msgid "Data you add in actions must be a named character vector"
-msgstr ""
-
-msgid "'obj' should inherit from 'character'"
-msgstr ""
-
-msgid "Icons map you add must be a named character vector"
-msgstr ""
-
-msgid "must be a list!"
-msgstr ""
-
-msgid "'type' could be only 'google', 'archive' or 'wiki', currently!"
-msgstr ""
-
-msgid "'f' must ba a character string!"
-msgstr ""
-
-msgid "Impossible to create the Object Browser 'path' directory!"
-msgstr ""
-
-msgid "'value' must be numeric!"
-msgstr ""
-
-msgid "'max.value' must be numeric or NULL!"
-msgstr ""
-
-msgid "Progress:"
-msgstr ""
-
-msgid "on"
-msgstr ""
-
-msgid "'x' must be character string(s)!"
 msgstr ""
 
 msgid "Load...\nLoad R objects"
@@ -95,13 +116,13 @@ msgstr ""
 msgid "Fix\nFix an R object"
 msgstr ""
 
+msgid "Load package(s)\nLoad one or several R packages"
+msgstr ""
+
 msgid "Remove\nRemove (permanently!) one or several objects from memory"
 msgstr ""
 
 msgid "Require <<<pkg>>>\nRequire the package <<<pkg>>>"
-msgstr ""
-
-msgid "Require (compact)\nCompact require one or several R packages"
 msgstr ""
 
 msgid "Attach\nAttach an object to the search path"
@@ -140,8 +161,188 @@ msgstr ""
 msgid "Copy\nCopy the object to the clipboard"
 msgstr ""
 
+msgid "'obj' should inherit from 'character'"
+msgstr ""
+
+msgid "Icons map you add must be a named character vector"
+msgstr ""
+
+msgid "'fun' must be a function"
+msgstr ""
+
+msgid "Running the batch process with %s..."
+msgstr ""
+
+msgid "No items to process!"
+msgstr ""
+
+msgid "Processed successfully %i items on %i (see .last.batch)"
+msgstr ""
+
+msgid "'expr' is NULL or of length zero. It must be an expression or NA"
+msgstr ""
+
+msgid "'expr' must be an expression or NA"
+msgstr ""
+
+msgid "In addition:"
+msgstr ""
+
+msgid "<aborted!>"
+msgstr ""
+
+msgid "<interrupted!>"
+msgstr ""
+
+msgid "Generic function with methods for the following classes:"
+msgstr ""
+
+msgid "You must provide at least one file path"
+msgstr ""
+
+msgid "Template file '%s' not found, starting from an empty file"
+msgstr ""
+
+msgid "Cannot edit files: no editor or not in interactive mode"
+msgstr ""
+
+msgid "Editing the file '%s'... Close the editor to continue!"
+msgstr ""
+
+msgid "only one item for 'file' is accepted"
+msgstr ""
+
+msgid ".file_edit_rstudio() cannot be used outside RStudio."
+msgstr ""
+
+msgid "impossible to get .rs.api.navigateToFile() function"
+msgstr ""
+
+msgid "impossible to get editor context... cannot honor wait = TRUE"
+msgstr ""
+
+msgid "Editing file '%s'...\nClose the editor, or switch to another one to continue!"
+msgstr ""
+
+msgid "only one item for 'title' is accepted"
+msgstr ""
+
+msgid ".file_edit_rgui() cannot be used outside Rgui."
+msgstr ""
+
+msgid "Editing file '%s'...\nClose the editor to continue!"
+msgstr ""
+
+msgid "Natural language support is available on this system,"
+msgstr ""
+
+msgid "but unable to properly switch language."
+msgstr ""
+
+msgid "Unable to switch to language '%s'. Using current language '%s' instead\n(displayed only once per session)."
+msgstr ""
+
+msgid "Test of svMisc's `gettext()` and `gettextf()`:"
+msgstr ""
+
+msgid "This should be transtlated, if '%s' language is supported."
+msgstr ""
+
+msgid "This is message number %i"
+msgstr ""
+
+msgid "Nothing to install."
+msgstr ""
+
+msgid "Install R package"
+msgstr ""
+
+msgid "The package '%s' will be installed.\nProceed?"
+msgstr ""
+
+msgid "Install R packages"
+msgstr ""
+
+msgid "The following packages will be installed:\n'%s'\nProceed?"
+msgstr ""
+
+msgid "Clear the list of packages to install?"
+msgstr ""
+
+msgid "'f' must be a character string!"
+msgstr ""
+
+msgid "Impossible to create the Object Browser 'path' directory!"
+msgstr ""
+
+msgid "x must be an 'objList' object"
+msgstr ""
+
 msgid "'strip' must be a 'svStripbar' object"
 msgstr ""
 
 msgid "'widgets' must be 'menu', 'item', 'sep' or 'space'"
 msgstr ""
+
+msgid "more than one 'pos' provided; Using only the first one"
+msgstr ""
+
+msgid "Unable to load package '%s'!\nUse `Install()` to make it available..."
+msgstr ""
+
+msgid "Unable to load packages: '%s'!\nUse `Install()` to make them available..."
+msgstr ""
+
+msgid "end of input"
+msgstr ""
+
+msgid "This will install package %s."
+msgstr ""
+
+msgid "This will install packages: %s and %s."
+msgstr ""
+
+msgid "'value' must be numeric"
+msgstr ""
+
+msgid "'max.value' must be numeric or NULL"
+msgstr ""
+
+msgid "Progress:"
+msgstr ""
+
+msgid "on"
+msgstr ""
+
+msgid "runs must be a single integer between 1 and 10"
+msgstr ""
+
+msgid "'type' could be only 'R', or 'google', currently!"
+msgstr ""
+
+msgid "A search query has been submitted"
+msgstr ""
+
+msgid "The results page should open in your browser shortly"
+msgstr ""
+
+msgid "%s must be a list"
+msgstr ""
+
+msgid "'x' must be character"
+msgstr ""
+
+msgid        "Error: "
+msgid_plural "Error: "
+msgstr[0]    ""
+msgstr[1]    ""
+
+msgid        "Error in "
+msgid_plural "Error in "
+msgstr[0]    ""
+msgstr[1]    ""
+
+msgid        "There was %d warning (use warnings_() to see it)"
+msgid_plural "There were %d warnings (use warnings_() to see them)"
+msgstr[0]    ""
+msgstr[1]    ""

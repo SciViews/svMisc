@@ -38,15 +38,17 @@ Install <- function(pkgs = get_temp('.packages_to_install'), ..., ask = TRUE) {
     }
 
     if (length(pkgs == 1)) {
-      title <- "Install R package"
-      message <- paste0("The package '", pkgs, "' will be installed.\nProceed?")
+      title <- gettext("Install R package")
+      message <- gettextf("The package '%s' will be installed.\nProceed?",
+        pkgs)
     } else {
-      title <- "Install R packages"
-      message <- paste0("The following packages will be installed:\n'",
-        paste(pkgs, collapse = "', '"), "'\nProceed?")
+      title <- gettext("Install R packages")
+      message <- gettextf(
+        "The following packages will be installed:\n'%s'\nProceed?",
+        paste(pkgs, collapse = "', '"))
     }
     if (!question(title, message)) {
-      if (question(title, "Clear the list of packages to install? "))
+      if (question(title, gettext("Clear the list of packages to install?")))
         rm_temp(pkgs_list)
       return(invisible(FALSE))
     }

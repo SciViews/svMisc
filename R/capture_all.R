@@ -58,11 +58,11 @@ markStdErr = FALSE) {
   # Inspired by 'capture.output' and the old .try_silent in utils package
   # Requires: R >= 2.13.0
 
-  if (is.null(expr))
-    stop("argument is of length zero")
+  if (is.null(expr) || !length(expr))
+    stop("'expr' is NULL or of length zero. It must be an expression or NA")
   if (!is.expression(expr)) {
     if (is.na(expr)) return(NA) else
-      stop("expr must be an expression or NA")
+      stop("'expr' must be an expression or NA")
   }
   # TODO: support for 'file'
   # markStdErr: if TRUE, stderr is separated from sddout by STX/ETX character
@@ -184,7 +184,7 @@ markStdErr = FALSE) {
     put_mark(FALSE, 1)
     cat(fomat_message(e))
     if (get_warn_level() == 0L && length(last.warning) > 0L)
-      cat(ngettext(1, "In addition: ", "In addition: ", domain = "R"))
+      cat(gettext("In addition:"), "")
   }
 
   res <- tryCatch(
@@ -223,23 +223,23 @@ markStdErr = FALSE) {
       # Handling user interrupts. Currently it works only from within R.
       #TODO: how to trigger interrupt via socket connection?
       abort = function(...) {
-        put_mark(FALSE, 4)
-        cat("<aborted!>\n") #DEBUG
+        put_mark(FALSE, 4) #DEBUG
+        cat(gettext("<aborted!>"), "\n", sep = "")
       },
 
-      interrupt = function(...)
-        cat("<interrupted!>\n"), #DEBUG: this does not seem to be ever called.
+      interrupt = function(...) #DEBUG: this does not seem to be ever called.
+        cat(gettext("<interrupted!>"), "\n", sep = ""),
 
       muffleWarning = function() NULL,
 
       grmbl = restart_error
     ),
 
-    error = function(e) { # This is called if warnLevel == 2
+    error = function(e) {# This is called if warnLevel == 2
       put_mark(FALSE, 5)
       cat(fomat_message(e))
       e #identity
-	  },
+    },
 
     finally = {}
   )
@@ -253,19 +253,14 @@ markStdErr = FALSE) {
     if (n_warn <= 10L) {
       print.warnings(last.warning)
     } else if (n_warn < 50L) {
-      # This is buggy and does not retrieve a translation of the message!
-      #cat(gettextf("There were %d warnings (use warnings() to see them)\n",
-      #  n_warn, domain = "R"))
       msg <- ngettext(1,
-        "There were %d warnings (use warnings2() to see them)\n",
-        "There were %d warnings (use warnings2() to see them)\n",
-        domain = "R")
-      cat(sprintf(msg, n_warn))
+        "There was %d warning (use warnings_() to see it)",
+        "There were %d warnings (use warnings_() to see them)")
+      cat(sprintf(msg, n_warn), "\n", sep = "")
     } else {
-      cat(ngettext(1,
-        "There were 50 or more warnings (use warnings2() to see the first 50)\n",
-        "There were 50 or more warnings (use warnings2() to see the first 50)\n",
-        domain = "R"))
+      msg <-
+        "There were 50 or more warnings (use warnings_() to see the first 50)"
+      cat(msg, "\n", sep = "")
     }
   }
 
@@ -293,8 +288,8 @@ captureAll <- capture_all
 
 #' @export
 #' @rdname capture_all
-#' @param ... Items passed directly to `warnings2()`.
-warnings2 <- function(...) {
+#' @param ... Items passed directly to `warnings_()`.
+warnings_ <- function(...) {
   if (length(last.warning <- get_temp("last.warning")))
     structure(last.warning, dots = list(...), class = "warnings")
 }

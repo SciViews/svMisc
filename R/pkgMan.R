@@ -192,10 +192,12 @@ pkgman_install <- function(pkgs, install.deps = FALSE, ask = TRUE) {
     status <- "done"
   } else {
     l <- length(dep)
-    msg <- sprintf(ngettext(l,
-      "This will install package %2$s.",
-      "This will install packages: %s and %s.",
-    ), paste(sQuote(dep[-l]), collapse = ", "), sQuote(dep[l]))
+    if (l == 1) {
+      msg <- gettextf("This will install package %s.", sQuote(dep))
+    } else {
+      msg <- gettextf("This will install packages: %s and %s.",
+        paste(sQuote(dep[-l]), collapse = ", "), sQuote(dep[l]))
+    }
     status <- "question"
   }
   list(packages = dep, message = msg, status = status)

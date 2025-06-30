@@ -45,8 +45,9 @@ suppress.messages = show.progress, verbose = TRUE) {
   owarn <- options(warn = 1) # Issue warnings immediatelly!
   on.exit(options(owarn))
   verbose <- isTRUE(as.logical(verbose))
-  if (verbose) message("Running the batch process with ",
-    deparse(substitute(fun)), "...")
+  if (verbose)
+    message(gettextf("Running the batch process with %s...",
+      deparse(substitute(fun))))
   cat("\n")
   n <- length(items)
   if (n < 1) {
@@ -78,8 +79,8 @@ suppress.messages = show.progress, verbose = TRUE) {
   progress(n + 1, n) # Cancel progression message
   if (verbose) {
     cat("\n")
-    message("Processed successfully ", sum(ok, na.rm = TRUE),
-    " items on ", n, " (see .last.batch)")
+    message(gettextf("Processed successfully %i items on %i (see .last.batch)",
+      sum(ok, na.rm = TRUE), n))
   }
   # Record .last.batch variable in SciViews:TempEnv
   last_batch <- structure(sum(ok, na.rm = TRUE) == n, items = items, ok = ok)

@@ -3,15 +3,17 @@ test_that("capture_all() produces correct outputs", {
   res1 <- "[1] 2\n"
   expect_true(is.na(capture_all(NA)))
   expect_error(capture_all(1),
-    "expr must be an expression or NA", fixed = TRUE)
+    "'expr' must be an expression or NA", fixed = TRUE)
   expect_error(capture_all("1+1"),
-    "expr must be an expression or NA", fixed = TRUE)
+    "'expr' must be an expression or NA", fixed = TRUE)
   expect_error(capture_all(TRUE),
-    "expr must be an expression or NA", fixed = TRUE)
+    "'expr' must be an expression or NA", fixed = TRUE)
   expect_error(capture_all(NULL),
-    "argument is of length zero", fixed = TRUE)
+    "'expr' is NULL or of length zero. It must be an expression or NA",
+    fixed = TRUE)
   expect_error(capture_all(logical(0)),
-    "argument is of length zero", fixed = TRUE)
+    "'expr' is NULL or of length zero. It must be an expression or NA",
+    fixed = TRUE)
 })
 
 #test_that("capture_all() splits outputs with split = TRUE", {

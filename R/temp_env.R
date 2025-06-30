@@ -111,7 +111,7 @@ add_temp <- function(x, item, value, use.names = TRUE, replace = TRUE) {
   if (exists_temp(x)) dat <- get_temp(x) else dat <- list()
 
   if (!inherits(dat, "list"))
-    stop(x, " must be a list!")
+    stop(gettextf("%s must be a list", x))
 
   if (item %in% names(dat))
     value <- add_items(dat[[item]], value,
@@ -137,7 +137,7 @@ change_temp <- function(x, item, value, replace.existing = TRUE) {
   if (exists_temp(x)) dat <- get_temp(x) else dat <- list()
 
   if (!inherits(dat, "list"))
-    stop(x, " must be a list!")
+    stop(gettextf("%s must be a list", x))
 
   if (replace.existing || !item %in% names(dat)) {
     dat[[item]] <- value
@@ -179,7 +179,7 @@ get_temp <- function(x, default = NULL, mode = "any", item = NULL) {
 #' @rdname temp_env
 delete_temp <- function(x) {
   if (!is.character(x))
-    stop("'x' must be character string(s)!")
+    stop("'x' must be character")
   l <- length(x)
   res <- rep(TRUE, l)
   if (l > 1) names(res) <- x
