@@ -3,44 +3,74 @@
 \name{gettext}
 \alias{gettext}
 \alias{gettextf}
+\alias{ngettext}
 \alias{test_gettext_lang}
 \title{Translate text messages in a different language than the one currently defined in the R session}
 \usage{
 gettext(
   ...,
-  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en")),
   domain = NULL,
-  trim = TRUE
+  trim = TRUE,
+  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en"))
 )
 
 gettextf(
   fmt,
   ...,
-  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en")),
   domain = NULL,
-  trim = TRUE
+  trim = TRUE,
+  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en"))
+)
+
+ngettext(
+  n,
+  msg1,
+  msg2,
+  domain = NULL,
+  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en"))
 )
 
 test_gettext_lang(
-  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en"))
+  lang = getOption("data.io_lang", default = Sys.getenv("LANGUAGE", unset = "en")),
+  n = 1
 )
 }
 \arguments{
-\item{...}{one of more character vectors}
+\item{...}{one of more character vectors.}
 
-\item{lang}{the desired language (usually in two letters, e.g., "en", "fr", "de", etc.)}
+\item{domain}{the 'domain' for the translation, a character string or \code{NULL};
+see \code{\link[base:gettext]{base::gettext()}} for more details.}
 
-\item{domain}{the 'domain' for the translation, a character string or \code{NULL}; see \code{\link[base:gettext]{base::gettext()}} for more details.}
+\item{trim}{logical indicating if the white space trimming should happen.}
 
-\item{trim}{logical indicating if the white space trimming should happen. \code{trim = FALSE} may be needed for compiled code (C / C++) messages which often end with \verb{\\n}.}
+\item{lang}{the target language (usually two lowercase letters, e.g., "en"
+for English, "fr" for French, "de" for German, etc.)}
 
 \item{fmt}{a character vector of format strings, each of up to 8192 bytes.}
+
+\item{n}{a non-negative integer.}
+
+\item{msg1}{the message to be used in English for \code{n = 1}.}
+
+\item{msg2}{the message to be used in English for \verb{n = 0, 2, 3, ...}.}
 }
 \value{
-a character vector with translated messages
+A character vector with translated messages. \code{test_gettext_lang()}
+only serve to test and demonstrate the translation in a given language.
 }
 \description{
-Translation messages are obtained with \code{\link[base:gettext]{base::gettext()}}. But, there is no way to specify that one needs translated messages in a different language than the current one in R. This function adds a \verb{lang=} argument that allows to do so.
+Translation messages are obtained with \code{\link[base:gettext]{base::gettext()}} or
+\code{\link[base:gettext]{base::ngettext()}}. But, there is no way to specify that one needs translated
+messages in a different language than the current one in R. These functions
+have an additional \verb{lang=} argument that allows to do so.
+}
+\details{
+To prepare your package for translation with these functions, you should
+import \code{gettext()}, \code{gettextf()} and \code{ngettext()} from svMisc. Then, you
+change the current directory to the base folder of the sources of your
+package and you issue \code{tools::update_pkg_po(".")} in R. Then, you create
+translations for different languages and you provide translated strings with
+\href{https://poedit.net/}{poEdit}.
 }
 \examples{
 old_lang <- Sys.setLanguage("fr") # Switch to French for R language
@@ -61,9 +91,14 @@ gettext("empty model supplied", "incompatible dimensions",
 
 # Test with some translations from the svMisc package itself:
 test_gettext_lang()
-test_gettext_lang("fr")
-test_gettext_lang("en")
+test_gettext_lang("fr", n = 1)
+test_gettext_lang("fr", n = 2)
+test_gettext_lang("en", n = 1)
+test_gettext_lang("en", n = 2)
 
 Sys.setLanguage(old_lang) # Restore original language
 rm(old_lang)
+}
+\seealso{
+\code{\link[base:gettext]{base::gettext()}}, \code{\link[base:sprintf]{base::gettextf()}}, \code{\link[tools:update_pkg_po]{tools::update_pkg_po()}}.
 }
