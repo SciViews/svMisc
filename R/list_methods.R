@@ -1,7 +1,10 @@
 #' List all methods associated with a generic function or a class, or all types
 #' associated with a method
 #'
-#' @description List all S3 and/or S4 methods for a generic function or for a
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' List all S3 and/or S4 methods for a generic function or for a
 #' class. List all types for a method; types are variants for a given method
 #' defined in a way it is easy to add other variants dynamically (on the
 #' contrary to a usual `type =` or `which =` argument, like in [plot.ts()] or
@@ -45,7 +48,7 @@
 #' @examples
 #' # Generic functions
 #' list_methods("t.test")               # S3
-#' list_methods("show", mixed = FALSE)	# S4
+#' list_methods("show", mixed = FALSE)  # S4
 #' list_methods("ls") # None, not a generic function!
 #'
 #' # Classes
@@ -60,6 +63,9 @@
 #' list_types("view", "data.frame", TRUE) # None, except if you defined custom views!
 list_methods <- function(f = character(), class = NULL, S3 = TRUE, S4 = TRUE,
 mixed = TRUE, filter = getOption("svGUI.methods")) {
+  lifecycle::deprecate_soft(when = "1.1.0",
+    what = "list_methods()", with = NULL)
+
   # Given a function, if it is generic then return a list of its methods
   # or given a class name, return all methods for this class
 
@@ -143,6 +149,9 @@ mixed = TRUE, filter = getOption("svGUI.methods")) {
 #' @export
 #' @rdname list_methods
 list_types <- function(method, class = "default", strict = FALSE) {
+  lifecycle::deprecate_soft(when = "1.1.0",
+    what = "list_types()", with = NULL)
+
   # List all custom functions for a method and for a given class
   # For instance, a custom view is a function as 'view_<customview>.class'
 

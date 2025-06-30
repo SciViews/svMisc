@@ -66,6 +66,8 @@ toolkit for this action.}
 The modified object is returned invisibly.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 Manage lists of GUI actions, icons and methods.
 }
 \examples{

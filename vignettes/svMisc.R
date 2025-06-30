@@ -147,7 +147,7 @@ search()
 # Get the variable
 get_temp("my_var")
 # List variables in the temporary environment
-ls(envir = TempEnv())
+ls(envir = temp_env())
 # Delete the variable
 rm_temp("my_var")
 

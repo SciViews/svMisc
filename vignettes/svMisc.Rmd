@@ -18,7 +18,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 library(svMisc)
 ```
 
-The {svMisc} package contains a large collection of functions that are useful in the context of (G)UI (Graphical) User Interface development, and also, of more general usage. Here is a series of functions you should look at.
+The {svMisc} package contains a collection of functions that are useful in the context of (G)UI (Graphical) User Interfaces, and also, of more general usage. Here is a series of functions you should look at.
 
 ## Help
 
@@ -45,7 +45,7 @@ In R, the use of `library()` to load a **package** is very confusing. Given the 
 
 ## Analyses in batch and show progression
 
-If you need to perform an analysis in batch mode, you may be happy with `batch()` and `progress()`. The first function runs a function sequentially on all items **allowing for an informative message in case of failure**. Also, `batch()` provides a mechanism to recover from the error, so that following items in the list are also analyzed. Indeed, if you use a simple `for()` loop or `applyXXX()` functions, the execution is stopped at the first error encountered. Imagine 500 items to process, and an error that appears at the second one... it leaves you 498 items unanalyzed! allows to continue to the next item.
+If you need to perform an analysis in batch mode, you may be happy with `batch()` and `progress()`. The first function runs a function sequentially on all items **allowing for an informative message in case of failure**. Also, `batch()` provides a mechanism to recover from the error, so that following items in the list are also analyzed. Indeed, if you use a simple `for()` loop or `applyXXX()` functions, the execution is stopped at the first error encountered. Imagine 500 items to process, and an error that appears at the second one... it leaves you 498 items not computed! allows to continue to the next item.
 
 The example shows a fake batch process of files, which fails randomly. Here is the function to run sequentially:
 
@@ -61,7 +61,7 @@ fake_process <- function(file) {
 }
 ```
 
-The key aspect here is that you function, instead of using `stop()` must use `warning()` and return `FALSE`. Otherwise, in case of success, it should return `TRUE`. Then, calling your function on a series of objects is straightforward:
+The key aspect here is that your function, instead of using `stop()` must use `warning()` and return `FALSE`. Otherwise, in case of success, it should return `TRUE`. Then, calling your function on a series of objects is straightforward:
 
 ```{r}
 # Run it in batch mode on ten items
@@ -87,7 +87,7 @@ for (i in 0:75) {
 
 ## Subsettable functions
 
-The `$` operator is not applicable on functions. It is not meaningful in that context. Yet, it may be convenient to use it in certain conditions. From the example of `?subsettable`:
+The `$` operator is not suitable for functions in base R. It is not meaningful in that context. Yet, it may be convenient to use it in certain conditions. From the example of `?subsettable`:
 
 ```{r}
 foo <- structure(function(x, type = c("histogram", "boxplot"), ...) {
@@ -169,7 +169,7 @@ identical(obj, obj2)
 
 ## Get system file or directory
 
-There are several different functions in R to access system files, or files inside R packages: `R.home()`, `system.file()`, `Sys.which()`, `tempdir()`. The `system_dir()` and `system_file()` functions centralize their functionalities. For instance:
+There are several different functions in R to access system files, or files inside R packages: `R.home()`, `system.file()`, `Sys.which()`, `tempdir()`. The `system_dir()` and `system_file()` functions replace them all. For instance:
 
 - Get the temporary directory used by this R process
 
@@ -261,13 +261,13 @@ def(0:2, mode = "logical", length.out = 5) # logical, size 5
 args_tip("ls")
 ```
 
-- Get the name of an (unused) temporary variable:
+- Get the name of a (new) temporary variable:
 
 ```{r}
 temp_var("my_var")
 ```
 
-- Manage a temporary environment attached to the search path using `TempEnv()` and the `temp_XXX()` functions. The **temporary_environment** vignette gives more details on this series of functions.
+- Manage a temporary environment attached to the search path using `temp_env()` and the `temp_XXX()` functions. The **temporary_environment** vignette gives more details on this set of functions.
 
 ```{r}
 search()
@@ -278,7 +278,7 @@ search()
 # Get the variable
 get_temp("my_var")
 # List variables in the temporary environment
-ls(envir = TempEnv())
+ls(envir = temp_env())
 # Delete the variable
 rm_temp("my_var")
 ```

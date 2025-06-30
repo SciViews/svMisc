@@ -105,6 +105,8 @@ These functions return data that is intended to be used by the
 SciViews \R package manager.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 These functions should not be used directly by the end-user.
 They implement the R-side code for the SciViews \R package manager.
 }

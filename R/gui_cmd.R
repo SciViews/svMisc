@@ -1,7 +1,10 @@
 #' Execute a command in the GUI client
 #'
-#' @description This function is not intended to be used at the command line
-#' (except for debugging purposes). It executes a command string to a
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' These functions are not intended to be used at the command line
+#' (except for debugging purposes). They executes a command string into a
 #' (compatible) GUI client.
 #'
 #' @param command The command string to execute in the GUI client.
@@ -33,6 +36,9 @@ gui_cmd <- function(command, ...) {
 #' @export
 #' @rdname gui_cmd
 gui_load <- function(...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_load()", with = NULL)
+
   # Ask the GUI client to select a .Rdata file to load()
   gui_cmd("load", ...)
 }
@@ -40,6 +46,9 @@ gui_load <- function(...) {
 #' @export
 #' @rdname gui_cmd
 gui_source <- function(...){
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_source()", with = NULL)
+
   # Ask the GUI client to select a .R file to source()
   gui_cmd("source", ...)  # TODO: should use sys.source() here
 }
@@ -47,6 +56,9 @@ gui_source <- function(...){
 #' @export
 #' @rdname gui_cmd
 gui_save <- function(...){
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_save()", with = NULL)
+
   # Ask the GUI client for a file where to save some data
   gui_cmd("save", ...)
 }
@@ -54,6 +66,9 @@ gui_save <- function(...){
 #' @export
 #' @rdname gui_cmd
 gui_import <- function(...){
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_import()", with = NULL)
+
   # Ask the client to display a dialog for importing some data
   gui_cmd("import", ...)
 }
@@ -61,6 +76,9 @@ gui_import <- function(...){
 #' @export
 #' @rdname gui_cmd
 gui_export <- function(...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_export()", with = NULL)
+
   # Ask the client to display a dialog for exporting some data
   gui_cmd("export", ...)
 }
@@ -68,6 +86,9 @@ gui_export <- function(...) {
 #' @export
 #' @rdname gui_cmd
 gui_report <- function(...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_report()", with = NULL)
+
   # Ask the client to display a dialog for reporting data (send a view...)
   gui_cmd("report", ...)
 }
@@ -75,6 +96,9 @@ gui_report <- function(...) {
 #' @export
 #' @rdname gui_cmd
 gui_setwd <- function(...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_setwd()", with = NULL)
+
   # Ask the GUI client to select a directory to set as active
   gui_cmd("setwd", ...)
 }

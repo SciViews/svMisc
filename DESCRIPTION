@@ -3,8 +3,9 @@ Type: Package
 Version: 1.5.0
 Title: Miscellaneous Functions for 'SciViews::R'
 Description: Functions required for the 'SciViews::R' dialect or for general
-  use: manage a temporary environment attached to the search path, define
-  synonyms for R functions using aka(), test if 'Aqua', 'Mac', 'Win' ...
+  use (manage a temporary environment attached to the search path, define
+  synonyms for R functions using aka(), use a progress bar, test if 'Aqua',
+  'Mac', 'Win' ...)
 Authors@R: c(
   person("Philippe", "Grosjean", role = c("aut", "cre"),
     email = "phgrosjean@sciviews.org",
@@ -17,6 +18,7 @@ Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 4.2.0)
 Imports:
     cli (>= 3.6.1),
+    lifecycle (>= 1.0.4),
     methods (>= 4.2.0),
     rlang (>= 1.1.1),
     stats (>= 4.2.0),

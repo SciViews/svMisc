@@ -3,7 +3,7 @@
 \name{pcloud}
 \alias{pcloud}
 \alias{pcloud_crypto}
-\title{Create the path to a file in the p-Cloud drive}
+\title{Create the path to a file in a p-Cloud drive}
 \usage{
 pcloud(...)
 

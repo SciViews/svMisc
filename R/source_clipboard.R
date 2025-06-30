@@ -16,7 +16,8 @@ source_clipboard <- function(primary = TRUE, ...) {
   if (is_win()) {
     data <- file("clipboard")
   } else if (is_mac()) {
-    data <- pipe("pbpaste")
+    #data <- pipe("pbpaste") # Does not worek anymore on macOS Sequoia 15.5?
+    data <- file("clipboard")
   } else {# Must be Linux/Unix
     if (primary) {
       data <- file("X11_clipboard")

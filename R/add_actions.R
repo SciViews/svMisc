@@ -1,7 +1,10 @@
 #' Add GUI elements like actions (menu items), icons, or methods in a predefined
 #' list
 #'
-#' @description Manage lists of GUI actions, icons and methods.
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' Manage lists of GUI actions, icons and methods.
 #'
 #' @param obj The name of the object in `SciViews:TempEnv` to manipulate.
 #' @param text The text of actions to add (label on first line, tip on other
@@ -28,6 +31,9 @@
 #' # add_methods()
 add_actions <- function(obj = get_actions(), text = NULL, code = NULL,
 state = NULL, options = NULL, replace = TRUE) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "add_actions()", with = NULL)
+
   dat <- get_temp(obj, default = list())
   if (!inherits(dat, "list"))
     stop("'obj' should inherit from 'list'")
@@ -43,20 +49,23 @@ state = NULL, options = NULL, replace = TRUE) {
     new_data <- as.character(new_data)
     names(new_data) <- new_names
     add_items(x, new_data, replace = replace)
-	}
-	if (!is.null(text)) dat$text <- add_data(dat$text, text, replace)
-	if (!is.null(code)) dat$code <- add_data(dat$code, code, replace)
-	if (!is.null(state)) dat$state <- add_data(dat$state, state, replace)
-	if (!is.null(options)) dat$options <- add_data(dat$options, options, replace)
+  }
+  if (!is.null(text)) dat$text <- add_data(dat$text, text, replace)
+  if (!is.null(code)) dat$code <- add_data(dat$code, code, replace)
+  if (!is.null(state)) dat$state <- add_data(dat$state, state, replace)
+  if (!is.null(options)) dat$options <- add_data(dat$options, options, replace)
 
-	## Reassign the modified values
-	assign_temp(obj, dat)
-	invisible(dat)
+  ## Reassign the modified values
+  assign_temp(obj, dat)
+  invisible(dat)
 }
 
 #' @export
 #' @rdname add_actions
 get_actions <- function(){
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "get_actions()", with = NULL)
+
   if (!exists_temp(".svActions")) {
     # Create .svActions if it does not exists yet
     .svActions <- list()
@@ -143,6 +152,9 @@ get_actions <- function(){
 #' @export
 #' @rdname add_actions
 add_icons <- function(obj = ".svIcons", icons, replace = TRUE) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "add_icons()", with = NULL)
+
   # Get the list of icons
   icn <- get_temp(obj, default = character())
   if (!inherits(icn, "character"))
@@ -169,6 +181,9 @@ add_icons <- function(obj = ".svIcons", icons, replace = TRUE) {
 #' @export
 #' @rdname add_actions
 add_methods <- function(methods) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "add_methods()", with = NULL)
+
   # Get the list of methods
   met <- getOption("svGUI.methods")
   if (!is.null(met))

@@ -1,6 +1,9 @@
 #' Functions to implement an object browser
 #'
-#' @description These functions provide features required to implement a
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' These functions provide features required to implement a
 #' complete object browser in a GUI client.
 #'
 #' @param id The id of the object browser (you can run several ones
@@ -86,6 +89,9 @@
 #' (obj_menu(envir = "noenvir"))
 obj_browse <- function(id = "default", envir = .GlobalEnv, all.names = NULL,
 pattern = NULL, group = NULL, sep = "\t", path = NULL, regenerate = FALSE) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_browse()", with = NULL)
+
   # Maintain files for remote Object Browser
   # If four first parameters are NULL, use cached version of these parameters,
   # or default values
@@ -214,6 +220,9 @@ pattern = NULL, group = NULL, sep = "\t", path = NULL, regenerate = FALSE) {
 #' @export
 #' @rdname obj_browse
 obj_clear <- function(id = "default") {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_clear()", with = NULL)
+
   # Clear any reference to a given 'id' object browser
   id <- as.character(id)[1]  # Make sure id is character
   if (id == "") id <- "default"
@@ -240,13 +249,20 @@ obj_clear <- function(id = "default") {
 
 #' @export
 #' @rdname obj_browse
-obj_dir <- function()
+obj_dir <- function() {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_dir()", with = NULL)
+
   file.path(tempdir(), "svObjBrowser")
+}
 
 #' @export
 #' @rdname obj_browse
 obj_info <- function(id = "default", envir = .GlobalEnv, object = "",
 path = NULL) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_info()", with = NULL)
+
   # Get a tooltip information for an object (for mouseover method)
 
   # Format envir as character (use only first item provided!)
@@ -317,6 +333,9 @@ path = NULL) {
 obj_list <- function(id = "default", envir = .GlobalEnv, object = NULL,
 all.names = FALSE, pattern = "", group = "", all.info = FALSE, sep = "\t",
 path = NULL, compare = TRUE, ...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_list()", with = NULL)
+
   # Make sure that id is character
   id <- as.character(id)[1]
   if (id == "") id <- "default"
@@ -467,6 +486,9 @@ path = NULL, compare = TRUE, ...) {
 #' @export
 #' @rdname obj_browse
 write.objList <- function(x, path, sep = "\t", ...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "write.objList()", with = NULL)
+
   id <- attr(x, "id")
   list_file <- file.path(path, sprintf("List_%s.txt", id))
   pars_file <- file.path(path, sprintf("Pars_%s.txt", id))
@@ -486,6 +508,9 @@ write.objList <- function(x, path, sep = "\t", ...) {
 #' @rdname obj_browse
 print.objList <- function(x, sep = NA, eol = "\n",
 header = !attr(x, "all.info"), raw.output = !is.na(sep), ...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "print.objList()", with = NULL)
+
   if (!inherits(x, "objList"))
     stop("x must be an 'objList' object")
 
@@ -650,6 +675,9 @@ obj_search <- function(sep = "\t", path = NULL, compare = TRUE) {
 #' @rdname obj_browse
 obj_menu <- function(id = "default", envir = .GlobalEnv, objects = "",
 sep = "\t", path = NULL) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_menu()", with = NULL)
+
   # TODO: look also in .required (now .Depends) in .GlobalEnv to determine
   # if one can detach a package
   # TODO: copy name to clipboard, send name to editor in menu

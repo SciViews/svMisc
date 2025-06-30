@@ -1,4 +1,4 @@
-#' Create the path to a file in the p-Cloud drive
+#' Create the path to a file in a p-Cloud drive
 #'
 #' @description Similar to [file.path()] but creates a path to a file located
 #' somewhere in a p-Cloud drive. [p-Cloud](https://www.pcloud.com/eu.html) is a

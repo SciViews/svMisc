@@ -56,8 +56,7 @@ list of character strings, or lists.
 RJSON is an object specification that is not unlike JSON, but
 better adapted to represent \R objects (i.e., richer than JSON). It is also
 easier to parse and evaluate in both \R and JavaScript to render the objects
-in both languages. RJSON objects are used by SciViews to exchange data
-between \R and SciViews GUIs like Komodo/SciViews-K.
+in both languages.
 }
 \details{
 JSON (JavaScript Object Notation) allows to specify fairly complex

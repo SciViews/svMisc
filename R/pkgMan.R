@@ -1,6 +1,9 @@
 #' Functions to manage R side of the SciViews R package manager
 #'
-#' @description These functions should not be used directly by the end-user.
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' These functions should not be used directly by the end-user.
 #' They implement the R-side code for the SciViews \R package manager.
 #'
 #' @param pkgname The name of one R package (character string).
@@ -24,6 +27,9 @@
 #' @keywords utilities
 #' @concept SciViews R package manager
 pkgman_describe <- function(pkgname, print.it = TRUE) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_describe()", with = NULL)
+
   owarn <- getOption("warn")
   on.exit(options(warn = owarn))
   options(warn = -1)
@@ -54,6 +60,9 @@ pkgman_describe <- function(pkgname, print.it = TRUE) {
 #' @export
 #' @rdname pkgman_describe
 pkgman_get_mirrors <- function() {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_get_mirrors()", with = NULL)
+
   # Cache the list of CRAN mirrors in SciViews:TempEnv
   temp_var <- "pkgMan.CRANmirrors"
   if (exists_temp(temp_var)) {
@@ -71,6 +80,9 @@ pkgman_get_mirrors <- function() {
 pkgman_get_available <- function(page = "next", pattern = "", n = 50,
 keep = c("Package", "Version", "InstalledVersion", "Status"), reload = FALSE,
 sep = ";", eol = "\t\n") {
+
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_get_available()", with = NULL)
 
   available_pkgs <- function(avpkg = available.packages(), installed = TRUE) {
     avpkg <- avpkg[order(toupper(avpkg[, "Package"])), , drop = FALSE]
@@ -142,6 +154,9 @@ sep = ";", eol = "\t\n") {
 #' @export
 #' @rdname pkgman_describe
 pkgman_get_installed <- function(sep = ";", eol = "\t\n") {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_get_installed()", with = NULL)
+
   inspkg <- installed.packages(fields = "Description")
   inspkg <- inspkg[order(toupper(inspkg[ , "Package"])),
     c("Package", "Version", "Description")]
@@ -155,6 +170,9 @@ pkgman_get_installed <- function(sep = ";", eol = "\t\n") {
 #' @export
 #' @rdname pkgman_describe
 pkgman_set_cran_mirror <- function(url) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_set_cran_mirror()", with = NULL)
+
   repos <- getOption("repos")
   repos['CRAN'] <- url
   options(repos = repos)
@@ -163,6 +181,9 @@ pkgman_set_cran_mirror <- function(url) {
 #' @export
 #' @rdname pkgman_describe
 pkgman_install <- function(pkgs, install.deps = FALSE, ask = TRUE) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_install()", with = NULL)
+
   dep <- suppressMessages(getNamespace("utils")$getDependencies(pkgs,
     available = get_temp('avpkg.list')))
   msg <- status <- ""
@@ -183,6 +204,9 @@ pkgman_install <- function(pkgs, install.deps = FALSE, ask = TRUE) {
 #' @export
 #' @rdname pkgman_describe
 pkgman_remove <- function(pkgname) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_remove()", with = NULL)
+
   sapply(pkgname, function(pkgname) {
     pkg_search_name <- paste("package", pkgname, sep = ":")
     if (pkg_search_name %in% search()) detach(pkg_search_name,
@@ -212,6 +236,9 @@ pkgman_remove <- function(pkgname) {
 #' @export
 #' @rdname pkgman_describe
 pkgman_load  <- function(pkgname) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_load()", with = NULL)
+
   sapply(pkgname, library, character.only = TRUE, logical.return = TRUE,
     simplify = FALSE)
 }
@@ -219,6 +246,9 @@ pkgman_load  <- function(pkgname) {
 #' @export
 #' @rdname pkgman_describe
 pkgman_detach <- function(pkgname) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "pkgman_detach()", with = NULL)
+
   sapply(pkgname, function(pkgname) {
     tryCatch({
       pkg_search_name <- paste("package", pkgname, sep = ":")

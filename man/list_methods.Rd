@@ -69,6 +69,8 @@ Otherwise, a character vector with the requested methods.
 For \code{list_types()}, a vector with character strings with methods' type names.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 List all S3 and/or S4 methods for a generic function or for a
 class. List all types for a method; types are variants for a given method
 defined in a way it is easy to add other variants dynamically (on the
@@ -85,7 +87,7 @@ So, adding new \emph{type}s for \emph{method} is very easy to implement.
 \examples{
 # Generic functions
 list_methods("t.test")               # S3
-list_methods("show", mixed = FALSE)	# S4
+list_methods("show", mixed = FALSE)  # S4
 list_methods("ls") # None, not a generic function!
 
 # Classes

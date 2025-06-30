@@ -1,5 +1,5 @@
 .onLoad <- function(lib, pkg) {
-	.initialize()
+   .initialize()
 
   # Determine where to find the preferred file editor for fileEdit()
   if (is.null(getOption("fileEditor"))) {

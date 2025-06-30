@@ -166,6 +166,8 @@ external, temporary file or \code{TRUE} in case of success or \code{FALSE} other
 is returned invisibly.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 These functions provide features required to implement a
 complete object browser in a GUI client.
 }

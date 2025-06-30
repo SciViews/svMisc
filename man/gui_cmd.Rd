@@ -61,8 +61,10 @@ The result of the command if it succeed, or \code{NULL} if the command
 cannot be run (i.e., \code{.guiCmd()} is not defined in \code{SciViews:TempEnv}).
 }
 \description{
-This function is not intended to be used at the command line
-(except for debugging purposes). It executes a command string to a
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+These functions are not intended to be used at the command line
+(except for debugging purposes). They executes a command string into a
 (compatible) GUI client.
 }
 \details{
