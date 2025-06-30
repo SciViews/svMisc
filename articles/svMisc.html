@@ -118,7 +118,7 @@
                         <h4 data-toc-skip class="author">Philippe
 Grosjean</h4>
             
-            <h4 data-toc-skip class="date">2025-06-27</h4>
+            <h4 data-toc-skip class="date">2025-06-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svMisc/blob/main/vignettes/svMisc.Rmd" class="external-link"><code>vignettes/svMisc.Rmd</code></a></small>
       <div class="hidden name"><code>svMisc.Rmd</code></div>
@@ -127,10 +127,10 @@ Grosjean</h4>
 
     
     
-<p>The {svMisc} package contains a large collection of functions that
-are useful in the context of (G)UI (Graphical) User Interface
-development, and also, of more general usage. Here is a series of
-functions you should look at.</p>
+<p>The {svMisc} package contains a collection of functions that are
+useful in the context of (G)UI (Graphical) User Interfaces, and also, of
+more general usage. Here is a series of functions you should look
+at.</p>
 <div class="section level2">
 <h2 id="help">Help<a class="anchor" aria-label="anchor" href="#help"></a>
 </h2>
@@ -190,7 +190,7 @@ that following items in the list are also analyzed. Indeed, if you use a
 simple <code>for()</code> loop or <code>applyXXX()</code> functions, the
 execution is stopped at the first error encountered. Imagine 500 items
 to process, and an error that appears at the second one… it leaves you
-498 items unanalyzed! allows to continue to the next item.</p>
+498 items not computed! allows to continue to the next item.</p>
 <p>The example shows a fake batch process of files, which fails
 randomly. Here is the function to run sequentially:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -203,7 +203,7 @@ randomly. Here is the function to run sequentially:</p>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span>  <span class="op">}</span> <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p>The key aspect here is that you function, instead of using
+<p>The key aspect here is that your function, instead of using
 <code><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop()</a></code> must use <code><a href="https://rdrr.io/r/base/warning.html" class="external-link">warning()</a></code> and return
 <code>FALSE</code>. Otherwise, in case of success, it should return
 <code>TRUE</code>. Then, calling your function on a series of objects is
@@ -253,9 +253,10 @@ here is a progress bar in percent, stopped at 75% () you need to call
 <div class="section level2">
 <h2 id="subsettable-functions">Subsettable functions<a class="anchor" aria-label="anchor" href="#subsettable-functions"></a>
 </h2>
-<p>The <code>$</code> operator is not applicable on functions. It is not
-meaningful in that context. Yet, it may be convenient to use it in
-certain conditions. From the example of <code><a href="../reference/subsettable.html">?subsettable</a></code>:</p>
+<p>The <code>$</code> operator is not suitable for functions in base R.
+It is not meaningful in that context. Yet, it may be convenient to use
+it in certain conditions. From the example of
+<code><a href="../reference/subsettable.html">?subsettable</a></code>:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">foo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">type</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">type</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.arg.html" class="external-link">match.arg</a></span><span class="op">(</span><span class="va">type</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"histogram"</span>, <span class="st">"boxplot"</span><span class="op">)</span><span class="op">)</span></span>
@@ -363,7 +364,7 @@ and decode rapidly almost all R objects. From the example at
 <span><span class="co">#&gt;  [9]     2)), "h&amp;$@" := list("x" := seq(1, 3), "y" := c(0.80441161612924,                                                                   </span></span>
 <span><span class="co">#&gt; [10]     -1.90006082335695, 0.93578428615882), "fact" := list("Data_" := c(2,                                                               </span></span>
 <span><span class="co">#&gt; [11]     1, 2), "levels" := c("a", "b"), "class" := "factor")),                                                                             </span></span>
-<span><span class="co">#&gt; [12]     "i" := list("Data_" := 20266., "class" := "Date"),                                                                                 </span></span>
+<span><span class="co">#&gt; [12]     "i" := list("Data_" := 20269., "class" := "Date"),                                                                                 </span></span>
 <span><span class="co">#&gt; [13]     "j" := list("" := seq(1, 5), "y" := "another item")), "comment" := "My comment", "anAttrib" := seq(1, 10), "anotherAttrib" := list(</span></span>
 <span><span class="co">#&gt; [14]     "" := TRUE, "y" := seq(1, 4)))</span></span>
 <span><span class="co"># Get back an R object from Rjson</span></span>
@@ -407,7 +408,7 @@ and decode rapidly almost all R objects. From the example at
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $i</span></span>
-<span><span class="co">#&gt; [1] "2025-06-27"</span></span>
+<span><span class="co">#&gt; [1] "2025-06-30"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $j</span></span>
 <span><span class="co">#&gt; $j[[1]]</span></span>
@@ -436,14 +437,13 @@ and decode rapidly almost all R objects. From the example at
 files inside R packages: <code><a href="https://rdrr.io/r/base/Rhome.html" class="external-link">R.home()</a></code>,
 <code><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file()</a></code>, <code><a href="https://rdrr.io/r/base/Sys.which.html" class="external-link">Sys.which()</a></code>,
 <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code>. The <code><a href="../reference/system_file.html">system_dir()</a></code> and
-<code><a href="../reference/system_file.html">system_file()</a></code> functions centralize their functionalities.
-For instance:</p>
+<code><a href="../reference/system_file.html">system_file()</a></code> functions replace them all. For instance:</p>
 <ul>
 <li>Get the temporary directory used by this R process</li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/system_file.html">system_dir</a></span><span class="op">(</span><span class="st">"temp"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpZs0W5A"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/RtmpSTH7BA"</span></span></code></pre></div>
 <ul>
 <li>Get the system temporary directory</li>
 </ul>
@@ -545,16 +545,16 @@ information about functions):</li>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/describe_function.html">args_tip</a></span><span class="op">(</span><span class="st">"ls"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "ls(name, pos = -1L, envir = as.environment(pos), all.names = FALSE, pattern,\n    sorted = TRUE)"</span></span></code></pre></div>
 <ul>
-<li>Get the name of an (unused) temporary variable:</li>
+<li>Get the name of a (new) temporary variable:</li>
 </ul>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/temp_var.html">temp_var</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "my_var37864"</span></span></code></pre></div>
 <ul>
 <li>Manage a temporary environment attached to the search path using
-<code><a href="../reference/temp_env.html">TempEnv()</a></code> and the <code>temp_XXX()</code> functions. The
+<code><a href="../reference/temp_env.html">temp_env()</a></code> and the <code>temp_XXX()</code> functions. The
 <strong>temporary_environment</strong> vignette gives more details on
-this series of functions.</li>
+this set of functions.</li>
 </ul>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/search.html" class="external-link">search</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -574,7 +574,7 @@ this series of functions.</li>
 <span><span class="fu"><a href="../reference/temp_env.html">get_temp</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 1 2 3 4 5</span></span>
 <span><span class="co"># List variables in the temporary environment</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span>envir <span class="op">=</span> <span class="fu"><a href="../reference/temp_env.html">TempEnv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span>envir <span class="op">=</span> <span class="fu"><a href="../reference/temp_env.html">temp_env</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "last.warning" "my_var"</span></span>
 <span><span class="co"># Delete the variable</span></span>
 <span><span class="fu"><a href="../reference/temp_env.html">rm_temp</a></span><span class="op">(</span><span class="st">"my_var"</span><span class="op">)</span></span></code></pre></div>
