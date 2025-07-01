@@ -171,7 +171,9 @@
 #' Translation messages are obtained with [base::gettext()] or
 #' [base::ngettext()]. But, there is no way to specify that one needs translated
 #' messages in a different language than the current one in R. These functions
-#' have an additional `lang=` argument that allows to do so.
+#' have an additional `lang=` argument that allows to do so. If the `lang=`
+#' argument is not provided in the call, they behave exactly like the base
+#' functions.
 #'
 #' @param fmt  a character vector of format strings, each of up to 8192 bytes.
 #' @param ... one of more character vectors.
