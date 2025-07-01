@@ -245,14 +245,14 @@ test_gettext_lang <- function(lang = getOption("data.io_lang",
   # Test the gettext() function with lang= attribute
   res <- gettext("Test of svMisc's `gettext()` and `gettextf()`:",
     "This should be transtlated, if '%s' language is supported.",
-    domain = "R-svMisc", lang = lang)
+  domain = "R-svMisc") #, lang = lang)
   cat(res[1], "\n", sep = "")
   cat(sprintf(res[2], lang), "\n", sep = "")
   # It is easier to use gettextf() for formatted messages
   cat(gettextf("This is message number %i", 3L,
-    domain = "R-svMisc", lang = lang), "\n", sep = "")
+    domain = "R-svMisc")) #, lang = lang), "\n", sep = "")
   # For pluralisation, use ngettext()
   cat(ngettext(n, "You asked for only one item", "You asked for several items",
-    domain = "R-svMisc", lang = lang), "\n", sep = "")
+    domain = "R-svMisc")) #, lang = lang), "\n", sep = "")
   invisible(res)
 }
