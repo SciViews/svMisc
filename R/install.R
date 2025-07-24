@@ -37,7 +37,7 @@ Install <- function(pkgs = get_temp('.packages_to_install'), ..., ask = TRUE) {
       }
     }
 
-    if (length(pkgs == 1)) {
+    if (length(pkgs) == 1) {
       title <- gettext("Install R package")
       message <- gettextf("The package '%s' will be installed.\nProceed?",
         pkgs)
