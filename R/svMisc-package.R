@@ -27,6 +27,6 @@
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
 #' @importFrom compiler cmpfun
-#' @importFrom rlang is_interactive
+#' @importFrom rlang abort caller_env eval_bare is_interactive
 ## usethis namespace: end
 "_PACKAGE"

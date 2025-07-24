@@ -1,5 +1,13 @@
 .onLoad <- function(lib, pkg) {
-   .initialize()
+  # Allow implicit (dot) data by default
+  assign_temp('.SciViews.implicit.data.dot', TRUE)
+
+  # Global definition of `.` (raises an error if used without definition)
+  .wrong_dot <- function(.)
+    stop("You are using '.', but you have not defined it.", call. = FALSE)
+  makeActiveBinding('.', .wrong_dot, env = temp_env())
+
+  .initialize()
 
   # Determine where to find the preferred file editor for fileEdit()
   if (is.null(getOption("fileEditor"))) {
@@ -56,6 +64,9 @@
       "head", "hist", "logLik", "plot", "predict", "residuals", "summary",
       "tail", "vcov"))
 }
+
+# Also define it here
+.SciViews.implicit.data <- TRUE
 
 # gettext() and hence gettextf() cannot retrieve messages ending with space
 # in the "R" domain, because these functions stripe them out!

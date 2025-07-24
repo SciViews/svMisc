@@ -1,3 +1,7 @@
+# svMisc 1.5.1
+
+-   The `eval_data_dot()` function that implements the data-dot injection in functions is added.
+
 # svMisc 1.5.0
 
 -   Preparation of all the messages for internationalization, and French version done.
