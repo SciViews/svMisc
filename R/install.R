@@ -57,11 +57,11 @@ Install <- function(pkgs = get_temp('.packages_to_install'), ..., ask = TRUE) {
   res <- try(install.packages(pkgs, ...), silent = TRUE)
 
   # Eliminate installed packages from the list in .packages_to_install
-  # Note: we do so also if the installation failed, in order to stop keeping to
-  # try to install those "uninstallable" packages
-  to_install <- get_temp(pkgs_list)
-  to_install <- to_install[!to_install %in% pkgs]
-  assign_temp(pkgs_list, to_install, replace.existing = TRUE)
+  is_installed <- sapply(pkgs, function(x) {
+    length(find.package(x, quiet = TRUE)) > 0
+  })
+  pkgs_not_installed <- pkgs[!is_installed]
+  assign_temp(pkgs_list, pkgs_not_installed, replace.existing = TRUE)
 
   invisible(!inherits(res, "try-error"))
 }
