@@ -8,7 +8,7 @@ eval_data_dot(
   call,
   arg = "data",
   value = as.symbol("."),
-  env = parent.frame(2L),
+  env = caller_env(2L),
   abort_msg = gettextf("Wrong '\%s' argument.", arg),
   abort_msg2 = gettext("\\nImplicit data-dot (.) not permitted"),
   abort_frame = caller_env()
@@ -22,7 +22,7 @@ eval_data_dot(
 \item{value}{The value to inject, usually the symbol '.'.}
 
 \item{env}{The environment where the evaluation of the data-dot-injected call
-should be evaluated (by default, \code{parent.frame(2L)}, should rarely be
+should be evaluated (by default, \code{caller_env(2L)}, should rarely be
 changed).}
 
 \item{abort_msg}{The message to use in case the 'data' argument is wrong.}

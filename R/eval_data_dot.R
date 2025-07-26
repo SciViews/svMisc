@@ -11,7 +11,7 @@
 #' @param arg The name of the argument to inject, usually 'data' or '.data'.
 #' @param value The value to inject, usually the symbol '.'.
 #' @param env The environment where the evaluation of the data-dot-injected call
-#'  should be evaluated (by default, `parent.frame(2L)`, should rarely be
+#'  should be evaluated (by default, `caller_env(2L)`, should rarely be
 #'  changed).
 #' @param abort_msg The message to use in case the 'data' argument is wrong.
 #' @param abort_msg2 An additional message to append to the error message in
@@ -54,7 +54,7 @@
 #' # an error: uncomment next line to see it
 #' #get_temp(".")
 eval_data_dot <- function(call, arg = 'data', value = as.symbol('.'),
-  env = parent.frame(2L), abort_msg = gettextf("Wrong '%s' argument.", arg),
+  env = caller_env(2L), abort_msg = gettextf("Wrong '%s' argument.", arg),
   abort_msg2 = gettext("\nImplicit data-dot (.) not permitted"),
   abort_frame = caller_env()) {
 
@@ -73,5 +73,6 @@ eval_data_dot <- function(call, arg = 'data', value = as.symbol('.'),
   }
   call[[2]] <- value
   names(call)[2] <- arg
+
   eval_bare(call, env)
 }
