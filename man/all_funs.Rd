@@ -4,7 +4,7 @@
 \alias{all_funs}
 \title{Find all functions in an Expression}
 \usage{
-all_funs(expr, max.names = -1L, unique = TRUE)
+all_funs(expr, max.names = -1L, unique = TRUE, exclude.names = NULL)
 }
 \arguments{
 \item{expr}{an expression or call from which the name of the function are to
@@ -13,6 +13,8 @@ be extracted.}
 \item{max.names}{the maximum number of names to be returned. -1 indicates no limit (other than vector size limits).}
 
 \item{unique}{a logical value which indicates whether duplicate names should be removed from the value.}
+
+\item{exclude.names}{a character vector with names to exclude, or \code{NULL} for none.}
 }
 \value{
 A character vector with the extracted function names.
@@ -31,4 +33,6 @@ ff <- ~z(x, y, z, TRUE, "test", l = 4) + (y(z, x(l)) + y(2))
 all.vars(ff)
 all.names(ff, unique = TRUE)
 all_funs(ff)
+all_funs(ff, unique = FALSE)
+all_funs(ff, exclude.names = "~")
 }

@@ -8,6 +8,7 @@
 #' be extracted.
 #' @param max.names the maximum number of names to be returned. -1 indicates no limit (other than vector size limits).
 #' @param unique a logical value which indicates whether duplicate names should be removed from the value.
+#' @param exclude.names a character vector with names to exclude, or `NULL` for none.
 #'
 #' @details
 #' The c code is adapted from base R code `do_allnames()` (the later one allows
@@ -22,8 +23,11 @@
 #' all.vars(ff)
 #' all.names(ff, unique = TRUE)
 #' all_funs(ff)
-all_funs <- function(expr, max.names = -1L, unique = TRUE) {
-  #max.names <- as.integer(max.names)[1]
-  #unique <- isTRUE(unique)
-  .Call(allfuns, expr, max.names, unique, PACKAGE = "svMisc")
+#' all_funs(ff, unique = FALSE)
+#' all_funs(ff, exclude.names = "~")
+all_funs <- function(expr, max.names = -1L, unique = TRUE,
+  exclude.names = NULL) {
+  if (!is.null(exclude.names) && !is.character(exclude.names))
+    stop("`exclude.names` must be a character vector or NULL.")
+  .Call(allfuns, expr, max.names, unique, exclude.names)
 }

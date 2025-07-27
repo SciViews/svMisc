@@ -16,7 +16,7 @@ typedef struct {
   int MaxCount;
 } NameWalkData;
 
-static void namewalk(SEXP s, NameWalkData *d, int isfun)
+static void namewalk(SEXP s, NameWalkData *d, int isfun, SEXP ex)
 {
   SEXP name;
 
@@ -26,6 +26,13 @@ static void namewalk(SEXP s, NameWalkData *d, int isfun)
     name = PRINTNAME(s);
     /* skip blank symbols */
     if(CHAR(name)[0] == '\0') goto ignore;
+    /* skip names in the exclude list */
+    if(ex != R_NilValue) {
+      for(int i = 0 ; i < LENGTH(ex) ; i++) {
+        if(STRING_ELT(ex, i) == name)
+          goto ignore;
+      }
+    }
     if(d->ItemCounts < d->MaxCount) {
       if(d->StoreValues) {
         if(d->UniqueNames) {
@@ -42,16 +49,16 @@ static void namewalk(SEXP s, NameWalkData *d, int isfun)
       break;
   case LANGSXP:
     /*if(!d->IncludeFunctions) s = CDR(s);*/
-    namewalk(CAR(s), d, 1);
+    namewalk(CAR(s), d, 1, ex);
     s = CDR(s);
     while(s != R_NilValue) {
-      namewalk(CAR(s), d, 0);
+      namewalk(CAR(s), d, 0, ex);
       s = CDR(s);
     }
     break;
   case EXPRSXP:
    for(R_xlen_t i = 0 ; i < XLENGTH(s) ; i++)
-      namewalk(VECTOR_ELT(s, i), d, 0);
+      namewalk(VECTOR_ELT(s, i), d, 0, ex);
     break;
   default:
     /* it seems the intention is to do nothing here! */
@@ -59,8 +66,8 @@ static void namewalk(SEXP s, NameWalkData *d, int isfun)
   }
 }
 
-/* Use .Call(allfuns, expr, max.names, unique) */
-SEXP allfuns(SEXP expr, SEXP maxnames, SEXP unique)
+/* Use .Call(allfuns, expr, max.names, unique, exclude.names) */
+SEXP allfuns(SEXP expr, SEXP maxnames, SEXP unique, SEXP excludenames)
 {
   int i, savecount;
   NameWalkData data = {NULL, 0, 0, 0, 0, 0};
@@ -74,14 +81,14 @@ SEXP allfuns(SEXP expr, SEXP maxnames, SEXP unique)
   if(data.UniqueNames == NA_LOGICAL)
     data.UniqueNames = 1;
 
-  namewalk(expr, &data, 0);
+  namewalk(expr, &data, 0, excludenames);
   savecount = data.ItemCounts;
 
   data.ans = Rf_allocVector(STRSXP, data.ItemCounts);
 
   data.StoreValues = 1;
   data.ItemCounts = 0;
-  namewalk(expr, &data, 0);
+  namewalk(expr, &data, 0, excludenames);
 
   if(data.ItemCounts != savecount) {
     PROTECT(expr = data.ans);
