@@ -92,7 +92,7 @@ expression or a call.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">all_funs</span><span class="op">(</span><span class="va">expr</span>, max.names <span class="op">=</span> <span class="op">-</span><span class="fl">1L</span>, unique <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">all_funs</span><span class="op">(</span><span class="va">expr</span>, max.names <span class="op">=</span> <span class="op">-</span><span class="fl">1L</span>, unique <span class="op">=</span> <span class="cn">TRUE</span>, exclude.names <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -110,6 +110,10 @@ be extracted.</p></dd>
 
 <dt id="arg-unique">unique<a class="anchor" aria-label="anchor" href="#arg-unique"></a></dt>
 <dd><p>a logical value which indicates whether duplicate names should be removed from the value.</p></dd>
+
+
+<dt id="arg-exclude-names">exclude.names<a class="anchor" aria-label="anchor" href="#arg-exclude-names"></a></dt>
+<dd><p>a character vector with names to exclude, or <code>NULL</code> for none.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -132,6 +136,10 @@ alone).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "~" "+" "z" "x" "y" "(" "l"</span>
 <span class="r-in"><span><span class="fu">all_funs</span><span class="op">(</span><span class="va">ff</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "~" "+" "z" "(" "y" "x"</span>
+<span class="r-in"><span><span class="fu">all_funs</span><span class="op">(</span><span class="va">ff</span>, unique <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "~" "+" "z" "(" "+" "y" "x" "y"</span>
+<span class="r-in"><span><span class="fu">all_funs</span><span class="op">(</span><span class="va">ff</span>, exclude.names <span class="op">=</span> <span class="st">"~"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "+" "z" "(" "y" "x"</span>
 </code></pre></div>
     </div>
   </div>
