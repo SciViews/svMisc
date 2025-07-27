@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   svMisc: svMisc.html
   temporary_environment: temporary_environment.html
-last_built: 2025-07-26T12:11Z
+last_built: 2025-07-27T12:33Z
 urls:
   reference: https://www.sciviews.org/svMisc/reference
   article: https://www.sciviews.org/svMisc/articles
