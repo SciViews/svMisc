@@ -1,3 +1,7 @@
+# svMisc 1.5.2
+
+-   The `all_funs()` function is added to return all functions used in an expression or a call (it uses c code adapted fro R base).
+
 # svMisc 1.5.1
 
 -   The `eval_data_dot()` function that implements the data-dot injection in functions is added.

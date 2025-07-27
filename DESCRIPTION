@@ -1,6 +1,6 @@
 Package: svMisc
 Type: Package
-Version: 1.5.1
+Version: 1.5.2
 Title: Miscellaneous Functions for 'SciViews::R'
 Description: Functions required for the 'SciViews::R' dialect or for general
   use (manage a temporary environment attached to the search path, define

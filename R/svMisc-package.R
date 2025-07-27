@@ -17,16 +17,14 @@
 #'   ones (fails gracefully).
 
 ## usethis namespace: start
-#' @importFrom utils RSiteSearch apropos available.packages browseURL
-#'   capture.output compareVersion file.edit file_test flush.console
-#'   getCRANmirrors getS3method install.packages installed.packages methods
-#'   object.size packageDescription remove.packages str tail write.table ? help
-#'   help.search apropos find txtProgressBar setTxtProgressBar
+#' @importFrom compiler cmpfun
 #' @importFrom methods findFunction existsFunction new isGeneric
-#'   showMethods slot slotNames
+#' @importFrom rlang abort caller_env eval_bare is_interactive
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
-#' @importFrom compiler cmpfun
-#' @importFrom rlang abort caller_env eval_bare is_interactive
+#' @importFrom utils RSiteSearch apropos available.packages browseURL
+#' @importFrom methods showMethods slot slotNames
+#' @importFrom utils capture.output compareVersion file.edit file_test find flush.console getCRANmirrors getS3method ? help help.search install.packages installed.packages methods object.size packageDescription remove.packages setTxtProgressBar str tail txtProgressBar write.table
+#' @useDynLib svMisc, .registration = TRUE
 ## usethis namespace: end
 "_PACKAGE"
