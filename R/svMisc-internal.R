@@ -2,6 +2,7 @@
   # Allow implicit (dot) data by default
   assign_temp('.SciViews.implicit.data.dot', TRUE)
 
+  # TODO: This does not work and it is not visible!
   # Global definition of `.` (raises an error if used without definition)
   .wrong_dot <- function(.)
     stop("You are using '.', but you have not defined it.", call. = FALSE)
