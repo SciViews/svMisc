@@ -12,7 +12,6 @@
 <url><loc>https://www.sciviews.org/svMisc/reference/about.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/add_actions.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/aka.html</loc></url>
-<url><loc>https://www.sciviews.org/svMisc/reference/all_funs.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/batch.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/capture_all.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/compare_r_version.html</loc></url>
@@ -21,6 +20,7 @@
 <url><loc>https://www.sciviews.org/svMisc/reference/def.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/describe_function.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/eval_data_dot.html</loc></url>
+<url><loc>https://www.sciviews.org/svMisc/reference/expr_funs.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/file_edit.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/gettext.html</loc></url>
 <url><loc>https://www.sciviews.org/svMisc/reference/gui_cmd.html</loc></url>
