@@ -5,7 +5,8 @@
   # Global definition of `.` (raises an error if used without definition)
   .wrong_dot <- function(.)
     stop("You are using '.', but you have not defined it.", call. = FALSE)
-  makeActiveBinding('.', .wrong_dot, env = temp_env())
+  # Not in temp_env: this makes problems with RStudio apparently
+  makeActiveBinding('.', .wrong_dot, env = parent.frame()) #, env = temp_env())
 
   .initialize()
 
@@ -66,7 +67,7 @@
 }
 
 # Also define it here
-.SciViews.implicit.data <- TRUE
+.SciViews.implicit.data.dots <- TRUE
 
 # gettext() and hence gettextf() cannot retrieve messages ending with space
 # in the "R" domain, because these functions stripe them out!

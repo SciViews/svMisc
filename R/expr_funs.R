@@ -19,15 +19,16 @@
 #' @export
 #'
 #' @examples
+#' # A formula where some names are simultaneously functions and variables
 #' ff <- ~z(x, y, z, TRUE, "test", l = 4) + (y(z, x(l)) + y(2))
 #' all.vars(ff)
 #' all.names(ff, unique = TRUE)
-#' all_funs(ff)
-#' all_funs(ff, unique = FALSE)
-#' all_funs(ff, exclude.names = "~")
-all_funs <- function(expr, max.names = -1L, unique = TRUE,
+#' expr_funs(ff)
+#' expr_funs(ff, unique = TRUE)
+#' expr_funs(ff, exclude.names = "~")
+expr_funs <- function(expr, max.names = -1L, unique = FALSE,
   exclude.names = NULL) {
   if (!is.null(exclude.names) && !is.character(exclude.names))
     stop("`exclude.names` must be a character vector or NULL.")
-  .Call(allfuns, expr, max.names, unique, exclude.names)
+  .Call(exprfuns, expr, max.names, unique, exclude.names)
 }

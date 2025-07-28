@@ -66,8 +66,8 @@ static void namewalk(SEXP s, NameWalkData *d, int isfun, SEXP ex)
   }
 }
 
-/* Use .Call(allfuns, expr, max.names, unique, exclude.names) */
-SEXP allfuns(SEXP expr, SEXP maxnames, SEXP unique, SEXP excludenames)
+/* Use .Call(exprfuns, expr, max.names, unique, exclude.names) */
+SEXP exprfuns(SEXP expr, SEXP maxnames, SEXP unique, SEXP excludenames)
 {
   int i, savecount;
   NameWalkData data = {NULL, 0, 0, 0, 0, 0};

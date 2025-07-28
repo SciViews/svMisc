@@ -1,6 +1,6 @@
 # svMisc 1.5.2
 
--   The `all_funs()` function is added to return all functions used in an expression or a call (it uses c code adapted fro R base).
+-   The `expr_funs()` function is added to return all functions used in an expression or a call (it uses c code adapted fro R base).
 
 # svMisc 1.5.1
 
