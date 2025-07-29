@@ -3,11 +3,11 @@
 #' @description
 #' Change the environment of a formula to a specified environment.
 #'
-#' @param formula A formula (or a quosure)
-#' @param env The environment to which the formula should be retargeted.
+#' @param x A formula (or a quosure), or a list of formulas.
+#' @param env The environment to which the formula(s) should be retargeted.
 #' Defaults to the parent frame.
 #'
-#' @returns The formula with the new environment set.
+#' @returns The formula or list of formulas with the new environment set.
 #' @export
 #'
 #' @examples
@@ -21,7 +21,22 @@
 #' # OK, but the environment associated to this formula is...
 #' # the environment of the function:
 #' rlang::f_env(f)
-retarget <- function(formula, env = parent.frame()) {
-  f_env(formula) <- env
-  formula
+#'
+#' # With a list of formulas (local() creates a new environment):
+#' fl <- local(list(y ~x^2, z~ sqrt(cos(x^2) + sin(x^2))))
+#' fl # Not in GlobalEnv
+#' retarget(fl) # Retargeted to GlobalEnv
+retarget <- function(x, env = parent.frame()) {
+  if (is.list(x)) {
+    if_formula_f_env <- function(x, env) {
+      if (is_formula(x))
+        f_env(x) <- env
+      x
+  }
+    x <- lapply(x, if_formula_f_env, env)
+
+  } else {# Not a list
+    f_env(x) <- env
+  }
+  x
 }

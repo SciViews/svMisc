@@ -4,16 +4,16 @@
 \alias{retarget}
 \title{Retarget a formula to a different environment}
 \usage{
-retarget(formula, env = parent.frame())
+retarget(x, env = parent.frame())
 }
 \arguments{
-\item{formula}{A formula (or a quosure)}
+\item{x}{A formula (or a quosure), or a list of formulas.}
 
-\item{env}{The environment to which the formula should be retargeted.
+\item{env}{The environment to which the formula(s) should be retargeted.
 Defaults to the parent frame.}
 }
 \value{
-The formula with the new environment set.
+The formula or list of formulas with the new environment set.
 }
 \description{
 Change the environment of a formula to a specified environment.
@@ -29,4 +29,9 @@ f
 # OK, but the environment associated to this formula is...
 # the environment of the function:
 rlang::f_env(f)
+
+# With a list of formulas (local() creates a new environment):
+fl <- local(list(y ~x^2, z~ sqrt(cos(x^2) + sin(x^2))))
+fl # Not in GlobalEnv
+retarget(fl) # Retargeted to GlobalEnv
 }

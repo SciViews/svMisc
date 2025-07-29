@@ -19,7 +19,7 @@
 ## usethis namespace: start
 #' @importFrom compiler cmpfun
 #' @importFrom methods findFunction existsFunction new isGeneric
-#' @importFrom rlang abort caller_env eval_bare f_env<- is_interactive
+#' @importFrom rlang abort caller_env eval_bare f_env<- is_formula is_interactive
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
 #' @importFrom utils RSiteSearch apropos available.packages browseURL
