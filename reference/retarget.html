@@ -90,25 +90,25 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">retarget</span><span class="op">(</span><span class="va">formula</span>, env <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent.frame</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">retarget</span><span class="op">(</span><span class="va">x</span>, env <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent.frame</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
 
 
-<dl><dt id="arg-formula">formula<a class="anchor" aria-label="anchor" href="#arg-formula"></a></dt>
-<dd><p>A formula (or a quosure)</p></dd>
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
+<dd><p>A formula (or a quosure), or a list of formulas.</p></dd>
 
 
 <dt id="arg-env">env<a class="anchor" aria-label="anchor" href="#arg-env"></a></dt>
-<dd><p>The environment to which the formula should be retargeted.
+<dd><p>The environment to which the formula(s) should be retargeted.
 Defaults to the parent frame.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The formula with the new environment set.</p>
+    <p>The formula or list of formulas with the new environment set.</p>
     </div>
 
     <div id="ref-examples">
@@ -119,15 +119,36 @@ Defaults to the parent frame.</p></dd>
 <span class="r-in"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu">make_formula</span><span class="op">(</span><span class="st">"x ~ log(y) + z"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">f</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> x ~ log(y) + z</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a55abc2e98&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c8960228&gt;</span>
 <span class="r-in"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu">retarget</span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">f</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> x ~ log(y) + z</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a55c2bbdf8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c7abfb38&gt;</span>
 <span class="r-in"><span><span class="co"># OK, but the environment associated to this formula is...</span></span></span>
 <span class="r-in"><span><span class="co"># the environment of the function:</span></span></span>
 <span class="r-in"><span><span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/f_rhs.html" class="external-link">f_env</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a55c2bbdf8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c7abfb38&gt;</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># With a list of formulas (local() creates a new environment):</span></span></span>
+<span class="r-in"><span><span class="va">fl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/eval.html" class="external-link">local</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span><span class="va">x</span><span class="op">^</span><span class="fl">2</span>, <span class="va">z</span><span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">cos</a></span><span class="op">(</span><span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">fl</span> <span class="co"># Not in GlobalEnv</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> y ~ x^2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c663f708&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> z ~ sqrt(cos(x^2) + sin(x^2))</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c663f708&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span><span class="fu">retarget</span><span class="op">(</span><span class="va">fl</span><span class="op">)</span> <span class="co"># Retargeted to GlobalEnv</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> y ~ x^2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c7abfb38&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> z ~ sqrt(cos(x^2) + sin(x^2))</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5622c7abfb38&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </div>
