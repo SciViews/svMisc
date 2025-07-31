@@ -76,6 +76,8 @@ stop_ <- function(..., call. = FALSE, domain = NULL, class = NULL,
   call = stop_top_call(2L), envir = parent.frame()) {
   # Note that call. is not use here!
   message <- gettext(..., domain = domain, trim = TRUE)
+  # Sometimes, gettext() looses names -> reapply them
+  names(message) <- ...names()
   cli_abort(message, class = class, call = call, .envir = envir)
 }
 
