@@ -17,6 +17,7 @@
 #'   ones (fails gracefully).
 
 ## usethis namespace: start
+#' @importFrom cli cli_abort
 #' @importFrom compiler cmpfun
 #' @importFrom methods findFunction existsFunction new isGeneric
 #' @importFrom rlang abort caller_env eval_bare f_env<- is_formula is_interactive
