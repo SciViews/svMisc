@@ -222,7 +222,7 @@ return the top call to be used for stop condition messages.</p>
 <span class="r-in"><span><span class="co"># In such a case, it is better to report the error from `test2()`.</span></span></span>
 <span class="r-in"><span><span class="co"># You can do that by stating `._top_call_. &lt;- TRUE` in the body of `test2()`.</span></span></span>
 <span class="r-in"><span><span class="va">test2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>  <span class="va">._top_call_.</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>  <span class="va">.__top_call__.</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span></span>
 <span class="r-in"><span>  <span class="fu">test1</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span><span class="fu">test2</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span></span>
