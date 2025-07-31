@@ -9,8 +9,8 @@ eval_data_dot(
   arg = "data",
   value = as.symbol("."),
   env = caller_env(2L),
-  abort_msg = gettextf("Wrong '\%s' argument.", arg),
-  abort_msg2 = gettext("\\nImplicit data-dot (.) not permitted"),
+  abort_msg = gettextf(x = "Wrong '\%s' argument.", arg),
+  abort_msg2 = gettext(i = "Implicit data-dot (.) not permitted"),
   abort_frame = caller_env()
 )
 }

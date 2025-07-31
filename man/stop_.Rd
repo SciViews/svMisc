@@ -105,7 +105,7 @@ test2(1:3)
 # In such a case, it is better to report the error from `test2()`.
 # You can do that by stating `._top_call_. <- TRUE` in the body of `test2()`.
 test2 <- function(x) {
-  ._top_call_. <- TRUE
+  .__top_call__. <- TRUE
   test1(x)
 }
 test2(1:3)

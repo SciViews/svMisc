@@ -65,7 +65,7 @@
 #' # In such a case, it is better to report the error from `test2()`.
 #' # You can do that by stating `._top_call_. <- TRUE` in the body of `test2()`.
 #' test2 <- function(x) {
-#'   ._top_call_. <- TRUE
+#'   .__top_call__. <- TRUE
 #'   test1(x)
 #' }
 #' test2(1:3)
@@ -103,7 +103,7 @@ stop_top_call <- function(nframe = 2L) {
     for (i in (nframe + 1):max_frames) {
       call <- env
       env <- parent.frame(i)
-      if (!isTRUE(env$`._top_call_.`))
+      if (!isTRUE(env$`.__top_call__.`))
         break
     }
   }
