@@ -1,5 +1,7 @@
 # svMisc 1.5.2
 
+-   `gettext`, `gettextf` and `ngettext` renamed `gettext_`, `gettexf_` and `ngettext_` to avoid forcing using them. One must rename them in a package that uses the language switch feature of these function.
+
 -   `retarget()` added (change easily the environment of a formula).
 
 -   `expr_funs()` is added to return all functions used in an expression or a call (it uses c code adapted fro R base).

@@ -8,6 +8,10 @@ test_that("gettext(), gettextf() and ngettext() behave like their base equivalen
   # Test with English language first
   old_lang <- Sys.setLanguage("en")
 
+  gettext <- gettext_
+  gettextf <- gettextf_
+  ngettext <- ngettext_
+
   expect_identical(
     gettext("Test of svMisc's `gettext()` and `gettextf()`:",
       "This should be transtlated, if '%s' language is supported.",
@@ -95,6 +99,10 @@ test_that("gettext(), gettextf() and ngettext() behave like their base equivalen
 test_that("gettext(), gettextf() and ngettext() can use lang=", {
   # Make sure R is in English language
   old_lang <- Sys.setLanguage("en")
+
+  gettext <- gettext_
+  gettextf <- gettextf_
+  ngettext <- ngettext_
 
   # Getting English messages, using lang= argument
   expect_identical(

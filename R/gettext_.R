@@ -188,11 +188,13 @@
 #'
 #' @details
 #' To prepare your package for translation with these functions, you should
-#' import `gettext()`, `gettextf()` and `ngettext()` from svMisc. Then, you
-#' change the current directory to the base folder of the sources of your
-#' package and you issue `tools::update_pkg_po(".")` in R. Then, you create
-#' translations for different languages and you provide translated strings with
-#' [poEdit](https://poedit.net/).
+#' import `gettext_()`, `gettextf_()` and `ngettext_()` from svMisc. Then, you
+#' define `gettext <- gettext_`, `gettextf <- gettextf_` and
+#' `ngettext <- ngettext_` in your R scripts in the package. Finally, you
+#' change the current directory of your R console to the base folder of the
+#' sources of your package and you issue `tools::update_pkg_po(".")` in R. Then,
+#' you create translations for different languages and you provide translated
+#' strings with, say, [poEdit](https://poedit.net/).
 #'
 #' @returns A character vector with translated messages. `test_gettext_lang()`
 #' only serve to test and demonstrate the translation in a given language.
@@ -202,6 +204,12 @@
 #'
 #' @examples
 #' old_lang <- Sys.setLanguage("fr") # Switch to French for R language
+#'
+#' # R look for messages to be translated into gettext() calls, not gettext_()
+#' # So, rename accordingly in your package:
+#' gettext <- svMisc::gettext_
+#' gettextf <- svMisc::gettextf_
+#' ngettext <- svMisc::ngettext_
 #'
 #' # Retrieve strings in same language
 #' gettext("empty model supplied", "incompatible dimensions",
@@ -218,41 +226,49 @@
 #'   domain="R-stats", lang = "xx")
 #'
 #' # Test with some translations from the svMisc package itself:
-#' test_gettext_lang()
-#' test_gettext_lang("fr", n = 1)
-#' test_gettext_lang("fr", n = 2)
-#' test_gettext_lang("en", n = 1)
-#' test_gettext_lang("en", n = 2)
+#' svMisc::test_gettext_lang()
+#' svMisc::test_gettext_lang("fr", n = 1)
+#' svMisc::test_gettext_lang("fr", n = 2)
+#' svMisc::test_gettext_lang("en", n = 1)
+#' svMisc::test_gettext_lang("en", n = 2)
 #'
 #' Sys.setLanguage(old_lang) # Restore original language
-#' rm(old_lang)
-gettext <- .gettext_lang$gettext
+#' rm(old_lang, gettext, gettextf, ngettext)
+gettext_ <- .gettext_lang$gettext
 
 #' @export
-#' @rdname gettext
-gettextf <- .gettext_lang$gettextf
+#' @rdname gettext_
+gettextf_ <- .gettext_lang$gettextf
 
 #' @export
-#' @rdname gettext
-ngettext <- .gettext_lang$ngettext
+#' @rdname gettext_
+ngettext_ <- .gettext_lang$ngettext
 
 #' @export
-#' @rdname gettext
+#' @rdname gettext_
 test_gettext_lang <- function(lang = getOption("data.io_lang",
     default = Sys.getenv("LANGUAGE", unset = "en")), n = 1) {
-  # You should import gettext() and gettextf() from svMisc instead of using the
-  # base functions to get the lang= argument working properly.
+  # You should import gettext_(), gettextf_() and ngettext_() from svMisc and
+  # rename them gettext, gettextf, and ngettext respectively instead of using
+  # the base functions to get the lang= argument working properly.
+  # This is better done in your package directly.
+  gettext <- gettext_
+  gettextf <- gettextf_
+  ngettext <- ngettext_
+
   # Test the gettext() function with lang= attribute
   res <- gettext("Test of svMisc's `gettext()` and `gettextf()`:",
     "This should be transtlated, if '%s' language is supported.",
-  domain = "R-svMisc") #, lang = lang)
+  domain = "R-svMisc", lang = lang)
   cat(res[1], "\n", sep = "")
   cat(sprintf(res[2], lang), "\n", sep = "")
+
   # It is easier to use gettextf() for formatted messages
   cat(gettextf("This is message number %i", 3L,
-    domain = "R-svMisc")) #, lang = lang), "\n", sep = "")
+    domain = "R-svMisc", lang = lang), "\n", sep = "")
+
   # For pluralisation, use ngettext()
   cat(ngettext(n, "You asked for only one item", "You asked for several items",
-    domain = "R-svMisc")) #, lang = lang), "\n", sep = "")
+    domain = "R-svMisc", lang = lang), "\n", sep = "")
   invisible(res)
 }

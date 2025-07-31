@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: svMisc 1.5.0\n"
-"POT-Creation-Date: 2025-06-30 21:59\n"
+"Project-Id-Version: svMisc 1.5.2\n"
+"POT-Creation-Date: 2025-07-31 09:38\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,6 +197,15 @@ msgstr ""
 msgid "Generic function with methods for the following classes:"
 msgstr ""
 
+msgid "Wrong '%s' argument."
+msgstr ""
+
+msgid "Implicit data-dot (.) not permitted"
+msgstr ""
+
+msgid "`exclude.names` must be a character vector or NULL."
+msgstr ""
+
 msgid "You must provide at least one file path"
 msgstr ""
 
@@ -324,6 +333,9 @@ msgid "A search query has been submitted"
 msgstr ""
 
 msgid "The results page should open in your browser shortly"
+msgstr ""
+
+msgid "You are using '.', but you have not defined it."
 msgstr ""
 
 msgid "%s must be a list"

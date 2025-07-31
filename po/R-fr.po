@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: svMisc 1.5.0\n"
-"POT-Creation-Date: 2025-06-30 21:59\n"
+"POT-Creation-Date: 2025-07-31 09:38\n"
 "PO-Revision-Date: 2025-06-30 22:07+0200\n"
 "Last-Translator: Philippe Grosjean <phgrosjean@sciviews.org>\n"
 "Language-Team: French SciViews translation team\n"
@@ -324,6 +324,15 @@ msgstr "<interrompu!>"
 msgid "Generic function with methods for the following classes:"
 msgstr "Fonction générique avec des méthodes pour les classes suivantes :"
 
+msgid "Wrong '%s' argument."
+msgstr ""
+
+msgid "Implicit data-dot (.) not permitted"
+msgstr ""
+
+msgid "`exclude.names` must be a character vector or NULL."
+msgstr ""
+
 msgid "You must provide at least one file path"
 msgstr "Vous devez fournir au moins un chemin d'accès au fichier"
 
@@ -488,6 +497,9 @@ msgstr "Une demande de recherche a été soumise"
 
 msgid "The results page should open in your browser shortly"
 msgstr "La page des résultats devrait s'ouvrir dans votre navigateur sous peu"
+
+msgid "You are using '.', but you have not defined it."
+msgstr ""
 
 msgid "%s must be a list"
 msgstr "%s doit être une liste"
