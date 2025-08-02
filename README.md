@@ -6,8 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://img.shields.io/codecov/c/github/SciViews/svMisc/main.svg)](https://app.codecov.io/gh/SciViews/svMisc?branch=main)
+[![codecov](https://codecov.io/gh/SciViews/svMisc/graph/badge.svg?token=1YyLPD4HkZ)](https://codecov.io/gh/SciViews/svMisc)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/svMisc)](https://cran.r-project.org/package=svMisc)
 [![r-universe
