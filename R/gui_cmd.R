@@ -23,6 +23,9 @@
 #' @keywords misc
 #' @concept graphical user interface (GUI) control
 gui_cmd <- function(command, ...) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "gui_cmd()", with = NULL)
+
   # This function sends a command to the GUI client
   # The actual code is a custom function named .guiCmd in SciViews:TempEnv
   cmd_fun <- get_temp(".guiCmd", mode = "function")

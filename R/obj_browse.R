@@ -644,6 +644,9 @@ header = !attr(x, "all.info"), raw.output = !is.na(sep), ...) {
 #' @export
 #' @rdname obj_browse
 obj_search <- function(sep = "\t", path = NULL, compare = TRUE) {
+  lifecycle::deprecate_soft(when = "1.5.0",
+    what = "obj_search()", with = NULL)
+
   new_search <- search()
   if (isTRUE(compare)) {
     old_search <- get_temp(".guiObjSearchCache", default = "")

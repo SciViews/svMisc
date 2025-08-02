@@ -1,15 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ‘SciViews::R’ - Miscellaneous Functions
-
-<a href="https://www.sciviews.org/svMisc"><img src="man/figures/logo.png" align="right" height="138" /></a>
+# ‘SciViews::R’ - Miscellaneous Functions <a href="https://www.sciviews.org/svMisc"><img src="man/figures/logo.png" align="right" height="138" /></a>
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/SciViews/svMisc/branch/main/graph/badge.svg)](https://app.codecov.io/gh/SciViews/svMisc?branch=main)
+coverage](https://img.shields.io/codecov/c/github/SciViews/svMisc/main.svg)](https://app.codecov.io/gh/SciViews/svMisc?branch=main)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/svMisc)](https://cran.r-project.org/package=svMisc)
 [![r-universe

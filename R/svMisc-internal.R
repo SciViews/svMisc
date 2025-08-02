@@ -9,7 +9,7 @@
   # Not in temp_env: this makes problems with RStudio apparently
   makeActiveBinding('.', .wrong_dot, env = parent.frame()) #, env = temp_env())
 
-  .initialize()
+  #.initialize()
 
   # Determine where to find the preferred file editor for fileEdit()
   if (is.null(getOption("fileEditor"))) {
@@ -54,18 +54,18 @@
   }
 }
 
-.initialize <- function(replace = TRUE) {
-  # If the option svGUI.methods is not defined, give reasonable default values
-  # Those are methods that can be applied to many objects without providing
-  # additional argument and that will be added automatically to objects'
-  # context menu in GUIs (print and show are not included, because we know
-  # they must exist for all objects)
-  # Rem: use addMethods() if you just want to add methods to this list
-  if (is.null(getOption("svGUI.methods")))
-    options(svGUI.methods = c("AIC", "anova", "confint", "BIC", "formula",
-      "head", "hist", "logLik", "plot", "predict", "residuals", "summary",
-      "tail", "vcov"))
-}
+#.initialize <- function(replace = TRUE) {
+#  # If the option svGUI.methods is not defined, give reasonable default values
+#  # Those are methods that can be applied to many objects without providing
+#  # additional argument and that will be added automatically to objects'
+#  # context menu in GUIs (print and show are not included, because we know
+#  # they must exist for all objects)
+#  # Rem: use addMethods() if you just want to add methods to this list
+#  if (is.null(getOption("svGUI.methods")))
+#    options(svGUI.methods = c("AIC", "anova", "confint", "BIC", "formula",
+#      "head", "hist", "logLik", "plot", "predict", "residuals", "summary",
+#      "tail", "vcov"))
+#}
 
 # Also define it here
 .SciViews.implicit.data.dots <- TRUE
