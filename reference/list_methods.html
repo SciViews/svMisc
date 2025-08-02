@@ -230,10 +230,60 @@ So, adding new <em>type</em>s for <em>method</em> is very easy to implement.</p>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"gui.methods"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"data.frame"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "formula" "head"    "plot"    "summary" "tail"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "$&lt;-"                            "$&lt;--method"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "Math"                           "Ops"                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "Ops,nonStructure,vector-method" "Ops,structure,vector-method"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "Ops,vector,nonStructure-method" "Ops,vector,structure-method"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "Summary"                        "["                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "[&lt;-"                            "[&lt;--method"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "[["                             "[[&lt;-"                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "[[&lt;--method"                    "aggregate"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "anyDuplicated"                  "anyNA"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "as.data.frame"                  "as.list"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "as.matrix"                      "as.vector"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [23] "by"                             "cbind"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "coerce,ANY,list-method"         "coerce,oldClass,S3-method"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [27] "dim"                            "dimnames"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "dimnames&lt;-"                     "droplevels"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "duplicated"                     "edit"                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "format"                         "formula"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "head"                           "initialize,oldClass-method"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "is.na"                          "merge"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [39] "na.exclude"                     "na.omit"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "plot"                           "print"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [43] "prompt"                         "rbind"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45] "row.names"                      "row.names&lt;-"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [47] "rowsum"                         "show,oldClass-method"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [49] "slotsFromS3"                    "slotsFromS3-method"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "sort_by"                        "split"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [53] "split&lt;-"                        "stack"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55] "str"                            "subset"                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [57] "summary"                        "t"                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [59] "tail"                           "transform"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [61] "type.convert"                   "unique"                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [63] "unstack"                        "within"                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65] "xtfrm"                         </span>
 <span class="r-in"><span><span class="fu">list_methods</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "anova"     "confint"   "formula"   "logLik"    "plot"      "predict"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "residuals" "summary"   "vcov"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "add1"                        "alias"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "anova"                       "case.names"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "coerce,oldClass,S3-method"   "confint"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "cooks.distance"              "deviance"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "dfbeta"                      "dfbetas"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "drop1"                       "dummy.coef"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "effects"                     "extractAIC"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "family"                      "formula"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "hatvalues"                   "influence"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "initialize,oldClass-method"  "kappa"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "labels"                      "logLik"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [23] "model.frame"                 "model.matrix"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "nobs"                        "plot"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [27] "predict"                     "print"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "proj"                        "qr"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "residuals"                   "rstandard"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "rstudent"                    "show,oldClass-method"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "simulate"                    "slotsFromS3,oldClass-method"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "summary"                     "variable.names"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [39] "vcov"                       </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># List method types</span></span></span>
 <span class="r-in"><span><span class="fu">list_types</span><span class="op">(</span><span class="st">"view"</span><span class="op">)</span>  <span class="co"># All default view types currently defined</span></span></span>

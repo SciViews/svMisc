@@ -323,84 +323,346 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-in"><span><span class="co"># For one object</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>objects <span class="op">=</span> <span class="st">"iris"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`obj_menu()` was deprecated in svMisc 1.5.0.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           widget            value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> help        item             Help</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> example     item          Example</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep          sep                -</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Functions   menu        Functions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> print       item   |Print or show</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic     item       |summary()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1   item          |plot()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       item           |Names</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> str         item             |Str</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1        sep               |-</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2   item       |formula()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3   item          |head()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4   item          |tail()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> View        menu             View</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef     item  |View (default)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> require     item |Require svViews</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> report      item        Report...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> edit        item             Edit</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> save        item       Save as...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Copy        menu             Copy</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef     item  |Copy (default)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> require.1   item    |Require svIO</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> export      item        Export...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2        sep                -</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> remove      item           Remove</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                tip</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> help                                             Help on an object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> example                               Run examples for this object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep                                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Functions                            Generic functions and methods</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> print                      Print or show the content of the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic                       Apply method summary() to the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1                        Apply method plot() to the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names                   Names of variables contained in the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> str                      Compact str() representation of an object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1                                                             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2                     Apply method formula() to the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3                        Apply method head() to the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4                        Apply method tail() to the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> View                                               View the object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef                               Default view for this object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> require                                Require the package svViews</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> report                            Prepare a report for this object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> edit                                                Edit an object</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> save                                                Save to a file</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Copy                              Copy the object to the clipboard</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef         Copy this object to the clipboard (default format)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> require.1                                 Require the package svIO</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> export                                       Export data to a file</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2                                                             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> remove    Remove (permanently!) one or several objects from memory</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                         code icon checked disabled hidden options</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> help              help(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> example        example(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep                                 FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Functions                           FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> print                   iris        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic        summary(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1         plot(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names            names(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> str                str(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1                               FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2      formula(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3         head(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4         tail(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> View                                FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef           view(iris)        FALSE     TRUE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> require     require(svViews)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> report       guiReport(iris)        FALSE     TRUE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> edit      iris &lt;- edit(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> save           guiSave(iris)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Copy                                FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef           copy(iris)        FALSE     TRUE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> require.1      require(svIO)        FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> export       guiExport(iris)        FALSE     TRUE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2                               FALSE    FALSE  FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> remove              rm(iris)        FALSE    FALSE  FALSE        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            widget                             value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> help         item                              Help</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> example      item                           Example</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep           sep                                 -</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Functions    menu                         Functions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> print        item                    |Print or show</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic      item                        |summary()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1    item                           |plot()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names        item                            |Names</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> str          item                              |Str</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1         sep                                |-</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2    item                            |$&lt;-()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3    item                     |$&lt;--method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4    item                           |Math()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.5    item                            |Ops()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.6    item |Ops,nonStructure,vector-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.7    item    |Ops,structure,vector-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.8    item |Ops,vector,nonStructure-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.9    item    |Ops,vector,structure-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.10   item                        |Summary()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.11   item                              |[()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.12   item                            |[&lt;-()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.13   item                     |[&lt;--method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.14   item                             |[[()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.15   item                           |[[&lt;-()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.16   item                    |[[&lt;--method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.17   item                      |aggregate()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.18   item                  |anyDuplicated()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.19   item                          |anyNA()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.20   item                  |as.data.frame()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.21   item                        |as.list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.22   item                      |as.matrix()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.23   item                      |as.vector()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.24   item                             |by()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.25   item                          |cbind()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.26   item         |coerce,ANY,list-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.27   item      |coerce,oldClass,S3-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.28   item                            |dim()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.29   item                       |dimnames()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.30   item                     |dimnames&lt;-()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.31   item                     |droplevels()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.32   item                     |duplicated()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.33   item                           |edit()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.34   item                         |format()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.35   item                        |formula()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.36   item                           |head()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.37   item     |initialize,oldClass-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.38   item                          |is.na()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.39   item                          |merge()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.40   item                     |na.exclude()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.41   item                        |na.omit()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.42   item                         |prompt()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.43   item                          |rbind()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.44   item                      |row.names()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.45   item                    |row.names&lt;-()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.46   item                         |rowsum()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.47   item           |show,oldClass-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.48   item                    |slotsFromS3()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.49   item             |slotsFromS3-method()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.50   item                        |sort_by()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.51   item                          |split()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.52   item                        |split&lt;-()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.53   item                          |stack()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.54   item                            |str()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.55   item                         |subset()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.56   item                              |t()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.57   item                           |tail()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.58   item                      |transform()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.59   item                   |type.convert()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.60   item                         |unique()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.61   item                        |unstack()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.62   item                         |within()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.63   item                          |xtfrm()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> View         menu                              View</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef      item                   |View (default)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require      item                  |Require svViews</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> report       item                         Report...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> edit         item                              Edit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> save         item                        Save as...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Copy         menu                              Copy</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef      item                   |Copy (default)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require.1    item                     |Require svIO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> export       item                         Export...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2         sep                                 -</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> remove       item                            Remove</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                    tip</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> help                                                 Help on an object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> example                                   Run examples for this object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep                                                                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Functions                                Generic functions and methods</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> print                          Print or show the content of the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic                           Apply method summary() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1                            Apply method plot() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names                       Names of variables contained in the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> str                          Compact str() representation of an object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2                             Apply method $&lt;-() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3                      Apply method $&lt;--method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4                            Apply method Math() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.5                             Apply method Ops() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.6  Apply method Ops,nonStructure,vector-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.7     Apply method Ops,structure,vector-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.8  Apply method Ops,vector,nonStructure-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.9     Apply method Ops,vector,structure-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.10                        Apply method Summary() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.11                              Apply method [() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.12                            Apply method [&lt;-() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.13                     Apply method [&lt;--method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.14                             Apply method [[() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.15                           Apply method [[&lt;-() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.16                    Apply method [[&lt;--method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.17                      Apply method aggregate() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.18                  Apply method anyDuplicated() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.19                          Apply method anyNA() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.20                  Apply method as.data.frame() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.21                        Apply method as.list() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.22                      Apply method as.matrix() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.23                      Apply method as.vector() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.24                             Apply method by() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.25                          Apply method cbind() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.26         Apply method coerce,ANY,list-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.27      Apply method coerce,oldClass,S3-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.28                            Apply method dim() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.29                       Apply method dimnames() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.30                     Apply method dimnames&lt;-() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.31                     Apply method droplevels() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.32                     Apply method duplicated() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.33                           Apply method edit() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.34                         Apply method format() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.35                        Apply method formula() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.36                           Apply method head() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.37     Apply method initialize,oldClass-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.38                          Apply method is.na() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.39                          Apply method merge() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.40                     Apply method na.exclude() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.41                        Apply method na.omit() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.42                         Apply method prompt() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.43                          Apply method rbind() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.44                      Apply method row.names() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.45                    Apply method row.names&lt;-() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.46                         Apply method rowsum() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.47           Apply method show,oldClass-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.48                    Apply method slotsFromS3() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.49             Apply method slotsFromS3-method() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.50                        Apply method sort_by() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.51                          Apply method split() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.52                        Apply method split&lt;-() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.53                          Apply method stack() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.54                            Apply method str() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.55                         Apply method subset() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.56                              Apply method t() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.57                           Apply method tail() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.58                      Apply method transform() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.59                   Apply method type.convert() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.60                         Apply method unique() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.61                        Apply method unstack() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.62                         Apply method within() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.63                          Apply method xtfrm() to the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> View                                                   View the object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef                                   Default view for this object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require                                    Require the package svViews</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> report                                Prepare a report for this object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> edit                                                    Edit an object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> save                                                    Save to a file</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Copy                                  Copy the object to the clipboard</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef             Copy this object to the clipboard (default format)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require.1                                     Require the package svIO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> export                                           Export data to a file</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> remove        Remove (permanently!) one or several objects from memory</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                            code icon checked disabled hidden</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> help                                 help(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> example                           example(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep                                                    FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Functions                                              FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> print                                      iris        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic                           summary(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1                            plot(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names                               names(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> str                                   str(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1                                                  FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2                             $&lt;-(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3                      $&lt;--method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4                            Math(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.5                             Ops(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.6  Ops,nonStructure,vector-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.7     Ops,structure,vector-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.8  Ops,vector,nonStructure-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.9     Ops,vector,structure-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.10                        Summary(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.11                              [(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.12                            [&lt;-(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.13                     [&lt;--method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.14                             [[(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.15                           [[&lt;-(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.16                    [[&lt;--method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.17                      aggregate(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.18                  anyDuplicated(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.19                          anyNA(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.20                  as.data.frame(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.21                        as.list(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.22                      as.matrix(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.23                      as.vector(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.24                             by(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.25                          cbind(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.26         coerce,ANY,list-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.27      coerce,oldClass,S3-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.28                            dim(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.29                       dimnames(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.30                     dimnames&lt;-(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.31                     droplevels(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.32                     duplicated(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.33                           edit(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.34                         format(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.35                        formula(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.36                           head(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.37     initialize,oldClass-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.38                          is.na(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.39                          merge(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.40                     na.exclude(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.41                        na.omit(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.42                         prompt(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.43                          rbind(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.44                      row.names(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.45                    row.names&lt;-(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.46                         rowsum(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.47           show,oldClass-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.48                    slotsFromS3(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.49             slotsFromS3-method(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.50                        sort_by(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.51                          split(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.52                        split&lt;-(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.53                          stack(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.54                            str(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.55                         subset(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.56                              t(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.57                           tail(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.58                      transform(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.59                   type.convert(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.60                         unique(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.61                        unstack(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.62                         within(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.63                          xtfrm(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> View                                                   FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef                              view(iris)        FALSE     TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require                        require(svViews)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> report                          guiReport(iris)        FALSE     TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> edit                         iris &lt;- edit(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> save                              guiSave(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Copy                                                   FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef                              copy(iris)        FALSE     TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require.1                         require(svIO)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> export                          guiExport(iris)        FALSE     TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2                                                  FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> remove                                 rm(iris)        FALSE    FALSE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            options</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> help              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> example           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Functions         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> print             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.1         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> str               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.1             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.2         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.3         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.4         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.5         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.6         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.7         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.8         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.9         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.10        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.11        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.12        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.13        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.14        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.15        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.16        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.17        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.18        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.19        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.20        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.21        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.22        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.23        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.24        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.25        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.26        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.27        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.28        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.29        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.30        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.31        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.32        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.33        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.34        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.35        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.36        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.37        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.38        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.39        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.40        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.41        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.42        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.43        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.44        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.45        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.46        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.47        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.48        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.49        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.50        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.51        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.52        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.53        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.54        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.55        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.56        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.57        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.58        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.59        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.60        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.61        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.62        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> generic.63        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> View              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> viewDef           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> report            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> edit              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> save              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Copy              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> copyDef           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> require.1         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> export            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sep.2             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> remove            </span>
 <span class="r-in"><span><span class="co"># For multiple objects</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>objects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"iris"</span>, <span class="st">"trees"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        widget      value</span>
@@ -425,7 +687,7 @@ Kamil Barton <a href="mailto:kamil.barton@uni-wuerzburg.de">kamil.barton@uni-wue
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># For environments</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="fu">obj_info</span><span class="op">(</span>envir <span class="op">=</span> <span class="st">".GlobalEnv"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Global environment\n\n          used (Mb) gc trigger  (Mb) max used  (Mb)\nNcells 1299912 69.5    2479494 132.5  2479494 132.5\nVcells 8109857 61.9   14141602 107.9 11710217  89.4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Global environment\n\n          used (Mb) gc trigger  (Mb) max used  (Mb)\nNcells 1301067 69.5    2479260 132.5  2479260 132.5\nVcells 8114216 62.0   14141339 107.9 11710035  89.4"</span>
 <span class="r-in"><span><span class="op">(</span><span class="fu">obj_menu</span><span class="op">(</span>envir <span class="op">=</span> <span class="st">".GlobalEnv"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        widget     value                                              tip</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> load     item   Load...                                   Load R objects</span>
