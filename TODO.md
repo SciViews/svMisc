@@ -1,5 +1,7 @@
 # svMisc To Do list
 
+-   How to get vignettes listed in the main help page?
+
 -   The various cases for section and aka printing, and str-ing + example.
 
 -   Same as `pCloud()`, but for OneDrive, Google Drive & Dropbox.
@@ -10,19 +12,9 @@
 
 -   A liste of (remote) sources for packages to install from github, bitbucket, etc. + a list of dependencies and code to run to install these.
 
--   Finalize the actions management
-
 -   Specification of dates in RJSON format
 
--   Write the code in `objList()` to list content inside objects, and perhaps also objects attributes.
-
--   Rework mechanism to call `.guiCmd()` from `objXXX()` functions.
-
 -   Make indeterminate `progress()`ion.
-
--   Use this in call tips to get the call for S3 method for given objects `args(getS3method("predict", class(myobj), optional = TRUE))`. + `selectMethod()` for S4 object does the same thing!
-
--   `objMenu()`: add copy name to clipboard, send name to editor in menu.
 
 -   Use `RShowDoc()` to access further R documentation.
 
