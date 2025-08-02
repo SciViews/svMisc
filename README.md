@@ -1,8 +1,8 @@
-# Miscellaneous Functions for 'SciViews::R' <a href='https://www.sciviews.org/svMisc'><img src='man/figures/logo.png' align='right' height='139'/></a>
+# 'SciViews::R' - Miscellaneous Functions <a href='https://www.sciviews.org/svMisc'><img src='man/figures/logo.png' align='right' height='139'/></a>
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/SciViews/svMisc/branch/main/graph/badge.svg)](https://codecov.io/gh/SciViews/svMisc?branch=main) [![CRAN status](https://www.r-pkg.org/badges/version/svMisc)](https://cran.r-project.org/package=svMisc) [![r-universe status](https://sciviews.r-universe.dev/badges/svMisc)](https://sciviews.r-universe.dev/svMisc) [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SciViews/svMisc/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/SciViews/svMisc/branch/main/graph/badge.svg)](https://app.codecov.io/gh/SciViews/svMisc?branch=main) [![CRAN status](https://www.r-pkg.org/badges/version/svMisc)](https://cran.r-project.org/package=svMisc) [![r-universe status](https://sciviews.r-universe.dev/badges/svMisc)](https://sciviews.r-universe.dev/svMisc) [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 
 <!-- badges: end -->
 

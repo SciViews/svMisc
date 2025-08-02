@@ -1,4 +1,4 @@
-#' Miscellaneous Functions for 'SciViews::R'
+#' 'SciViews::R' - Miscellaneous Functions
 #'
 #' The \{svMisc\} package is of general use among SciViews::R, a layer on top of
 #' R, and the tidyverse. This package collects together a series of general
@@ -16,6 +16,8 @@
 #' - [parse_text()] to parse any R expression, including partial or incorrect
 #'   ones (fails gracefully).
 
+# The following block is used by usethis to automatically manage
+# roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 #' @importFrom cli cli_abort
 #' @importFrom compiler cmpfun

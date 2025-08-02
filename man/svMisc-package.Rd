@@ -4,7 +4,7 @@
 \name{svMisc-package}
 \alias{svMisc}
 \alias{svMisc-package}
-\title{Miscellaneous Functions for 'SciViews::R'}
+\title{'SciViews::R' - Miscellaneous Functions}
 \description{
 The \{svMisc\} package is of general use among SciViews::R, a layer on top of
 R, and the tidyverse. This package collects together a series of general
@@ -27,6 +27,7 @@ Useful links:
 \itemize{
   \item \url{https://github.com/SciViews/svMisc}
   \item \url{https://www.sciviews.org/svMisc/}
+  \item \url{https://sciviews.r-universe.dev/svMisc}
   \item Report bugs at \url{https://github.com/SciViews/svMisc/issues}
 }
 

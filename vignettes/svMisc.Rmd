@@ -1,5 +1,5 @@
 ---
-title: "Miscellaneous Functions for 'SciViews::R'"
+title: "'SciViews::R' - Miscellaneous Functions"
 author: "Philippe Grosjean"
 date: "`r Sys.Date()`"
 output:
@@ -8,7 +8,7 @@ output:
     toc_depth: 3
     fig_caption: yes
 vignette: >
-  %\VignetteIndexEntry{Miscellaneous Functions for 'SciViews::R'}
+  %\VignetteIndexEntry{'SciViews::R' - Miscellaneous Functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 library(svMisc)
 ```
 
-The {svMisc} package contains a collection of functions that are useful in the context of (G)UI (Graphical) User Interfaces, and also, of more general usage. Here is a series of functions you should look at.
+> The {svMisc} package contains a collection of functions that are useful in the context of (G)UI (Graphical) User Interfaces, and also, of more general usage. Here is a series of functions you should look at.
 
 ## Help
 
