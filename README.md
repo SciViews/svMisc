@@ -14,7 +14,6 @@ status](https://sciviews.r-universe.dev/badges/svMisc)](https://sciviews.r-unive
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-
 <!-- badges: end -->
 
 {svMisc} provides a series of functions that are used by the other

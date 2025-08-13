@@ -1,5 +1,7 @@
 # svMisc 1.5.2
 
+-   `eval_data_dot()` is renamed `recall_with_data_dot()` to be more explicit. A companion function `prepare_data_dot()` is added. Version for two data frame arguments are also added.
+
 -   `stop_()`, `warning_()` and `stop_top_call()` added.
 
 -   `?` is renamed `%?%` to avoid conflict with `utils::?`.
