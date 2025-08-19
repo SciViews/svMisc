@@ -14,10 +14,15 @@ prepare_data_dot2(x, y, is_top_call = TRUE)
 recall_with_data_dot(
   call,
   arg = ".data",
-  value = as.symbol("."),
+  value = quote((.)),
   env = parent.frame(2L),
   abort_msg = gettextf("`\%s` must be a 'data.frame'.", arg),
   abort_msg2 = gettext("Implicit data-dot (.) not permitted"),
+  abort_msg3 = gettext("Data-dot mechanism activated, but no `.` object found."),
+  abort_msg4 =
+    gettextf("Define `.` before calling this function, or provide `\%s=` explicitly.",
+    arg),
+  abort_msg5 = gettextf("See {.help svMisc::data_dot_mechanism} for more infos."),
   abort_frame = parent.frame()
 )
 
@@ -25,10 +30,15 @@ recall_with_data_dot2(
   call,
   arg = "x",
   arg2 = "y",
-  value = as.symbol("."),
+  value = quote((.)),
   env = parent.frame(2L),
   abort_msg = gettextf("`\%s` and `\%s` must both be 'data.frame'.", arg, arg2),
   abort_msg2 = gettext("Implicit data-dot (.) not permitted"),
+  abort_msg3 = gettext("Data-dot mechanism activated, but no `.` object found."),
+  abort_msg4 =
+    gettextf("Define `.` before calling this function, or provide `\%s=` explicitly.",
+    arg),
+  abort_msg5 = gettextf("See {.help svMisc::data_dot_mechanism} for more infos."),
   abort_frame = parent.frame()
 )
 }
@@ -58,6 +68,12 @@ changed).}
 case data-dot-injection is not permitted (when
 \code{.SciViews.implicit.data.dot != TRUE}, see example).}
 
+\item{abort_msg3}{An error message when \code{.} is not found.}
+
+\item{abort_msg4}{An additional explanation when \code{.}is not found.}
+
+\item{abort_msg5}{A hint to read the documentation of the data-dot mechanism.}
+
 \item{abort_frame}{The environment to use for the error message, by default,
 the caller environment (should rarely be changed).}
 
@@ -83,33 +99,45 @@ functions that have two first arguments that must be data frames, generally
 called \code{x}and \code{y}.
 }
 \examples{
+# Use this (rename) function to get extra-info in the error message about the
+# data-dot mechanism automatically
+stop <- stop_
+
 # Here is how you create a data-dot function
 my_subset <- function(.data = (.), i, j) {
-  # This makes it a data-dot function
   if (!prepare_data_dot(.data))
     return(recall_with_data_dot())
 
-  # Code of the function
-  # Second argument (i here) must not be a data.frame to avoid confusion
-  message(".env has ", paste(names(.env), collapse = ", "))
+  if (!is.numeric(i))
+    stop_("{.arg i} must be numeric") # Use this function
+  if (i == 1)
+    message(".env has ", paste(names(.env), collapse = ", "))
   .data[i, j]
 }
-dtf1 <- data.frame(x = 1:3, y = 4:6)
-my_subset(dtf1, 1, 'y')
-# If .data is in '.', it can be omitted
-.= dtf1
-my_subset(1, 'y')
 
-# This mechanism is potentially confusing. You can inactivate it anywhere:
+dtf1 <- data.frame(x = 1:3, y = 4:6)
+# The message shows the objects available in the function environment
+my_subset(dtf1, 1, 'y')
+# This is wrong
+try(my_subset(dtf1, 'y'))
+.= dtf1
+my_subset(2, 'y')
+# Error message with indication that the data-dot mechanism is activated
+try(my_subset('y'))
+# Data-dot mechanism not activate, but dot object used
+try(my_subset(., 'y'))
+# Wrong .data=
+try(my_subset(.data = 'y'))
+
+# When data-dot is not permitted...
 .SciViews.implicit.data.dot <- FALSE
-# This time next call is wrong
-try(my_subset(1, 'y'))
-# You must indicate '.' explicitly in that case:
-my_subset(., 1, 'y')
-rm(.SciViews.implicit.data.dot) # Reactivate it
-my_subset(1, 'y') # Implicit again
-# Note that, if you have not defined '.' and try to use it, you got
-# an error:
+try(my_subset(2, 'y'))
+rm(.SciViews.implicit.data.dot)
+
+# When `.` is not found...
 rm(.)
-try(my_subset(1, 'y'))
+try(my_subset(2, 'y'))
+}
+\seealso{
+\link{data_dot_mechanism}
 }

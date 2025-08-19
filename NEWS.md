@@ -2,7 +2,7 @@
 
 -   `eval_data_dot()` is renamed `recall_with_data_dot()` to be more explicit. A companion function `prepare_data_dot()` is added. Version for two data frame arguments are also added.
 
--   `stop_()`, `warning_()` and `stop_top_call()` added.
+-   `stop_()`, `warning_()` and `stop_top_call()` added, and `object_info()` is used to provide further information about objects in the error message.
 
 -   `?` is renamed `%?%` to avoid conflict with `utils::?`.
 

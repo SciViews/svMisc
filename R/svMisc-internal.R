@@ -67,8 +67,10 @@
 #      "tail", "vcov"))
 #}
 
-# Also define it here
+# Also define it here... temporarily for peaceful R CMD check
+.zap <- function(...) rm(list = c(...), envir = parent.frame())
 .SciViews.implicit.data.dots <- TRUE
+.zap('.SciViews.implicit.data.dots')
 
 # gettext() and hence gettextf() cannot retrieve messages ending with space
 # in the "R" domain, because these functions stripe them out!

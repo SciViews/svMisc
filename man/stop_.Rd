@@ -4,6 +4,7 @@
 \alias{stop_}
 \alias{warning_}
 \alias{stop_top_call}
+\alias{object_info}
 \title{Enhanced stop() and warning()}
 \usage{
 stop_(
@@ -12,7 +13,8 @@ stop_(
   domain = NULL,
   class = NULL,
   call = stop_top_call(2L),
-  envir = parent.frame()
+  envir = parent.frame(),
+  last_call = sys.call(-1L)
 )
 
 warning_(
@@ -24,6 +26,8 @@ warning_(
 )
 
 stop_top_call(nframe = 2L)
+
+object_info(x)
 }
 \arguments{
 \item{...}{One or more character strings with the error or warning message(s).
@@ -42,6 +46,9 @@ the error should be reported from.}
 
 \item{envir}{The environment where to evaluate the glue expressions.}
 
+\item{last_call}{The last call issued by the user, used to check if a dot
+(\code{.}) object was invoked.}
+
 \item{immediate.}{Logical, whether to issue the warning immediately even if
 \code{getOption("warn") <= 0}. Note that this is not respected for condition
 objects.}
@@ -51,6 +58,8 @@ output as a single line when \code{options(warn = 1)}.}
 
 \item{nframe}{The number of frames to go up the call stack to find the top
 call for stop condition messages.}
+
+\item{x}{An R object to describe.}
 }
 \value{
 \code{stop_()} and \code{warning_()} are invoked for their side-effects, but

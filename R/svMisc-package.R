@@ -27,7 +27,7 @@
 #' @importFrom rlang abort caller_env eval_bare f_env<- is_formula is_interactive
 #' @importFrom stats cor fft quantile rnorm runif
 #' @importFrom tools file_path_as_absolute
-#' @importFrom utils capture.output compareVersion file.edit file_test find flush.console getCRANmirrors getS3method ? help help.search install.packages installed.packages methods object.size packageDescription remove.packages setTxtProgressBar str tail txtProgressBar write.table
+#' @importFrom utils capture.output compareVersion file.edit file_test find flush.console getCRANmirrors getS3method ? help help.search install.packages installed.packages methods object.size packageDescription remove.packages setTxtProgressBar str tail txtProgressBar View write.table
 #' @importFrom utils RSiteSearch apropos available.packages browseURL
 #' @useDynLib svMisc, .registration = TRUE
 ## usethis namespace: end

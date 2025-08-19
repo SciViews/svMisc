@@ -18,6 +18,8 @@
 #' @param call The execution environment of a currently running function where
 #'   the error should be reported from.
 #' @param envir The environment where to evaluate the glue expressions.
+#' @param last_call The last call issued by the user, used to check if a dot
+#' (`.`) object was invoked.
 #'
 #' @returns `stop_()` and `warning_()` are invoked for their side-effects, but
 #'   `stop_()` actually stops execution of the current code. `stop_top_call()`
@@ -73,11 +75,26 @@
 #'
 #' rm(stop, warning)
 stop_ <- function(..., call. = FALSE, domain = NULL, class = NULL,
-  call = stop_top_call(2L), envir = parent.frame()) {
+  call = stop_top_call(2L), envir = parent.frame(), last_call = sys.call(-1L)) {
   # Note that call. is not use here!
   message <- gettext(..., domain = domain, trim = TRUE)
   # Sometimes, gettext() looses names -> reapply them
   names(message) <- ...names()
+  # If the data-dot mechanism was activated, we provide extra information, or if
+  # the first argument of the function was '.', we provide extra information.
+  if (missing(last_call))
+    last_call <- sys.call(-1L)
+  first_arg <- last_call[[2]]
+  if (is.null(first_arg)) first_arg <- ""
+  data_dot <-  (first_arg == '(.)') # data-dot mechanisms is likeley activated
+  # Enhance the message
+  if (data_dot)
+    message <- c(message, i = gettext(
+      "{.emph The data-dot mechanism was activated (see {.help svMisc::data_dot_mechanism}).}"))
+
+  if (data_dot || first_arg == '.')
+    message <- c(message, `*` = gettext(
+      "{.emph {.code .} is {object_info(.)}}"))
   cli_abort(message, class = class, call = call, .envir = envir)
 }
 
@@ -110,4 +127,26 @@ stop_top_call <- function(nframe = 2L) {
     }
   }
   call
+}
+
+#' @rdname stop_
+#' @param x An R object to describe.
+#' @export
+object_info <- function(x) {
+  if (is.null(x)) {
+    "'NULL'"
+  } else if (is.data.frame(x)) {
+    x_names <- paste0("'", names(x), "'")
+    if (length(x_names) > 8L)
+      x_names <- c(x_names[1:8], "...")
+    x_names <- paste(x_names, collapse = ", ")
+    gettextf("a data frame with %d rows and %d columns: %s",
+      nrow(x), ncol(x), x_names)
+  } else if (is.list(x)) {
+    gettextf("a list with %d elements", length(x))
+  } else if (is.vector(x)) {
+    gettextf("a vector of type '%s' and %d elements", typeof(x), length(x))
+  } else {
+    gettextf("an object of class '%s'", paste(class(x), collapse = "/"))
+  }
 }
