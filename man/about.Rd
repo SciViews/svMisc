@@ -2,14 +2,14 @@
 % Please edit documentation in R/about.R
 \name{about}
 \alias{about}
-\alias{\%?\%}
+\alias{?}
 \alias{ex}
 \alias{print.runnable}
 \title{Get information and help about \R objects}
 \usage{
 about(topic, ...)
 
-type \%?\% topic
+`?`(type, topic)
 
 ex()
 
@@ -65,8 +65,8 @@ about("vec")
 # If the comment has a src attribute, change the topic to that one
 #urchin <- read("urchin_bio", package = "data")
 #about("urchin")
-.\%?\% filter
-.\%?\% stats::filter
+.? filter
+.? stats::filter
 }
 }
 \seealso{

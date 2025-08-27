@@ -41,8 +41,8 @@
 #' # If the comment has a src attribute, change the topic to that one
 #' #urchin <- read("urchin_bio", package = "data")
 #' #about("urchin")
-#' .%?% filter
-#' .%?% stats::filter
+#' .? filter
+#' .? stats::filter
 #' }
 about <- function(topic, ...) {
   if (!is.character(topic) || length(topic) != 1 || nchar(topic) < 1)
@@ -169,7 +169,7 @@ about <- function(topic, ...) {
 #' argument is a topic passed to the `about()` function. Otherwise, it is the
 #' first argument to restrict help pages, like `class`, `methods`, or `method`.
 #' See examples for how to use it.
-`%?%` <- function(type, topic) {
+`?` <- function(type, topic) {
   type <- substitute(type)
   if (missing(topic)) {
     do.call(utils::`?`, list(type))

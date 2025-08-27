@@ -4,8 +4,6 @@
 
 -   `stop_()`, `warning_()` and `stop_top_call()` added, and `object_info()` is used to provide further information about objects in the error message.
 
--   `?` is renamed `%?%` to avoid conflict with `utils::?`.
-
 -   `gettext`, `gettextf` and `ngettext` renamed `gettext_`, `gettexf_` and `ngettext_` to avoid forcing using them. One must rename them in a package that uses the language switch feature of these function.
 
 -   `retarget()` added (change easily the environment of a formula).
