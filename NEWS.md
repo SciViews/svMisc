@@ -1,3 +1,9 @@
+# svMisc 1.6.0
+
+-   Functions `stop_`, `warning_`, `stop_top_call()`, `object_info()`, `gettext_()`, `gettextf_()`, `ngettext_()` and `test_gettext_lang()` are moved from here to svBase.
+
+-   Functions for subsettable type (`fun$type()`) and subsettable which (`fun$which()`) are moved to svBase (>= 1.7.0).
+
 # svMisc 1.5.2
 
 -   `eval_data_dot()` is renamed `recall_with_data_dot()` to be more explicit. A companion function `prepare_data_dot()` is added. Version for two data frame arguments are also added.

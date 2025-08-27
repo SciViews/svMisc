@@ -20,7 +20,6 @@
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 #' @importFrom cli cli_abort
-#' @importFrom compiler cmpfun
 #' @importFrom lifecycle deprecated
 #' @importFrom methods findFunction existsFunction new isGeneric
 #' @importFrom methods showMethods slot slotNames

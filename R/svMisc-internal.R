@@ -1,14 +1,4 @@
 .onLoad <- function(lib, pkg) {
-  # Allow implicit (dot) data by default
-  assign_temp('.SciViews.implicit.data.dot', TRUE)
-
-  # TODO: This does not work and it is not visible!
-  # Global definition of `.` (raises an error if used without definition)
-  .wrong_dot <- function(.)
-    stop("You are using '.', but you have not defined it.", call. = FALSE)
-  # Not in temp_env: this makes problems with RStudio apparently
-  makeActiveBinding('.', .wrong_dot, env = parent.frame()) #, env = temp_env())
-
   #.initialize()
 
   # Determine where to find the preferred file editor for fileEdit()
@@ -67,10 +57,6 @@
 #      "tail", "vcov"))
 #}
 
-# Also define it here... temporarily for peaceful R CMD check
-.zap <- function(...) rm(list = c(...), envir = parent.frame())
-.SciViews.implicit.data.dots <- TRUE
-.zap('.SciViews.implicit.data.dots')
 
 # gettext() and hence gettextf() cannot retrieve messages ending with space
 # in the "R" domain, because these functions stripe them out!

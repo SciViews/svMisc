@@ -81,6 +81,7 @@ subpaths
 subsettable
 Subsettable
 SuppDists
+svBase
 svFlow
 svSweave
 svUnit
