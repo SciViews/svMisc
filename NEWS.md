@@ -1,5 +1,9 @@
 # svMisc 1.6.0
 
+-   Functions `aka()` and `section()` are moved to svBase.
+
+-   Functions `retarget()` and `expr_funs()` are moved from here to svBase.
+
 -   Functions `stop_`, `warning_`, `stop_top_call()`, `object_info()`, `gettext_()`, `gettextf_()`, `ngettext_()` and `test_gettext_lang()` are moved from here to svBase.
 
 -   Functions for subsettable type (`fun$type()`) and subsettable which (`fun$which()`) are moved to svBase (>= 1.7.0).

@@ -22,7 +22,7 @@ Imports:
     lifecycle,
     methods (>= 4.2.0),
     rlang (>= 1.1.1),
-    stats (>= 4.2.0),
+    stats(>= 4.2.0),
     tools (>= 4.2.0),
     utils (>= 4.2.0)
 Suggests:

@@ -39,4 +39,4 @@ pcloud <- function(...) {
 #' @rdname pcloud
 pcloud_crypto <- function(...)
   pcloud("Crypto Folder", ...)
-  # TODO: check for the existance of this folder and issue a warning otherwise
+  # TODO: check for the existence of this folder and issue a warning otherwise

@@ -207,7 +207,7 @@ name.or.addition = c("name", "addition", "both")) {
     }
 
     # Do we add addition strings as a separate column?
-    if(!is.null(additions))
+    if (!is.null(additions))
       ret <- cbind(ret, data.frame(addition = additions))
 
     # Do we sort results alphabetically?
