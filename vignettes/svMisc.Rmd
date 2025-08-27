@@ -1,6 +1,6 @@
 ---
 title: "'SciViews::R' - Miscellaneous Functions"
-author: "Philippe Grosjean"
+author: "Philippe Grosjean (phgrosjean@sciviews.org)"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
