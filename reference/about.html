@@ -110,7 +110,7 @@ also further document your custom objects easily in their source files!</p>
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">about</span><span class="op">(</span><span class="va">topic</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">type</span> <span class="op">%?%</span> <span class="va">topic</span></span>
+<span><span class="fu">`?`</span><span class="op">(</span><span class="va">type</span>, <span class="va">topic</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">ex</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -174,8 +174,8 @@ returned invisibly.</p>
 <span class="r-in"><span><span class="co"># If the comment has a src attribute, change the topic to that one</span></span></span>
 <span class="r-in"><span><span class="co">#urchin &lt;- read("urchin_bio", package = "data")</span></span></span>
 <span class="r-in"><span><span class="co">#about("urchin")</span></span></span>
-<span class="r-in"><span><span class="va">.</span><span class="op">%?%</span> <span class="va">filter</span></span></span>
-<span class="r-in"><span><span class="va">.</span><span class="op">%?%</span> <span class="fu">stats</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span></span></span>
+<span class="r-in"><span><span class="va">.</span><span class="op">?</span> <span class="va">filter</span></span></span>
+<span class="r-in"><span><span class="va">.</span><span class="op">?</span> <span class="fu">stats</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
